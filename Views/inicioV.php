@@ -20,8 +20,19 @@
     }
 
     .bg-custom-sec {
-      background-color: #2b2b2b ;
+      background-color: #2b2b2b;
     }
+
+    .imagen-superpuesta {
+  top: 0;
+  right: 0;
+  max-width: 50px; /* Ajusta el ancho máximo de la imagen superpuesta */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: auto; /* Ajusta la altura automáticamente */
+} 
+.text-token{
+  color: #efb810;
+}
   </style>
 </head>
 
@@ -48,26 +59,46 @@
   </nav>
 
   <!--------------- NAV BOXES  --------------->
-  <article id>
+  <article id="nav-boxes">
     <div class="container py-5">
       <div class="row">
         <div class="col-lg-16 ">
           <div class="card mb-4 bg-custom-sec">
-            <div class="card-body text-center bg-custom-sec">
-              <div class="d-flex justify-content-between">
-                <button class="btn btn-primary">Botón 1</button>
-                <button class="btn btn-secondary">Botón 2</button>
-                <button class="btn btn-success">Botón 3</button>
+            <div class="card-body text-center bg-custom-sec ">
+              <div class="d-flex justify-content-between ">
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Popular</button>
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Tecnología</button>
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Ropa</button>
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Figuras</button>
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Cine</button>
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Nuevo</button>
+                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Ofertas</button>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </article>
 
+  <article>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card position-relative text-center bg-custom-sec" >
+        <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
+        <img src="imagen-superpuesta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
+        <div class="card-body">
+          <p class="card-text text-secondary"><b>Descripción de la tarjeta 1 </b> </p>
+          <h5 class="card-text text-token"> <b> 1.234  </b></h5>
+          <a href="#" class="btn btn-primary color-tokens">Botón de la tarjeta 1</a>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjetas 2 y 3 -->
+  </div>
+</div>
+</article>
 
   <!--------------- FOOTER  --------------->
 
@@ -75,22 +106,28 @@
     <br>
     <div class="d-flex justify-content-around">
       <div>
-        <h3>Dirección</h3>
+        <h3>Contacto</h3>
         <p>
-          Calle Cordoba 8<br>
-          Madrid<br>
-          España
+          <i class="bi bi-facebook"></i> Facebok<br>
+          <i class="bi bi-instagram"></i> Instagram<br>
+          <i class="bi bi-twitter"></i> Twitter<br>
+          <i class="bi bi-envelope"></i> support@ejemplo.com<br>
+          <i class="bi bi-telephone-fill"></i> +34 45 67 23 45<br>
         </p>
       </div>
       <div>
-        <h3>Gmail</h3>
+        <h3>Información</h3>
         <p>
-          contacto@ejemplo.com<br>
-          officina@sampledomain.com
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a>
+
         </p>
       </div>
       <div>
-        <h3>Teléfono</h3>
+        <h3>Formas de pago</h3>
         <p>
           897 87 78 23<br>
           654 98 65 09<br>
@@ -101,7 +138,7 @@
 
     <div class="text-center p-3">
       © 2022 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">Alejandro Ceballos & Manuel Medina</a>
+      <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
     </div>
   </footer>
 </body>
