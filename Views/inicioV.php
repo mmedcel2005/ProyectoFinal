@@ -24,92 +24,102 @@
     }
 
     .imagen-superpuesta {
-  top: 0;
-  right: 0;
-  max-width: 50px; /* Ajusta el ancho máximo de la imagen superpuesta */
-  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-  height: auto; /* Ajusta la altura automáticamente */
-} 
-.text-token{
-  color: #efb810;
-}
-.btn-amarillo{
-  background-color: #efb810;
-}
+      top: 0;
+      right: 0;
+      max-width: 50px;
+      /* Ajusta el ancho máximo de la imagen superpuesta */
+      width: 100%;
+      /* Asegura que la imagen ocupe todo el ancho del contenedor */
+      height: auto;
+      /* Ajusta la altura automáticamente */
+    }
+
+    .text-token {
+      color: #efb810;
+      font-weight: bold;
+    }
+
+    .btn-amarillo {
+      background-color: #efb810;
+      font-weight: bold;
+    }
   </style>
 </head>
 
 <body>
-  <!--------------- NAV  --------------->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-    <a class="navbar-brand" href="#">Navbar w/ text</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Mistery Boxes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Oro gratis</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tienda</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">
-          <img src="usuario.jpg" alt="Imagen de usuario" class="rounded-circle usuario-imagen">
-          <span class="usuario-nombre">Nombre de Usuario</span> <br>
-          <span class="usuario-monedas">100 Monedas</span>
-        </a>
-      </li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <!--------------- NAV  --------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+      <a class="navbar-brand" href="#">Navbar w/ text</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Mistery Boxes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Oro gratis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="usuario.jpg" alt="Imagen de usuario" class="rounded-circle usuario-imagen">
+              <span class="usuario-nombre">Nombre de Usuario</span> <br>
+              <span class="usuario-monedas">100 Monedas</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-  <!--------------- NAV BOXES  --------------->
-  <article id="nav-boxes">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-16 ">
-          <div class="card mb-4 bg-custom-sec">
-            <div class="card-body text-center bg-custom-sec ">
-              <div class="d-flex justify-content-between ">
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Popular</button>
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Tecnología</button>
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Ropa</button>
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Figuras</button>
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Cine</button>
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Nuevo</button>
-                <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-secondary rounded-1">Ofertas</button>
+  <main>
+    <!--------------- NAV BOXES  --------------->
+    <article id="nav-boxes">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-16 ">
+            <div class="card mb-4 bg-custom-sec">
+              <div class="card-body text-center bg-custom-sec ">
+                <div class="d-flex justify-content-between ">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">POPULAR</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">TECNOLOGÍA</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">ROPA</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">FIGURAS</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">CINE</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">NUEVO</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">OFERTAS</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article>
-  <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card position-relative text-center bg-custom-sec" >
-        <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-        <img src="imagen-superpuesta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
-        <div class="card-body">
-          <p class="card-text text-secondary"><b>Descripción de la tarjeta 1 </b> </p>
-          <h5 class="card-text text-token"> <b> 1.234  </b></h5>
-          <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card position-relative text-center bg-custom-sec">
+              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
+              <img src="imagen-superpuesta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
+              <div class="card-body">
+                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
+                <h5 class="card-text text-token"> 1.234 </h5>
+                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjetas 2 y 3 -->
         </div>
       </div>
-    </div>
-    <!-- Tarjetas 2 y 3 -->
-  </div>
-</div>
-</article>
-
+    </article>
+  </main>
   <!--------------- FOOTER  --------------->
 
   <footer class="bg-custom text-center text-white" id="contact_footer">
