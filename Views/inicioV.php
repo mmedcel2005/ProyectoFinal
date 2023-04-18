@@ -33,6 +33,9 @@
 .text-token{
   color: #efb810;
 }
+.btn-amarillo{
+  background-color: #efb810;
+}
   </style>
 </head>
 
@@ -54,6 +57,13 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Tienda</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">
+          <img src="usuario.jpg" alt="Imagen de usuario" class="rounded-circle usuario-imagen">
+          <span class="usuario-nombre">Nombre de Usuario</span> <br>
+          <span class="usuario-monedas">100 Monedas</span>
+        </a>
+      </li>
       </ul>
     </div>
   </nav>
@@ -91,7 +101,7 @@
         <div class="card-body">
           <p class="card-text text-secondary"><b>Descripción de la tarjeta 1 </b> </p>
           <h5 class="card-text text-token"> <b> 1.234  </b></h5>
-          <a href="#" class="btn btn-primary color-tokens">Botón de la tarjeta 1</a>
+          <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
         </div>
       </div>
     </div>
