@@ -26,7 +26,7 @@
     .imagen-superpuesta {
       top: 0;
       right: 0;
-      max-width: 50px;
+      max-width: 100px;
       /* Ajusta el ancho máximo de la imagen superpuesta */
       width: 100%;
       /* Asegura que la imagen ocupe todo el ancho del contenedor */
@@ -104,10 +104,10 @@
     <article>
       <div class="container">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 mb-3">
             <div class="card position-relative text-center bg-custom-sec">
               <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-              <img src="imagen-superpuesta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
+              <img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
               <div class="card-body">
                 <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
                 <h5 class="card-text text-token"> 1.234 </h5>
@@ -116,6 +116,39 @@
             </div>
           </div>
           <!-- Tarjetas 2 y 3 -->
+          <div class="col-sm-4 mb-3">
+            <div class="card position-relative text-center bg-custom-sec">
+              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
+              <img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
+              <div class="card-body">
+                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
+                <h5 class="card-text text-token"> 1.234 </h5>
+                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <div class="card position-relative text-center bg-custom-sec">
+              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
+              <img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
+              <div class="card-body">
+                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
+                <h5 class="card-text text-token"> 1.234 </h5>
+                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <div class="card position-relative text-center bg-custom-sec">
+              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
+              <img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
+              <div class="card-body">
+                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
+                <h5 class="card-text text-token"> 1.234 </h5>
+                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </article>
