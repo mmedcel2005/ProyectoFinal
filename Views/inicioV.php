@@ -50,29 +50,36 @@
   <header>
     <!--------------- NAV  --------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-      <a class="navbar-brand" href="#">Navbar w/ text</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Mistery Boxes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Oro gratis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tienda</a>
-          </li>
-          <li class="nav-item">
+      <div class="container-fluid">
+        <a class="nav-link" href="./index.html">
+          <img src="" alt="" style="height: 40px" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Mistery Boxes</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Oro gratis</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Tienda</b></a>
+            </li>
+            <li class="nav-item"></li>
+          </ul>
+          <div class="d-flex mx-lg-5">
             <a class="nav-link" href="#">
-              <img src="usuario.jpg" alt="Imagen de usuario" class="rounded-circle usuario-imagen">
-              <span class="usuario-nombre">Nombre de Usuario</span> <br>
+              <img
+                src="usuario.jpg"
+                alt="Imagen de usuario"
+                class="rounded-circle usuario-imagen"
+              />
+              <span class="usuario-nombre">Nombre de Usuario</span> <br />
               <span class="usuario-monedas">100 Monedas</span>
             </a>
-          </li>
-        </ul>
+          </div>
+          <div id="google_translate_element" class="google"></div>
+        </div>
       </div>
     </nav>
   </header>
