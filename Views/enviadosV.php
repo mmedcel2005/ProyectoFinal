@@ -76,60 +76,83 @@
     </header>
 
     <main>
-        <section>
-            <div class="container py-5">
+    <section>
+      <div class="container py-5 ">
 
+        <!-- Carrito -->
 
-                <div class="row">
-                    <div class="col-lg-16">
-                        <div class="card mb-4 bg-custom-sec text-white">
-
-                            <div class="card-header py-3">
-                                <h5 class="mb-0">Inventario</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                        <!-- Image -->
-                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="" class="w-100 " alt="" />
-                                            <a href="#!">
-                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                            </a>
-                                        </div>
-                                        <!-- Image -->
-                                    </div>
-
-                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                        <!-- Data -->
-                                        <p><strong></strong></p>
-                                        <p>Nombre
-                                        </p>
-
-
-                                        <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
-                                            <i class="bi bi-send-fill"></i>
-                                        </button>
-                                        <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                            <i class="bi bi-heart-fill"></i>
-                                        </button>
-                                        <!-- Data -->
-                                    </div>
-
-                                   
-                                </div>
-                                <hr class="my-4">
-                                
-                                
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
+<h1>Mis pedidos</h1>
+        <!-- Tarjeta pedido -->
+        <div class="card bg-custom-sec text-white">
+          <div class="card-header py-3 ">
+            <div class="row ">
+              <div class="col">
+                <h5 class="mb-0">Finalizado</h5>
+              </div>
+              <div class="col-md-auto">
+                Pedido efectuado el: 8 jan, 2023
+                <br>
+                Nº de pedido: 2343933400076235
+              </div>
+              
             </div>
-        </section>
-    </main>
+          </div>
+
+          <div class="card-body">
+            <!-- Single item -->
+            <div class="row">
+              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <!-- Image -->
+                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                  <img src="https://assets.stickpng.com/images/5afac6086554160a79bea115.png" class="w-100"
+                    alt="Marshall JVM410H Bundle" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                  </a>
+                </div>
+                <!-- Image -->
+              </div>
+
+              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                <!-- Data -->
+                <p><strong>Marshall JVM410H Bundle
+                  </strong></p>
+                <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+
+                <!-- Data -->
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+
+                <!-- Price -->
+                <h2 class="text-start text-md-center">
+                  <strong class="featured_prize">2069€</strong>
+                </h2>
+                <!-- Price -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      
+
+        <br>
+
+      </div>
+      </div>
+
+
+
+
+
+
+      </div>
+      </div>
+    </section>
     <!--------------- FOOTER  --------------->
 
     <footer class="bg-custom text-center text-white" id="contact_footer">
