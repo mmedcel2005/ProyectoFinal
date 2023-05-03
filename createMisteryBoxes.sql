@@ -8,21 +8,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema proyecto
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema proyecto
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `proyecto` DEFAULT CHARACTER SET utf8 ;
+USE `proyecto` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuario`
+-- Table `proyecto`.`Usuario`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Usuario` ;
+DROP TABLE IF EXISTS `proyecto`.`Usuario` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(20) NULL,
   `apellidos` VARCHAR(35) NULL,
@@ -38,11 +38,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Objeto`
+-- Table `proyecto`.`Objeto`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Objeto` ;
+DROP TABLE IF EXISTS `proyecto`.`Objeto` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Objeto` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Objeto` (
   `idObjeto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(20) NULL,
   `descripcion` VARCHAR(50) NULL,
@@ -54,11 +54,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Caja`
+-- Table `proyecto`.`Caja`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Caja` ;
+DROP TABLE IF EXISTS `proyecto`.`Caja` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Caja` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Caja` (
   `idCaja` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(20) NULL,
   `descripcion` VARCHAR(45) NULL,
@@ -69,11 +69,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Compra`
+-- Table `proyecto`.`Compra`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Compra` ;
+DROP TABLE IF EXISTS `proyecto`.`Compra` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Compra` (
   `idCompra` INT NOT NULL AUTO_INCREMENT,
   `Usuario_idUsuario` INT NOT NULL,
   `fechaYHora` DATETIME NULL,
@@ -86,28 +86,31 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   INDEX `fk_Compra_Objeto1_idx` (`Objeto_idObjeto` ASC) VISIBLE,
   CONSTRAINT `fk_Compra_Usuario`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `proyecto
+  `.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Compra_Caja1`
     FOREIGN KEY (`Caja_idCaja`)
-    REFERENCES `mydb`.`Caja` (`idCaja`)
+    REFERENCES `proyecto
+  `.`Caja` (`idCaja`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Compra_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto`)
-    REFERENCES `mydb`.`Objeto` (`idObjeto`)
+    REFERENCES `proyecto
+  `.`Objeto` (`idObjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Objeto_has_Caja`
+-- Table `proyecto`.`Objeto_has_Caja`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Objeto_has_Caja` ;
+DROP TABLE IF EXISTS `proyecto`.`Objeto_has_Caja` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Objeto_has_Caja` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Objeto_has_Caja` (
   `Objeto_idObjeto` INT NOT NULL,
   `Caja_idCaja` INT NOT NULL,
   PRIMARY KEY (`Objeto_idObjeto`, `Caja_idCaja`),
@@ -115,23 +118,25 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Objeto_has_Caja` (
   INDEX `fk_Objeto_has_Caja_Objeto1_idx` (`Objeto_idObjeto` ASC) VISIBLE,
   CONSTRAINT `fk_Objeto_has_Caja_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto`)
-    REFERENCES `mydb`.`Objeto` (`idObjeto`)
+    REFERENCES `proyecto
+  `.`Objeto` (`idObjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Objeto_has_Caja_Caja1`
     FOREIGN KEY (`Caja_idCaja`)
-    REFERENCES `mydb`.`Caja` (`idCaja`)
+    REFERENCES `proyecto
+  `.`Caja` (`idCaja`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`CompraDeToken`
+-- Table `proyecto`.`CompraDeToken`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`CompraDeToken` ;
+DROP TABLE IF EXISTS `proyecto`.`CompraDeToken` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`CompraDeToken` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`CompraDeToken` (
   `idCompraToken` INT NOT NULL AUTO_INCREMENT,
   `precio` FLOAT NOT NULL,
   `Usuario_idUsuario` INT NOT NULL,
@@ -139,18 +144,19 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CompraDeToken` (
   INDEX `fk_CompraDeToken_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_CompraDeToken_Usuario1`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `proyecto
+  `.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`PackToken`
+-- Table `proyecto`.`PackToken`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`PackToken` ;
+DROP TABLE IF EXISTS `proyecto`.`PackToken` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`PackToken` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`PackToken` (
   `idPackToken` INT NOT NULL AUTO_INCREMENT,
   `cantidadToken` INT NULL,
   `precio` VARCHAR(45) NULL,
@@ -161,11 +167,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`CompraDeToken_has_PackToken`
+-- Table `proyecto`.`CompraDeToken_has_PackToken`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`CompraDeToken_has_PackToken` ;
+DROP TABLE IF EXISTS `proyecto`.`CompraDeToken_has_PackToken` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`CompraDeToken_has_PackToken` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`CompraDeToken_has_PackToken` (
   `CompraDeToken_idCompraToken` INT NOT NULL,
   `CompraDeToken_Usuario_idUsuario` INT NOT NULL,
   `PackToken_idPackToken` INT NOT NULL,
@@ -174,41 +180,44 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CompraDeToken_has_PackToken` (
   INDEX `fk_CompraDeToken_has_PackToken_CompraDeToken1_idx` (`CompraDeToken_idCompraToken` ASC, `CompraDeToken_Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_CompraDeToken_has_PackToken_CompraDeToken1`
     FOREIGN KEY (`CompraDeToken_idCompraToken` , `CompraDeToken_Usuario_idUsuario`)
-    REFERENCES `mydb`.`CompraDeToken` (`idCompraToken` , `Usuario_idUsuario`)
+    REFERENCES `proyecto
+  `.`CompraDeToken` (`idCompraToken` , `Usuario_idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_CompraDeToken_has_PackToken_PackToken1`
     FOREIGN KEY (`PackToken_idPackToken`)
-    REFERENCES `mydb`.`PackToken` (`idPackToken`)
+    REFERENCES `proyecto
+  `.`PackToken` (`idPackToken`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Inventario`
+-- Table `proyecto`.`Inventario`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Inventario` ;
+DROP TABLE IF EXISTS `proyecto`.`Inventario` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Inventario` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Inventario` (
   `idInventario` INT NOT NULL AUTO_INCREMENT,
   `Usuario_idUsuario` INT NOT NULL,
   PRIMARY KEY (`idInventario`, `Usuario_idUsuario`),
   INDEX `fk_Inventario_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Inventario_Usuario1`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `proyecto
+  `.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Inventario_has_Objeto`
+-- Table `proyecto`.`Inventario_has_Objeto`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Inventario_has_Objeto` ;
+DROP TABLE IF EXISTS `proyecto`.`Inventario_has_Objeto` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Inventario_has_Objeto` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Inventario_has_Objeto` (
   `Inventario_idInventario` INT NOT NULL,
   `Inventario_Usuario_idUsuario` INT NOT NULL,
   `Objeto_idObjeto` INT NOT NULL,
@@ -217,41 +226,44 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Inventario_has_Objeto` (
   INDEX `fk_Inventario_has_Objeto_Inventario1_idx` (`Inventario_idInventario` ASC, `Inventario_Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Inventario_has_Objeto_Inventario1`
     FOREIGN KEY (`Inventario_idInventario` , `Inventario_Usuario_idUsuario`)
-    REFERENCES `mydb`.`Inventario` (`idInventario` , `Usuario_idUsuario`)
+    REFERENCES `proyecto
+  `.`Inventario` (`idInventario` , `Usuario_idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Inventario_has_Objeto_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto`)
-    REFERENCES `mydb`.`Objeto` (`idObjeto`)
+    REFERENCES `proyecto
+  `.`Objeto` (`idObjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`metodoPago`
+-- Table `proyecto`.`metodoPago`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`metodoPago` ;
+DROP TABLE IF EXISTS `proyecto`.`metodoPago` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`metodoPago` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`metodoPago` (
   `token` INT NOT NULL,
   `Usuario_idUsuario` INT NOT NULL,
   PRIMARY KEY (`token`, `Usuario_idUsuario`),
   INDEX `fk_metodoPago_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_metodoPago_Usuario1`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `proyecto
+  `.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Enviados`
+-- Table `proyecto`.`Enviados`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Enviados` ;
+DROP TABLE IF EXISTS `proyecto`.`Enviados` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Enviados` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Enviados` (
   `numEnviados` INT NOT NULL,
   `fecha_Envio` DATE NULL,
   `estadoEnvio` VARCHAR(45) GENERATED ALWAYS AS () VIRTUAL,
@@ -260,18 +272,19 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Enviados` (
   INDEX `fk_Enviados_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Enviados_Usuario1`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `proyecto
+  `.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Enviados_has_Objeto`
+-- Table `proyecto`.`Enviados_has_Objeto`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Enviados_has_Objeto` ;
+DROP TABLE IF EXISTS `proyecto`.`Enviados_has_Objeto` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Enviados_has_Objeto` (
+CREATE TABLE IF NOT EXISTS `proyecto`.`Enviados_has_Objeto` (
   `Enviados_idEnviados` INT NOT NULL,
   `Objeto_idObjeto` INT NOT NULL,
   PRIMARY KEY (`Enviados_idEnviados`, `Objeto_idObjeto`),
@@ -279,12 +292,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Enviados_has_Objeto` (
   INDEX `fk_Enviados_has_Objeto_Enviados1_idx` (`Enviados_idEnviados` ASC) VISIBLE,
   CONSTRAINT `fk_Enviados_has_Objeto_Enviados1`
     FOREIGN KEY (`Enviados_idEnviados`)
-    REFERENCES `mydb`.`Enviados` (`numEnviados`)
+    REFERENCES `proyecto
+  `.`Enviados` (`numEnviados`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Enviados_has_Objeto_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto`)
-    REFERENCES `mydb`.`Objeto` (`idObjeto`)
+    REFERENCES `proyecto
+  `.`Objeto` (`idObjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
