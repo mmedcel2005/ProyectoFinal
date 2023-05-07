@@ -88,7 +88,7 @@
 
         <!-- Carrito -->
 
-<h1>Mis pedidos</h1>
+<h1 class="text-white">Mis pedidos</h1>
         <!-- Tarjeta pedido -->
         <div class="card bg-custom-sec text-white">
           <div class="card-header py-3 ">
@@ -111,8 +111,8 @@
               <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                 <!-- Image -->
                 <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src="https://assets.stickpng.com/images/5afac6086554160a79bea115.png" class="w-100"
-                    alt="Marshall JVM410H Bundle" />
+                  <img src="" class="w-100"
+                    alt="imagen" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                   </a>
@@ -122,7 +122,7 @@
 
               <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                 <!-- Data -->
-                <p><strong>Marshall JVM410H Bundle
+                <p><strong>Item
                   </strong></p>
                 <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
                   <i class="bi bi-trash-fill"></i>
@@ -135,7 +135,7 @@
 
                 <!-- Price -->
                 <h2 class="text-start text-md-center">
-                  <strong class="featured_prize">2069€</strong>
+                  <strong class="featured_prize">8888€</strong>
                 </h2>
                 <!-- Price -->
               </div>
