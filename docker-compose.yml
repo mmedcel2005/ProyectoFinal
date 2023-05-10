@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: proyecto
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+  web:
+    image: php:7.4-apache
+    build: /home/ec2-user/ProyectoFinal
+    ports:
+      - "80:80"
+    volumes:
+      - /home/ec2-user/ProyectoFinal:/var/www/html/
+    depends_on:
+      - db
+volumes:
+  db_data:
+
