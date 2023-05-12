@@ -1,0 +1,19 @@
+Sí, se puede hacer que Apache ejecute un archivo index.php en lugar de un archivo index.html por defecto.
+
+Para hacer esto, se debe modificar la directiva DirectoryIndex en el archivo de configuración de Apache (httpd.conf o apache2.conf, dependiendo de la distribución de Linux utilizada) para incluir el nombre del archivo index.php en la lista de archivos index.
+
+Por ejemplo, para agregar index.php a la lista de archivos index en el archivo de configuración de Apache, se puede agregar esta línea dentro de la sección correspondiente a la raíz del sitio web:
+
+Copy code
+DirectoryIndex index.php index.html
+Esto indica a Apache que primero debe buscar un archivo llamado index.php para ejecutar por defecto, y si no lo encuentra, buscará un archivo index.html. Si se desea que index.php sea el único archivo index, simplemente se puede eliminar "index.html" de la lista.
+
+Después de hacer esta modificación, se debe reiniciar el servicio de Apache para que los cambios surtan efecto. En la mayoría de las distribuciones de Linux, se puede hacer esto mediante el siguiente comando:
+
+Copy code
+sudo service apache2 restart
+o
+
+Copy code
+sudo systemctl restart apache2
+Una vez que se ha reiniciado el servicio de Apache, el archivo index.php debería ser el archivo predeterminado que se ejecute cuando se accede a la raíz del sitio web.
