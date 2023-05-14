@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `cantTokens` INT NULL,
   `imagen` VARCHAR(80) NULL,
   PRIMARY KEY (`idUsuario`),
-  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC) VISIBLE)
+  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC))
 ENGINE = InnoDB;
 
 
@@ -73,9 +73,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `Caja_idCaja` INT NOT NULL,
   `Objeto_idObjeto` INT NOT NULL,
   PRIMARY KEY (`idCompra`, `Caja_idCaja`, `Objeto_idObjeto`),
-  INDEX `fk_Compra_Usuario_idx` (`Usuario_idUsuario` ASC) VISIBLE,
-  INDEX `fk_Compra_Caja1_idx` (`Caja_idCaja` ASC) VISIBLE,
-  INDEX `fk_Compra_Objeto1_idx` (`Objeto_idObjeto` ASC) VISIBLE,
+  INDEX `fk_Compra_Usuario_idx` (`Usuario_idUsuario` ASC) ,
+  INDEX `fk_Compra_Caja1_idx` (`Caja_idCaja` ASC) ,
+  INDEX `fk_Compra_Objeto1_idx` (`Objeto_idObjeto` ASC) ,
   CONSTRAINT `fk_Compra_Usuario`
     FOREIGN KEY (`Usuario_idUsuario`)
     REFERENCES `mydb`.`Usuario` (`idUsuario`)
@@ -101,8 +101,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Objeto_has_Caja` (
   `Objeto_idObjeto` INT NOT NULL,
   `Caja_idCaja` INT NOT NULL,
   PRIMARY KEY (`Objeto_idObjeto`, `Caja_idCaja`),
-  INDEX `fk_Objeto_has_Caja_Caja1_idx` (`Caja_idCaja` ASC) VISIBLE,
-  INDEX `fk_Objeto_has_Caja_Objeto1_idx` (`Objeto_idObjeto` ASC) VISIBLE,
+  INDEX `fk_Objeto_has_Caja_Caja1_idx` (`Caja_idCaja` ASC) ,
+  INDEX `fk_Objeto_has_Caja_Objeto1_idx` (`Objeto_idObjeto` ASC) ,
   CONSTRAINT `fk_Objeto_has_Caja_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto`)
     REFERENCES `mydb`.`Objeto` (`idObjeto`)
