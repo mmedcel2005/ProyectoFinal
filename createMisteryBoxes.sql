@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Objeto` (
   `idObjeto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(20) NULL,
-  `descripcion` VARCHAR(500) NULL,
+  `descripcion` VARCHAR(50) NULL,
   `imagen` VARCHAR(50) NULL,
   `calidad` VARCHAR(2) NULL,
   `precio` INT NULL,

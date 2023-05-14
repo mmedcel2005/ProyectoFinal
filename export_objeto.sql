@@ -30,7 +30,7 @@ CREATE TABLE `objeto` (
   `calidad` varchar(2) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   PRIMARY KEY (`idObjeto`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-14 13:54:41
+-- Dump completed on 2023-05-14 13:34:30
