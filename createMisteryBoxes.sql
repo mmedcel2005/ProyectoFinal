@@ -55,7 +55,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `proyecto`.`Caja` (
   `idCaja` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(20) NULL,
-  `descripcion` VARCHAR(45) NULL,
+  `descripcion` VARCHAR(500) NULL,
   `imagen` VARCHAR(50) NULL,
   `precio` FLOAT NULL,
   PRIMARY KEY (`idCaja`))
