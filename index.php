@@ -2,7 +2,7 @@
 namespace controller;
 
 
-use \model\UsuarioModel;
+use \model\UsuarioM;
 use \model\Utils;
 
 

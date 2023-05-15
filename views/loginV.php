@@ -77,7 +77,7 @@ namespace views;
 
 <body class="text-center">
     <form id="login" method="POST" action="../controller/loginC.php" class="form-signin">
-        <img class="mb-4" src="../src/img/logoXL.png" alt="" width="72" height="72">
+        <img class="mb-4" src="../src/img/logoXL.png" alt="" width="300" height="72">
 
         <!-- Introducir email  -->
         <div class="form-floating mb-3 mt-3">
