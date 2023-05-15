@@ -9,7 +9,7 @@ use \model\Utils;
 
 
 //Añadimos el código del modelo
-require_once("../model/Usuario.php");
+require_once("../model/UsuarioM.php");
 require_once("../model/Utils.php");
 
 //COMPRUEBA QUE BOTON SE HA ACTIVADO
