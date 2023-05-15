@@ -153,4 +153,60 @@ class Usuario
         // Se devuelve el valor de la variable $result
         return $result;
     }
+
+//Funcion que comprueba la contraseña del login
+    //Devuelve 0 si es incorrecta la contraseña y correo y 1 si es correcta
+    public function comprobarPswdLogin($usuario, $conexPDO)
+    {
+        //Comprueba que se haya enviado los datos
+        if (isset($usuario["correo"]) && isset($usuario["contrasena"])) {
+
+            $email = $usuario["correo"];
+
+
+            //Si la conexion es diferente de null
+            if ($conexPDO != null) {
+                try {
+                    //Primero recogemos la salt de ese usuario
+
+                    //Primero introducimos la sentencia a ejecutar con prepare
+                    //Ponemos en lugar de valores directamente, interrogaciones
+                    $sentencia = $conexPDO->prepare("SELECT salt FROM proyecto.Usuario where correo=?");
+                    //Asociamos a cada interrogacion el valor que queremos en su lugar
+                    $sentencia->bindParam(1, $email);
+                    //Ejecutamos la sentencia
+                    $sentencia->execute();
+
+                    //Devolvemos los datos del Usuario
+                    $salt = $sentencia->fetchColumn();
+                    if ($salt == null) {
+                        return 0;
+                    }
+
+                    //Usamos la salt para encriptar la contraseña y asi poder comparar y ver si es correcta
+                    $password = crypt($usuario["contrasena"], '$5$rounds=5000$' . $salt . '$');
+
+
+
+                    //Primero introducimos la sentencia a ejecutar con prepare
+                    //Ponemos en lugar de valores directamente, interrogaciones
+                    $sentencia = $conexPDO->prepare("SELECT count(*) FROM gimnasio.Usuario where correo=? and contraseña=?");
+                    //Asociamos a cada interrogacion el valor que queremos en su lugar
+                    $sentencia->bindParam(1, $email);
+                    $sentencia->bindParam(2, $password);
+                    //Ejecutamos la sentencia
+                    $sentencia->execute();
+
+
+                    //Devolvemos los datos del Usuario
+                    //Devuelve 1 si es correcto 0 si es incorrecto
+                    return (int) $sentencia->fetchColumn();
+                } catch (PDOException $e) {
+                    print("Error al acceder a BD" . $e->getMessage());
+                }
+            }
+        }
+    }
+
+
 }
