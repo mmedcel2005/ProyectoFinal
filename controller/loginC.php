@@ -38,7 +38,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
             $mensaje = "El usuario o contraseña no es correcta";
             //Nos enviara a la pagina de login
-            include("../views/login.php");
+            include("../views/loginV.php");
         } else {
          
                 //Si no quiere decir que esta activo por lo que nos enviara a mostrar clientes

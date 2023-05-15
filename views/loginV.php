@@ -76,19 +76,19 @@ namespace views;
 </head>
 
 <body class="text-center">
-    <form id="login" method="POST" action="../controller/loginCntrl.php" class="form-signin">
+    <form id="login" method="POST" action="../controller/loginC.php" class="form-signin">
         <img class="mb-4" src="../img/bootstrap-solid.svg" alt="" width="72" height="72">
 
         <!-- Introducir email  -->
         <div class="form-floating mb-3 mt-3">
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            <label for="email">Email</label>
+            <input type="correo" class="form-control" id="correo" placeholder="Introduce el email" name="correo">
+            <label for="correo">Email</label>
         </div>
 
         <!-- Introducir contraseña -->
         <div class="form-floating mt-3 mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-            <label for="password">Contraseña</label>
+            <input type="contrasena" class="form-control" id="contrasena" placeholder="Introduce la contraseña" name="contrasena">
+            <label for="contrasena">Contraseña</label>
         </div>
 
         <p style="color: red;"> <?php $mensaje ?></p>
