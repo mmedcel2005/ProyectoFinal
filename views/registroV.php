@@ -91,35 +91,42 @@ namespace views;
 </head>
 
 <body class="text-center">
-    <form id="login" method="POST" action="../controller/loginC.php" class="form-signin">
+    <form id="login" method="POST" action="../controller/registroC.php" class="form-signin">
         <img class="mb-4" src="../src/img/logoXL.png" alt="" width="300" height="72">
 
         <!-- Introducir email  -->
         <div class="form-floating mb-3 mt-3">
-            <input type="correo" class="form-control" id="correo" placeholder="Introduce el email" name="correo">
+            <input type="text" class="form-control" id="nombre" placeholder="Introduce el nombre" name="nombre">
+            <label for="nombre">Nombre</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" class="form-control" id="apellidos" placeholder="Introduce los apellidos" name="apellidos">
+            <label for="apellidos">Apellidos</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-3">
+            <input type="email" class="form-control" id="correo" placeholder="Introduce el email" name="correo">
             <label for="correo">Email</label>
         </div>
 
-        <!-- Introducir contraseña -->
         <div class="form-floating mt-3 mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Introduce la contraseña" name="password">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
             <label for="password">Contraseña</label>
-        </div>
 
-        <p style="color: red;"> <?php $mensaje ?></p>
+          </div>
 
-        <!-- Boton para registrarse -->
-        <div class="checkbox mb-3">
-            <button name="registrarse" value="registrarse" class="btn btn-link text-token" type="submit">Registrarse</button>
-        </div>
+          <!-- Confirmar contraseña -->
+          <div class="form-floating mt-3 mb-3">
+            <label for="confirmPassword">Confirmar Password</label>
+            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirmar Password">
+            <label for="confirmPassword">Confirmar contraseña</label>
 
-        <!-- Boton para cambiar contraseña  -->
-        <div class="checkbox mb-3">
-            <button name="cambiarPassword" value="cambiarPassword" class="btn btn-link text-token"  type="submit">Cambiar contraseña</button>
-        </div>
+          </div>
 
-        <!-- Boton para iniciar sesio  -->
-        <button name="iniciar" value="iniciar" class="btn btn-lg btn-amarillo btn-block" type="submit">Iniciar Sesión</button>
+        <button type="submit" name="registro" value="true" class="btn btn-lg btn-amarillo btn-block">Registrar</button>
+
         <p class="mt-5 mb-3 text-muted">&copy; 2023-2024</p>
     </form>
 </body>
