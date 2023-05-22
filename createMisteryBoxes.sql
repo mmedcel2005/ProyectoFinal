@@ -57,6 +57,8 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`Caja` (
   `nombre` VARCHAR(20) NULL,
   `descripcion` VARCHAR(500) NULL,
   `imagen` VARCHAR(50) NULL,
+  `estado` VARCHAR(1) NULL,
+  `categoria` VARCHAR(1) NULL,
   `precio` FLOAT NULL,
   PRIMARY KEY (`idCaja`))
 ENGINE = InnoDB;

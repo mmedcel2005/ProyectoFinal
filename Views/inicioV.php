@@ -52,7 +52,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
         <a class="nav-link" href="./index.html">
-          <img src="" alt="" style="height: 40px" />
+          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -67,17 +67,16 @@
             </li>
             <li class="nav-item"></li>
           </ul>
-          <div class="d-flex mx-lg-5">
-            <a class="nav-link" href="#">
-              <img
-                src="usuario.jpg"
-                alt="Imagen de usuario"
-                class="rounded-circle usuario-imagen"
-              />
-              <span class="usuario-nombre">Nombre de Usuario</span> <br />
-              <span class="usuario-monedas">100 Monedas</span>
-            </a>
-          </div>
+
+          <?php
+          print('<div class="d-flex mx-lg-5">');
+          print('<a class="nav-link" href="usuarioV.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" />');
+          print('<span class="usuario-nombre">' . $_SESSION['nombre'] . '</span> <br />');
+          print('<span class="usuario-monedas">' . $_SESSION['cantTokens'] . '</span>');
+          print("</a></div>");
+          print("");
+
+          ?>
           <div id="google_translate_element" class="google"></div>
         </div>
       </div>
@@ -110,53 +109,31 @@
 
     <article>
       <div class="container">
-        <div class="row">
-          <div class="col-sm-4 mb-3">
-            <div class="card position-relative text-center bg-custom-sec">
-              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-              <img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
-              <div class="card-body">
-                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
-                <h5 class="card-text text-token"> 1.234 </h5>
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
-              </div>
+        <?php
+        print('<div class="row">');
+        for ($i = 0; $i < count($datosCajas); $i++) {
+          print('<div class="row">
+        <div class="col-sm-4 mb-3">
+          <div class="card position-relative text-center bg-custom-sec">
+            <img src="' . $datosCaja["imagen"] . '" class="card-img-top" alt="Imagen ' . $datosCaja["nombre"] . '">');
+
+          if ($datosCaja["estado"] == "N") {
+            print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+          } elseif ($datosCaja["estado"] == "O") {
+            print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+          }
+
+          print('<div class="card-body">
+              <p class="card-text text-muted"><b>' . $datosCaja["imagen"] . '</b> </p>
+              <h5 class="card-text text-token">' . $datosCaja["precio"] . '</h5>
+              <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
             </div>
           </div>
-          <!-- Tarjetas 2 y 3 -->
-          <div class="col-sm-4 mb-3">
-            <div class="card position-relative text-center bg-custom-sec">
-              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-              <img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
-              <div class="card-body">
-                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
-                <h5 class="card-text text-token"> 1.234 </h5>
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 mb-3">
-            <div class="card position-relative text-center bg-custom-sec">
-              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-              <img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
-              <div class="card-body">
-                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
-                <h5 class="card-text text-token"> 1.234 </h5>
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 mb-3">
-            <div class="card position-relative text-center bg-custom-sec">
-              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-              <img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
-              <div class="card-body">
-                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
-                <h5 class="card-text text-token"> 1.234 </h5>
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>');
+        }
+        print('<div>');
+        ?>
+
       </div>
     </article>
   </main>
