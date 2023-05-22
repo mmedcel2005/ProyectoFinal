@@ -3,14 +3,17 @@ namespace controller;
 
 
 use \model\UsuarioM;
+use \model\CajasM;
 use \model\Utils;
 //Creamos un array para guardar los datos del cliente
 
 
+session_start();
 
 //Añadimos el código del modelo
 require_once("../model/UsuarioM.php");
 require_once("../model/Utils.php");
+require_once("../model/CajasM.php");
 
 //COMPRUEBA QUE BOTON SE HA ACTIVADO
 //Comprobamos si se ha pulsado el boton iniciar
@@ -27,6 +30,8 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
         $conexPDO = Utils::conectar();
 
         $gestorUsu = new UsuarioM();
+        $gestorCaj = new CajasM();
+
 
         //Comprobamos que la contraseña sea correcta
         $credenciales = $gestorUsu->verificarCredenciales($usuario, $conexPDO);
@@ -35,10 +40,11 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
         //COMPROBAMOS CONTRASEÑA
         //Si la comprobacion de la contraseña es 0 quiere decir que es incorrecta
         if ($credenciales == 1) {
-            session_start();
             $_SESSION['loggedin'] = true;
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
+            $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+
 
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];

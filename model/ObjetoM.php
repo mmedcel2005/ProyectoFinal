@@ -7,7 +7,7 @@ require_once("Utils.php");
 use \PDO;
 use \PDOException;
 
-class Objeto
+class ObjetoM
 {
     // Función para guardar el objeto en la base de datos
     public function guardarObjeto($conexPDO, $objeto)
@@ -101,6 +101,29 @@ class Objeto
         }
         return null;
     }
+
+     // Función para obtener todos los objetos de la base de datos
+     function obtenerObjetosIntoCaja($cajaId, $conexPDO) {
+        global $conexPDO;
+      
+        // Consulta SQL para obtener los objetos de la caja
+        $sql = "SELECT Objeto.*, Objeto_has_Caja.* FROM Objeto
+                INNER JOIN Objeto_has_Caja ON Objeto.idObjeto = Objeto_has_Caja.Objeto_idObjeto
+                WHERE Objeto_has_Caja.Caja_idCaja = :cajaId";
+      
+        // Preparar la consulta
+        $stmt = $conexPDO->prepare($sql);
+        $stmt->bindParam(':cajaId', $cajaId);
+      
+        // Ejecutar la consulta
+        $stmt->execute();
+      
+        // Obtener los resultados de la consulta
+        $resultados = $stmt->fetchAll();
+      
+        return $resultados;
+      }
+      
 
 
     // Función para obtener todos los objetos de la base de datos

@@ -53,23 +53,7 @@ class Objeto_has_Caja
         }
     }
 
-    // Función para obtener todos los objetos de la base de datos
-    public function obtenerObjetos($conexPDO)
-    {
-        if ($conexPDO != null) {
-            try {
-                // Se define la sentencia SQL para obtener todos los objetos
-                $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Objeto");
-
-                // Se ejecuta la sentencia SQL y se devuelve el resultado
-                $sentencia->execute();
-                return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-            } catch (PDOException $e) {
-                // Si ocurre algún error, se muestra el mensaje de error
-                print("Error al acceder a BD" . $e->getMessage());
-            }
-        }
-    }
+   
 
     // Función para obtener un objeto por su ID
     public function obtenerObjetoPorID($conexPDO, $idObjeto)

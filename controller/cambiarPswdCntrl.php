@@ -7,6 +7,9 @@ use \model\Usuario;
 use \model\Utils;
 //Creamos un array para guardar los datos del cliente
 
+session_start();
+
+
 //Añadimos el código del modelo
 require_once("../model/Usuario.php");
 require_once("../model/Utils.php");

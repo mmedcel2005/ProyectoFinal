@@ -108,32 +108,35 @@
     </article>
 
     <article>
-      <div class="container">
-        <?php
-        print('<div class="row">');
-        for ($i = 0; $i < count($datosCajas); $i++) {
-          print('<div class="row">
+      <form action="../controller/abrirCajaC.php">
+        <div class="container">
+          <?php
+          print('<div class="row">');
+          for ($i = 0; $i < count($datosCajas); $i++) {
+            print('<div class="row">
         <div class="col-sm-4 mb-3">
           <div class="card position-relative text-center bg-custom-sec">
             <img src="' . $datosCaja["imagen"] . '" class="card-img-top" alt="Imagen ' . $datosCaja["nombre"] . '">');
 
-          if ($datosCaja["estado"] == "N") {
-            print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-          } elseif ($datosCaja["estado"] == "O") {
-            print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-          }
+            if ($datosCaja["estado"] == "N") {
+              print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+            } elseif ($datosCaja["estado"] == "O") {
+              print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+            }
 
-          print('<div class="card-body">
+            print('<div class="card-body">
               <p class="card-text text-muted"><b>' . $datosCaja["imagen"] . '</b> </p>
               <h5 class="card-text text-token">' . $datosCaja["precio"] . '</h5>
-              <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
+              <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCaja["idCaja"] . '">
+              <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
+            </div>
             </div>
           </div>
         </div>');
-        }
-        print('<div>');
-        ?>
-
+          }
+          print('<div>');
+          ?>
+      </form>
       </div>
     </article>
   </main>
