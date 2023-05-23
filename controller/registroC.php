@@ -42,10 +42,11 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     //Añadimos el registro
     $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
 
-    var_dump($resultado);
 
     //Si ha ido bien el mensaje sera distinto de null
     if ($resultado != null) {
+        var_dump($resultado);
+
         session_start();
         $_SESSION['loggedin'] = true;
 
