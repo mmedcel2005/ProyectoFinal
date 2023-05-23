@@ -2,7 +2,7 @@
 // Se define el namespace al que pertenece la clase
 namespace model;
 
-require_once('Utils.php');
+require_once(__DIR__ . '/Utils.php');
 
 // Se importan las clases PDO y PDOException
 use \PDO;
