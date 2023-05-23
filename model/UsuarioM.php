@@ -54,38 +54,37 @@ class UsuarioM
 
     
 
-    // Se define una función llamada anadirUsuario que añade un usuario
-    public function anadirUsuario($usuario, $conexPDO)
-    {
-        // Se inicializa la variable $result en null
-        $result = null;
+// Se define una función llamada anadirUsuario que añade un usuario
+public function anadirUsuario($conexPDO, $usuario)
+{
+    // Se inicializa la variable $result en null
+    $result = null;
 
-        // Se verifica si los parámetros recibidos son válidos
-        if (isset($usuario) && $conexPDO != null) {
-            try {
-                // Se define la sentencia SQL para insertar un nuevo registro
-                $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, direccion, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :direccion, :salt, :cantTokens, :imagen)");
+    // Se verifica si los parámetros recibidos son válidos
+    if (isset($usuario) && $conexPDO != null) {
+        try {
+            // Se define la sentencia SQL para insertar un nuevo registro
+            $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, direccion, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :direccion, :salt, :cantTokens, :imagen)");
 
-                // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
-                $sentencia->bindParam(":nombre", $usuario["nombre"]);
-                $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
-                $sentencia->bindParam(":correo", $usuario["correo"]);
-                $sentencia->bindParam(":password", $usuario["password"]);
-                $sentencia->bindParam(":direccion", $usuario["direccion"]);
-                $sentencia->bindParam(":salt", $usuario["salt"]);
-                $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
-                $sentencia->bindParam(":imagen", $usuario["imagen"]);
+            // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
+            $sentencia->bindParam(":nombre", $usuario["nombre"]);
+            $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
+            $sentencia->bindParam(":correo", $usuario["correo"]);
+            $sentencia->bindParam(":password", $usuario["password"]);
+            $sentencia->bindParam(":direccion", $usuario["direccion"]);
+            $sentencia->bindParam(":salt", $usuario["salt"]);
+            $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
+            $sentencia->bindParam(":imagen", $usuario["imagen"]);
 
-                // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
-                $result = $sentencia->execute();
-
-            } catch (PDOException $e) {
-                // Si se produce un error, se muestra un mensaje en pantalla
-                print("Error al acceder a BD" . $e->getMessage());
-            }
+            // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
+            $result = $sentencia->execute();
+        } catch (PDOException $e) {
+            // Si se produce un error, se muestra un mensaje en pantalla
+            print("Error al acceder a BD" . $e->getMessage());
         }
-        return $result;
     }
+    return $result;
+}
 
 
 
