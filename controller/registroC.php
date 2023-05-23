@@ -28,6 +28,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $salt = Utils::generarSalt(16, false);
     $usuario["salt"] = $salt;
     $usuario["cantTokens"] = 0;
+    $usuario["direccion"] = null;
     $usuario["imagen"] = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp";
 
     //Encriptamos el password en 256 bits
