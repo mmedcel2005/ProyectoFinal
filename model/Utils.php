@@ -12,19 +12,19 @@ class Utils {
      */
     public static function conectar()
     { 
-        $conPDO=null;
+        $conPDO = null;
         try {
             require_once("../global.php");
+            global $DB_SERVER, $DB_USER, $DB_PASSWD, $DB_SCHEMA;
             $conPDO = new PDO("mysql:host=".$DB_SERVER.";dbname=".$DB_SCHEMA, $DB_USER, $DB_PASSWD);
             return $conPDO;
-
-         } catch (PDOException $e) {
+        } catch (PDOException $e) {
             print "¡Error al conectar!: " . $e->getMessage() . "<br/>";
             return $conPDO;
             die();
         }
-      
     }
+    
 
     //Funcion que limpia los datos introducidos
     public static function limpiarDatos($data){
