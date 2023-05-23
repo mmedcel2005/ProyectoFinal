@@ -71,6 +71,7 @@ class UsuarioM
                 $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
                 $sentencia->bindParam(":correo", $usuario["correo"]);
                 $sentencia->bindParam(":password", $usuario["password"]);
+                $sentencia->bindParam(":password", $usuario["direccion"]);
                 $sentencia->bindParam(":salt", $usuario["salt"]);
                 $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
                 $sentencia->bindParam(":imagen", $usuario["imagen"]);
