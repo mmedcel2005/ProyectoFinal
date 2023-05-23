@@ -38,6 +38,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar();
+    var_dump($conexPDO);
 
     //Añadimos el registro
     $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
