@@ -38,10 +38,11 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar();
-    var_dump($conexPDO);
 
     //Añadimos el registro
     $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
+
+    var_dump($resultado);
 
     //Si ha ido bien el mensaje sera distinto de null
     if ($resultado != null) {
@@ -59,11 +60,11 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     } else {
         $mensaje = "Ha habido un fallo al acceder a la Base de Datos";
 
-        var_dump($resultado);
+
         include("../views/registroV.php");
     }
 } else {
 
     //Sin datos del  cliente cargados cargamos la vista
-    include("../views/registroUsuario.php");
+    include("../views/registroV.php");
 }
