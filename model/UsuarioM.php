@@ -1,6 +1,6 @@
 <?php
 // Se define el namespace al que pertenece la clase
-namespace model;
+namespace Model;
 
 require_once(__DIR__ . '/Utils.php');
 

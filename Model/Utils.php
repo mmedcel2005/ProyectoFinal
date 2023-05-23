@@ -11,7 +11,7 @@ class Utils {
      * Funcion que se conecta a la BD y nos devuelve una conexion PDO activa
      */
     public static function conectar()
-    {
+    { 
         $conPDO=null;
         try {
             require_once("../global.php");

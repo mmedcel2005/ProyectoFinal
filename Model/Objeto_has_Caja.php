@@ -92,7 +92,7 @@ class Objeto_has_Caja
                 return $sentencia->execute();
             } catch (PDOException $e) {
                 // Si ocurre algún error, se muestra el mensaje de error
-                print("Error al acceder a BD" . $e->getMessage());
+                print("Error al acceder a BD" . $e->getMessage()); 
             }
         }
     }
