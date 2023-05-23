@@ -55,13 +55,13 @@ class UsuarioM
     
 
 // Se define una función llamada anadirUsuario que añade un usuario
-public function anadirUsuario($conexPDO, $usuario)
+public function anadirUsuario($usuario, $conexPDO)
 {
     // Se inicializa la variable $result en null
     $result = null;
 
     // Se verifica si los parámetros recibidos son válidos
-    if (isset($usuario) && $conexPDO != null) {
+    if ($conexPDO != null) {
         try {
             // Se define la sentencia SQL para insertar un nuevo registro
             $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, direccion, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :direccion, :salt, :cantTokens, :imagen)");
@@ -85,6 +85,7 @@ public function anadirUsuario($conexPDO, $usuario)
     }
     return $result;
 }
+
 
 
 
