@@ -58,7 +58,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     } else {
         $mensaje = "Ha habido un fallo al acceder a la Base de Datos";
 
-        //var_dump($datosClientes);
+        var_dump($resultado);
         include("../views/registroV.php");
     }
 } else {
