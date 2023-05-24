@@ -115,18 +115,18 @@
             print('<div class="row">
         <div class="col-sm-4 mb-3">
           <div class="card position-relative text-center bg-custom-sec">
-            <img src="' . $datosCaja["imagen"] . '" class="card-img-top" alt="Imagen ' . $datosCaja["nombre"] . '">');
+            <img src="' . $datosCaja[$i]["imagen"] . '" class="card-img-top" alt="Imagen ' . $datosCaja[$i]["nombre"] . '">');
 
-            if ($datosCaja["estado"] == "N") {
+            if ($datosCaja[$i]["estado"] == "N") {
               print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            } elseif ($datosCaja["estado"] == "O") {
+            } elseif ($datosCaja[$i]["estado"] == "O") {
               print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
             }
 
             print('<div class="card-body">
-              <p class="card-text text-muted"><b>' . $datosCaja["imagen"] . '</b> </p>
-              <h5 class="card-text text-token">' . $datosCaja["precio"] . '</h5>
-              <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCaja["idCaja"] . '">
+              <p class="card-text text-muted"><b>' . $datosCaja[$i]["imagen"] . '</b> </p>
+              <h5 class="card-text text-token">' . $datosCaja[$i]["precio"] . '</h5>
+              <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCaja[$i]["idCaja"] . '">
               <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
             </div>
             </div>
