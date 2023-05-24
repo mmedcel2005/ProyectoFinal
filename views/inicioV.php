@@ -114,8 +114,8 @@
           for ($i = 0; $i < count($datosCajas); $i++) {
             print('<div class="row">
         <div class="col-sm-4 mb-3">
-          <div class="card position-relative text-center bg-custom-sec">
-            <img src="' . $datosCajas[$i]["imagen"] . '" class="card-img-top" alt="Imagen ' . $datosCajas[$i]["nombre"] . '">');
+          <div class="card position-relative text-center bg-custom-sec">');
+          print("<img src='" . $datosCajas[$i]["imagen"] . "' class='card-img-top' alt='Imagen " . $datosCajas[$i]["nombre"] . "'>");
 
             if ($datosCajas[$i]["estado"] == "N") {
               print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
@@ -124,7 +124,7 @@
             }
 
             print('<div class="card-body">
-              <p class="card-text text-muted"><b>' . $datosCajas[$i]["imagen"] . '</b> </p>
+              <p class="card-text text-muted"><b>' . $datosCajas[$i]["nombre"] . '</b> </p>
               <h5 class="card-text text-token">' . $datosCajas[$i]["precio"] . '</h5>
               <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCajas[$i]["idCaja"] . '">
               <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
