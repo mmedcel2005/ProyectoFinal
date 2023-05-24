@@ -7,9 +7,9 @@ use \model\CajasM;
 use \model\Utils;
 
 
-require_once("/model/UsuarioM.php");
-require_once("/model/Utils.php");
-require_once("/model/CajasM.php");
+require_once("model/UsuarioM.php");
+require_once("model/Utils.php");
+require_once("model/CajasM.php");
 
 
 // En otros controladores
