@@ -22,6 +22,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
     $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
 
+    var_dump($datosCajas);
 
 
     include("views/inicioV.php");
