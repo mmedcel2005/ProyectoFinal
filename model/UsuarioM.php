@@ -152,9 +152,9 @@ public function anadirUsuario($usuario, $conexPDO)
 
     public function verificarCredenciales($usuario, $conexPDO)
 {
-    if (isset($usuario["correo"]) && isset($usuario["contrasena"])) {
+    if (isset($usuario["correo"]) && isset($usuario["password"])) {
         $correo = $usuario["correo"];
-        $contrasena = $usuario["contrasena"];
+        $password = $usuario["password"];
 
         $sentencia=null;
         
@@ -169,8 +169,8 @@ public function anadirUsuario($usuario, $conexPDO)
                 var_dump($salt);
 
                 if($salt != null){
-                    $password = crypt($usuario["contrasena"], '$5$rounds=5000$' . $salt . '$');
-                    $sentencia = $conexPDO->prepare("SELECT COUNT(*) FROM proyecto.Usuario WHERE correo = ? AND contrasena = ?;");
+                    $password = crypt($usuario["password"], '$5$rounds=5000$' . $salt . '$');
+                    $sentencia = $conexPDO->prepare("SELECT COUNT(*) FROM proyecto.Usuario WHERE correo = ? AND password = ?;");
                     $sentencia->bindParam(1, $correo);
                     $sentencia->bindParam(2, $password);
                     //Ejecutamos la sentencia
