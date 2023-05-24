@@ -71,7 +71,6 @@ public function anadirUsuario($usuario, $conexPDO)
             $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
             $sentencia->bindParam(":correo", $usuario["correo"]);
             $sentencia->bindParam(":password", $usuario["password"]);
-            $sentencia->bindParam(":direccion", $usuario["direccion"]);
             $sentencia->bindParam(":salt", $usuario["salt"]);
             $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
             $sentencia->bindParam(":imagen", $usuario["imagen"]);
