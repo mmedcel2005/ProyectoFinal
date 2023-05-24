@@ -43,7 +43,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     //Añadimos el registro
     $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
-    var_dump($resultado);
+    var_dump($usuario);
 
 
     //Si ha ido bien el mensaje sera distinto de null
