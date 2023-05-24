@@ -19,6 +19,8 @@ require_once("../model/CajasM.php");
 //Comprobamos si se ha pulsado el boton iniciar
 if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
     //Comprobamos que haya enviado los daots
+    var_dump($_POST);
+
     if (isset($_POST["correo"]) && isset($_POST["password"])) {
         //rellenamos los datos del cliente que le pasaremos a la vista
         //Y lo filtramos para impedir la insercion de codigo
@@ -37,7 +39,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
         //Comprobamos que la contraseña sea correcta
         $credenciales = $gestorUsu->verificarCredenciales($usuario, $conexPDO);
-        var_dump($credenciales);
         //Obtenemos el codigo de activacion de la BD para mostrarlo por pantalla mas tarde puesto que no he realizado la configuracion del envio de correo en xamp
 
         //COMPROBAMOS CONTRASEÑA
