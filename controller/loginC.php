@@ -47,9 +47,8 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
             $_SESSION['loggedin'] = true;
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
-            var_dump($datosUsuario);
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
-
+            var_dump($datosCajas);
 
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
