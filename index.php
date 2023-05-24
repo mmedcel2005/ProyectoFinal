@@ -1,4 +1,5 @@
 <?php
+
 namespace controller;
 
 
@@ -17,10 +18,13 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
 
-    
+    //Nos conectamos a la Bd
+    $conexPDO = Utils::conectar();
+
+
     $gestorCaj = new CajasM();
 
-    $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+    $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
     var_dump($datosCajas);
 
@@ -32,4 +36,3 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 }
 
 //Creamos un array para guardar los datos del cliente
-
