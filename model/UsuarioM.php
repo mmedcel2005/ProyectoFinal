@@ -43,7 +43,7 @@ class UsuarioM
                     $sentencia->execute();
     
                     // Devolvemos el nombre de usuario
-                    return $sentencia->fetchColumn();
+                    return $sentencia->fetch();
                 } catch (PDOException $e) {
                     print("Error al acceder a BD" . $e->getMessage());
                 }
