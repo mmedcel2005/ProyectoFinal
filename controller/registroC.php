@@ -2,7 +2,7 @@
 
 namespace controller;
 
-
+session_start();
 
 use \model\UsuarioM;
 use \model\Utils;
@@ -38,18 +38,15 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar();
 
-    var_dump($conexPDO);
 
     //Añadimos el registro
     $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
-    var_dump($usuario);
 
 
     //Si ha ido bien el mensaje sera distinto de null
     if ($resultado != null) {
-        var_dump($resultado);
 
-        session_start();
+
         $_SESSION['loggedin'] = true;
 
         $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
