@@ -126,8 +126,10 @@
             print('<div class="card-body">
               <p class="card-text text-muted"><b>' . $datosCajas[$i]["nombre"] . '</b> </p>
               <h5 class="card-text text-token">' . $datosCajas[$i]["precio"] . '</h5>
+              <form method="POST" action="../controller/abrirCajaC.php">
               <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCajas[$i]["idCaja"] . '">
               <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
+              </form>
             </div>
             </div>
           </div>
@@ -135,7 +137,7 @@
           }
           print('<div>');
           ?>
-      </form>
+
       </div>
     </article>
   </main>

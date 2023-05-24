@@ -48,7 +48,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
-            var_dump($datosCajas);
 
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
