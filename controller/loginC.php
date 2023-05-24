@@ -29,12 +29,12 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
         //Nos conectamos a la Bd
         $conexPDO = Utils::conectar();
 
-        var_dump($conexPDO);
+
         $gestorUsu = new UsuarioM();
         $gestorCaj = new CajasM();
 
 
-        var_dump($usuario);
+
         //Comprobamos que la contraseña sea correcta
         $credenciales = $gestorUsu->verificarCredenciales($usuario, $conexPDO);
         //Obtenemos el codigo de activacion de la BD para mostrarlo por pantalla mas tarde puesto que no he realizado la configuracion del envio de correo en xamp
