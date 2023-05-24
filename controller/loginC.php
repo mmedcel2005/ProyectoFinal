@@ -37,6 +37,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
         //Comprobamos que la contraseña sea correcta
         $credenciales = $gestorUsu->verificarCredenciales($usuario, $conexPDO);
+        var_dump($credenciales);
         //Obtenemos el codigo de activacion de la BD para mostrarlo por pantalla mas tarde puesto que no he realizado la configuracion del envio de correo en xamp
 
         //COMPROBAMOS CONTRASEÑA
@@ -70,10 +71,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
     //Mostramos la pagina de registro
     include("../views/registroV.php");
 
-    //Si no se ha pulsado ninguno de los botones anteriores comprobamos si el pulsado es cambiar contraseña
-} elseif (isset($_POST["cambiarPassword"]) && $_POST["cambiarPassword"] == "cambiarPassword") {
-    //Mostramos la pagina para cambiar contraseña
-    include("../views/cambiarPswdView.php");
 } else {
     //Si entra aqui quiere decir que no se ha pulsado ningun boton dirigimos a la pagina de login
     include("../views/loginV.php");

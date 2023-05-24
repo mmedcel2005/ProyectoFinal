@@ -114,9 +114,7 @@ namespace views;
         </div>
 
         <!-- Boton para cambiar contraseña  -->
-        <div class="checkbox mb-3">
-            <button name="cambiarPassword" value="cambiarPassword" class="btn btn-link text-token"  type="submit">Cambiar contraseña</button>
-        </div>
+
 
         <!-- Boton para iniciar sesio  -->
         <button name="iniciar" value="iniciar" class="btn btn-lg btn-amarillo btn-block" type="submit">Iniciar Sesión</button>
