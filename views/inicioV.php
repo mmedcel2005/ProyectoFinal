@@ -122,10 +122,9 @@
             } elseif ($datosCaja[$i]["estado"] == "O") {
               print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
             }
-            
+            print("<p>" . $datosCajas[$i]["imagen"]. "</p>");
             print('<div class="card-body">
               <p class="card-text text-muted"><b>' . $datosCajas[$i]["nombre"] . '</b> </p>
-              print("<p>" . $datosCajas[$i]["imagen"]. "</p>");
               <h5 class="card-text text-token">' . $datosCajas[$i]["precio"] . '</h5>
               <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCajas[$i]["idCaja"] . '">
               <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
