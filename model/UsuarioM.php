@@ -64,7 +64,7 @@ public function anadirUsuario($usuario, $conexPDO)
     if ($conexPDO != null) {
         try {
             // Se define la sentencia SQL para insertar un nuevo registro
-            $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, direccion, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :direccion, :salt, :cantTokens, :imagen)");
+            $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :salt, :cantTokens, :imagen)");
 
             // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
             $sentencia->bindParam(":nombre", $usuario["nombre"]);
