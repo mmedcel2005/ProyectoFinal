@@ -43,7 +43,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
         //COMPROBAMOS CONTRASEÑA
         //Si la comprobacion de la contraseña es 0 quiere decir que es incorrecta
-        if ($credenciales == 1) {
+        if ($credenciales != null) {
             $_SESSION['loggedin'] = true;
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
