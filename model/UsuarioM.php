@@ -166,6 +166,8 @@ public function anadirUsuario($usuario, $conexPDO)
                 $sentencia->execute();
 
                 $salt = $sentencia->fetchColumn();
+                
+                var_dump($salt);
 
                 if($salt != null){
                     $password = crypt($usuario["contrasena"], '$5$rounds=5000$' . $salt . '$');

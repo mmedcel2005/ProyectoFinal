@@ -38,7 +38,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
         $credenciales = $gestorUsu->verificarCredenciales($usuario, $conexPDO);
         //Obtenemos el codigo de activacion de la BD para mostrarlo por pantalla mas tarde puesto que no he realizado la configuracion del envio de correo en xamp
 
-        var_dump($credenciales);
         //COMPROBAMOS CONTRASEÑA
         //Si la comprobacion de la contraseña es 0 quiere decir que es incorrecta
         if ($credenciales == 1) {
