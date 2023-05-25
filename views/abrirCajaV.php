@@ -152,6 +152,59 @@
                     <p class="card-text"><?php echo $item['descripcion']; ?></p>
                   </div>
                 </div>
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
