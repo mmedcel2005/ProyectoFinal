@@ -31,6 +31,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
         include("../views/abrirCajaV.php");
     }else{
+        $gestorCaja = new CajasM();
+        $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+
         include("../views/inicioV.php");
     }
 
