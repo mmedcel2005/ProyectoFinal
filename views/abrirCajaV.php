@@ -62,10 +62,10 @@
       color: white;
     }
 
-    .card-title,
-    .card-text {
+    .item-card-title,
+    .item-card-text {
       margin: 0;
-      font-size: 12px;
+      font-size: 15px;
     }
   </style>
 </head>
@@ -185,56 +185,7 @@
       </section>
 
 
-    <section>
-      <div class="container py-5 ">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
-          <div class="col mb-4">
-          <?php foreach ($items as $item) 
-            print('<div class="card">');
-            print('<div class="card-img-container">');
-            switch($item["calidad"]){
-              case "L":
-                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
 
-                break;
-                case "E":
-                  print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-
-                  break;
-                  case "SR":
-                    print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-
-                    break;
-                    case "R":
-                      print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-
-                      break;
-                      case "C":
-                        print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-
-                        break;
-                        case "MC":
-                          print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-
-                          break;
-                          default:
-                          break;
-            }
-
-            print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-            print('<div class="item-overlay">');
-            print('<img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">');
-            print('<h6 class="card-title text-white">Nombre del item</h6>');
-            print('<p class="card-text">Precio</p>');
-            print('</div>');
-            print('</div>');
-            print('</div> </div>');
-            ?>
-          </div>
-          <!-- Aquí van las demás tarjetas -->
-        </div>
-      </div>
-    </section>
 
     <section>
       <div class="container py-5 ">
@@ -274,8 +225,8 @@
           }
           print('     <div class="item-overlay">');
           print('       <img src="'. $item['imagen'] .'" alt="I'. $item['nombre'] .'" class="item-image img-fluid">');
-          print('      <h6 class="card-title text-white">'. $item['nombre'] .'</h6>');
-          print('       <p class="card-text">'. $item['precio'] .'</p>');
+          print('      <br><h6 class="item-card-title text-white">'. $item['nombre'] .'</h6>');
+          print('       <h4 class="item-card-text text-token">'. $item['precio'] .'</h4>');
           print('      </div>');
           print('    </div>');
           print('  </div>');
