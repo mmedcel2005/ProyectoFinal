@@ -50,7 +50,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
         <a class="nav-link" href="./index.html">
-          <img src="" alt="" style="height: 40px" />
+          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -65,17 +65,15 @@
             </li>
             <li class="nav-item"></li>
           </ul>
-          <div class="d-flex mx-lg-5">
-            <a class="nav-link" href="#">
-              <img
-                src="usuario.jpg"
-                alt="Imagen de usuario"
-                class="rounded-circle usuario-imagen"
-              />
-              <span class="usuario-nombre">Nombre de Usuario</span> <br />
-              <span class="usuario-monedas">100 Monedas</span>
-            </a>
-          </div>
+
+          <?php
+          print('<div class="d-flex mx-lg-5">');
+          print('<a class="nav-link" href="usuarioV.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
+          print("</a></div>");
+          print("");
+
+          ?>
           <div id="google_translate_element" class="google"></div>
         </div>
       </div>

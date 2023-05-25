@@ -70,9 +70,8 @@
 
           <?php
           print('<div class="d-flex mx-lg-5">');
-          print('<a class="nav-link" href="usuarioV.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" />');
-          print('<span class="usuario-nombre">' . $_SESSION['nombre'] . '</span> <br />');
-          print('<span class="usuario-monedas">' . $_SESSION['cantTokens'] . '</span>');
+          print('<a class="nav-link" href="usuarioV.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
           print("</a></div>");
           print("");
 
@@ -115,20 +114,22 @@
           for ($i = 0; $i < count($datosCajas); $i++) {
             print('<div class="row">
         <div class="col-sm-4 mb-3">
-          <div class="card position-relative text-center bg-custom-sec">
-            <img src="' . $datosCaja["imagen"] . '" class="card-img-top" alt="Imagen ' . $datosCaja["nombre"] . '">');
+          <div class="card position-relative text-center bg-custom-sec">');
+          print("<img src='" . $datosCajas[$i]["imagen"] . "' class='card-img-top' alt='Imagen " . $datosCajas[$i]["nombre"] . "'>");
 
-            if ($datosCaja["estado"] == "N") {
+            if ($datosCajas[$i]["estado"] == "N") {
               print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            } elseif ($datosCaja["estado"] == "O") {
+            } elseif ($datosCaja[$i]["estado"] == "O") {
               print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
             }
 
             print('<div class="card-body">
-              <p class="card-text text-muted"><b>' . $datosCaja["imagen"] . '</b> </p>
-              <h5 class="card-text text-token">' . $datosCaja["precio"] . '</h5>
-              <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCaja["idCaja"] . '">
+              <p class="card-text text-muted"><b>' . $datosCajas[$i]["nombre"] . '</b> </p>
+              <h5 class="card-text text-token">' . $datosCajas[$i]["precio"] . '</h5>
+              <form method="POST" action="../controller/abrirCajaC.php">
+              <input type="hidden" id="idCaja" name="idCaja" value="' . $datosCajas[$i]["idCaja"] . '">
               <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
+              </form>
             </div>
             </div>
           </div>
@@ -136,7 +137,7 @@
           }
           print('<div>');
           ?>
-      </form>
+
       </div>
     </article>
   </main>

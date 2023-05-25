@@ -19,6 +19,7 @@ require_once("../model/CajasM.php");
 //Comprobamos si se ha pulsado el boton iniciar
 if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
     //Comprobamos que haya enviado los daots
+
     if (isset($_POST["correo"]) && isset($_POST["password"])) {
         //rellenamos los datos del cliente que le pasaremos a la vista
         //Y lo filtramos para impedir la insercion de codigo
@@ -29,22 +30,24 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
         //Nos conectamos a la Bd
         $conexPDO = Utils::conectar();
 
+
         $gestorUsu = new UsuarioM();
         $gestorCaj = new CajasM();
 
 
+
         //Comprobamos que la contraseña sea correcta
         $credenciales = $gestorUsu->verificarCredenciales($usuario, $conexPDO);
+
         //Obtenemos el codigo de activacion de la BD para mostrarlo por pantalla mas tarde puesto que no he realizado la configuracion del envio de correo en xamp
 
         //COMPROBAMOS CONTRASEÑA
         //Si la comprobacion de la contraseña es 0 quiere decir que es incorrecta
-        if ($credenciales == 1) {
+        if ($credenciales != null) {
             $_SESSION['loggedin'] = true;
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
-
 
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
@@ -68,10 +71,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
     //Mostramos la pagina de registro
     include("../views/registroV.php");
 
-    //Si no se ha pulsado ninguno de los botones anteriores comprobamos si el pulsado es cambiar contraseña
-} elseif (isset($_POST["cambiarPassword"]) && $_POST["cambiarPassword"] == "cambiarPassword") {
-    //Mostramos la pagina para cambiar contraseña
-    include("../views/cambiarPswdView.php");
 } else {
     //Si entra aqui quiere decir que no se ha pulsado ningun boton dirigimos a la pagina de login
     include("../views/loginV.php");

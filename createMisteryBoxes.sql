@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`Usuario` (
   `nombre` VARCHAR(20) NULL,
   `apellidos` VARCHAR(35) NULL,
   `correo` VARCHAR(35) NULL,
-  `contraseña` VARCHAR(30) NULL,
+  `password` VARCHAR(30) NULL,
   `direccion` VARCHAR(50) NULL,
   `salt` VARCHAR(20) NULL,
   `cantTokens` INT NULL,

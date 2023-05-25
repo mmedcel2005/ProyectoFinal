@@ -27,10 +27,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
         $caja= $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
         $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);   
+
+        include("../views/abrirCajaV.php");
+    }else{
+        include("../views/inicioV.php");
     }
 
-
-    include("../views/abrirCajaV.php");
 } else {
     // El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
     include("views\loginV.php");

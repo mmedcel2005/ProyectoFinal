@@ -2,7 +2,7 @@
 
 namespace controller;
 
-
+session_start();
 
 use \model\UsuarioM;
 use \model\Utils;
@@ -10,7 +10,7 @@ use \model\Utils;
 
 
 //Añadimos el código del modelo
-require_once("../model/Usuario.php");
+require_once("../model/UsuarioM.php");
 require_once("../model/Utils.php");
 
 
@@ -38,12 +38,15 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar();
 
+
     //Añadimos el registro
     $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
 
+
     //Si ha ido bien el mensaje sera distinto de null
     if ($resultado != null) {
-        session_start();
+
+
         $_SESSION['loggedin'] = true;
 
         $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
@@ -57,11 +60,11 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     } else {
         $mensaje = "Ha habido un fallo al acceder a la Base de Datos";
 
-        //var_dump($datosClientes);
+
         include("../views/registroV.php");
     }
 } else {
 
     //Sin datos del  cliente cargados cargamos la vista
-    include("../views/registroUsuario.php");
+    include("../views/registroV.php");
 }
