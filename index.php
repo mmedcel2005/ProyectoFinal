@@ -8,9 +8,9 @@ use \model\CajasM;
 use \model\Utils;
 
 
-require_once("../model/UsuarioM.php");
-require_once("../model/Utils.php");
-require_once("../model/CajasM.php");
+require_once("model/UsuarioM.php");
+require_once("model/Utils.php");
+require_once("model/CajasM.php");
 
 
 // En otros controladores
@@ -26,13 +26,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
     $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
-    var_dump($datosCajas);
-
-
-    include("../views/inicioV.php");
+    include("views/inicioV.php");
 } else {
     // El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
-    include("../views/loginV.php");
+    include("views/loginV.php");
 }
 
 //Creamos un array para guardar los datos del cliente
