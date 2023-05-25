@@ -236,7 +236,11 @@
       </div>
     </section>
 
-    <div class="card">
+    <section>
+      <div class="container py-5 ">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
+          <div class="col mb-4">
+            <div class="card">
               <div class="card-img-container">
                 <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
                 <div class="item-overlay">
@@ -245,7 +249,8 @@
                   <p class="card-text">Precio</p>
                 </div>
               </div>
-              </div>
+            </div>
+          </div>
           <!-- Aquí van las demás tarjetas -->
         </div>
       </div>
