@@ -126,8 +126,8 @@
 
             print('<div class="card-body">
               <p class="card-text text-muted"><b>' . $caja["nombre"]. '</b> </p>
-              <h5 class="card-text text-token">' . $caja["precio"] . '</h5>
-              <form method="POST" action="../controller/abrirCajaC.php">');
+              <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+              print("<form method='POST' action='../controller/abrirCajaC.php'>");
               print("<input type='hidden' id='idCaja' name='idCaja' value='" . $caja["idCaja"] . "'/>");
               print('<button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
               </form>
