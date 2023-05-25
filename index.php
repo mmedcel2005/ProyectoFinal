@@ -19,7 +19,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
 
     //Nos conectamos a la Bd
-    $conexPDO = Utils::conectar();
+    $iniciado=true;
+    $conexPDO = Utils::conectar($iniciado);
 
 
     $gestorCaj = new CajasM();
