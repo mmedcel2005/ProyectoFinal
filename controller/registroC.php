@@ -36,7 +36,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $gestorUsu = new UsuarioM();
 
     //Nos conectamos a la Bd
-    $conexPDO = Utils::conectar();
+    $conexPDO = Utils::conectar($l=false);
 
 
     //Añadimos el registro

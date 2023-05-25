@@ -10,10 +10,16 @@ class Utils {
     /**
      * Funcion que se conecta a la BD y nos devuelve una conexion PDO activa
      */
-    public static function conectar()
+    public static function conectar($l)
     {
         try {
-            require_once("../global.php");
+            if($l=true){
+                require_once("global.php");
+
+            }else{
+                require_once("../global.php");
+
+            }
             $conPDO = new PDO("mysql:host=".$DB_SERVER.";dbname=".$DB_SCHEMA, $DB_USER, $DB_PASSWD);
             return $conPDO;
         } catch (PDOException $e) {

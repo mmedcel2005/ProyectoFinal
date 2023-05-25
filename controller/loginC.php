@@ -28,7 +28,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
 
         //Nos conectamos a la Bd
-        $conexPDO = Utils::conectar();
+        $conexPDO = Utils::conectar($l=false);
 
 
         $gestorUsu = new UsuarioM();

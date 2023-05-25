@@ -9,7 +9,7 @@ use \model\Utils;
 
 
 require_once("model/UsuarioM.php");
-require_once("Utils.php");
+require_once("model/Utils.php");
 require_once("model/CajasM.php");
 
 
@@ -20,7 +20,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
 
     //Nos conectamos a la Bd
-    $conexPDO = Utils::conectar();
+    $conexPDO = Utils::conectar($l=true);
 
 
     $gestorCaj = new CajasM();

@@ -3,7 +3,7 @@
 namespace controller;
 
 
-use \model\Usuario;
+use \model\UsuarioM;
 use \model\Utils;
 //Creamos un array para guardar los datos del cliente
 
@@ -11,7 +11,7 @@ session_start();
 
 
 //Añadimos el código del modelo
-require_once("../model/Usuario.php");
+require_once("../model/UsuarioM.php");
 require_once("../model/Utils.php");
 
 //Si nos llegan datos de un cliente, implica que es el formulario el que llama al controlador
@@ -29,7 +29,7 @@ if (isset($_POST["email"]) && isset($_POST["oldPassword"]) && isset($_POST["newP
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar();
 
-    $gestorUsu = new Usuario();
+    $gestorUsu = new UsuarioM();
 
     $comprobarPswdLogin=$gestorUsu->comprobarPswdLogin($usuario, $conexPDO);
     //Comprobamos que la contraseña sea correcta usando la funcion si es 0 no es correcta

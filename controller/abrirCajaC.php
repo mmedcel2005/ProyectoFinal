@@ -22,6 +22,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     if (isset($_POST["idCaja"])) {
         $cajaId= $_POST["idCaja"];
     
+        $conexPDO = Utils::conectar($l=false);
         $gestorObj = new ObjetoM();
         $gestorCaja = new CajasM();
 
