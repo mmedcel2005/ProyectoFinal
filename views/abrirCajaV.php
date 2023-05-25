@@ -245,7 +245,11 @@
                   <p class="card-text">Precio</p>
                 </div>
               </div>
-
+              </div>
+          <!-- Aquí van las demás tarjetas -->
+        </div>
+      </div>
+    </section>
     <section>
       <!-- Agrega este código al final de tu vista -->
       <div class="modal fade" id="modalGanador" tabindex="-1" role="dialog" aria-labelledby="modalGanadorLabel" aria-hidden="true">
