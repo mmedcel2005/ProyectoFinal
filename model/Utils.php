@@ -13,7 +13,7 @@ class Utils {
     public static function conectar($l)
     {
         try {
-            if($l=true){
+            if($l==true){
                 require_once("global.php");
 
             }else{
