@@ -95,7 +95,7 @@
           <?php
           print('<div class="d-flex mx-lg-5">');
           print('<a class="nav-link" href="usuarioV.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
           print("</a></div>");
           print("");
 
@@ -127,62 +127,38 @@
     </section>
 
 
-      <section>
-        <div class="container py-5">
+    <section>
+      <div class="container py-5">
 
 
-          <div class="row justify-content-center">
-            <div class="col-md-6">
-              <div id="ruleta" class="card-deck d-flex justify-content-center">
-                <?php foreach ($items as $item) : ?>
-
-                  <div class="card">
-              <div class="card-img-container">
-              <?php echo $item['descripcion']; ?>
-                <img src="<?php switch($item["calidad"]){
-                  case "L":
-                    echo "../src/img/bg-item-amarillo.png";
-                    break;
-                    case "E":
-                      echo "../src/img/bg-item-rojo.png";
-                      break;
-                      case "SR":
-                        echo "../src/img/bg-item-morado.png";
-                        break;
-                        case "R":
-                          echo "../src/img/bg-item-azul.png";
-                          break;
-                          case "C":
-                            echo "../src/img/bg-item-celeste.png";
-                            break;
-                            case "MC":
-                              echo "../src/img/bg-item-gris.png";
-                              break;
-                              default:
-                              break;
-                } ?>" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="<?php echo $item['imagen']; ?>" alt="Imagen del<?php echo $item['nombre']; ?>" class="item-image img-fluid">
-                  <h6 class="card-title text-white"><?php echo $item['nombre']; ?></h6>
-                  <p class="card-text"><?php echo $item['precio']; ?></p>
-                </div>
-              </div>
-            </div>
-                  <div class="card">
-                    <img src="<?php echo $item['imagen']; ?>" class="card-img-top" alt="Imagen del item">
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                      <p class="card-text"><?php echo $item['descripcion']; ?></p>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div id="ruleta" class="card-deck d-flex justify-content-center">
+              
+                <div class="card">
+                  <div class="card-img-container">
+                    <img src="imagen" class="card-img-top" alt="Imagen de fondo">
+                    <div class="item-overlay">
+                      <img src="imagen" alt="Imagen de nombre" class="item-image img-fluid">
+                      <h6 class="card-title text-white">nombre</h6>
+                      <p class="card-text text-token">precio</p>
                     </div>
                   </div>
-                <?php endforeach; ?>
-              </div>
+                </div>
+                <div class="card">
+                  <img src="imagen" class="card-img-top" alt="Imagen del item">
+                  <div class="card-body">
+                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
+                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
+                  </div>
+                </div>
             </div>
           </div>
-
-
         </div>
-      </section>
+
+
+      </div>
+    </section>
 
 
 
@@ -192,46 +168,46 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
           <?php
           foreach ($items as $item) {
-          print('<div class="col mb-4">');
-          print(' <div class="card">');
-          print('   <div class="card-img-container">');
-          switch($item["calidad"]){
-            case "L":
-              print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+            print('<div class="col mb-4">');
+            print(' <div class="card">');
+            print('   <div class="card-img-container">');
+            switch ($item["calidad"]) {
+              case "L":
+                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
+                break;
               case "E":
                 print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
 
                 break;
-                case "SR":
-                  print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+              case "SR":
+                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
 
-                  break;
-                  case "R":
-                    print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "R":
+                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
 
-                    break;
-                    case "C":
-                      print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "C":
+                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
 
-                      break;
-                      case "MC":
-                        print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "MC":
+                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
 
-                        break;
-                        default:
-                        break;
+                break;
+              default:
+                break;
+            }
+            print('     <div class="item-overlay">');
+            print('       <img src="' . $item['imagen'] . '" alt="I' . $item['nombre'] . '" class="item-image img-fluid">');
+            print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+            print('      </div>');
+            print('    </div>');
+            print('  </div>');
+            print('</div>');
           }
-          print('     <div class="item-overlay">');
-          print('       <img src="'. $item['imagen'] .'" alt="I'. $item['nombre'] .'" class="item-image img-fluid">');
-          print('      <br><h6 class="item-card-title text-white">'. $item['nombre'] .'</h6>');
-          print('       <h4 class="item-card-text text-token">'. $item['precio'] .'</h4>');
-          print('      </div>');
-          print('    </div>');
-          print('  </div>');
-          print('</div>');
-        }
           ?>
 
         </div>
