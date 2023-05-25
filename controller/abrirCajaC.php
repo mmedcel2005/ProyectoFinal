@@ -31,6 +31,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
         include("../views/abrirCajaV.php");
     }else{
+        $conexPDO = Utils::conectar($l=false);
+
         $gestorCaja = new CajasM();
         $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
