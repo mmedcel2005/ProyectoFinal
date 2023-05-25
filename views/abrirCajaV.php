@@ -239,128 +239,50 @@
     <section>
       <div class="container py-5 ">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Aquí van las demás tarjetas -->
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+          foreach ($items as $item) {
+          print('<div class="col mb-4">');
+          print(' <div class="card">');
+          print('   <div class="card-img-container">');
+          switch($item["calidad"]){
+            case "L":
+              print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
 
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              break;
+              case "E":
+                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
 
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
+                break;
+                case "SR":
+                  print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
 
+                  break;
+                  case "R":
+                    print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
 
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
+                    break;
+                    case "C":
+                      print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
 
+                      break;
+                      case "MC":
+                        print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
 
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
+                        break;
+                        default:
+                        break;
+          }
+          print('     <div class="item-overlay">');
+          print('       <img src="'. $item['imagen'] .'" alt="I'. $item['nombre'] .'" class="item-image img-fluid">');
+          print('      <h6 class="card-title text-white">'. $item['nombre'] .'</h6>');
+          print('       <p class="card-text">'. $item['precio'] .'</p>');
+          print('      </div>');
+          print('    </div>');
+          print('  </div>');
+          print('</div>');
+        }
+          ?>
 
-
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-4">
-            <div class="card">
-              <div class="card-img-container">
-                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
