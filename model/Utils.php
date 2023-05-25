@@ -13,12 +13,7 @@ class Utils {
     public static function conectar()
     {
         try {
-            if(isset($iniciado)&& $iniciado == true){
-            require_once("global.php");
-        }else{
             require_once("../global.php");
-
-        }
             $conPDO = new PDO("mysql:host=".$DB_SERVER.";dbname=".$DB_SCHEMA, $DB_USER, $DB_PASSWD);
             return $conPDO;
         } catch (PDOException $e) {
