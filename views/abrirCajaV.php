@@ -252,6 +252,18 @@
             </div>
           </div>
           <!-- Aquí van las demás tarjetas -->
+          <div class="col mb-4">
+            <div class="card">
+              <div class="card-img-container">
+                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
+                <div class="item-overlay">
+                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
+                  <h6 class="card-title text-white">Nombre del item</h6>
+                  <p class="card-text">Precio</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
