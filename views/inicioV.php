@@ -116,7 +116,7 @@
             print('<div class="row">
         <div class="col-sm-4 mb-3">
           <div class="card position-relative text-center bg-custom-sec">');
-          print("<img src='" . $caja["imagen"] . "' class='card-img-top' alt='Imagen " . $caja["nombre"] . "'>");
+          print("<img src='" . $caja["imagen"] . "' class='card-img-top' alt='Imagen " . $caja[$i]["nombre"] . "'>");
 
             if ($caja["estado"] == "N") {
               print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
