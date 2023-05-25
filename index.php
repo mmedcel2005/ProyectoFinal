@@ -15,6 +15,7 @@ require_once("model/CajasM.php");
 
 // En otros controladores
 session_start();
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
 
