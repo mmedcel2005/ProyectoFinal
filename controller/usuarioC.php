@@ -17,31 +17,21 @@ require_once("../model/CajasM.php");
 require_once("../model/Utils.php");
 
 session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['idUsuario'] != true ) {
     // El usuario ha iniciado sesión, permitir acceso a la página
-    if (isset($_GET["idCaja"])) {
-        $cajaId= $_GET["idCaja"];
+        $cajaId= ["idCaja"];
     
         $conexPDO = Utils::conectar($l=false);
-        $gestorObj = new ObjetoM();
+        $gestorUsuario = new UsuarioM();
         $gestorCaja = new CajasM();
 
-        $caja= $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
+        $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
         $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);   
 
-        include("../views/abrirCajaV.php");
-    }else{
-        $conexPDO = Utils::conectar($l=false);
-
-        $gestorCaja = new CajasM();
-        $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
-
-        include("../views/inicioV.php");
-    }
+        include("../views/usuarioV.php");
+    
 
 } else {
     // El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
-    include("views\loginV.php");
+    include("../views\loginV.php");
 }
-
-

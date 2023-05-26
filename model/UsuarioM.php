@@ -2,7 +2,7 @@
 // Se define el namespace al que pertenece la clase
 namespace Model;
 
-require_once(__DIR__ . '/Utils.php');
+require_once('../Utils.php');
 
 // Se importan las clases PDO y PDOException
 use \PDO;
@@ -51,6 +51,24 @@ class UsuarioM
         }
     }
 
+    public function obtenerUsuarioPorID($usuario, $conexPDO)
+    {
+        if (isset($usuario["correo"])) {
+            $idUsuario = $usuario["idUsuario"];
+            if ($conexPDO != null) {
+                try {
+                    $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE idUsuario = ?");
+                    $sentencia->bindParam(1, $idUsuario);
+                    $sentencia->execute();
+    
+                    // Devolvemos el nombre de usuario
+                    return $sentencia->fetch();
+                } catch (PDOException $e) {
+                    print("Error al acceder a BD" . $e->getMessage());
+                }
+            }
+        }
+    }
 
     
 

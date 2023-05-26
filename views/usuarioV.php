@@ -45,9 +45,9 @@
 </head>
 
 <body>
-    <header>
-        <!--------------- NAV  --------------->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+<header>
+    <!--------------- NAV  --------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
         <a class="nav-link" href="./index.html">
           <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
@@ -68,7 +68,7 @@
 
           <?php
           print('<div class="d-flex mx-lg-5">');
-          print('<a class="nav-link" href="usuarioV.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
+          print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
           print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
           print("</a></div>");
           print("");
@@ -78,7 +78,7 @@
         </div>
       </div>
     </nav>
-    </header>
+  </header>
 
     <main>
         <section>
@@ -90,8 +90,10 @@
                         <div class="card mb-4 bg-custom-sec">
                             <div class="card-body text-center text-white">
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                                <h5 class="my-3">Juan Rodriguez Garcia</h5>
-                                <p class="text-muted mb-4">Jerez de la Frontera, Cadiz, España</p>
+                                <?php
+                                print ('<h5 class="my-3">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
+                                print ('<p class="text-muted mb-4">'. $usuario["nombre"] .'</p>');
+                                ?>
                                 <div class="d-flex justify-content-center mb-2">
 
                                 </div>
