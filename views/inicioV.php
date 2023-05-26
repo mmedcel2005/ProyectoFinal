@@ -95,7 +95,7 @@
                   <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">TECNOLOGÍA</button>
                   <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">ROPA</button>
                   <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">FIGURAS</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">CINE</button>
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">ACCESORIOS</button>
                   <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">NUEVO</button>
                   <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">OFERTAS</button>
                 </div>
@@ -113,8 +113,8 @@
           print('<div class="row">');
           foreach($datosCajas as $caja)
           for ($i = 0; $i < count($datosCajas); $i++) {
-            print('<div class="row">
-        <div class="col-sm-4 mb-3">
+            print('
+            print(<div class="col-sm-4 mb-3">
           <div class="card position-relative text-center bg-custom-sec">');
           print("<img src='" . $caja["imagen"] . "' class='card-img-top' alt='Imagen " . $caja["nombre"] . "'>");
 
