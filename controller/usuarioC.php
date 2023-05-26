@@ -33,5 +33,5 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['
 
 } else {
     // El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
-    include("../views\loginV.php");
+    include("../views/loginV.php");
 }
