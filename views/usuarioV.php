@@ -92,7 +92,6 @@
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <?php
                                 print ('<h5 class="my-3">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
-                                print ('<p class="text-muted mb-4">'. $usuario["nombre"] .'</p>');
                                 ?>
                                 <div class="d-flex justify-content-center mb-2">
 
@@ -106,7 +105,9 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">Nombre Completo</p>
+                                    <?php
+                                        print ('<p class="mb-0">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] .'</p>')
+                                        ?>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">Juan Rodriguez Garcia</p>
