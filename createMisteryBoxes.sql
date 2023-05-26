@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`Usuario` (
   `salt` VARCHAR(20) NULL,
   `cantTokens` INT NULL,
   `imagen` VARCHAR(80) NULL,
+  `telefono` VARCHAR(15) NULL,
   PRIMARY KEY (`idUsuario`),
   UNIQUE INDEX `correo_UNIQUE` (`correo` ASC))
 ENGINE = InnoDB;

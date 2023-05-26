@@ -49,7 +49,7 @@
     <!--------------- NAV  --------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
-        <a class="nav-link" href="./index.html">
+        <a class="nav-link" href="../index.php">
           <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -105,12 +105,12 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                    <?php
-                                        print ('<p class="mb-0">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] .'</p>')
-                                        ?>
+                                        <p class="mb-0">Nombre Completo</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">Juan Rodriguez Garcia</p>
+                                    <?php
+                                    print ('<p class="text-muted mb-0">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] .'</p>');
+                                    ?>
                                     </div>
                                 </div>
                                 <hr>
@@ -119,7 +119,9 @@
                                         <p class="mb-0">Email</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">juanitorodriguez23@gmail.com</p>
+                                    <?php
+                                    print ('<p class="text-muted mb-0">'. $usuario["correo"] . '</p>');
+                                    ?>
                                     </div>
                                 </div>
                                 <hr>
@@ -128,7 +130,9 @@
                                         <p class="mb-0">Telefono</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">634 34 45 23</p>
+                                    <?php
+                                    print ('<p class="text-muted mb-0">'. $usuario["telefono"] . '</p>');
+                                    ?>
                                     </div>
                                 </div>
                                 <hr>
@@ -138,7 +142,9 @@
                                         <p class="mb-0">Direccion Usuada</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">Calle nombre nº 8,  88888, Ciudad, Provincia, Pais</p>
+                                    <?php
+                                    print ('<p class="text-muted mb-0">'. $usuario["direccion"] . '</p>');
+                                    ?>
                                     </div>
                                 </div>
                             </div>
