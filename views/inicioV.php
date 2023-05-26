@@ -106,44 +106,6 @@
       </div>
     </article>
 
-    <article>
-      <form action="../controller/abrirCajaC.php">
-        <div class="container">
-        <div class="row">
-          <?php
-          foreach($datosCajas as $caja)
-          for ($i = 0; $i < count($datosCajas); $i++) {
-            print('
-            print(<div class="col-sm-4 mb-3">
-          <div class="card position-relative text-center bg-custom-sec">');
-          print("<img src='" . $caja["imagen"] . "' class='card-img-top' alt='Imagen " . $caja["nombre"] . "'>");
-
-            if ($caja["estado"] == "N") {
-              print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            } elseif ($caja["estado"] == "O") {
-              print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            }
-
-            print('<div class="card-body">
-              <p class="card-text text-muted"><b>' . $caja["nombre"]. '</b> </p>
-              <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
-              print("<form method='GET' action='../controller/abrirCajaC.php'>");
-              print("<input type='hidden' id='idCaja' name='idCaja' value='" . $caja["idCaja"] . "'/>");
-              print('<button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
-              </form>
-            </div>
-            </div>
-          </div>
-        </div>');
-          }
-          print('<div>');
-          ?>
-
-          
-
-      </div>
-    </article>
-
 
     <article>
   <div class="container">
