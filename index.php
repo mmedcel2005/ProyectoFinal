@@ -31,7 +31,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         if($categoria=="N" || $categoria=="O" ){
             $datosCajas = $gestorCaja->obtenerCajasEstado($categoria, $conexPDO);
         }else{
-            $datosCajas = $gestorCaja->obtenerCajasEstado($categoria, $conexPDO);
+            $datosCajas = $gestorCaja->obtenerCajasCategoria($categoria, $conexPDO);
 
         }
     }else{
