@@ -25,12 +25,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         $gestorUsuario = new UsuarioM();
         $gestorCaja = new CajasM();
 
-        var_dump($idUsuario);
         
         $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
 
         if($usuario != null){
             include("../views/usuarioV.php");
+        }
+        else{
+            $gestorCaj = new CajasM();
+
+            $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+
+            include("../views/inicioV.php");
         }
 
         var_dump($usuario);
