@@ -51,10 +51,10 @@ class UsuarioM
         }
     }
 
-    public function obtenerUsuarioPorID($usuario, $conexPDO)
+    public function obtenerUsuarioPorID($idUsuario, $conexPDO)
     {
-        if (isset($usuario["idUsuario"])) {
-            $idUsuario = $usuario["idUsuario"];
+        if ($idUsuario != null) {
+           
             if ($conexPDO != null) {
                 try {
                     $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE idUsuario = ?");
