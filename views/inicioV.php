@@ -109,11 +109,11 @@
     <article>
       <form action="../controller/abrirCajaC.php">
         <div class="container">
+        <div class="row">
           <?php
-          print('<div class="row">');
           foreach($datosCajas as $caja)
           for ($i = 0; $i < count($datosCajas); $i++) {
-            print('<div class="row">
+            print('
             print(<div class="col-sm-4 mb-3">
           <div class="card position-relative text-center bg-custom-sec">');
           print("<img src='" . $caja["imagen"] . "' class='card-img-top' alt='Imagen " . $caja["nombre"] . "'>");
@@ -192,6 +192,8 @@
     </div>
   </div>
 </article>
+
+
   </main>
   <!--------------- FOOTER  --------------->
 
