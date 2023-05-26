@@ -25,7 +25,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
     $gestorCaja = new CajasM();
 
-    $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
+    if(isset($_POST["categoria"])){
+        $categoria=$_POST["categoria"];
+
+        if($categoria=="N" || $categoria=="O" ){
+            $datosCajas = $gestorCaja->obtenerCajasEstado($categoria, $conexPDO);
+        }else{
+            $datosCajas = $gestorCaja->obtenerCajasEstado($categoria, $conexPDO);
+
+        }
+    }else{
+        $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
+    }
 
     include("views/inicioV.php");
 } else {

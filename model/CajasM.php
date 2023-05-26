@@ -11,27 +11,27 @@ use \PDOException;
 // Se define la clase Usuario
 class CajasM
 {
-// Método para obtener los registros de la tabla Caja
-public function obtenerCajasPorID($cajaId, $conexPDO)
-{
-    // Verifica si la conexión a la BD es válida
-    if ($conexPDO != null) {
-        try {
-            // Se define la consulta SQL con el filtro de ID
-            $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Caja WHERE idCaja = :id");
-            $sentencia->bindParam(':id', $cajaId);
-            
-            // Se ejecuta la sentencia SQL y se retornan los resultados
-            $sentencia->execute();
-            
-            // Devolvemos los datos en un array asociativo
-            return $sentencia->fetch();
-        } catch (PDOException $e) {
-            // Si se produce un error, se muestra un mensaje en pantalla
-            print("Error al acceder a BD" . $e->getMessage());
+    // Método para obtener los registros de la tabla Caja
+    public function obtenerCajasPorID($cajaId, $conexPDO)
+    {
+        // Verifica si la conexión a la BD es válida
+        if ($conexPDO != null) {
+            try {
+                // Se define la consulta SQL con el filtro de ID
+                $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Caja WHERE idCaja = :id");
+                $sentencia->bindParam(':id', $cajaId);
+
+                // Se ejecuta la sentencia SQL y se retornan los resultados
+                $sentencia->execute();
+
+                // Devolvemos los datos en un array asociativo
+                return $sentencia->fetch();
+            } catch (PDOException $e) {
+                // Si se produce un error, se muestra un mensaje en pantalla
+                print("Error al acceder a BD" . $e->getMessage());
+            }
         }
     }
-}
 
     // Método para obtener los registros de la tabla usuarios
     public function obtenerCajas($conexPDO)
@@ -53,5 +53,44 @@ public function obtenerCajasPorID($cajaId, $conexPDO)
         }
     }
 
+    public function obtenerCajasEstado($estado, $conexPDO)
+    {
+        // Verifica si la conexión a la BD es válida
+        if ($conexPDO != null) {
+            try {
+                // Se define la consulta SQL
+                $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Caja WHERE estado=:estado");
+                $sentencia->bindParam(':estado', $estado);
+                // Se ejecuta la sentencia SQL y se retornan los resultados
+                $sentencia->execute();
 
+                // Devolvemos los datos en int
+                return $sentencia->fetchAll();
+            } catch (PDOException $e) {
+                // Si se produce un error, se muestra un mensaje en pantalla
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+    }
+
+    public function obtenerCajasCategoria($categoria, $conexPDO)
+    {
+        // Verifica si la conexión a la BD es válida
+        if ($conexPDO != null) {
+            try {
+                // Se define la consulta SQL
+                $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Caja WHERE categoria=:categoria");
+                $sentencia->bindParam(':categoria', $categoria);
+
+                // Se ejecuta la sentencia SQL y se retornan los resultados
+                $sentencia->execute();
+
+                // Devolvemos los datos en int
+                return $sentencia->fetchAll();
+            } catch (PDOException $e) {
+                // Si se produce un error, se muestra un mensaje en pantalla
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+    }
 }

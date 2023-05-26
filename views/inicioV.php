@@ -92,12 +92,24 @@
               <div class="card-body text-center bg-custom-sec ">
                 <div class="d-flex justify-content-between ">
                   <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">POPULAR</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">TECNOLOGÍA</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">ROPA</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">FIGURAS</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">ACCESORIOS</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">NUEVO</button>
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">OFERTAS</button>
+                  <form action="../index.php" method="post">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" id="categoria" value="T">TECNOLOGÍA</button>
+                  </form>
+                  <form action="../index.php" method="post">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" id="categoria" value="R">ROPA</button>
+                  </form>
+                  <form action="../index.php" method="post">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" id="categoria" value="F">FIGURAS</button>
+                  </form>
+                  <form action="../index.php" method="post">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" id="categoria" value="A">ACCESORIOS</button>
+                  </form>
+                  <form action="../index.php" method="post">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" id="categoria" value="N">NUEVO</button>
+                  </form>
+                  <form action="../index.php" method="post">
+                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" id="categoria" value="O">OFERTAS</button>
+                  </form>
                 </div>
               </div>
             </div>
