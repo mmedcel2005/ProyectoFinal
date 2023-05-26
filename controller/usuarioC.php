@@ -29,9 +29,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         
         $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
 
+        if($usuario != null){
+            include("../views/usuarioV.php");
+        }
+
         var_dump($usuario);
 
-        include("../views/usuarioV.php");
+        include("../views/inicioV.php");
     
 
 } else {
