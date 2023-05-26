@@ -26,7 +26,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         $gestorCaja = new CajasM();
 
         $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
-        $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);   
 
         include("../views/usuarioV.php");
     
