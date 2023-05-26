@@ -144,7 +144,7 @@
       </div>
     </article>
 
-    
+
     <article>
   <div class="container">
     <div class="row">
@@ -161,6 +161,34 @@
           </div>
         </div>
       </div>
+      <div class="col-sm-4 mb-3">
+        <div class="card position-relative text-center bg-custom-sec">
+          <img src="IMAGEN" class="card-img-top" alt="Imagen NOMBRE">
+          <div class="card-body">
+            <p class="card-text text-muted"><b>NOMBRE</b></p>
+            <h5 class="card-text text-token">PRECIO</h5>
+            <form method="GET" action="../controller/abrirCajaC.php">
+              <input type="hidden" id="idCaja" name="idCaja" value="ID">
+              <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3">
+        <div class="card position-relative text-center bg-custom-sec">
+          <img src="IMAGEN" class="card-img-top" alt="Imagen NOMBRE">
+          <div class="card-body">
+            <p class="card-text text-muted"><b>NOMBRE</b></p>
+            <h5 class="card-text text-token">PRECIO</h5>
+            <form method="GET" action="../controller/abrirCajaC.php">
+              <input type="hidden" id="idCaja" name="idCaja" value="ID">
+              <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </article>
