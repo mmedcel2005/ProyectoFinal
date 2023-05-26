@@ -55,6 +55,7 @@ class UsuarioM
     {
         if (isset($usuario["correo"])) {
             $idUsuario = $usuario["idUsuario"];
+            var_dump($idUsuario);
             if ($conexPDO != null) {
                 try {
                     $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE idUsuario = ?");
