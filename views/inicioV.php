@@ -111,8 +111,7 @@
         <div class="container">
         <div class="row">
           <?php
-          foreach($datosCajas as $caja)
-          for ($i = 0; $i < count($datosCajas); $i++) {
+          foreach($datosCajas as $caja){
             print('
             print(<div class="col-sm-4 mb-3">
           <div class="card position-relative text-center bg-custom-sec">');
