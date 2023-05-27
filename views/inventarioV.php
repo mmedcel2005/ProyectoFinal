@@ -116,7 +116,9 @@
                                     print('</div>');
                                 }                               
                                 else{
-                                    foreach($objetosIntoInventario as $item){
+                                    $totalItems = count($objetosIntoInventario);
+
+                                    foreach($objetosIntoInventario as $key => $item){
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
                                         print('    <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">');
@@ -175,7 +177,11 @@
                                         print('    </p>');
                                         print('</div>');
                                         print('</div>');
-                                        print('<hr class="my-4">');
+                                        
+                                        if ($key != $totalItems - 1) {
+                                            // No es el último elemento, realizar acción adicional
+                                            print('<hr class="my-4">');
+                                        }
                                     }
 
                                 }
