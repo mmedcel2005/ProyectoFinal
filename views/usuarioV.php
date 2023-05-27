@@ -263,7 +263,7 @@
                                         print('</div>');
                                         print('<hr class="my-4">');
                                     }
-                                    print('<h3><a href="">Ver mas</a></h3>');
+                                    print('<h5><a href="">Ver mas</a></h5>');
 
                                 }else{
                                     foreach($objetosIntoInventario as $item){
@@ -327,7 +327,7 @@
                                         print('</div>');
                                         print('<hr class="my-4">');
                                     }
-                                    print('<h3><a href="">Ver mas</a></h3>');
+                                    print('<h5><a href="">Ver mas</a></h5>');
 
                                 }
 
