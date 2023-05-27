@@ -4,6 +4,7 @@ namespace controller;
 
 use \model\UsuarioM;
 use \model\CajasM;
+use \model\InventarioM;
 use \model\Utils;
 //Creamos un array para guardar los datos del cliente
 
@@ -13,6 +14,7 @@ session_start();
 //Añadimos el código del modelo
 require_once("../model/UsuarioM.php");
 require_once("../model/Utils.php");
+require_once("../model/InventarioM.php");
 require_once("../model/CajasM.php");
 
 //COMPRUEBA QUE BOTON SE HA ACTIVADO
@@ -33,6 +35,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
         $gestorUsu = new UsuarioM();
         $gestorCaj = new CajasM();
+        $gestorInv = new InventarioM();
 
 
 
@@ -48,7 +51,9 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+            $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
+            $_SESSION['idInventario'] = $idInventario;
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
             $_SESSION['nombre'] = $datosUsuario['nombre'];
