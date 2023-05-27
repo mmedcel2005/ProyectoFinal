@@ -199,6 +199,7 @@
                             </div>
                             <div class="card-body">
 
+                               
                                 <?php
                                 if((count($objetosIntoInventario)>3)){
                                     for($i=0;$i<3;$i++){
@@ -331,108 +332,6 @@
                                 }
 
                                 ?>
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                        <!-- Image -->
-                                        <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
-                                            <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />
-                                            <img src="../src/img/item/iPhone 11 Silicone Case.png" class="position-absolute top-0 start-0 w-100 h-100" alt="Segunda imagen superpuesta" />
-                                            <a href="#!">
-                                                <div class="mask"></div>
-                                            </a>
-                                        </div>
-                                        <!-- Image -->
-                                    </div>
-
-                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                        <!-- Data -->
-                                        <p><strong></strong></p>
-                                        <p>Nombre
-                                        </p>
-
-
-                                        <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
-                                            <i class="bi bi-send-fill"></i>
-                                        </button>
-                                        <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                            <i class="bi bi-heart-fill"></i>
-                                        </button>
-                                        <!-- Data -->
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-
-
-                                        <!-- Price -->
-                                        <p class="text-start text-md-center">
-                                            <strong class="text-token">Precio€</strong>
-                                        </p>
-                                        <!-- Price -->
-                                    </div>
-                                </div>
-
-
-                                <hr class="my-4">
-
-
-
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                        <!-- Image -->
-                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="" class="w-100 " alt="" />
-                                            <a href="#!">
-                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                            </a>
-                                        </div>
-                                        <!-- Image -->
-                                    </div>
-
-                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                        <!-- Data -->
-                                        <p><strong></strong></p>
-                                        <p>Nombre
-                                        </p>
-
-
-                                        <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
-                                            <i class="bi bi-send-fill"></i>
-                                        </button>
-                                        <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                            <i class="bi bi-heart-fill"></i>
-                                        </button>
-                                        <!-- Data -->
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-
-
-                                        <!-- Price -->
-                                        <p class="text-start text-md-center">
-                                            <strong class="text-token">Precio€</strong>
-                                        </p>
-                                        <!-- Price -->
-                                    </div>
-                                </div>
-                                <hr class="my-4">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-
-                                    </div>
-
-                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                        <!-- Data -->
-                                        <h3>El inventario esta vacio</h3>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-
-
-
-                                    </div>
-                                </div>
-                                <hr class="my-4">
-                                <h5>Ver mas</h3>
                             </div>
                         </div>
 
