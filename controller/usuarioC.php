@@ -33,7 +33,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
         $objetosIntoInventario= $gestorInv->obtenerObjetoIntoInventario( $idInventario , $idUsuario, $conexPDO);
 
-        $var_dump($objetosIntoInventario);
+        var_dump($objetosIntoInventario);
 
         if($usuario != null){
             include("../views/usuarioV.php");
