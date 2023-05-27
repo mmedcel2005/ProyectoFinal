@@ -98,72 +98,7 @@
 
                                
                                 <?php
-                                if((count($objetosIntoInventario)>3)){
-                                    for($i=0;$i<3;$i++){
-                                        print('<div class="row">');
-                                        print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
-                                        print('    <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">');
-                                        switch ($objetosIntoInventario[$i]["calidad"]) {
-                                            case "L":
-                                                print('        <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
-                                            case "E":
-                                                print('        <img src="../src/img/bg-item-rojo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
-                                            case "SR":
-                                                print('        <img src="../src/img/bg-item-morado.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
-                                            case "R":
-                                                print('        <img src="../src/img/bg-item-azul.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
-                                            case "C":
-                                                print('        <img src="../src/img/bg-item-celeste.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
-                                            case "MC":
-                                                print('        <img src="../src/img/bg-item-gris.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
-                                            default:
-                                              break;
-                                          }
-                                        print('        <img src="'.$objetosIntoInventario[$i]["imagen"] .'" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de '.$objetosIntoInventario[$i]["nombre"] .'" />');
-                                        print('        <a href="#!">');
-                                        print('            <div class="mask"></div>');
-                                        print('        </a>');
-                                        print('    </div>');
-                                        print('</div>');
-    
-                                        print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                        print('    <p>'.$objetosIntoInventario[$i]["nombre"] .'</p>');
-
-    
-    
-                                        print('   <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">');
-                                        print('        <i class="bi bi-send-fill"></i>');
-                                        print('    </button>');
-                                        print('    <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">');
-                                        print('        <i class="bi bi-heart-fill"></i>');
-                                        print('    </button>');
-                                        print('</div>');
-    
-                                        print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-    
-                                        print('      <p class="text-start text-md-center">');
-                                        print('       <strong class="text-token">'.$objetosIntoInventario[$i]["precio"] .' €</strong>');
-                                        print('    </p>');
-                                        print('</div>');
-                                        print('</div>');
-                                        print('<hr class="my-4">');
-                                    }
-                                    print('<h5><a href="" class="text-decoration-none text-white">Ver más</a></h5>');
-
-                                }
-                                elseif($objetosIntoInventario==null || (count($objetosIntoInventario))<1 ){
+                                if($objetosIntoInventario==null || (count($objetosIntoInventario))<1 ){
                                     print('<div class="row">');
                                     print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
 
