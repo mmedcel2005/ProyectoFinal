@@ -47,7 +47,7 @@ class InventarioM
                 $idUsuario = $usuario['idUsuario'];
                 var_dump($idUsuario);
                 // Se define la sentencia SQL para obtener el idInventario del Usuario
-                $sentencia = $conexPDO->prepare("SELECT idInventario FROM proyecto.Usuario WHERE idUsuario = :idUsuario");
+                $sentencia = $conexPDO->prepare("SELECT idInventario FROM proyecto.Inventario WHERE Usuario_idUsuario = :idUsuario");
     
                 // Se asigna el valor del parámetro idUsuario al placeholder de la sentencia SQL
                 $sentencia->bindParam(":idUsuario", $idUsuario);
