@@ -5,12 +5,14 @@ namespace controller;
 session_start();
 
 use \model\UsuarioM;
+use \model\InventarioM;
 use \model\Utils;
 //Creamos un array para guardar los datos del cliente
 
 
 //Añadimos el código del modelo
 require_once("../model/UsuarioM.php");
+require_once("../model/InventarioM.php");
 require_once("../model/Utils.php");
 
 
@@ -34,35 +36,53 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $usuario["password"] = crypt($_POST["password"], '$5$rounds=5000$' . $usuario["salt"] . '$');
 
     $gestorUsu = new UsuarioM();
+    $gestorInv = new InventarioM();
+
 
     //Nos conectamos a la Bd
-    $conexPDO = Utils::conectar($l=false);
+    $conexPDO = Utils::conectar($l = false);
+
+    $comprobarCorreo = $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
+
+    if ($comprobarCorreo == null) {
+        $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
+
+        if ($resultado != null) {
 
 
-    //Añadimos el registro
-    $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
+            $_SESSION['loggedin'] = true;
+
+            $datosUsuario = $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
+
+            if ($datosUsuario != null) {
+
+                $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
+
+                if ($idInventario != null) {
+                    $_SESSION['idInventario'] = $idInventario;
+                    $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
+                    $_SESSION['nombre'] = $datosUsuario['nombre'];
+                    $_SESSION['correo'] = $datosUsuario['correo'];
+                    $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
+                }
+            }
+
+            include("../views/inicioV.php");
+        } else {
+            $mensaje = "Ha habido un fallo al acceder a la Base de Datos";
+
+
+            include("../views/registroV.php");
+        }
+    } else {
+        $mensaje = "Este correo ya existe";
+        include("../views/registroV.php");
+    }
+
 
 
     //Si ha ido bien el mensaje sera distinto de null
-    if ($resultado != null) {
 
-
-        $_SESSION['loggedin'] = true;
-
-        $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
-
-        $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
-        $_SESSION['nombre'] = $datosUsuario['nombre'];
-        $_SESSION['correo'] = $datosUsuario['correo'];
-        $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
-
-        include("../views/inicioV.php");
-    } else {
-        $mensaje = "Ha habido un fallo al acceder a la Base de Datos";
-
-
-        include("../views/registroV.php");
-    }
 } else {
 
     //Sin datos del  cliente cargados cargamos la vista

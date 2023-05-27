@@ -144,6 +144,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`PackToken` (
   `cantidadToken` INT NULL,
   `precio` VARCHAR(45) NULL,
   `enOferta` CHAR NULL,
+  `imagen` VARCHAR(80) NULL,
   `porcentajeOf` INT NULL,
   PRIMARY KEY (`idPackToken`))
 ENGINE = InnoDB;
