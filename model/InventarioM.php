@@ -40,21 +40,20 @@ class InventarioM
     {
         // Se inicializa la variable $result en null
         $result = null;
-
+    
         // Se verifica si los parámetros recibidos son válidos
         if ($conexPDO != null && $usuario['idUsuario'] != null) {
             try {
                 $idUsuario = $usuario['idUsuario'];
-                // Se define la sentencia SQL para insertar un nuevo registro
-                $sentencia = $conexPDO->prepare("SELECT idInventario FROM proyecto.Usuario (Usuario_idUsuario) VALUES (:Usuario_idUsuario)");
-
-                // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
-                $sentencia->bindParam(":Usuario_idUsuario", $idUsuario);
-
-
+                // Se define la sentencia SQL para obtener el idInventario del Usuario
+                $sentencia = $conexPDO->prepare("SELECT idInventario FROM proyecto.Usuario WHERE idUsuario = :idUsuario");
+    
+                // Se asigna el valor del parámetro idUsuario al placeholder de la sentencia SQL
+                $sentencia->bindParam(":idUsuario", $idUsuario);
+    
                 // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
                 $sentencia->execute();
-
+    
                 return $sentencia->fetchColumn();
             } catch (PDOException $e) {
                 // Si se produce un error, se muestra un mensaje en pantalla
@@ -63,6 +62,7 @@ class InventarioM
         }
         return $result;
     }
+    
 
     public function obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO)
     {
