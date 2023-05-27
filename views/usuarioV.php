@@ -234,7 +234,7 @@
                                             default:
                                               break;
                                           }
-                                        print('        <img src="'.$objetosIntoInventario[$i]["imagen"] .'" class="position-absolute top-0 start-0 w-80 h-80" alt="Imagen de '.$objetosIntoInventario[$i]["nombre"] .'" />');
+                                        print('        <img src="'.$objetosIntoInventario[$i]["imagen"] .'" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de '.$objetosIntoInventario[$i]["nombre"] .'" />');
                                         print('        <a href="#!">');
                                         print('            <div class="mask"></div>');
                                         print('        </a>');
@@ -298,7 +298,7 @@
                                             default:
                                               break;
                                           }
-                                        print('        <img src="'.$item["imagen"] .'" class="position-absolute top-0 start-0 w-80 h-80" alt="Imagen de '.$item["nombre"] .'" />');
+                                        print('        <img src="'.$item["imagen"] .'" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de '.$item["nombre"] .'" />');
                                         print('        <a href="#!">');
                                         print('            <div class="mask"></div>');
                                         print('        </a>');
