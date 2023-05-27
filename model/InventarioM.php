@@ -45,6 +45,7 @@ class InventarioM
         if ($conexPDO != null && $usuario['idUsuario'] != null) {
             try {
                 $idUsuario = $usuario['idUsuario'];
+                var_dump($idUsuario);
                 // Se define la sentencia SQL para obtener el idInventario del Usuario
                 $sentencia = $conexPDO->prepare("SELECT idInventario FROM proyecto.Usuario WHERE idUsuario = :idUsuario");
     
