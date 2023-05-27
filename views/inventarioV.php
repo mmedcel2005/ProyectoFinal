@@ -88,8 +88,8 @@
 
 
                 <div class="row">
-                <div class="col-lg-8">
-                        <div class="card mb-12 bg-custom-sec text-white">
+                <div class="col-lg-12">
+                        <div class="card mb-4 bg-custom-sec text-white">
 
                             <div class="card-header py-3">
                                 <h5 class="mb-0">Inventario</h5>
