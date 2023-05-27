@@ -177,7 +177,6 @@
                                         print('</div>');
                                         print('<hr class="my-4">');
                                     }
-                                    print('<h5><a href="" class="text-decoration-none text-white">Ver más</a></h5>');
 
                                 }
 
