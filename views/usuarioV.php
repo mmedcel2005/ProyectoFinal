@@ -45,40 +45,40 @@
 </head>
 
 <body>
-<header>
-    <!--------------- NAV  --------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-      <div class="container-fluid">
-        <a class="nav-link" href="../index.php">
-          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Mistery Boxes</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Oro gratis</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Tienda</b></a>
-            </li>
-            <li class="nav-item"></li>
-          </ul>
+    <header>
+        <!--------------- NAV  --------------->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            <div class="container-fluid">
+                <a class="nav-link" href="../index.php">
+                    <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>Mistery Boxes</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>Oro gratis</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>Tienda</b></a>
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
 
-          <?php
-          print('<div class="d-flex mx-lg-5">');
-          print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
-          print("</a></div>");
-          print("");
+                    <?php
+                    print('<div class="d-flex mx-lg-5">');
+                    print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
+                    print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
+                    print("</a></div>");
+                    print("");
 
-          ?>
-          <div id="google_translate_element" class="google"></div>
-        </div>
-      </div>
-    </nav>
-  </header>
+                    ?>
+                    <div id="google_translate_element" class="google"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <section>
@@ -91,7 +91,7 @@
                             <div class="card-body text-center text-white">
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <?php
-                                print ('<h5 class="my-3">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
+                                print('<h5 class="my-3">' . $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
                                 ?>
                                 <div class="d-flex justify-content-center mb-2">
 
@@ -108,9 +108,9 @@
                                         <p class="mb-0">Nombre Completo</p>
                                     </div>
                                     <div class="col-sm-9">
-                                    <?php
-                                    print ('<p class="text-muted mb-0">'. $usuario["nombre"] . ' ' . $usuario["apellidos"] .'</p>');
-                                    ?>
+                                        <?php
+                                        print('<p class="text-muted mb-0">' . $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</p>');
+                                        ?>
                                     </div>
                                 </div>
                                 <hr>
@@ -119,9 +119,9 @@
                                         <p class="mb-0">Email</p>
                                     </div>
                                     <div class="col-sm-9">
-                                    <?php
-                                    print ('<p class="text-muted mb-0">'. $usuario["correo"] . '</p>');
-                                    ?>
+                                        <?php
+                                        print('<p class="text-muted mb-0">' . $usuario["correo"] . '</p>');
+                                        ?>
                                     </div>
                                 </div>
                                 <hr>
@@ -130,21 +130,21 @@
                                         <p class="mb-0">Telefono</p>
                                     </div>
                                     <div class="col-sm-9">
-                                    <?php
-                                    print ('<p class="text-muted mb-0">'. $usuario["telefono"] . '</p>');
-                                    ?>
+                                        <?php
+                                        print('<p class="text-muted mb-0">' . $usuario["telefono"] . '</p>');
+                                        ?>
                                     </div>
                                 </div>
                                 <hr>
-                               
+
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <p class="mb-0">Direccion Usuada</p>
                                     </div>
                                     <div class="col-sm-9">
-                                    <?php
-                                    print ('<p class="text-muted mb-0">'. $usuario["direccion"] . '</p>');
-                                    ?>
+                                        <?php
+                                        print('<p class="text-muted mb-0">' . $usuario["direccion"] . '</p>');
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -201,9 +201,12 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
-                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="../src/img/bg-item-amarillo.png" class="w-100 " alt="Imagen de fondo" />
-                                            
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
+                                            <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />
+                                            <img src="../src/img/item/iPhone 11 Silicone Case.png" class="position-absolute top-0 start-0 w-100 h-100" alt="Segunda imagen superpuesta" />
+                                            <a href="#!">
+                                                <div class="mask"></div>
+                                            </a>
                                         </div>
                                         <!-- Image -->
                                     </div>
