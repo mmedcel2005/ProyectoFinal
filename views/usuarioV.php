@@ -265,7 +265,25 @@
                                     }
                                     print('<h5><a href="" class="text-decoration-none text-white">Ver más</a></h5>');
 
-                                }else{
+                                }
+                                elseif($objetosIntoInventario==null || (count($objetosIntoInventario))<1 ){
+                                    print('<div class="row">');
+                                    print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
+
+                                    print('</div>');
+
+                                    print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
+                                    print('<h3>El inventario esta vacio</h3>');
+                                    print('</div>');
+
+                                    print('<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
+
+
+
+                                    print('</div>');
+                                    print('</div>');
+                                }                               
+                                else{
                                     foreach($objetosIntoInventario as $item){
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
@@ -327,7 +345,7 @@
                                         print('</div>');
                                         print('<hr class="my-4">');
                                     }
-                                    print('<h5><a href="" class="text-decoration-none text-white">Ver más</a></h5>');
+                                    print('<h5><a href="../controller/inventarioV.php" class="text-decoration-none text-white">Ver más</a></h5>');
 
                                 }
 
