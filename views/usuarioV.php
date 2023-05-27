@@ -41,25 +41,6 @@
         .btn-amarillo {
             background-color: #efb810;
         }
-
-        .card-img-container {
-      position: relative;
-    }
-
-    .item-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-    }
-
-    .item-card-title,
-    .item-card-text {
-      margin: 0;
-      font-size: 15px;
-    }
     </style>
 </head>
 
@@ -221,13 +202,11 @@
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
                                         <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="../src/img/bg-item-amarillo.png" class="w-100 " alt="Imagen de fondo" />
-                                            
+                                            <img src="../src/img/bg-item-amarillo.png" class="w-100 " alt="" />
                                             <a href="#!">
                                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                             </a>
-
-                                           
+                                        </div>
                                         <!-- Image -->
                                     </div>
 
