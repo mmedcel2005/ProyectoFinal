@@ -34,7 +34,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         
         $objetosIntoInventario= $gestorInv->obtenerObjetoIntoInventario( $idInventario , $idUsuario, $conexPDO);
 
-        var_dump($objetosIntoInventario);
 
         if($usuario != null){
             include("../views/usuarioV.php");
@@ -46,10 +45,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
             include("../views/inicioV.php");
         }
-
-        var_dump($usuario);
-
-        include("../views/inicioV.php");
     
 
 } else {
