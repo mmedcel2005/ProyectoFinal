@@ -284,7 +284,7 @@
 
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
-                                        <p><strong>El inventario esta vacio</strong></p>
+                                        <h3>El inventario esta vacio</h3>
                                         <p>Nombre
 
                                     </div>
