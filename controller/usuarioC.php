@@ -31,8 +31,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
         
         $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
-        var_dump($_SESSION['idInventario']);
-
+        
         $objetosIntoInventario= $gestorInv->obtenerObjetoIntoInventario( $idInventario , $idUsuario, $conexPDO);
 
 

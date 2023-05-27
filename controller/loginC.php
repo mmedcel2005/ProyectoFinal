@@ -53,6 +53,8 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
             $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
+            var_dump($idInventario);
+
             $_SESSION['idInventario'] = $idInventario;
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
