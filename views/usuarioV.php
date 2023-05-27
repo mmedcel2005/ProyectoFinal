@@ -222,11 +222,7 @@
                                         <!-- Image -->
                                         <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                                             <img src="../src/img/bg-item-amarillo.png" class="w-100 " alt="Imagen de fondo" />
-                                            <div class="item-overlay">
-                  <img src="../src/img/item/30W USB-C Power Adapter.png" alt="Imagen del item" class="item-image img-fluid">
-                  <h6 class="card-title text-white">Nombre del item</h6>
-                  <p class="card-text">Precio</p>
-                </div>
+                                            
                                             <a href="#!">
                                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                             </a>
