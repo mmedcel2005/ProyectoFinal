@@ -21,9 +21,9 @@ require_once("../model/Utils.php");
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $gestorToken = new PacktokenM();
 
-    $packTokens = $gestorToken->obtenerPackTokens($conexPDO);
+    $conexPDO = Utils::conectar($l=false);
 
-    var_dump($packTokens);
+    $packTokens = $gestorToken->obtenerPackTokens($conexPDO);
 
 
     if($packTokens != null){
