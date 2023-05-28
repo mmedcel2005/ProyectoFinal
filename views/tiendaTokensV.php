@@ -93,12 +93,12 @@
     <?php
     foreach($packTokens as $tokens){
       print('<div class="col-sm-4 mb-3">');
-      print(' <div class="card position-relative text-center bg-custom-sec hover-overlay">');
+      print(' <div class="card position-relative text-center bg-custom-sec">');
       print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
       print('  <div class="card-body">');
       print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . '</b></p>');
       print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
-      print('    <form method="GET" action="../controller/tiendaTokensC.php">');
+      print('    <form method="GET" action="../controller/abrirCajaC.php">');
       print('     <input type="hidden" id="idPackToken" name="idPackToken" value="' . $tokens["idPackToken"] . '">');
       print( '     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
       print('   </form>');
