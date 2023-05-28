@@ -25,6 +25,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         include("../views/tiendaTokensV.php");
 
+    }else{
+        include("../views/loginV.php");
     }
 
 } else {
