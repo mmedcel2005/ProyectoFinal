@@ -28,7 +28,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         include("../views/tiendaTokensV.php");
 
     }else{
-        $gestorCaj = new CajasM();
+        $gestorCaja = new CajasM();
 
         $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
 
