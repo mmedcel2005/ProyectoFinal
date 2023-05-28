@@ -30,7 +30,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     }else{
         $gestorCaj = new CajasM();
 
-        $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+        $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
 
         include("../views/inicioV.php");
     }
