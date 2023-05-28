@@ -131,11 +131,9 @@
       print('<div class="col-sm-4 mb-3">');
       print(' <div class="card position-relative text-center bg-custom-sec">');
       print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
-      if ($caja["estado"] == "N") {
-        print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-      } elseif ($caja["estado"] == "O") {
+      if ($caja["enOferta"] == "s") {
         print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-      }
+      } 
       print('  <div class="card-body">');
       print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
       print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');

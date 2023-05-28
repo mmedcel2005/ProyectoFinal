@@ -95,6 +95,11 @@
       print('<div class="col-sm-4 mb-3">');
       print(' <div class="card position-relative text-center bg-custom-sec">');
       print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
+      if ($caja["estado"] == "N") {
+        print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+      } elseif ($caja["estado"] == "O") {
+        print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+      }
       print('  <div class="card-body">');
       print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . '</b></p>');
       print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
