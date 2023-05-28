@@ -28,7 +28,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     if($packTokens != null){
 
-        var_dump($packTokens)
+        var_dump($packTokens);
 
         include("../views/tiendaTokensV.php");
 
