@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <style>
-    body {
+   body {
       background-color: #1c1c1c;
     }
 
@@ -26,7 +26,7 @@
     .imagen-superpuesta {
       top: 0;
       right: 0;
-      max-width: 50px;
+      max-width: 100px;
       /* Ajusta el ancho máximo de la imagen superpuesta */
       width: 100%;
       /* Asegura que la imagen ocupe todo el ancho del contenedor */
