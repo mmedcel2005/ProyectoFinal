@@ -57,13 +57,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Mistery Boxes</b></a>
+              <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><b>Oro gratis</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Tienda</b></a>
+              <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
             </li>
             <li class="nav-item"></li>
           </ul>
