@@ -23,6 +23,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     $packTokens = $gestorToken->obtenerPackTokens($conexPDO);
 
+    var_dump($packTokens);
+
+
     if($packTokens != null){
 
         include("../views/tiendaTokensV.php");
@@ -31,7 +34,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $gestorCaja = new CajasM();
 
         $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
-        var_dump($datosCajas);
 
         include("../views/inicioV.php");
     }
