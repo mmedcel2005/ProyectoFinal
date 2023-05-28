@@ -95,11 +95,6 @@
       print('<div class="col-sm-4 mb-3">');
       print(' <div class="card position-relative text-center bg-custom-sec hover-overlay">');
       print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
-      print('  <div class="card-img-overlay d-flex align-items-center">');
-      print('    <div class="overlay-content">');
-      print('      <img src="' . $tokens["imagenBrillo"] . '" class="img-fluid" alt="Imagen de' . $tokens["cantidadToken"] . ' tokens">');
-      print('    </div>');
-      print('  </div>');
       print('  <div class="card-body">');
       print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . '</b></p>');
       print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
