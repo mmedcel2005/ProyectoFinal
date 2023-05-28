@@ -88,7 +88,7 @@
 
   <article>
   <div class="container">
-    <div class="row m-3">
+    <div class="row mt-3">
 
     <?php
     foreach($packTokens as $tokens){
