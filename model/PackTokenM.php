@@ -18,7 +18,7 @@ public function obtenerPackTokens($conexPDO)
     if ($conexPDO != null) {
         try {
             // Se define la consulta SQL
-            $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.PackToken");
+            $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.PackToken ORDER BY cantidadToken");
             // Se ejecuta la sentencia SQL y se retornan los resultados
             $sentencia->execute();
 
