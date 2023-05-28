@@ -88,11 +88,11 @@
 
   <article>
   <div class="container">
-    <div class="row">
+    <div class="row m-3">
 
     <?php
     foreach($packTokens as $tokens){
-      print('<div class="col-sm-4 mb-3" m3>');
+      print('<div class="col-sm-4 mb-3">');
       print(' <div class="card position-relative text-center bg-custom-sec">');
       print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
       if ($caja["estado"] == "N") {
