@@ -86,24 +86,36 @@
 
   <main>
 
-    <article>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="card position-relative text-center bg-custom-sec">
-              <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-              <img src="imagen-superpuesta.png" class="position-absolute imagen-superpuesta" alt="Imagen superpuesta">
-              <div class="card-body">
-                <p class="card-text text-muted"><b>Descripción de la tarjeta 1 </b> </p>
-                <h5 class="card-text text-token"> 1.234 </h5>
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-11">Abrir</a>
-              </div>
-            </div>
-          </div>
-          <!-- Tarjetas 2 y 3 -->
-        </div>
-      </div>
-    </article>
+  <article>
+  <div class="container">
+    <div class="row">
+
+    <?php
+    foreach($packTokens as $tokens){
+      print('<div class="col-sm-4 mb-3">');
+      print(' <div class="card position-relative text-center bg-custom-sec hover-overlay">');
+      print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
+      print('  <div class="card-img-overlay d-flex align-items-center">');
+      print('    <div class="overlay-content">');
+      print('      <img src="' . $tokens["imagenBrillo"] . '" class="img-fluid" alt="Imagen de' . $tokens["cantidadToken"] . ' tokens">');
+      print('    </div>');
+      print('  </div>');
+      print('  <div class="card-body">');
+      print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . '</b></p>');
+      print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
+      print('    <form method="GET" action="../controller/tiendaTokensC.php">');
+      print('     <input type="hidden" id="idPackToken" name="idPackToken" value="' . $tokens["idPackToken"] . '">');
+      print( '     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
+      print('   </form>');
+      print('   </div>');
+      print(' </div>');
+      print('</div>');
+    }
+    ?>
+
+    </div>
+  </div>
+</article>
   </main>
   <!--------------- FOOTER  --------------->
 
