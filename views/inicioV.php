@@ -51,7 +51,7 @@
     <!--------------- NAV  --------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
-        <a class="nav-link" href="./index.html">
+      <a class="nav-link" href="../index.php">
           <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
