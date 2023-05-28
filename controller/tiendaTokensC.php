@@ -12,7 +12,7 @@ session_start();
 
 //Añadimos el código del modelo
 require_once("../model/UsuarioM.php");
-require_once("../model/PacktokenM.php");
+require_once("../model/PackTokenM.php");
 require_once("../model/Utils.php");
 
 
