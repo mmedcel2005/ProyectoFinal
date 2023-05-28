@@ -4,6 +4,7 @@ namespace controller;
 
 use \model\UsuarioM;
 use \model\Utils;
+use \model\CajasM; 
 use \model\PacktokenM; 
 //Creamos un array para guardar los datos del cliente
 
@@ -12,6 +13,7 @@ session_start();
 
 //Añadimos el código del modelo
 require_once("../model/UsuarioM.php");
+require_once("../model/CajasM.php");
 require_once("../model/PackTokenM.php");
 require_once("../model/Utils.php");
 
@@ -26,7 +28,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         include("../views/tiendaTokensV.php");
 
     }else{
-        include("../views/loginV.php");
+        $gestorCaj = new CajasM();
+
+        $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+
+        include("../views/inicioV.php");
     }
 
 } else {
