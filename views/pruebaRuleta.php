@@ -43,6 +43,39 @@
       background-color: #efb810;
       font-weight: bold;
     }
+
+    .container {
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#spinBtn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  text-align: center;
+}
+
+.modal-content {
+  margin-top: 20px;
+}
+
+#winnerText {
+  font-size: 24px;
+  font-weight: bold;
+}
   </style>
 </head>
 
@@ -193,6 +226,47 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
+
+  <script>
+    $(document).ready(function() {
+  var carousel = $("#carouselExampleControls");
+  var modal = $("#winnerModal");
+
+  // Configurar opciones de Bootstrap Carousel
+  carousel.carousel({
+    interval: false
+  });
+
+  // Obtener el número total de elementos de la ruleta
+  var itemCount = carousel.find(".carousel-item").length;
+
+  // Agregar evento al botón de girar
+  $("#spinBtn").click(function() {
+    // Desactivar el botón mientras se realiza la animación
+    $(this).prop("disabled", true);
+
+    // Obtener un número aleatorio para determinar el ganador
+    var winnerIndex = Math.floor(Math.random() * itemCount);
+
+    // Calcular la distancia de giro en grados según el índice ganador
+    var degreesToRotate = winnerIndex * (360 / itemCount) + 720;
+
+    // Aplicar animación de giro utilizando TweenMax
+    TweenMax.to(carousel, 5, {
+      rotation: degreesToRotate,
+      onComplete: function() {
+        // Mostrar el modal del ganador
+        var winnerTitle = carousel.find(".carousel-item").eq(winnerIndex).find(".card-title").text();
+        $("#winnerText").text("¡El ganador es: " + winnerTitle + "!");
+        modal.modal("show");
+
+        // Reactivar el botón después de mostrar el modal
+        $("#spinBtn").prop("disabled", false);
+      }
+    });
+  });
+});
+  </script>
 </body>
 
 </html>
