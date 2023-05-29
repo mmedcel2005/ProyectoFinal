@@ -67,6 +67,25 @@
 
 <button id="randomBtn" class="btn btn-primary">Mover Carrusel</button>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal content goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
@@ -93,6 +112,12 @@
           items: 5
         }
       }
+    });
+
+    carousel.on('translated.owl.carousel', function(event) {
+      // El carrusel se ha detenido después de moverse
+      // Abre el modal aquí
+      $('#myModal').modal('show');
     });
 
     $('#randomBtn').click(function() {
