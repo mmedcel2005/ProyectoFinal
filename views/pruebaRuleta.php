@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Carrusel múltiple con desplazamiento de uno en uno y modal</title>
+  <title>Carrusel múltiple con desplazamiento de uno en uno</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 <body>
 
-<div class="owl-carousel owl-theme">
+<div class="owl-carousel owl-theme"> 
   <div class="item">
     <div class="card">
       <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
@@ -27,35 +27,51 @@
       </div>
     </div>
   </div>
-  <!-- Resto de las tarjetas -->
-</div>
-
-<button id="randomBtn" class="btn btn-primary">Mover Carrusel</button>
-
-<!-- Modal -->
-<div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="itemModalLabel">Detalles del Elemento</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div class="item">
+    <div class="card">
+      <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
+      <div class="card-body">
+        <h5 class="card-title">Tarjeta 3</h5>
+        <p class="card-text">Contenido de la tarjeta 3</p>
       </div>
-      <div class="modal-body">
-        <div id="itemContent">
-          <!-- Aquí se mostrará el contenido del elemento seleccionado -->
-        </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="card">
+      <img src="imagen4.jpg" class="card-img-top" alt="Imagen 4">
+      <div class="card-body">
+        <h5 class="card-title">Tarjeta 4</h5>
+        <p class="card-text">Contenido de la tarjeta 4</p>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="card">
+      <img src="imagen5.jpg" class="card-img-top" alt="Imagen 5">
+      <div class="card-body">
+        <h5 class="card-title">Tarjeta 5</h5>
+        <p class="card-text">Contenido de la tarjeta 5</p>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="card">
+      <img src="imagen6.jpg" class="card-img-top" alt="Imagen 6">
+      <div class="card-body">
+        <h5 class="card-title">Tarjeta 6</h5>
+        <p class="card-text">Contenido de la tarjeta 7</p>
       </div>
     </div>
   </div>
 </div>
 
+<button id="randomBtn" class="btn btn-primary">Mover Carrusel</button>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
   $(document).ready(function(){
-    var carousel = $('.owl-carousel').owlCarousel({
+    $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 10,
       nav: true,
@@ -80,18 +96,11 @@
     });
 
     $('#randomBtn').click(function() {
+      var carousel = $('.owl-carousel').data('owl.carousel');
       var randomIndex = Math.floor(Math.random() * carousel.items().length);
-      carousel.to(randomIndex, 500, true);
-    });
-
-    carousel.on('changed.owl.carousel', function(event) {
-      var currentIndex = event.item.index;
-      var currentItem = $(event.target).find('.owl-item').eq(currentIndex).find('.card');
-      var cardTitle = currentItem.find('.card-title').text();
-      var cardText = currentItem.find('.card-text').text();
-      $('#itemModalLabel').text(cardTitle);
-      $('#itemContent').html('<p>' + cardText + '</p>');
-      $('#itemModal').modal('show');
+      var currentIndex = carousel.relative(carousel.current());
+      var direction = 'next' ;
+      carousel.to(randomIndex, 500, direction);
     });
   });
 </script>
