@@ -57,17 +57,6 @@ h1 {
   margin: 0 auto;
 }
 
-.slider-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slide {
-  flex: 0 0 auto;
-  margin-right: 10px;
-}
-
 #spinBtn {
   display: block;
   margin: 20px auto;
@@ -128,35 +117,33 @@ h1 {
 
   <main>
   <div class="container">
-    <h1>Ruleta con Apariencia de Carousel</h1>
-    <div id="carousel" class="slider">
-      <div class="slider-inner">
-        <div class="slide">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 1</h5>
-              <p class="card-text">Descripción del item 1</p>
-            </div>
+    <h1>Ruleta con Bootstrap</h1>
+    <div id="carouselExample" class="carousel">
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Item 1</h5>
+            <p class="card-text">Descripción del item 1</p>
           </div>
         </div>
-        <div class="slide">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 2</h5>
-              <p class="card-text">Descripción del item 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 3</h5>
-              <p class="card-text">Descripción del item 3</p>
-            </div>
-          </div>
-        </div>
-        <!-- Agrega más tarjetas para más elementos de la ruleta -->
       </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Item 2</h5>
+            <p class="card-text">Descripción del item 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Item 3</h5>
+            <p class="card-text">Descripción del item 3</p>
+          </div>
+        </div>
+      </div>
+      <!-- Agrega más tarjetas para más elementos de la ruleta -->
     </div>
     <button id="spinBtn" class="btn btn-primary">Girar</button>
   </div>
@@ -180,98 +167,59 @@ h1 {
     </div>
   </div>
 
-  </main>
-  <!--------------- FOOTER  --------------->
-
-  <footer class="bg-custom text-center text-white" id="contact_footer">
-    <br>
-    <div class="d-flex justify-content-around">
-      <div>
-        <h3>Contacto</h3>
-        <p>
-          <i class="bi bi-facebook"></i> Facebok<br>
-          <i class="bi bi-instagram"></i> Instagram<br>
-          <i class="bi bi-twitter"></i> Twitter<br>
-          <i class="bi bi-envelope"></i> support@ejemplo.com<br>
-          <i class="bi bi-telephone-fill"></i> +34 45 67 23 45<br>
-        </p>
-      </div>
-      <div>
-        <h3>Información</h3>
-        <p>
-          <a href=""> Politicas y preguntas</a><br>
-          <a href=""> Politicas y preguntas</a><br>
-          <a href=""> Politicas y preguntas</a><br>
-          <a href=""> Politicas y preguntas</a><br>
-          <a href=""> Politicas y preguntas</a>
-
-        </p>
-      </div>
-      <div>
-        <h3>Formas de pago</h3>
-        <p>
-          897 87 78 23<br>
-          654 98 65 09<br>
-          789 09 39 85
-        </p>
-      </div>
-    </div>
-
-    <div class="text-center p-3">
-      © 2022 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
-    </div>
-  </footer>
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="script.js"></script>
-
   <script>
-    $(document).ready(function() {
-  var slider = tns({
-    container: '#carousel',
-    items: 3,
-    slideBy: 'page',
-    autoplay: false,
-    controls: false,
-    mouseDrag: false,
-    nav: false,
-    loop: true
-  });
-
+$(document).ready(function() {
+  var carousel = $("#carouselExample");
   var modal = $("#winnerModal");
 
+  // Configurar opciones de Slick Carousel
+  carousel.slick({
+    centerMode: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
   // Obtener el número total de elementos de la ruleta
-  var itemCount = slider.getInfo().slideCount;
+  var itemCount = carousel.find(".carousel-item").length;
 
   // Agregar evento al botón de girar
   $("#spinBtn").click(function() {
-    // Desactivar el botón mientras se realiza la animación
-    $(this).prop("disabled", true);
-
     // Obtener un número aleatorio para determinar el ganador
     var winnerIndex = Math.floor(Math.random() * itemCount);
 
-    // Calcular la cantidad de desplazamientos necesarios para llegar al índice ganador
-    var currentSlide = slider.getInfo().index;
-    var numShifts = (winnerIndex + itemCount - currentSlide) % itemCount;
+    // Desplazar la ruleta al índice ganador
+    carousel.slick("slickGoTo", winnerIndex);
 
-    // Realizar los desplazamientos para llegar al índice ganador
-    for (var i = 0; i < numShifts; i++) {
-      slider.goTo('next');
-    }
-
-    // Mostrar el modal del ganador después de un breve retraso
+    // Mostrar el modal del ganador después de que finalice la animación
     setTimeout(function() {
-      var winnerTitle = slider.getInfo().slideItems[winnerIndex].querySelector('.card-title').textContent;
+      var winnerTitle = carousel.find(".carousel-item").eq(winnerIndex).find(".card-title").text();
       $("#winnerText").text("¡El ganador es: " + winnerTitle + "!");
       modal.modal("show");
-
-      // Reactivar el botón después de mostrar el modal
-      $("#spinBtn").prop("disabled", false);
     }, 1000); // Ajusta este tiempo de espera según la duración de la animación de giro
   });
 });
