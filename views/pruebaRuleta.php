@@ -76,7 +76,6 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
-
   </style>
 </head>
 
@@ -119,32 +118,34 @@ h1 {
   <main>
   <div class="container">
     <h1>Ruleta con Bootstrap</h1>
-    <div id="carouselExample" class="carousel">
-      <div class="carousel-item">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Item 1</h5>
-            <p class="card-text">Descripción del item 1</p>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Item 1</h5>
+              <p class="card-text">Descripción del item 1</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Item 2</h5>
-            <p class="card-text">Descripción del item 2</p>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Item 2</h5>
+              <p class="card-text">Descripción del item 2</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Item 3</h5>
-            <p class="card-text">Descripción del item 3</p>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Item 3</h5>
+              <p class="card-text">Descripción del item 3</p>
+            </div>
           </div>
         </div>
+        <!-- Agrega más tarjetas para más elementos de la ruleta -->
       </div>
-      <!-- Agrega más tarjetas para más elementos de la ruleta -->
     </div>
     <button id="spinBtn" class="btn btn-primary">Girar</button>
   </div>
@@ -167,10 +168,48 @@ h1 {
       </div>
     </div>
   </div>
-
-
   </main>
   <!--------------- FOOTER  --------------->
+
+  <footer class="bg-custom text-center text-white" id="contact_footer">
+    <br>
+    <div class="d-flex justify-content-around">
+      <div>
+        <h3>Contacto</h3>
+        <p>
+          <i class="bi bi-facebook"></i> Facebok<br>
+          <i class="bi bi-instagram"></i> Instagram<br>
+          <i class="bi bi-twitter"></i> Twitter<br>
+          <i class="bi bi-envelope"></i> support@ejemplo.com<br>
+          <i class="bi bi-telephone-fill"></i> +34 45 67 23 45<br>
+        </p>
+      </div>
+      <div>
+        <h3>Información</h3>
+        <p>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a><br>
+          <a href=""> Politicas y preguntas</a>
+
+        </p>
+      </div>
+      <div>
+        <h3>Formas de pago</h3>
+        <p>
+          897 87 78 23<br>
+          654 98 65 09<br>
+          789 09 39 85
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center p-3">
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -179,7 +218,7 @@ h1 {
   <script src="script.js"></script>
 
   <script>
- $(document).ready(function() {
+    $(document).ready(function() {
   var carousel = $("#carouselExample");
   var modal = $("#winnerModal");
 
