@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="owl-carousel owl-theme">
+<div class="owl-carousel owl-theme"> 
   <div class="item">
     <div class="card">
       <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
