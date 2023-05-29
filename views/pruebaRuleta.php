@@ -53,15 +53,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">¡Felicidades!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p id="winnerText"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -71,26 +69,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Inicializar el carousel
-            $('#carouselExampleControls').carousel({
-                interval: false
+            $('#spinButton').click(function() {
+                var carouselItemsCount = $('#carouselExampleControls .carousel-item').length;
+                var winnerIndex = Math.floor(Math.random() * carouselItemsCount);
+                $('#carouselExampleControls').carousel(winnerIndex);
             });
 
-            // Obtener la cantidad de elementos en el carousel
-            var carouselItemsCount = $('#carouselExampleControls .carousel-item').length;
-
-            // Girar la ruleta cuando se hace clic en el botón
-            $('#spinButton').click(function() {
-                var winnerIndex = Math.floor(Math.random() * carouselItemsCount); // Generar un índice aleatorio para seleccionar el ganador
-                $('#carouselExampleControls').carousel('pause'); // Pausar el carousel
-                $('#carouselExampleControls').carousel(winnerIndex); // Mover el carousel al índice del ganador
-
-                // Mostrar el modal del ganador después de que se detenga la animación
-                setTimeout(function() {
-                    var winnerText = $('#carouselExampleControls .carousel-item.active img').attr('alt');
-                    $('#winnerText').text('¡Has ganado ' + winnerText + '!');
-                    $('#winnerModal').modal('show');
-                }, 4000); // Ajusta el valor de tiempo en milisegundos según la duración de la animación
+            $('#carouselExampleControls').on('slid.bs.carousel', function() {
+                var winnerText = $('#carouselExampleControls .carousel-item.active img').attr('alt');
+                $('#winnerText').text('¡Has ganado ' + winnerText + '!');
+                $('#winnerModal').modal('show');
             });
         });
     </script>
