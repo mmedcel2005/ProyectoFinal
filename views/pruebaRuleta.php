@@ -147,6 +147,42 @@ h1 {
                 </div>
               </div>
             </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Item 3</h5>
+                  <p class="card-text">Descripción del item 4</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Item 3</h5>
+                  <p class="card-text">Descripción del item 5</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Item 3</h5>
+                  <p class="card-text">Descripción del item 6</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Item 3</h5>
+                  <p class="card-text">Descripción del item 7</p>
+                </div>
+              </div>
+            </div>
             <!-- Agrega más tarjetas para más elementos de la ruleta -->
           </div>
         </div>
