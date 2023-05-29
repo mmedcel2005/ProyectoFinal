@@ -76,6 +76,7 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
   </style>
 </head>
 
@@ -118,34 +119,32 @@ h1 {
   <main>
   <div class="container">
     <h1>Ruleta con Bootstrap</h1>
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 1</h5>
-              <p class="card-text">Descripción del item 1</p>
-            </div>
+    <div id="carouselExample" class="carousel">
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Item 1</h5>
+            <p class="card-text">Descripción del item 1</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 2</h5>
-              <p class="card-text">Descripción del item 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 3</h5>
-              <p class="card-text">Descripción del item 3</p>
-            </div>
-          </div>
-        </div>
-        <!-- Agrega más tarjetas para más elementos de la ruleta -->
       </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Item 2</h5>
+            <p class="card-text">Descripción del item 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Item 3</h5>
+            <p class="card-text">Descripción del item 3</p>
+          </div>
+        </div>
+      </div>
+      <!-- Agrega más tarjetas para más elementos de la ruleta -->
     </div>
     <button id="spinBtn" class="btn btn-primary">Girar</button>
   </div>
@@ -211,14 +210,14 @@ h1 {
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="script.js"></script>
-
+  
   <script>
-    $(document).ready(function() {
+$(document).ready(function() {
   var carousel = $("#carouselExample");
   var modal = $("#winnerModal");
 
