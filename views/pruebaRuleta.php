@@ -6,6 +6,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .container {
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#spinBtn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  text-align: center;
+}
+
+.modal-content {
+  margin-top: 20px;
+}
+
+#winnerText {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
