@@ -57,6 +57,17 @@ h1 {
   margin: 0 auto;
 }
 
+.slider-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
 #spinBtn {
   display: block;
   margin: 20px auto;
@@ -116,12 +127,11 @@ h1 {
   </header>
 
   <main>
-
   <div class="container">
-    <h1>Ruleta con Bootstrap</h1>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+    <h1>Ruleta con Apariencia de Carousel</h1>
+    <div id="carousel" class="slider">
+      <div class="slider-inner">
+        <div class="slide">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Item 1</h5>
@@ -129,7 +139,7 @@ h1 {
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="slide">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Item 2</h5>
@@ -137,7 +147,7 @@ h1 {
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="slide">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Item 3</h5>
@@ -147,14 +157,6 @@ h1 {
         </div>
         <!-- Agrega más tarjetas para más elementos de la ruleta -->
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Siguiente</span>
-      </a>
     </div>
     <button id="spinBtn" class="btn btn-primary">Girar</button>
   </div>
@@ -229,16 +231,21 @@ h1 {
 
   <script>
     $(document).ready(function() {
-  var carousel = $("#carouselExampleControls");
-  var modal = $("#winnerModal");
-
-  // Configurar opciones de Bootstrap Carousel
-  carousel.carousel({
-    interval: false
+  var slider = tns({
+    container: '#carousel',
+    items: 3,
+    slideBy: 'page',
+    autoplay: false,
+    controls: false,
+    mouseDrag: false,
+    nav: false,
+    loop: true
   });
 
+  var modal = $("#winnerModal");
+
   // Obtener el número total de elementos de la ruleta
-  var itemCount = carousel.find(".carousel-item").length;
+  var itemCount = slider.getInfo().slideCount;
 
   // Agregar evento al botón de girar
   $("#spinBtn").click(function() {
@@ -248,24 +255,27 @@ h1 {
     // Obtener un número aleatorio para determinar el ganador
     var winnerIndex = Math.floor(Math.random() * itemCount);
 
-    // Calcular la distancia de giro en grados según el índice ganador
-    var degreesToRotate = winnerIndex * (360 / itemCount) + 720;
+    // Calcular la cantidad de desplazamientos necesarios para llegar al índice ganador
+    var currentSlide = slider.getInfo().index;
+    var numShifts = (winnerIndex + itemCount - currentSlide) % itemCount;
 
-    // Aplicar animación de giro utilizando TweenMax
-    TweenMax.to(carousel, 5, {
-      rotation: degreesToRotate,
-      onComplete: function() {
-        // Mostrar el modal del ganador
-        var winnerTitle = carousel.find(".carousel-item").eq(winnerIndex).find(".card-title").text();
-        $("#winnerText").text("¡El ganador es: " + winnerTitle + "!");
-        modal.modal("show");
+    // Realizar los desplazamientos para llegar al índice ganador
+    for (var i = 0; i < numShifts; i++) {
+      slider.goTo('next');
+    }
 
-        // Reactivar el botón después de mostrar el modal
-        $("#spinBtn").prop("disabled", false);
-      }
-    });
+    // Mostrar el modal del ganador después de un breve retraso
+    setTimeout(function() {
+      var winnerTitle = slider.getInfo().slideItems[winnerIndex].querySelector('.card-title').textContent;
+      $("#winnerText").text("¡El ganador es: " + winnerTitle + "!");
+      modal.modal("show");
+
+      // Reactivar el botón después de mostrar el modal
+      $("#spinBtn").prop("disabled", false);
+    }, 1000); // Ajusta este tiempo de espera según la duración de la animación de giro
   });
 });
+
   </script>
 </body>
 
