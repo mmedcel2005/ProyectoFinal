@@ -59,7 +59,7 @@
       <img src="imagen6.jpg" class="card-img-top" alt="Imagen 6">
       <div class="card-body">
         <h5 class="card-title">Tarjeta 6</h5>
-        <p class="card-text">Contenido de la tarjeta 6</p>
+        <p class="card-text">Contenido de la tarjeta 7</p>
       </div>
     </div>
   </div>
