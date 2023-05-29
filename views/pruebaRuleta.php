@@ -2,26 +2,27 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-    <style> .container {
-    margin-top: 50px;
-    text-align: center;
-}
+    <style>
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
 
-#carouselExampleControls {
-    width: 400px;
-    margin: 0 auto;
-}
+        #carouselExampleControls {
+            width: 400px;
+            margin: 0 auto;
+        }
 
-#spinButton {
-    margin-top: 20px;
-}
+        #spinButton {
+            margin-top: 20px;
+        }
 
-#winnerText {
-    font-weight: bold;
-    font-size: 18px;
-    text-align: center;
-}</style>
-    
+        #winnerText {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -68,28 +69,30 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js">$(document).ready(function() {
-    // Inicializar el carousel
-    $('#carouselExampleControls').carousel({
-        interval: false
-    });
+    <script>
+        $(document).ready(function() {
+            // Inicializar el carousel
+            $('#carouselExampleControls').carousel({
+                interval: false
+            });
 
-    // Obtener la cantidad de elementos en el carousel
-    var carouselItemsCount = $('#carouselExampleControls .carousel-item').length;
+            // Obtener la cantidad de elementos en el carousel
+            var carouselItemsCount = $('#carouselExampleControls .carousel-item').length;
 
-    // Girar la ruleta cuando se hace clic en el botón
-    $('#spinButton').click(function() {
-        var winnerIndex = Math.floor(Math.random() * carouselItemsCount); // Generar un índice aleatorio para seleccionar el ganador
-        $('#carouselExampleControls').carousel('pause'); // Pausar el carousel
-        $('#carouselExampleControls').carousel(winnerIndex); // Mover el carousel al índice del ganador
+            // Girar la ruleta cuando se hace clic en el botón
+            $('#spinButton').click(function() {
+                var winnerIndex = Math.floor(Math.random() * carouselItemsCount); // Generar un índice aleatorio para seleccionar el ganador
+                $('#carouselExampleControls').carousel('pause'); // Pausar el carousel
+                $('#carouselExampleControls').carousel(winnerIndex); // Mover el carousel al índice del ganador
 
-        // Mostrar el modal del ganador después de que se detenga la animación
-        setTimeout(function() {
-            var winnerText = $('#carouselExampleControls .carousel-item.active img').attr('alt');
-            $('#winnerText').text('¡Has ganado ' + winnerText + '!');
-            $('#winnerModal').modal('show');
-        }, 4000); // Ajusta el valor de tiempo en milisegundos según la duración de la animación
-    });
-});</script>
+                // Mostrar el modal del ganador después de que se detenga la animación
+                setTimeout(function() {
+                    var winnerText = $('#carouselExampleControls .carousel-item.active img').attr('alt');
+                    $('#winnerText').text('¡Has ganado ' + winnerText + '!');
+                    $('#winnerModal').modal('show');
+                }, 4000); // Ajusta el valor de tiempo en milisegundos según la duración de la animación
+            });
+        });
+    </script>
 </body>
 </html>
