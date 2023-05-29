@@ -1,93 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Ruleta con Bootstrap</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        .carousel-inner .carousel-item {
-            transition: transform 1s ease;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta Bootstrap</title>
+  <!-- Agrega los estilos de Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <style>
+    .card {
+      width: 200px;
+      height: 300px;
+      margin: 10px;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+    
+    #modalWinner {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Ruleta con Bootstrap</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <!-- Agrega más indicadores si es necesario -->
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="imagen1.jpg" alt="Slide 1">
+  <div class="container">
+    <h1>Ruleta Bootstrap</h1>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Elemento 1</h5>
+                  <p class="card-text">Descripción del elemento 1</p>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="imagen2.jpg" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="imagen3.jpg" alt="Slide 3">
-                </div>
-                <!-- Agrega más elementos de carrusel si es necesario -->
+              </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="winnerModalLabel">¡El ítem ganador es!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p id="winnerItem"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Elemento 2</h5>
+                  <p class="card-text">Descripción del elemento 2</p>
                 </div>
+              </div>
             </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Elemento 3</h5>
+                  <p class="card-text">Descripción del elemento 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Elemento 4</h5>
+                  <p class="card-text">Descripción del elemento 4</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Elemento 5</h5>
+                  <p class="card-text">Descripción del elemento 5</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Elemento 6</h5>
+                  <p class="card-text">Descripción del elemento 6</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <button id="spinBtn" class="btn btn-primary mt-3">¡Girar!</button>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var carousel = $("#carouselExampleIndicators");
+  <!-- Agrega los scripts de Bootstrap y jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Inicializar el carrusel
+      $('#carouselExample').carousel({
+        interval: false // Deshabilitar el auto-giro
+      });
 
-            // Generar un número aleatorio para detener el carrusel
-            var randomStop = Math.floor(Math.random() * carousel.find(".carousel-item").length);
+      // Obtener las tarjetas del carrusel
+      var cards = $('.carousel-item .card');
 
-            carousel.carousel({
-                interval: 100,  // Ajusta la velocidad de la animación del carrusel
-                wrap: false
-            }).on("slid.bs.carousel", function (e) {
-                var currentIndex = $(e.target).find(".carousel-item.active").index();
+      // Manejar el evento click del botón
+      $('#spinBtn').click(function() {
+        // Generar un índice aleatorio para seleccionar una tarjeta
+        var randomIndex = Math.floor(Math.random() * cards.length);
 
-                // Detener el carrusel cuando alcance el índice aleatorio
-                if (currentIndex === randomStop) {
-                    carousel.carousel("pause");
-                    var winnerItem = carousel.find(".carousel-item").eq(currentIndex).find("img").attr("alt");
-                    $("#winnerItem").text(winnerItem);
-                    $("#winnerModal").modal("show");
-                }
-            });
-        });
-    </script>
+        // Detener el carrusel en la tarjeta seleccionada
+        $('#carouselExample').carousel(randomIndex);
+
+        // Mostrar el modal con el elemento ganador
+        var winner = cards[randomIndex].querySelector('.card-title').innerText;
+        $('#modalWinner').text('¡El ganador es: ' + winner + '!');
+        $('#winnerModal').modal('show');
+      });
+    });
+  </script>
+
+  <!-- Modal para mostrar el elemento ganador -->
+  <div id="winnerModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Elemento Ganador</h5>
+        </div>
+        <div class="modal-body" id="modalWinner">
+          ¡El ganador es: !
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
