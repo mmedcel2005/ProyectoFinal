@@ -126,11 +126,12 @@
                 var randomIndex = Math.floor(Math.random() * carousel.items().length);
                 var currentIndex = carousel.relative(carousel.current());
                 var direction = 'next';
-                carousel.to(randomIndex, 500, direction).on('translated.owl.carousel', function(event) {
-                    $('#myModal').modal('show');
 
+                carousel.to(randomIndex, 500, direction).on('changed.owl.carousel', function(event) {
+                    if (event.property.name === 'position' && event.property.value === currentIndex) {
+                        $('#myModal').modal('show');
+                    }
                 });
-
             });
 
 
