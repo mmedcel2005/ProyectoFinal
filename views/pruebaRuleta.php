@@ -94,49 +94,56 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                dots: false,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    576: {
-                        items: 2
-                    },
-                    768: {
-                        items: 3
-                    },
-                    992: {
-                        items: 4
-                    },
-                    1200: {
-                        items: 5
-                    }
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        });
+
+        function abrirModalDespuesDeCarousel() {
+            var carousel = $('.owl-carousel').data('owl.carousel');
+            var currentIndex = carousel.relative(carousel.current());
+            var direction = 'next';
+
+            carousel.to(currentIndex, 500, direction).on('changed.owl.carousel', function(event) {
+                if (event.property.name === 'position' && event.property.value === currentIndex) {
+                    $('#myModal').modal('show');
                 }
             });
+        }
 
+        $('#randomBtn').click(function() {
+            var carousel = $('.owl-carousel').data('owl.carousel');
+            var randomIndex = Math.floor(Math.random() * carousel.items().length);
 
-
-            $('#randomBtn').click(function() {
-                var carousel = $('.owl-carousel').data('owl.carousel');
-                var randomIndex = Math.floor(Math.random() * carousel.items().length);
-                var currentIndex = carousel.relative(carousel.current());
-                var direction = 'next';
-
-                carousel.to(randomIndex, 500, direction).on('changed.owl.carousel', function(event) {
-                    if (event.property.name === 'position' && event.property.value === currentIndex) {
-                        $('#myModal').modal('show');
-                    }
-                });
+            carousel.to(randomIndex, 500, 'next').on('changed.owl.carousel', function(event) {
+                if (event.property.name === 'position' && event.property.value === randomIndex) {
+                    abrirModalDespuesDeCarousel();
+                }
             });
-
-
         });
-    </script>
+    });
+</script>
+
 
 </body>
 
