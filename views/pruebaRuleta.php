@@ -76,6 +76,7 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
   </style>
 </head>
 
@@ -167,13 +168,18 @@ h1 {
     </div>
   </div>
 
+
+  </main>
+  <!--------------- FOOTER  --------------->
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="script.js"></script>
+
   <script>
-$(document).ready(function() {
+ $(document).ready(function() {
   var carousel = $("#carouselExample");
   var modal = $("#winnerModal");
 
