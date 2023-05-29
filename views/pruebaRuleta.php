@@ -99,7 +99,7 @@
       var carousel = $('.owl-carousel').data('owl.carousel');
       var randomIndex = Math.floor(Math.random() * carousel.items().length);
       var currentIndex = carousel.relative(carousel.current());
-      var direction = currentIndex < randomIndex ? 'next' : 'prev';
+      var direction = 'next' ;
       carousel.to(randomIndex, 500, direction);
     });
   });
