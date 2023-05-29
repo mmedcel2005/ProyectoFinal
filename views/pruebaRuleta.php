@@ -122,100 +122,30 @@ h1 {
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 1</h5>
-                  <p class="card-text">Descripción del item 1</p>
-                </div>
-              </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Item 1</h5>
+              <p class="card-text">Descripción del item 1</p>
             </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 2</h5>
-                  <p class="card-text">Descripción del item 2</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 3</h5>
-                  <p class="card-text">Descripción del item 3</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 3</h5>
-                  <p class="card-text">Descripción del item 4</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 3</h5>
-                  <p class="card-text">Descripción del item 5</p>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 3</h5>
-                  <p class="card-text">Descripción del item 6</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 3</h5>
-                  <p class="card-text">Descripción del item 7</p>
-                </div>
-              </div>
-            </div>
-            <!-- Agrega más tarjetas para más elementos de la ruleta -->
           </div>
         </div>
         <div class="carousel-item">
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 4</h5>
-                  <p class="card-text">Descripción del item 4</p>
-                </div>
-              </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Item 2</h5>
+              <p class="card-text">Descripción del item 2</p>
             </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 5</h5>
-                  <p class="card-text">Descripción del item 5</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Item 6</h5>
-                  <p class="card-text">Descripción del item 6</p>
-                </div>
-              </div>
-            </div>
-            <!-- Agrega más tarjetas para más elementos de la ruleta -->
           </div>
         </div>
-        <!-- Agrega más slides para más elementos de la ruleta -->
+        <div class="carousel-item">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Item 3</h5>
+              <p class="card-text">Descripción del item 3</p>
+            </div>
+          </div>
+        </div>
+        <!-- Agrega más tarjetas para más elementos de la ruleta -->
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -247,7 +177,6 @@ h1 {
       </div>
     </div>
   </div>
-
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
