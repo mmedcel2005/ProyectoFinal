@@ -122,11 +122,7 @@
       }
     });
 
-    carousel.on('translated.owl.carousel', function(event) {
-  // El carrusel se ha detenido después de moverse
-  // Abre el modal aquí
-  $('#myModal').modal('show');
-});
+    
 
     $('#randomBtn').click(function() {
       var carousel = $('.owl-carousel').data('owl.carousel');
