@@ -13,11 +13,47 @@
     <div class="owl-carousel owl-theme">
         <div class="item">
             <div class="card">
-                <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-                <div class="card-body">
-                    <h5 class="card-title">Tarjeta 1</h5>
-                    <p class="card-text">Contenido de la tarjeta 1</p>
-                </div>
+            <?php
+          foreach ($items as $item) {
+            print(' <div class="card">');
+            print('   <div class="card-img-container">');
+            switch ($item["calidad"]) {
+              case "L":
+                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+
+                break;
+              case "E":
+                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+
+                break;
+              case "SR":
+                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+
+                break;
+              case "R":
+                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+
+                break;
+              case "C":
+                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+
+                break;
+              case "MC":
+                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+
+                break;
+              default:
+                break;
+            }
+            print('     <div class="item-overlay">');
+            print('       <img src="' . $item['imagen'] . '" alt="I' . $item['nombre'] . '" class="item-image img-fluid">');
+            print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+            print('      </div>');
+            print('    </div>');
+            print('  </div>');
+        }
+        ?>
             </div>
         </div>
         <div class="item">

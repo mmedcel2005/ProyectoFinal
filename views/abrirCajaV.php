@@ -132,10 +132,10 @@
 
     <section>
       <div class="owl-carousel owl-theme">
-        <div class="item">
-          <div class="card">
             <?php
             foreach ($items as $item) {
+              print('<div class="item">');
+
               print(' <div class="card">');
               print('   <div class="card-img-container">');
               switch ($item["calidad"]) {
@@ -175,53 +175,11 @@
               print('  </div>');
             }
             ?>
-          </div>
         </div>
-        <div class="item">
-          <div class="card">
-            <img src="imagen2.jpg" class="card-img-top" alt="Imagen 2">
-            <div class="card-body">
-              <h5 class="card-title">Tarjeta 2</h5>
-              <p class="card-text">Contenido de la tarjeta 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
-            <div class="card-body">
-              <h5 class="card-title">Tarjeta 3</h5>
-              <p class="card-text">Contenido de la tarjeta 3</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <img src="imagen4.jpg" class="card-img-top" alt="Imagen 4">
-            <div class="card-body">
-              <h5 class="card-title">Tarjeta 4</h5>
-              <p class="card-text">Contenido de la tarjeta 4</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <img src="imagen5.jpg" class="card-img-top" alt="Imagen 5">
-            <div class="card-body">
-              <h5 class="card-title">Tarjeta 5</h5>
-              <p class="card-text">Contenido de la tarjeta 5</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <img src="imagen6.jpg" class="card-img-top" alt="Imagen 6">
-            <div class="card-body">
-              <h5 class="card-title">Tarjeta 6</h5>
-              <p class="card-text">Contenido de la tarjeta 7</p>
-            </div>
-          </div>
-        </div>
+        
+        
+
+
       </div>
     </section>
 
