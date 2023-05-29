@@ -44,12 +44,12 @@ h1 {
   </style>
 </head>
 <body>
- <!-- Código HTML -->
+<!-- Código HTML -->
 <div class="container">
   <h1>Ruleta con bootstrap</h1>
   <p>Pulsa el botón para girar la ruleta y ver el ítem ganador.</p>
   <button id="spin-button" class="btn btn-primary">Girar</button>
-  <div id="roulette" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="false">
+  <div id="roulette" class="carousel fade mt-4" data-bs-ride="carousel" data-bs-interval="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="card bg-primary text-white">
@@ -123,7 +123,7 @@ h1 {
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    transform: rotate(45deg);
+    transform: rotate(45deg) scale(0.8);
   }
 
   .carousel-item {
@@ -154,8 +154,8 @@ h1 {
   var numItems = items.length; // El número de ítems
   var spinning = false; // Indica si la ruleta está girando o no
   var spinInterval; // El intervalo para girar la ruleta
-  var spinDuration = 3000; // La duración del giro en milisegundos
-  var spinSpeed = 100; // La velocidad del giro en milisegundos
+  var spinDuration = 5000; // La duración del giro en milisegundos
+  var spinSpeed = 50; // La velocidad del giro en milisegundos
 
   // Función para girar la ruleta
   function spinRoulette() {
