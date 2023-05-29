@@ -20,6 +20,12 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
           <div class="col-sm-4">
             <div class="card">
               <img src="imagen2.jpg" class="card-img-top" alt="Imagen 2">
@@ -29,6 +35,12 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
           <div class="col-sm-4">
             <div class="card">
               <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
@@ -53,6 +65,12 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
           <div class="col-sm-4">
             <div class="card">
               <img src="imagen5.jpg" class="card-img-top" alt="Imagen 5">
@@ -62,6 +80,12 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
           <div class="col-sm-4">
             <div class="card">
               <img src="imagen6.jpg" class="card-img-top" alt="Imagen 6">
