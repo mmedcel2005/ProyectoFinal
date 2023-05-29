@@ -97,8 +97,10 @@
 
     $('#randomBtn').click(function() {
       var carousel = $('.owl-carousel').data('owl.carousel');
-      var randomTimes = Math.floor(Math.random() * carousel.items().length) + 1;
-      carousel.to(randomTimes, 500);
+      var randomIndex = Math.floor(Math.random() * carousel.items().length);
+      var currentIndex = carousel.relative(carousel.current());
+      var direction = currentIndex < randomIndex ? 'next' : 'prev';
+      carousel.to(randomIndex, 500, direction);
     });
   });
 </script>
