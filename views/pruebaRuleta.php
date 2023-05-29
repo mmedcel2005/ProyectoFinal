@@ -98,7 +98,7 @@
     $('#randomBtn').click(function() {
       var carousel = $('.owl-carousel').data('owl.carousel');
       var randomTimes = Math.floor(Math.random() * carousel.items().length) + 1;
-      carousel.to(randomTimes, 500);
+      carousel.prev(randomTimes, 500);
     });
   });
 </script>
