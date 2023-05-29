@@ -6,6 +6,8 @@
   <title>Ruleta Bootstrap</title>
   <!-- Agrega los estilos de Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <!-- Agrega los estilos de Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     .card {
       width: 200px;
@@ -13,6 +15,10 @@
       margin: 10px;
       text-align: center;
       background-color: #f8f9fa;
+    }
+
+    #carouselExample {
+      overflow: hidden;
     }
     
     #modalWinner {
@@ -104,13 +110,27 @@
         // Generar un índice aleatorio para seleccionar una tarjeta
         var randomIndex = Math.floor(Math.random() * cards.length);
 
-        // Detener el carrusel en la tarjeta seleccionada
-        $('#carouselExample').carousel(randomIndex);
+        // Deshabilitar el carrusel durante el giro
+        $('#carouselExample').carousel('pause');
 
-        // Mostrar el modal con el elemento ganador
-        var winner = cards[randomIndex].querySelector('.card-title').innerText;
-        $('#modalWinner').text('¡El ganador es: ' + winner + '!');
-        $('#winnerModal').modal('show');
+        // Agregar clase de animación a las tarjetas
+        cards.addClass('animate__animated animate__fadeOut');
+
+        setTimeout(function() {
+          // Detener el carrusel en la tarjeta seleccionada
+          $('#carouselExample').carousel(randomIndex);
+
+          // Mostrar el modal con el elemento ganador
+          var winner = cards[randomIndex].querySelector('.card-title').innerText;
+          $('#modalWinner').text('¡El ganador es: ' + winner + '!');
+          $('#winnerModal').modal('show');
+        }, 2000); // Esperar 2 segundos antes de detener el carrusel y mostrar el resultado
+      });
+
+      // Restablecer las tarjetas y reanudar el carrusel después de que se oculte el modal
+      $('#winnerModal').on('hidden.bs.modal', function() {
+        cards.removeClass('animate__animated animate__fadeOut');
+        $('#carouselExample').carousel('cycle');
       });
     });
   </script>
@@ -133,4 +153,3 @@
   </div>
 </body>
 </html>
-
