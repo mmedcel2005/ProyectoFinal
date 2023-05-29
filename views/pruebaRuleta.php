@@ -115,7 +115,6 @@
     });
 
 
-
     $('#randomBtn').click(function() {
       var carousel = $('.owl-carousel').data('owl.carousel');
       var randomIndex = Math.floor(Math.random() * carousel.items().length);
@@ -123,6 +122,13 @@
       var direction = 'next' ;
       carousel.to(randomIndex, 500, direction);
     });
+
+    carousel.on('translated.owl.carousel', function(event) {
+  // El carrusel se ha detenido después de moverse
+  // Abre el modal aquí
+  $('#myModal').modal('show');
+});
+
   });
 </script>
 
