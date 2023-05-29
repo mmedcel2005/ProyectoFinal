@@ -43,38 +43,6 @@
       background-color: #efb810;
       font-weight: bold;
     }
-    .container {
-  margin-top: 50px;
-}
-
-h1 {
-  text-align: center;
-}
-
-.card {
-  width: 300px;
-  margin: 0 auto;
-}
-
-#spinBtn {
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.modal {
-  display: none;
-  text-align: center;
-}
-
-.modal-content {
-  margin-top: 20px;
-}
-
-#winnerText {
-  font-size: 24px;
-  font-weight: bold;
-}
   </style>
 </head>
 
@@ -116,7 +84,6 @@ h1 {
 
   <main>
 
-  <body>
   <div class="container">
     <h1>Ruleta con Bootstrap</h1>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -178,43 +145,6 @@ h1 {
     </div>
   </div>
 
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
-  <script>
-    $(document).ready(function() {
-  var carousel = $("#carouselExampleControls");
-  var modal = $("#winnerModal");
-
-  // Configurar opciones de Bootstrap Carousel
-  carousel.carousel({
-    interval: false
-  });
-
-  // Obtener el número total de elementos de la ruleta
-  var itemCount = carousel.find(".carousel-item").length;
-
-  // Agregar evento al botón de girar
-  $("#spinBtn").click(function() {
-    // Obtener un número aleatorio para determinar el ganador
-    var winnerIndex = Math.floor(Math.random() * itemCount);
-
-    // Detener la ruleta en el índice ganador
-    carousel.carousel(winnerIndex);
-
-    // Mostrar el modal del ganador después de que finalice la animación
-    setTimeout(function() {
-      var winnerTitle = carousel.find(".carousel-item").eq(winnerIndex).find(".card-title").text();
-      $("#winnerText").text("¡El ganador es: " + winnerTitle + "!");
-      modal.modal("show");
-    }, 1000); // Ajusta este tiempo de espera según la duración de la animación de giro
-  });
-});
-  </script>
-</body>
-
   </main>
   <!--------------- FOOTER  --------------->
 
@@ -257,6 +187,12 @@ h1 {
       <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
     </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
