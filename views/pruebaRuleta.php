@@ -125,14 +125,11 @@
       var currentIndex = carousel.relative(carousel.current());
       var direction = 'next' ;
       carousel.to(randomIndex, 500, direction);
+      $('#myModal').modal('show');
+
     });
 
-    carousel.on('translated.owl.carousel', function(event) {
-  // El carrusel se ha detenido después de moverse
-  // Abre el modal aquí
-  $('#myModal').modal('show');
-});
-    
+ 
   });
 </script>
 
