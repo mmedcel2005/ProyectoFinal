@@ -67,30 +67,11 @@
 
 <button id="randomBtn" class="btn btn-primary">Mover Carrusel</button>
 
-<!-- Modal -->
-<div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="itemModalLabel">Detalles del Elemento</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="itemContent">
-          <!-- Aquí se mostrará el contenido del elemento seleccionado -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
   $(document).ready(function(){
-    var carousel = $('.owl-carousel').owlCarousel({
+    $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 10,
       nav: true,
@@ -115,17 +96,11 @@
     });
 
     $('#randomBtn').click(function() {
+      var carousel = $('.owl-carousel').data('owl.carousel');
       var randomIndex = Math.floor(Math.random() * carousel.items().length);
       var currentIndex = carousel.relative(carousel.current());
-      var direction = currentIndex < randomIndex ? 'next' : 'prev';
-      carousel.to(randomIndex, 500, direction).then(function() {
-        var currentItem = carousel._items[randomIndex];
-        var cardTitle = $(currentItem).find('.card-title').text();
-        var cardText = $(currentItem).find('.card-text').text();
-        $('#itemModalLabel').text(cardTitle);
-        $('#itemContent').html('<p>' + cardText + '</p>');
-        $('#itemModal').modal('show');
-      });
+      var direction = 'next' ;
+      carousel.to(randomIndex, 500, direction);
     });
   });
 </script>
