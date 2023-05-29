@@ -117,66 +117,7 @@ h1 {
   <main>
 
   <body>
-  <div class="container">
-    <h1>Ruleta con Bootstrap</h1>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 1</h5>
-              <p class="card-text">Descripción del item 1</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 2</h5>
-              <p class="card-text">Descripción del item 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Item 3</h5>
-              <p class="card-text">Descripción del item 3</p>
-            </div>
-          </div>
-        </div>
-        <!-- Agrega más tarjetas para más elementos de la ruleta -->
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Siguiente</span>
-      </a>
-    </div>
-    <button id="spinBtn" class="btn btn-primary">Girar</button>
-  </div>
-
-  <div id="winnerModal" class="modal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">¡Ganador!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p id="winnerText"></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
