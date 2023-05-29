@@ -85,9 +85,10 @@
     });
 
     carousel.on('changed.owl.carousel', function(event) {
-      var currentElement = $(event.target).find('.owl-item').eq(event.item.index).find('.card');
-      var cardTitle = currentElement.find('.card-title').text();
-      var cardText = currentElement.find('.card-text').text();
+      var currentIndex = event.item.index;
+      var currentItem = $(event.target).find('.owl-item').eq(currentIndex).find('.card');
+      var cardTitle = currentItem.find('.card-title').text();
+      var cardText = currentItem.find('.card-text').text();
       $('#itemModalLabel').text(cardTitle);
       $('#itemContent').html('<p>' + cardText + '</p>');
       $('#itemModal').modal('show');
