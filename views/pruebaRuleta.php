@@ -65,6 +65,8 @@
   </div>
 </div>
 
+<button id="randomBtn" class="btn btn-primary">Mover Carrusel</button>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
@@ -92,9 +94,14 @@
         }
       }
     });
+
+    $('#randomBtn').click(function() {
+      var carousel = $('.owl-carousel').data('owl.carousel');
+      var randomTimes = Math.floor(Math.random() * carousel.items().length) + 1;
+      carousel.to(randomTimes, 500);
+    });
   });
 </script>
 
 </body>
 </html>
-
