@@ -71,11 +71,11 @@
 </head>
 
 <body>
-<header>
+  <header>
     <!--------------- NAV  --------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
-      <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="../index.php">
           <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -95,7 +95,7 @@
           <?php
           print('<div class="d-flex mx-lg-5">');
           print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
           print("</a></div>");
           print("");
 
@@ -129,88 +129,97 @@
 
 
     <section>
-      <div class="container py-5">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="card">
+            <?php
+            foreach ($items as $item) {
+              print(' <div class="card">');
+              print('   <div class="card-img-container">');
+              switch ($item["calidad"]) {
+                case "L":
+                  print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
 
+                  break;
+                case "E":
+                  print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
 
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div id="ruleta" class="card-deck d-flex justify-content-center">
-              
-                <div class="card">
-                  <div class="card-img-container">
-                    <img src="imagen" class="card-img-top" alt="Imagen de fondo">
-                    <div class="item-overlay">
-                      <img src="imagen" alt="Imagen de nombre" class="item-image img-fluid">
-                      <h6 class="card-title text-white">nombre</h6>
-                      <p class="card-text text-token">precio</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
+                  break;
+                case "SR":
+                  print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
 
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
+                  break;
+                case "R":
+                  print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
 
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
+                  break;
+                case "C":
+                  print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
 
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
+                  break;
+                case "MC":
+                  print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
 
-                <div class="card">
-                  <img src="imagen" class="card-img-top" alt="Imagen del item">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $item['nombre']; ?></h5>
-                    <p class="card-text"><?php echo $item['descripcion']; ?></p>
-                  </div>
-                </div>
+                  break;
+                default:
+                  break;
+              }
+              print('     <div class="item-overlay">');
+              print('       <img src="' . $item['imagen'] . '" alt="I' . $item['nombre'] . '" class="item-image img-fluid">');
+              print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+              print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+              print('      </div>');
+              print('    </div>');
+              print('  </div>');
+            }
+            ?>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img src="imagen2.jpg" class="card-img-top" alt="Imagen 2">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta 2</h5>
+              <p class="card-text">Contenido de la tarjeta 2</p>
             </div>
           </div>
         </div>
-
-
+        <div class="item">
+          <div class="card">
+            <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta 3</h5>
+              <p class="card-text">Contenido de la tarjeta 3</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img src="imagen4.jpg" class="card-img-top" alt="Imagen 4">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta 4</h5>
+              <p class="card-text">Contenido de la tarjeta 4</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img src="imagen5.jpg" class="card-img-top" alt="Imagen 5">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta 5</h5>
+              <p class="card-text">Contenido de la tarjeta 5</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <img src="imagen6.jpg" class="card-img-top" alt="Imagen 6">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta 6</h5>
+              <p class="card-text">Contenido de la tarjeta 7</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -330,39 +339,49 @@
       <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
     </div>
   </footer>
-</body>
-<script>
-  $(document).ready(function() {
-    var ruleta = document.getElementById('ruleta');
-    var btnGirar = document.getElementById('btnGirar');
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          576: {
+            items: 2
+          },
+          768: {
+            items: 3
+          },
+          992: {
+            items: 4
+          },
+          1200: {
+            items: 5
+          }
+        }
+      });
 
-    // Girar la ruleta al hacer clic en el botón
-    btnGirar.addEventListener('click', function() {
-      var ganador = obtenerGanador();
+      $('#randomBtn').click(function() {
+        var carousel = $('.owl-carousel').data('owl.carousel');
+        var randomIndex = Math.floor(Math.random() * carousel.items().length);
+        var currentIndex = carousel.relative(carousel.current());
+        var direction = 'next';
 
-      // Deshabilitar el botón para evitar múltiples giros
-      btnGirar.disabled = true;
+        carousel.to(randomIndex, 500, direction);
 
-      // Girar la ruleta durante 3 segundos
-      ruleta.classList.add('girando');
-      setTimeout(function() {
-        ruleta.classList.remove('girando');
-
-        // Mostrar el modal con el objeto ganador
-        $('#modalGanador').modal('show');
-
-        // Habilitar el botón nuevamente
-        btnGirar.disabled = false;
-      }, 3000);
+        setTimeout(function() {
+          $('#myModal').modal('show');
+        }, 3000); // Tiempo de espera en milisegundos (en este caso, 3 segundos)
+      });
     });
-
-    // Función para obtener un objeto ganador aleatorio
-    function obtenerGanador() {
-      var indiceGanador = Math.floor(Math.random() * <?php echo count($items); ?>);
-      return <?php echo json_encode($items); ?>[indiceGanador];
-    }
-  });
-</script>
-</script>
+  </script>
+</body>
 
 </html>
