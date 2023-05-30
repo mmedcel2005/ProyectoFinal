@@ -255,7 +255,7 @@
               <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                 <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
                   <img src="" id="imagenBG" class="w-100" alt="Imagen de fondo" />
-                  <img src="" id="imagenItem" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de <?php echo $item["nombre"]; ?>" />
+                  <img src="" id="imagenItem" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de " />
                   <a href="#!">
                     <div class="mask"></div>
                   </a>
@@ -367,8 +367,7 @@
         document.querySelector('#imagenBG').src = imagenBG;
         document.querySelector('#imagenItem').src = imagenItem;
         document.querySelector('#precio').textContent = precio;
-        document.querySelector('#nombre').textContent = nombre;
-        document.querySelector('#idObjeto').value = idObjeto;
+
 
         // Aquí puedes hacer lo que necesites con el objeto currentItemData
         console.log(currentItemData);
