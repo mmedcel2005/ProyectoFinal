@@ -218,18 +218,13 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `proyecto`.`metodoPago` (
   `token` INT NOT NULL,
   `Usuario_idUsuario` INT NOT NULL,
-  `nombre` VARCHAR(50) NOT NULL,
-  `titularTarjeta` VARCHAR(50) NOT NULL,
-  `mesCaducidad` INT NOT NULL,
-  `anioCaducidad` INT NOT NULL,
   PRIMARY KEY (`token`, `Usuario_idUsuario`),
   INDEX `fk_metodoPago_Usuario1_idx` (`Usuario_idUsuario` ASC),
   CONSTRAINT `fk_metodoPago_Usuario1`
     FOREIGN KEY (`Usuario_idUsuario`)
     REFERENCES `proyecto`.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
