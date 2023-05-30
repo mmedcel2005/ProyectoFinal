@@ -342,9 +342,11 @@
         var randomIndex = 1;
         var currentIndex = carousel.relative(carousel.current());
         var direction = 'next';
-        var selectedItem = carousel.$stage.children().eq(randomIndex-12).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
         carousel.to(randomIndex, 500, direction);
+        randomIndex= randomIndex-12;
+        var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
+
 
         setTimeout(function() {
           $('#myModal .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
