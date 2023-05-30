@@ -125,7 +125,7 @@
               <img src="<?php echo $caja['imagen']; ?>" class="card-img-top custom-img mx-auto" alt="<?php echo $item['nombre']; ?>">
               <div class="card-body">
                 <h5 class="card-text text-token"><?php echo $item['precio']; ?></h5>
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="btnGirar">Abrir</a>
+                <a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>
               </div>
             </div>
           </div>
