@@ -34,25 +34,28 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         // Definir las probabilidades de aparición para cada categoría (puedes ajustar los porcentajes según tus necesidades)
         $categoriasProbabilidades = [
-            "L" => 50,    // 50% de probabilidad
-            "E" => 30,    // 30% de probabilidad
-            "SR" => 15,   // 15% de probabilidad
-            "R" => 4,     // 4% de probabilidad
-            "C" => 1,     // 1% de probabilidad
+            "L" => 1,    
+            "E" => 4,    
+            "SR" => 15,   
+            "R" => 30,  
+            "C" => 50,   
         ];
 
         // Generar un nuevo array con las categorías en función de las probabilidades
-        $nuevoArray = [];
+        $itemsAleatorio = [];
         foreach ($categoriasProbabilidades as $categoria => $probabilidad) {
             $numItems = round(count($items) * ($probabilidad / 100)); // Calcular el número de elementos para esta categoría
             $categoriaItems = array_filter($items, function ($item) use ($categoria) {
                 return $item['calidad'] === $categoria;
             }); // Filtrar los elementos por categoría
             $categoriaItems = array_slice($categoriaItems, 0, $numItems); // Tomar solo el número de elementos necesarios según la probabilidad
-            $nuevoArray = array_merge($nuevoArray, $categoriaItems); // Agregar los elementos de esta categoría al nuevo array
+            $itemsAleatorio = array_merge($itemsAleatorio, $categoriaItems); // Agregar los elementos de esta categoría al nuevo array
         }
 
-        shuffle($nuevoArray); // Mezclar aleatoriamente el nuevo array
+        shuffle($itemsAleatorio); // Mezclar aleatoriamente el nuevo array
+
+        var_dump($itemsAleatorio);
+
         include("../views/abrirCajaV.php");
     } else {
         $conexPDO = Utils::conectar($l = false);

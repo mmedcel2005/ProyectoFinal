@@ -133,7 +133,7 @@
     <section>
       <div class="owl-carousel owl-theme">
             <?php
-            foreach ($items as $item) {
+            foreach ($itemsAleatorio as $item) {
               print('<div class="item">');
               print('<div class="card">');
               print('    <div class="card-img-container">');
