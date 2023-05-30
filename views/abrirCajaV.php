@@ -353,25 +353,7 @@
         }
       });
 
-      owlCarousel.on('changed.owl.carousel', function(event) {
-        var currentItem = event.item.index;
-        var items = event.relatedTarget._items;
-        var currentItemData = items[currentItem];
-
-        var imagenBG = currentItemData.querySelector('.card-img-top').src;
-        var imagenItem = currentItemData.querySelector('.item-image').src;
-        var precio = currentItemData.querySelector('.item-card-text').textContent;
-        var nombre = currentItemData.querySelector('.item-card-title').textContent;
-        var idObjeto = currentItemData.querySelector('#id').value;
-
-        document.querySelector('#imagenBG').src = imagenBG;
-        document.querySelector('#imagenItem').src = imagenItem;
-        document.querySelector('#precio').textContent = precio;
-        document.querySelector('#idObjeto').value = idObjeto;
-
-        // Aquí puedes hacer lo que necesites con el objeto currentItemData
-        console.log(currentItemData);
-      });
+      
 
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
