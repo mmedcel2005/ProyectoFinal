@@ -339,7 +339,7 @@
 
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
-        var randomIndex = Math.floor(Math.random() * (carousel.items().length - 10)) + 10;
+        var randomIndex = 20;
         var currentIndex = carousel.relative(carousel.current());
         var direction = 'next';
         var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
