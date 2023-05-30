@@ -241,26 +241,48 @@
         </div>
       </div>
     </section>
-    <section>
-      <!-- Agrega este código al final de tu vista -->
-      <div class="modal fade" id="modalGanador" tabindex="-1" role="dialog" aria-labelledby="modalGanadorLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalGanadorLabel">Objeto Ganador</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Título del Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                            <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
+                                <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />
+                                <img src="<?php echo $item["imagen"]; ?>" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de <?php echo $item["nombre"]; ?>" />
+                                <a href="#!">
+                                    <div class="mask"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                            <p><?php echo $item["nombre"]; ?></p>
+                            <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                            <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">
+                                <i class="bi bi-heart-fill"></i>
+                            </button>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <p class="text-start text-md-center">
+                                <strong class="text-token"><?php echo $item["precio"]; ?> €</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <img src="" alt="Imagen del objeto" id="ganadorImagen">
-              <h5 class="modal-title" id="ganadorNombre"></h5>
-              <p id="ganadorDescripcion"></p>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
 
   </main>
   <!--------------- FOOTER  --------------->
