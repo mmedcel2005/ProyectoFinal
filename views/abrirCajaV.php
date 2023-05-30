@@ -73,6 +73,20 @@
     .owl-carousel {
       pointer-events: none;
     }
+
+    .roulette-container {
+      position: relative;
+    }
+
+    .roulette-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: 100px;
+      background-color: #000;
+    }
   </style>
 </head>
 
@@ -135,57 +149,62 @@
 
 
     <section>
-      <div class="owl-carousel owl-theme">
-        <?php
-        foreach ($itemsAleatorio as $item) {
-          print('<div class="item">');
-          print('<div class="card" id="item-card-' . $item['idObjeto'] . '">');
-          print('    <div class="card-img-container">');
-          switch ($item["calidad"]) {
-            case "L":
-              print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+      <div class="container py-5 bg-custom-sec">
+        <div class="roulette-container">
+          <div class="roulette-line"></div>
+          <div class="owl-carousel owl-theme">
+            <?php
+            foreach ($itemsAleatorio as $item) {
+              print('<div class="item">');
+              print('<div class="card" id="item-card-' . $item['idObjeto'] . '">');
+              print('    <div class="card-img-container">');
+              switch ($item["calidad"]) {
+                case "L":
+                  print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
-            case "E":
-              print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+                  break;
+                case "E":
+                  print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
-            case "SR":
-              print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+                  break;
+                case "SR":
+                  print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
-            case "R":
-              print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+                  break;
+                case "R":
+                  print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
-            case "C":
-              print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+                  break;
+                case "C":
+                  print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
-            case "MC":
-              print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+                  break;
+                case "MC":
+                  print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
 
-              break;
-            default:
-              break;
-          }
-          print('        <div class="item-overlay">');
-          print('       <img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
-          print('           <br>');
-          print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-          print('      <input type="hidden" id="id" name="id" value="' . $item['idObjeto'] . '">');
-          print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-          print('        </div>');
-          print('    </div>');
-          print('</div>');
-          print('</div>');
-        }
-        ?>
+                  break;
+                default:
+                  break;
+              }
+              print('        <div class="item-overlay">');
+              print('       <img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
+              print('           <br>');
+              print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+              print('      <input type="hidden" id="id" name="id" value="' . $item['idObjeto'] . '">');
+              print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+              print('        </div>');
+              print('    </div>');
+              print('</div>');
+              print('</div>');
+            }
+            ?>
+          </div>
+
+
+
+
+        </div>
       </div>
-
-
-
-
       </div>
     </section>
 
@@ -193,48 +212,48 @@
 
 
     <section>
-  <div class="container py-5">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">
-      <?php
-      foreach ($items as $item) {
-        print('<div class="col mb-4 rounded p-4">');
-        print(' <div class="card">');
-        print('   <div class="card-img-container">');
-        switch ($item["calidad"]) {
-          case "L":
-            print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-            break;
-          case "E":
-            print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-            break;
-          case "SR":
-            print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-            break;
-          case "R":
-            print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-            break;
-          case "C":
-            print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-            break;
-          case "MC":
-            print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-            break;
-          default:
-            break;
-        }
-        print('     <div class="item-overlay">');
-        print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
-        print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-        print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-        print('      </div>');
-        print('    </div>');
-        print('  </div>');
-        print('</div>');
-      }
-      ?>
-    </div>
-  </div>
-</section>
+      <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">
+          <?php
+          foreach ($items as $item) {
+            print('<div class="col mb-4 rounded p-4">');
+            print(' <div class="card">');
+            print('   <div class="card-img-container">');
+            switch ($item["calidad"]) {
+              case "L":
+                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "E":
+                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "SR":
+                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "R":
+                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "C":
+                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "MC":
+                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              default:
+                break;
+            }
+            print('     <div class="item-overlay">');
+            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
+            print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+            print('      </div>');
+            print('    </div>');
+            print('  </div>');
+            print('</div>');
+          }
+          ?>
+        </div>
+      </div>
+    </section>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -245,7 +264,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -329,7 +348,7 @@
         }
       });
 
-      
+
 
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
@@ -338,7 +357,7 @@
         var direction = 'next';
 
         carousel.to(randomIndex, 500, direction);
-        randomIndex= randomIndex-9;
+        randomIndex = randomIndex - 9;
         var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
 
