@@ -35,10 +35,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         // Definir las probabilidades de aparición para cada categoría (puedes ajustar los porcentajes según tus necesidades)
         $categoriasProbabilidades = [
             "L" => 1,    
-            "E" => 2,    
-            "SR" => 5,   
-            "R" => 20,  
-            "C" => 72,   
+            "E" => 3,    
+            "SR" => 6,   
+            "R" => 15,  
+            "C" => 25,   
+            "N" => 50,   
+
         ];
 
         // Generar un nuevo array con las categorías en función de las probabilidades
