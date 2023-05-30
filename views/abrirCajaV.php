@@ -251,7 +251,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -335,21 +335,35 @@
         }
       });
 
-      
+
 
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
-        var randomIndex = Math.floor(Math.random() * (carousel.items().length - 10)) + 10;
         var currentIndex = carousel.relative(carousel.current());
-        var direction = 'next';
-        var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
-        carousel.to(randomIndex, 500, direction);
+        // Detener el carrusel en el índice actual
+        carousel.stop();
+        carousel.to(currentIndex, 0);
+
+        var selectedItem = carousel.$stage.children().eq(currentIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
         setTimeout(function() {
           $('#myModal .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
           $('#myModal').modal('show');
         }, 3000); // Tiempo de espera en milisegundos (en este caso, 3 segundos)
+      });
+
+      $('.owl-carousel').owlCarousel({
+        // Configuración del carrusel...
+
+        onTranslated: function() {
+          var carousel = $('.owl-carousel').data('owl.carousel');
+          var currentIndex = carousel.relative(carousel.current());
+
+          // Detener el carrusel en el índice actual
+          carousel.stop();
+          carousel.to(currentIndex, 0);
+        }
       });
     });
   </script>
