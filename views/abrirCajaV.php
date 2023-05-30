@@ -139,7 +139,7 @@
         <?php
         foreach ($itemsAleatorio as $item) {
           print('<div class="item">');
-          print('<div class="card">');
+          print('<div class="card" id="item-card-' . $item['idObjeto'] . '">');
           print('    <div class="card-img-container">');
           switch ($item["calidad"]) {
             case "L":
@@ -251,25 +251,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="row">
-              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
-                  <img src="" id="imagenBG" class="w-100" alt="Imagen de fondo" />
-                  <img src="" id="imagenItem" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de " />
-                  <a href="#!">
-                    <div class="mask"></div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                <p id="nombre"></p>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <p class="text-start text-md-center">
-                  <strong class="text-token" id="precio"> €</strong>
-                </p>
-              </div>
-            </div>
+            
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -360,10 +342,12 @@
         var randomIndex = Math.floor(Math.random() * (carousel.items().length - 10)) + 10;
         var currentIndex = carousel.relative(carousel.current());
         var direction = 'next';
+        var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
         carousel.to(randomIndex, 500, direction);
 
         setTimeout(function() {
+          $('#myModal .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
           $('#myModal').modal('show');
         }, 3000); // Tiempo de espera en milisegundos (en este caso, 3 segundos)
       });
