@@ -100,10 +100,8 @@
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . ' €</b></p>');
             print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
-            print('    <form method="GET" action="../controller/abrirCajaC.php">');
             print('     <input type="hidden" id="idPackToken" name="idPackToken" value="' . $tokens["idPackToken"] . '">');
             print('     <button type="submit" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-amarillo color-tokens col-sm-11">Comprar</button>');
-            print('   </form>');
             print('   </div>');
             print(' </div>');
             print('</div>');
