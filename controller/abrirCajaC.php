@@ -39,7 +39,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             "SR" => 6,   
             "R" => 15,  
             "C" => 25,   
-            "N" => 50,   
+            "MC" => 50,   
 
         ];
 
