@@ -149,7 +149,7 @@
 
 
     <section>
-      <div class="container py-5 bg-custom-sec">
+      <div class="container py-5">
         <div class="roulette-container">
           <div class="roulette-line"></div>
           <div class="owl-carousel owl-theme">
