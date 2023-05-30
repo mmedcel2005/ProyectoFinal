@@ -193,55 +193,49 @@
 
 
     <section>
-      <div class="container py-5 ">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">
-          <?php
-          foreach ($items as $item) {
-            print('<div class="col mb-4" >');
-            print(' <div class="card">');
-            print('   <div class="card-img-container">');
-            switch ($item["calidad"]) {
-              case "L":
-                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+  <div class="container py-5 bg-custom-sec">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
+      <?php
+      foreach ($items as $item) {
+        print('<div class="col mb-4 rounded p-4">');
+        print(' <div class="card">');
+        print('   <div class="card-img-container">');
+        switch ($item["calidad"]) {
+          case "L":
+            print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+            break;
+          case "E":
+            print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+            break;
+          case "SR":
+            print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+            break;
+          case "R":
+            print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+            break;
+          case "C":
+            print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+            break;
+          case "MC":
+            print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+            break;
+          default:
+            break;
+        }
+        print('     <div class="item-overlay">');
+        print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
+        print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+        print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+        print('      </div>');
+        print('    </div>');
+        print('  </div>');
+        print('</div>');
+      }
+      ?>
+    </div>
+  </div>
+</section>
 
-                break;
-              case "E":
-                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-
-                break;
-              case "SR":
-                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-
-                break;
-              case "R":
-                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-
-                break;
-              case "C":
-                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-
-                break;
-              case "MC":
-                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-
-                break;
-              default:
-                break;
-            }
-            print('     <div class="item-overlay">');
-            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
-            print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-            print('      </div>');
-            print('    </div>');
-            print('  </div>');
-            print('</div>');
-          }
-          ?>
-
-        </div>
-      </div>
-    </section>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
