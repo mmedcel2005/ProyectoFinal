@@ -135,44 +135,45 @@
             <?php
             foreach ($items as $item) {
               print('<div class="item">');
-
-              print(' <div class="card">');
-              print('   <div class="card-img-container">');
+              print('<div class="card">');
+              print('    <div class="card-img-container">');
               switch ($item["calidad"]) {
                 case "L":
                   print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-
+  
                   break;
                 case "E":
                   print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-
+  
                   break;
                 case "SR":
                   print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-
+  
                   break;
                 case "R":
                   print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-
+  
                   break;
                 case "C":
                   print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-
+  
                   break;
                 case "MC":
                   print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-
+  
                   break;
                 default:
                   break;
               }
-              print('     <div class="item-overlay">');
-              print('       <img src="' . $item['imagen'] . '" alt="I' . $item['nombre'] . '" class="item-image img-fluid">');
+              print('        <div class="item-overlay">');
+              print('       <img src="' . $item['imagen'] . '" alt="' . $item['nombre'] . '" class="item-image img-fluid">');
+              print('           <br>');
               print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
               print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-              print('      </div>');
+              print('        </div>');
               print('    </div>');
-              print('  </div>');
+              print('</div>');
+              print('</div>');
             }
             ?>
         </div>
@@ -223,7 +224,7 @@
                 break;
             }
             print('     <div class="item-overlay">');
-            print('       <img src="' . $item['imagen'] . '" alt="I' . $item['nombre'] . '" class="item-image img-fluid">');
+            print('       <img src="' . $item['imagen'] . '" alt="' . $item['nombre'] . '" class="item-image img-fluid">');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
             print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
             print('      </div>');
