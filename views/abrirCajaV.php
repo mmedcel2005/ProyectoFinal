@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../style/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <style>
@@ -71,8 +71,8 @@
     }
 
     .owl-carousel {
-  pointer-events: none;
-}
+      pointer-events: none;
+    }
   </style>
 </head>
 
@@ -136,53 +136,54 @@
 
     <section>
       <div class="owl-carousel owl-theme">
-            <?php
-            foreach ($itemsAleatorio as $item) {
-              print('<div class="item">');
-              print('<div class="card">');
-              print('    <div class="card-img-container">');
-              switch ($item["calidad"]) {
-                case "L":
-                  print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-  
-                  break;
-                case "E":
-                  print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-  
-                  break;
-                case "SR":
-                  print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-  
-                  break;
-                case "R":
-                  print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-  
-                  break;
-                case "C":
-                  print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-  
-                  break;
-                case "MC":
-                  print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-  
-                  break;
-                default:
-                  break;
-              }
-              print('        <div class="item-overlay">');
-              print('       <img src="' . $item['imagen'] . '" alt="' . $item['nombre'] . '" class="item-image img-fluid">');
-              print('           <br>');
-              print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-              print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-              print('        </div>');
-              print('    </div>');
-              print('</div>');
-              print('</div>');
-            }
-            ?>
-        </div>
-        
-        
+        <?php
+        foreach ($itemsAleatorio as $item) {
+          print('<div class="item">');
+          print('<div class="card">');
+          print('    <div class="card-img-container">');
+          switch ($item["calidad"]) {
+            case "L":
+              print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+
+              break;
+            case "E":
+              print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+
+              break;
+            case "SR":
+              print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+
+              break;
+            case "R":
+              print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+
+              break;
+            case "C":
+              print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+
+              break;
+            case "MC":
+              print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+
+              break;
+            default:
+              break;
+          }
+          print('        <div class="item-overlay">');
+          print('       <img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
+          print('           <br>');
+          print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+          print('      <input type="hidden" id="id" name="id" value="' . $item['idObjeto'] . '">');
+          print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+          print('        </div>');
+          print('    </div>');
+          print('</div>');
+          print('</div>');
+        }
+        ?>
+      </div>
+
+
 
 
       </div>
@@ -228,7 +229,7 @@
                 break;
             }
             print('     <div class="item-overlay">');
-            print('       <img src="' . $item['imagen'] . '" alt="' . $item['nombre'] . '" class="item-image img-fluid">');
+            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
             print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
             print('      </div>');
@@ -243,45 +244,40 @@
     </section>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Título del Modal</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Has ganado:</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
+                  <img src="" id="imagenBG" class="w-100" alt="Imagen de fondo" />
+                  <img src="" id="imagenItem" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de <?php echo $item["nombre"]; ?>" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                            <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">
-                                <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />
-                                <img src="<?php echo $item["imagen"]; ?>" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de <?php echo $item["nombre"]; ?>" />
-                                <a href="#!">
-                                    <div class="mask"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                            <p><?php echo $item["nombre"]; ?></p>
-                            <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">
-                                <i class="bi bi-send-fill"></i>
-                            </button>
-                            <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                <i class="bi bi-heart-fill"></i>
-                            </button>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <p class="text-start text-md-center">
-                                <strong class="text-token"><?php echo $item["precio"]; ?> €</strong>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar cambios</button>
-                </div>
+              </div>
+              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                <p id="nombre"></p>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <p class="text-start text-md-center">
+                  <strong class="text-token" id="precio"> €</strong>
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <input type="hidden" value="" id="idObjeto">
+            <button type="button" class="btn btn-primary">Guardar cambios</button>
+          </div>
         </div>
+      </div>
     </div>
 
   </main>
@@ -331,7 +327,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
     $(document).ready(function() {
-      $('.owl-carousel').owlCarousel({
+      var owlCarousel = $('.owl-carousel');
+
+      owlCarousel.owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
@@ -353,6 +351,27 @@
             items: 5
           }
         }
+      });
+
+      owlCarousel.on('changed.owl.carousel', function(event) {
+        var currentItem = event.item.index;
+        var items = event.relatedTarget._items;
+        var currentItemData = items[currentItem];
+
+        var imagenBG = currentItemData.querySelector('.card-img-top').src;
+        var imagenItem = currentItemData.querySelector('.item-image').src;
+        var precio = currentItemData.querySelector('.item-card-text').textContent;
+        var nombre = currentItemData.querySelector('.item-card-title').textContent;
+        var idObjeto = currentItemData.querySelector('#id').value;
+
+        document.querySelector('#imagenBG').src = imagenBG;
+        document.querySelector('#imagenItem').src = imagenItem;
+        document.querySelector('#precio').textContent = precio;
+        document.querySelector('#nombre').textContent = nombre;
+        document.querySelector('#idObjeto').value = idObjeto;
+
+        // Aquí puedes hacer lo que necesites con el objeto currentItemData
+        console.log(currentItemData);
       });
 
       $('#randomBtn').click(function() {
