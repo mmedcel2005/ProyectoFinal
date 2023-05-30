@@ -56,6 +56,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         shuffle($itemsAleatorio); // Mezclar aleatoriamente el nuevo array
 
+        var_dump($itemsAleatorio);
 
         include("../views/abrirCajaV.php");
     } else {
