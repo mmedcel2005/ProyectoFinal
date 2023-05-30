@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
 <head>
     <title>Ruleta de tokens</title>
     <style>
@@ -106,11 +109,12 @@
         <div class="roulette" id="roulette"></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        (function ($) {
+        (function($) {
             $.fn.extend({
-                roulette: function (options) {
+                roulette: function(options) {
                     var defaults = {
                         angle: 0,
                         angleOffset: -45,
@@ -120,11 +124,10 @@
 
                     var opt = $.extend(defaults, options);
 
-                    return this.each(function () {
+                    return this.each(function() {
                         var o = opt;
 
-                        var data = [
-                            {
+                        var data = [{
                                 color: '#3f297e',
                                 text: 'N분의 1'
                             },
@@ -224,7 +227,7 @@
                             return wrapW / (1 / Math.tan(rad));
                         }
 
-                        $btnStart.on("click", function () {
+                        $btnStart.on("click", function() {
                             rotation();
                         });
 
@@ -236,7 +239,7 @@
                                 animateTo: completeA,
                                 center: ["50%", "50%"],
                                 easing: easing,
-                                callback: function () {
+                                callback: function() {
                                     var currentA = $(this).getRotateAngle();
 
                                     console.log(currentA);
@@ -253,11 +256,11 @@
             });
         })(jQuery);
 
-        $(function () {
+        $(function() {
             $('.box-roulette').roulette();
         });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
+
 </html>
