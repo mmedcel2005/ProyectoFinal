@@ -113,59 +113,66 @@
     </article>
 
     <article>
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Selecciona método de pago:</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago1">
-            <label class="form-check-label" for="metodoPago1">Tarjeta 1</label>
+      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Selecciona método de pago:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Seleccionar</th>
+                    <th scope="col">Nombre de la tarjeta</th>
+                    <th scope="col">Números de la tarjeta</th>
+                    <th scope="col">Titular de la tarjeta</th>
+                    <th scope="col">Fecha de caducidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago1"></td>
+                    <td>Tarjeta 1</td>
+                    <td>**** **** **** 1234</td>
+                    <td>John Doe</td>
+                    <td>05/25</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago2"></td>
+                    <td>Tarjeta 2</td>
+                    <td>**** **** **** 5678</td>
+                    <td>Jane Smith</td>
+                    <td>10/23</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago3"></td>
+                    <td>Tarjeta 3</td>
+                    <td>**** **** **** 9012</td>
+                    <td>Mark Johnson</td>
+                    <td>09/24</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago4"></td>
+                    <td>Tarjeta 4</td>
+                    <td>**** **** **** 3456</td>
+                    <td>Alice Johnson</td>
+                    <td>12/26</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <input type="hidden" value="" id="idObjeto">
+              <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
           </div>
-          <p>Nombre de la tarjeta: <span>Tarjeta 1</span></p>
-          <p>Números de la tarjeta: <span>**** **** **** 1234</span></p>
-          <p>Titular de la tarjeta: <span>John Doe</span></p>
-          <p>Fecha de caducidad: <span>05/25</span></p>
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago2">
-            <label class="form-check-label" for="metodoPago2">Tarjeta 2</label>
-          </div>
-          <p>Nombre de la tarjeta: <span>Tarjeta 2</span></p>
-          <p>Números de la tarjeta: <span>**** **** **** 5678</span></p>
-          <p>Titular de la tarjeta: <span>Jane Smith</span></p>
-          <p>Fecha de caducidad: <span>10/23</span></p>
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago3">
-            <label class="form-check-label" for="metodoPago3">Tarjeta 3</label>
-          </div>
-          <p>Nombre de la tarjeta: <span>Tarjeta 3</span></p>
-          <p>Números de la tarjeta: <span>**** **** **** 9012</span></p>
-          <p>Titular de la tarjeta: <span>Mark Johnson</span></p>
-          <p>Fecha de caducidad: <span>09/24</span></p>
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago4">
-            <label class="form-check-label" for="metodoPago4">Tarjeta 4</label>
-          </div>
-          <p>Nombre de la tarjeta: <span>Tarjeta 4</span></p>
-          <p>Números de la tarjeta: <span>**** **** **** 3456</span></p>
-          <p>Titular de la tarjeta: <span>Alice Johnson</span></p>
-          <p>Fecha de caducidad: <span>12/26</span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <input type="hidden" value="" id="idObjeto">
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
         </div>
       </div>
-    </div>
-  </div>
-</article>
+    </article>
+
 
   </main>
   <!--------------- FOOTER  --------------->
