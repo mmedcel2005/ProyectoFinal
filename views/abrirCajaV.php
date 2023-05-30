@@ -197,7 +197,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 ">
           <?php
           foreach ($items as $item) {
-            print('<div class="col mb-4" bg-custom-sec>');
+            print('<div class="col mb-4 bg-custom-sec" >');
             print(' <div class="card">');
             print('   <div class="card-img-container">');
             switch ($item["calidad"]) {
