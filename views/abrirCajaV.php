@@ -130,7 +130,7 @@
             <div class="card position-relative text-center bg-custom-sec">
               <img src="<?php echo $caja['imagen']; ?>" class="card-img-top custom-img mx-auto" alt="<?php echo $item['nombre']; ?>">
               <div class="card-body">
-                <h5 class="card-text text-token"><?php echo $item['precio']; ?></h5>
+                <h5 class="card-text text-token"><?php echo $caja['precio']; ?></h5>
                 <a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>
               </div>
             </div>
