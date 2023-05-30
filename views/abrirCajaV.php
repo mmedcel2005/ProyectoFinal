@@ -344,7 +344,7 @@
         var direction = 'next';
 
         carousel.to(randomIndex, 500, direction);
-        randomIndex= randomIndex-12;
+        randomIndex= randomIndex-11;
         var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
 
