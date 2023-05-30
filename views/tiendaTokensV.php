@@ -133,28 +133,28 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago1"></td>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago1" onchange="handleCheckboxChange(1)"></td>
                     <td>Tarjeta 1</td>
                     <td>**** **** **** 1234</td>
                     <td>John Doe</td>
                     <td>05/25</td>
                   </tr>
                   <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago2"></td>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago2" onchange="handleCheckboxChange(2)"></td>
                     <td>Tarjeta 2</td>
                     <td>**** **** **** 5678</td>
                     <td>Jane Smith</td>
                     <td>10/23</td>
                   </tr>
                   <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago3"></td>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago3" onchange="handleCheckboxChange(3)"></td>
                     <td>Tarjeta 3</td>
                     <td>**** **** **** 9012</td>
                     <td>Mark Johnson</td>
                     <td>09/24</td>
                   </tr>
                   <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago4"></td>
+                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago4" onchange="handleCheckboxChange(4)"></td>
                     <td>Tarjeta 4</td>
                     <td>**** **** **** 3456</td>
                     <td>Alice Johnson</td>
@@ -220,6 +220,16 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  function handleCheckboxChange(checkboxNumber) {
+    // Desmarcar todos los checkboxes excepto el seleccionado
+    for (let i = 1; i <= 4; i++) {
+      if (i !== checkboxNumber) {
+        document.getElementById('metodoPago' + i).checked = false;
+      }
+    }
+  }
+</script>
 </body>
 
 </html>
