@@ -69,6 +69,10 @@
       margin: 0;
       font-size: 15px;
     }
+
+    .owl-carousel {
+  pointer-events: none;
+}
   </style>
 </head>
 
