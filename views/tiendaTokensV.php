@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <style>
-   body {
+    body {
       background-color: #1c1c1c;
     }
 
@@ -47,11 +47,11 @@
 </head>
 
 <body>
-<header>
+  <header>
     <!--------------- NAV  --------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
-      <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="../index.php">
           <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,7 +71,7 @@
           <?php
           print('<div class="d-flex mx-lg-5">');
           print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
           print("</a></div>");
           print("");
 
@@ -85,31 +85,93 @@
 
   <main>
 
-  <article>
-  <div class="container">
-    <div class="row mt-3">
+    <article>
+      <div class="container">
+        <div class="row mt-3">
 
-    <?php
-    foreach($packTokens as $tokens){
-      print('<div class="col-sm-4 mb-3">');
-      print(' <div class="card position-relative text-center bg-custom-sec">');
-      print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
-      if ($caja["enOferta"] == "S") {
-        print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-      }
-      print('  <div class="card-body">');
-      print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . ' €</b></p>');
-      print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
-      print('    <form method="GET" action="../controller/abrirCajaC.php">');
-      print('     <input type="hidden" id="idPackToken" name="idPackToken" value="' . $tokens["idPackToken"] . '">');
-      print( '     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
-      print('   </form>');
-      print('   </div>');
-      print(' </div>');
-      print('</div>');
-    }
-    ?>
+          <?php
+          foreach ($packTokens as $tokens) {
+            print('<div class="col-sm-4 mb-3">');
+            print(' <div class="card position-relative text-center bg-custom-sec">');
+            print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
+            if ($caja["enOferta"] == "S") {
+              print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+            }
+            print('  <div class="card-body">');
+            print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . ' €</b></p>');
+            print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
+            print('    <form method="GET" action="../controller/abrirCajaC.php">');
+            print('     <input type="hidden" id="idPackToken" name="idPackToken" value="' . $tokens["idPackToken"] . '">');
+            print('     <button type="submit" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-amarillo color-tokens col-sm-11">Comprar</button>');
+            print('   </form>');
+            print('   </div>');
+            print(' </div>');
+            print('</div>');
+          }
+          ?>
 
+        </div>
+      </div>
+    </article>
+
+    <article>
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Selecciona método de pago:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago1">
+                <label class="form-check-label" for="metodoPago1">Tarjeta 1</label>
+              </div>
+              <p>Nombre de la tarjeta: <span>Tarjeta 1</span></p>
+              <p>Números de la tarjeta: <span>**** **** **** 1234</span></p>
+              <p>Titular de la tarjeta: <span>John Doe</span></p>
+              <p>Fecha de caducidad: <span>05/25</span></p>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago2">
+                <label class="form-check-label" for="metodoPago2">Tarjeta 2</label>
+              </div>
+              <p>Nombre de la tarjeta: <span>Tarjeta 2</span></p>
+              <p>Números de la tarjeta: <span>**** **** **** 5678</span></p>
+              <p>Titular de la tarjeta: <span>Jane Smith</span></p>
+              <p>Fecha de caducidad: <span>10/23</span></p>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago3">
+                <label class="form-check-label" for="metodoPago3">Tarjeta 3</label>
+              </div>
+              <p>Nombre de la tarjeta: <span>Tarjeta 3</span></p>
+              <p>Números de la tarjeta: <span>**** **** **** 9012</span></p>
+              <p>Titular de la tarjeta: <span>Mark Johnson</span></p>
+              <p>Fecha de caducidad: <span>09/24</span></p>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago4">
+                <label class="form-check-label" for="metodoPago4">Tarjeta 4</label>
+              </div>
+              <p>Nombre de la tarjeta: <span>Tarjeta 4</span></p>
+              <p>Números de la tarjeta: <span>**** **** **** 3456</span></p>
+              <p>Titular de la tarjeta: <span>Alice Johnson</span></p>
+              <p>Fecha de caducidad: <span>12/26</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <input type="hidden" value="" id="idObjeto">
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </div>
     </div>
   </div>
 </article>
