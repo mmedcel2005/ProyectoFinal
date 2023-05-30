@@ -27,8 +27,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $gestorCaja = new CajasM();
 
         $caja = $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
-        $objetos = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
+        $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
 
+
+        $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
 
         // Definir las probabilidades de aparición para cada categoría (puedes ajustar los porcentajes según tus necesidades)
         $categoriasProbabilidades = [
@@ -42,17 +44,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         // Generar un nuevo array con las categorías en función de las probabilidades
         $nuevoArray = [];
         foreach ($categoriasProbabilidades as $categoria => $probabilidad) {
-            $numItems = round(count($objetos) * ($probabilidad / 100)); // Calcular el número de elementos para esta categoría
-            $categoriaItems = array_filter($objetos, function ($item) use ($categoria) {
+            $numItems = round(count($items) * ($probabilidad / 100)); // Calcular el número de elementos para esta categoría
+            $categoriaItems = array_filter($items, function ($item) use ($categoria) {
                 return $item['calidad'] === $categoria;
             }); // Filtrar los elementos por categoría
             $categoriaItems = array_slice($categoriaItems, 0, $numItems); // Tomar solo el número de elementos necesarios según la probabilidad
             $nuevoArray = array_merge($nuevoArray, $categoriaItems); // Agregar los elementos de esta categoría al nuevo array
         }
 
-        shuffle($items); // Mezclar aleatoriamente el nuevo array
-
-
+        shuffle($nuevoArray); // Mezclar aleatoriamente el nuevo array
         include("../views/abrirCajaV.php");
     } else {
         $conexPDO = Utils::conectar($l = false);
