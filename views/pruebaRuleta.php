@@ -26,28 +26,40 @@
         </div>
         <div class="item">
             <div class="card">
-                <img src="imagen2.jpg" class="card-img-top" alt="Imagen 2">
-                <div class="card-body">
-                    <h5 class="card-title">Tarjeta 2</h5>
-                    <p class="card-text">Contenido de la tarjeta 2</p>
+                <div class="card-img-container">
+                    <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
+                    <div class="item-overlay">
+                        <img src="<?php echo $item['imagen']; ?>" alt="I<?php echo $item['nombre']; ?>" class="item-image img-fluid">
+                        <br>
+                        <h6 class="item-card-title text-white"><?php echo $item['nombre']; ?></h6>
+                        <h4 class="item-card-text text-token"><?php echo $item['precio']; ?></h4>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="item">
             <div class="card">
-                <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
-                <div class="card-body">
-                    <h5 class="card-title">Tarjeta 3</h5>
-                    <p class="card-text">Contenido de la tarjeta 3</p>
+                <div class="card-img-container">
+                    <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
+                    <div class="item-overlay">
+                        <img src="<?php echo $item['imagen']; ?>" alt="I<?php echo $item['nombre']; ?>" class="item-image img-fluid">
+                        <br>
+                        <h6 class="item-card-title text-white"><?php echo $item['nombre']; ?></h6>
+                        <h4 class="item-card-text text-token"><?php echo $item['precio']; ?></h4>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="item">
             <div class="card">
-                <img src="imagen4.jpg" class="card-img-top" alt="Imagen 4">
-                <div class="card-body">
-                    <h5 class="card-title">Tarjeta 4</h5>
-                    <p class="card-text">Contenido de la tarjeta 4</p>
+                <div class="card-img-container">
+                    <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
+                    <div class="item-overlay">
+                        <img src="<?php echo $item['imagen']; ?>" alt="I<?php echo $item['nombre']; ?>" class="item-image img-fluid">
+                        <br>
+                        <h6 class="item-card-title text-white"><?php echo $item['nombre']; ?></h6>
+                        <h4 class="item-card-text text-token"><?php echo $item['precio']; ?></h4>
+                    </div>
                 </div>
             </div>
         </div>
