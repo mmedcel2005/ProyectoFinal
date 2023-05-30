@@ -159,7 +159,6 @@
                     <td>**** **** **** 3456</td>
                     <td>Alice Johnson</td>
                     <td>12/26</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
