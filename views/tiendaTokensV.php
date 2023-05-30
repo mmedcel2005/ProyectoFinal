@@ -43,6 +43,10 @@
       background-color: #efb810;
       font-weight: bold;
     }
+
+    tr:last-child td {
+  border-bottom: none;
+}
   </style>
 </head>
 
