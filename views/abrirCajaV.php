@@ -85,6 +85,7 @@
       transform: translate(-50%, -50%);
       width: 2px;
       height: 100px;
+      z-index: 2; 
       background-color: #000;
     }
   </style>
