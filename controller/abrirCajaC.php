@@ -43,6 +43,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                 $cantTokensActual= $_SESSION['cantTokens'] - $precioCaja;
 
+                $_SESSION['cantTokens']=$cantTokensActual;
+
                 $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
 
