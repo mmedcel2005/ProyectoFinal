@@ -179,7 +179,7 @@
               <form action="../controller/tiendaTokensC.php" method="post">
               <input type="hidden" value="" id="idPackToken" name="idPackToken">
                 <!-- Aquí puedes agregar campos adicionales si es necesario -->
-                <button type="submit" name="comprar" id="comprar" value="comprar" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
+                <button type="submit" name="comprar" id="comprar" value="comprar" class="btn btn-primary" >Comprar</button>
               </form>
 
             </div>
