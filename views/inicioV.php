@@ -45,7 +45,7 @@
     }
 
     .btn.no-hover-color:hover {
-    pointer-events: none;
+    pointer-events: none!important;
   }
   </style>
 </head>
