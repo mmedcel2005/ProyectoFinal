@@ -44,7 +44,7 @@ class PackTokenM
                 $sentencia->execute();
 
                 // Devolvemos los datos en int
-                return $sentencia->fetchAll();
+                return $sentencia->fetchColumn();
             } catch (PDOException $e) {
                 // Si se produce un error, se muestra un mensaje en pantalla
                 print("Error al acceder a BD" . $e->getMessage());
