@@ -31,7 +31,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         $packTokensComprado = $gestorToken->obtenerTokensPorID($idPackToken, $conexPDO);
 
-        var_dump($packTokensComprado);
+        var_dump($_SESSION['cantTokens']);
 
 
         if ($packTokensComprado != null && $_SESSION['cantTokens'] != null && $_SESSION['idUsuario'] != null) {
