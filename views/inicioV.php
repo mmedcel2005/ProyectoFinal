@@ -50,7 +50,6 @@
 
     .btn-bg-custom:hover {
       background-color: #121212;
-      color: black !important;
 
     }
     .btn-amarillo:hover {
