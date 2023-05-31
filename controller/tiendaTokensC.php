@@ -20,20 +20,35 @@ require_once("../model/Utils.php");
 
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    $gestorToken = new PacktokenM();
 
     $conexPDO = Utils::conectar($l = false);
+
+    $gestorToken = new PacktokenM();
+    $gestorUsuario = new UsuarioM();
 
     if (isset($_POST["comprar"]) && $_POST["comprar"] == "comprar" && isset($_POST["idPackToken"]) && $_POST["idPackToken"] != null) {
         $idPackToken = $_POST["idPackToken"];
 
         $packTokensComprado = $gestorToken->obtenerTokensPorID($idPackToken, $conexPDO);
 
-        if ($packTokensComprado != null) {
+        if ($packTokensComprado != null && $_SESSION['cantTokens'] != null && $_SESSION['idUsuario'] != null) {
 
-            $_SESSION['cantTokens'] = $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
+            $idUsuario= $_SESSION['idUsuario'];
 
+            $cantTokensActual= $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
+            
+            $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+
+            if($cambiarCantTokens != null){
+
+            $_SESSION['cantTokens'] = $cantTokensActual;
             $notificacion= "ok";
+
+
+        }else{
+            $notificacion= "error";
+
+        }
 
         }else{
             $notificacion= "error";

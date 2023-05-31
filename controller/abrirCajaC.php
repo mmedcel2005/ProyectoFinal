@@ -23,8 +23,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $cajaId = $_GET["idCaja"];
 
         $conexPDO = Utils::conectar($l = false);
+        
         $gestorObj = new ObjetoM();
-        $gestorCaja = new CajasM();
+        $gestorUsuario = new UsuarioM();
 
         $caja = $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
         $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);

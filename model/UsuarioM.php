@@ -41,7 +41,7 @@ class UsuarioM
                     $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE correo = ?");
                     $sentencia->bindParam(1, $correo);
                     $sentencia->execute();
-    
+
                     // Devolvemos el nombre de usuario
                     return $sentencia->fetch();
                 } catch (PDOException $e) {
@@ -54,13 +54,13 @@ class UsuarioM
     public function obtenerUsuarioPorID($idUsuario, $conexPDO)
     {
         if ($idUsuario != null) {
-           
+
             if ($conexPDO != null) {
                 try {
                     $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE idUsuario = ?");
                     $sentencia->bindParam(1, $idUsuario);
                     $sentencia->execute();
-    
+
                     // Devolvemos el nombre de usuario
                     return $sentencia->fetch();
                 } catch (PDOException $e) {
@@ -70,38 +70,38 @@ class UsuarioM
         }
     }
 
-    
 
-// Se define una función llamada anadirUsuario que añade un usuario
-public function anadirUsuario($usuario, $conexPDO)
-{
-    // Se inicializa la variable $result en null
-    $result = null;
 
-    // Se verifica si los parámetros recibidos son válidos
-    if ($conexPDO != null) {
-        try {
-            // Se define la sentencia SQL para insertar un nuevo registro
-            $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :salt, :cantTokens, :imagen)");
+    // Se define una función llamada anadirUsuario que añade un usuario
+    public function anadirUsuario($usuario, $conexPDO)
+    {
+        // Se inicializa la variable $result en null
+        $result = null;
 
-            // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
-            $sentencia->bindParam(":nombre", $usuario["nombre"]);
-            $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
-            $sentencia->bindParam(":correo", $usuario["correo"]);
-            $sentencia->bindParam(":password", $usuario["password"]);
-            $sentencia->bindParam(":salt", $usuario["salt"]);
-            $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
-            $sentencia->bindParam(":imagen", $usuario["imagen"]);
+        // Se verifica si los parámetros recibidos son válidos
+        if ($conexPDO != null) {
+            try {
+                // Se define la sentencia SQL para insertar un nuevo registro
+                $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Usuario (nombre, apellidos, correo, password, salt, cantTokens, imagen) VALUES (:nombre, :apellidos, :correo, :password, :salt, :cantTokens, :imagen)");
 
-            // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
-            $result = $sentencia->execute();
-        } catch (PDOException $e) {
-            // Si se produce un error, se muestra un mensaje en pantalla
-            print("Error al acceder a BD" . $e->getMessage());
+                // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
+                $sentencia->bindParam(":nombre", $usuario["nombre"]);
+                $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
+                $sentencia->bindParam(":correo", $usuario["correo"]);
+                $sentencia->bindParam(":password", $usuario["password"]);
+                $sentencia->bindParam(":salt", $usuario["salt"]);
+                $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
+                $sentencia->bindParam(":imagen", $usuario["imagen"]);
+
+                // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
+                $result = $sentencia->execute();
+            } catch (PDOException $e) {
+                // Si se produce un error, se muestra un mensaje en pantalla
+                print("Error al acceder a BD" . $e->getMessage());
+            }
         }
+        return $result;
     }
-    return $result;
-}
 
 
 
@@ -169,44 +169,56 @@ public function anadirUsuario($usuario, $conexPDO)
 
 
     public function verificarCredenciales($usuario, $conexPDO)
-{
-    if (isset($usuario["correo"]) && isset($usuario["password"])) {
-        $correo = $usuario["correo"];
-        $password = $usuario["password"];
+    {
+        if (isset($usuario["correo"]) && isset($usuario["password"])) {
+            $correo = $usuario["correo"];
+            $password = $usuario["password"];
 
-        $sentencia=null;
-        
-        if ($conexPDO != null) {
-            try {
-                $sentencia = $conexPDO->prepare("SELECT salt FROM proyecto.Usuario WHERE correo = ?");
-                $sentencia->bindParam(1, $correo);
-                $sentencia->execute();
+            $sentencia = null;
 
-                $salt = $sentencia->fetchColumn();
-                
-
-                if($salt != null){
-                    $password = crypt($usuario["password"], '$5$rounds=5000$' . $salt . '$');
-                    $sentencia = $conexPDO->prepare("SELECT COUNT(*) FROM proyecto.Usuario WHERE correo = ? AND password = ?;");
+            if ($conexPDO != null) {
+                try {
+                    $sentencia = $conexPDO->prepare("SELECT salt FROM proyecto.Usuario WHERE correo = ?");
                     $sentencia->bindParam(1, $correo);
-                    $sentencia->bindParam(2, $password);
-                    //Ejecutamos la sentencia
                     $sentencia->execute();
 
-                    return (int) $sentencia->fetchColumn();
-                }else{
-                    return null;
-                }
+                    $salt = $sentencia->fetchColumn();
 
-               
+
+                    if ($salt != null) {
+                        $password = crypt($usuario["password"], '$5$rounds=5000$' . $salt . '$');
+                        $sentencia = $conexPDO->prepare("SELECT COUNT(*) FROM proyecto.Usuario WHERE correo = ? AND password = ?;");
+                        $sentencia->bindParam(1, $correo);
+                        $sentencia->bindParam(2, $password);
+                        //Ejecutamos la sentencia
+                        $sentencia->execute();
+
+                        return (int) $sentencia->fetchColumn();
+                    } else {
+                        return null;
+                    }
+                } catch (PDOException $e) {
+                    print("Error al acceder a BD" . $e->getMessage());
+                }
+            }
+            return $sentencia;
+        }
+    }
+
+    public function cambiarCantidadTokens($cantTokens, $idUsuario, $conexPDO)
+    {
+        if ($conexPDO != null) {
+            try {
+                $sentencia = $conexPDO->prepare("UPDATE Usuario SET cantTokens = :cantTokens WHERE idUsuario = :idUsuario");
+                $sentencia->bindParam(":cantTokens", $cantTokens);
+                $sentencia->bindParam(":idUsuario", $idUsuario);
+                $sentencia->execute();
+
+                // Devolvemos el nombre de usuario
+                return $sentencia->fetch();
             } catch (PDOException $e) {
                 print("Error al acceder a BD" . $e->getMessage());
             }
         }
-        return $sentencia;
     }
-}
-
-
-
 }
