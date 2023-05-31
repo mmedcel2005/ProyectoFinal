@@ -177,7 +177,7 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
               <form action="../controller/tiendaTokensC.php" method="post">
                 <input type="hidden" value="" id="idPackToken" name="idPackToken">
-                <button type="button" name="comprar" id="comprar" value="comprar" class="btn btn-primary">Comprar</button>
+                <button type="button" name="comprar" id="comprar" value="comprar" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
               </form>
             </div>
           </div>
