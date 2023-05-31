@@ -51,7 +51,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                 $_SESSION['cantTokens'] = $cantTokensActual;
 
-                var_dump($$_POST['idObjeto']);
+                var_dump($_POST['idObjeto']);
 
                 if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
