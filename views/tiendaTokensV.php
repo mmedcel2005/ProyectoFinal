@@ -172,6 +172,7 @@
                 </tbody>
               </table>
             </div>
+<<<<<<< HEAD
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -181,6 +182,12 @@
               </form>
             </div>
           </div>
+=======
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <input type="hidden" value="" id="idPackToken"> <!-- Movido aquí -->
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+>>>>>>> parent of b364542 (comprar tokens)
         </div>
       </div>
     </article>
