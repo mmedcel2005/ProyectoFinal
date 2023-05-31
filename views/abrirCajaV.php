@@ -131,11 +131,11 @@
                 <h5 class="card-text text-token"><?php echo $caja['precio']; ?></h5>
 
                 <?php
-                  if($_SESSION['cantTokens'] < $caja['precio']){
-                    print('<a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="noSuficientesTokens">Abrir</a>');
-                  }else{
-                    print('<a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>');
-                  }
+                if ($_SESSION['cantTokens'] < $caja['precio']) {
+                  print('<a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="noSuficientesTokens">Abrir</a>');
+                } else {
+                  print('<a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>');
+                }
                 ?>
 
               </div>
@@ -315,13 +315,20 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">No tienes suficientes tokens</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-            <input type="hidden" value="" id="idObjeto">
-            <form action="../controller/tiendaTokensC.php" method="post">
-            <button type="submit" class="btn btn-primary">Comprar</button>
-            </form>
+            <h4 class="modal-title">No tienes suficientes tokens</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <p>Lo sentimos, no tienes suficientes tokens para realizar esta acción.</p>
+            <p>¿Deseas comprar más tokens?</p>
+          </div>
+
+          <!-- Pie del modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-primary">Comprar</button>
           </div>
         </div>
       </div>
@@ -407,7 +414,7 @@
         var carousel = $('.owl-carousel').data('owl.carousel');
 
         var minPositions = 13; // Número mínimo de posiciones que se debe mover la ruleta
-        var maxPositions = ((carousel.items().length)*2); // Número máximo de posiciones que se puede mover la ruleta
+        var maxPositions = ((carousel.items().length) * 2); // Número máximo de posiciones que se puede mover la ruleta
         var randomIndex = Math.floor(Math.random() * (maxPositions - minPositions + 1)) + minPositions;
 
         var currentIndex = carousel.relative(carousel.current());
