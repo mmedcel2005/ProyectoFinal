@@ -22,6 +22,7 @@ require_once("../model/Utils.php");
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $gestorToken = new PacktokenM();
 
+    $conexPDO = Utils::conectar($l = false);
 
     if (isset($_POST["comprar"]) && $_POST["comprar"] == "comprar" && isset($_POST["idPackToken"]) && $_POST["idPackToken"] != null) {
         $idPackToken = $_POST["idPackToken"];
@@ -38,7 +39,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
 
-    $conexPDO = Utils::conectar($l = false);
 
     $packTokens = $gestorToken->obtenerPackTokens($conexPDO);
 
