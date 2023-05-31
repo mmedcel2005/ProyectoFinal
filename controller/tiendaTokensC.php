@@ -33,6 +33,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             $_SESSION['cantTokens'] = $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
 
+            var_dump( $_SESSION['cantTokens'] );
+
             var_dump( $packTokensComprado["cantidadToken"]);
         }
     }
