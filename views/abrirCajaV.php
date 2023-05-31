@@ -301,9 +301,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vender</button>
-        <form action="../controller/abrirCajaC.php" method="post"></form>
+        <form action="../controller/abrirCajaC.php" method="post">
         <input type="hidden" value="" id="idObjeto">
         <button type="submit" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
+        </form>
       </div>
     </div>
   </div>
