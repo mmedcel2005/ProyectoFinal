@@ -43,6 +43,11 @@
       background-color: #efb810;
       font-weight: bold;
     }
+
+    .btn:focus,
+    .btn:active {
+      animation: none !important;
+    }
   </style>
 </head>
 
@@ -51,7 +56,7 @@
     <!--------------- NAV  --------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
-      <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="../index.php">
           <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,7 +76,7 @@
           <?php
           print('<div class="d-flex mx-lg-5">');
           print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
           print("</a></div>");
           print("");
 
@@ -92,25 +97,25 @@
               <div class="card-body text-center bg-custom-sec ">
                 <div class="d-flex justify-content-between ">
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">POPULAR</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">POPULAR</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="R">ROPA</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="R">ROPA</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="F">FIGURAS</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="F">FIGURAS</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="A">ACCESORIOS</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="A">ACCESORIOS</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="N">NUEVO</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="N">NUEVO</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="O">OFERTAS</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="O">OFERTAS</button>
                   </form>
                 </div>
               </div>
@@ -122,36 +127,36 @@
 
 
     <article>
-  <div class="container">
-    <div class="row">
+      <div class="container">
+        <div class="row">
 
-    <?php
-    foreach($datosCajas as $caja){
+          <?php
+          foreach ($datosCajas as $caja) {
 
-      print('<div class="col-sm-4 mb-3">');
-      print(' <div class="card position-relative text-center bg-custom-sec">');
-      print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
-      if ($caja["estado"] == "O") {
-        print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-      } elseif ($caja["estado"] == "N") {
-        print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-      } 
-      print('  <div class="card-body">');
-      print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
-      print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
-      print('    <form method="GET" action="../controller/abrirCajaC.php">');
-      print('     <input type="hidden" id="idCaja" name="idCaja" value="' . $caja["idCaja"] . '">');
-      print( '     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
-      print('   </form>');
-      print('   </div>');
-      print(' </div>');
-      print('</div>');
-    }
+            print('<div class="col-sm-4 mb-3">');
+            print(' <div class="card position-relative text-center bg-custom-sec">');
+            print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
+            if ($caja["estado"] == "O") {
+              print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+            } elseif ($caja["estado"] == "N") {
+              print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+            }
+            print('  <div class="card-body">');
+            print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
+            print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+            print('    <form method="GET" action="../controller/abrirCajaC.php">');
+            print('     <input type="hidden" id="idCaja" name="idCaja" value="' . $caja["idCaja"] . '">');
+            print('     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
+            print('   </form>');
+            print('   </div>');
+            print(' </div>');
+            print('</div>');
+          }
           ?>
 
-    </div>
-  </div>
-</article>
+        </div>
+      </div>
+    </article>
 
 
   </main>
