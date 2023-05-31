@@ -47,6 +47,10 @@
     tr:last-child td {
   border-bottom: none;
 }
+.btn-amarillo:hover {
+      background-color: #efb810;
+      color: white;
+    }
   </style>
 </head>
 
