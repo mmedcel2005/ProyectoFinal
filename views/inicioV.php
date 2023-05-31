@@ -44,13 +44,9 @@
       font-weight: bold;
     }
 
-    .btn:focus,
-.btn:active,
-.btn:active:focus,
-.btn:active:hover {
-  outline: none;
-  box-shadow: none;
-}
+    .btn.no-hover-color:hover {
+    pointer-events: none;
+  }
   </style>
 </head>
 
@@ -112,7 +108,7 @@
                     <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="F">FIGURAS</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 rounded-1" name="categoria" id="categoria" value="A">ACCESORIOS</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="A">ACCESORIOS</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="N">NUEVO</button>
