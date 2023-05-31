@@ -304,7 +304,7 @@
         <form action="../controller/abrirCajaC.php" method="post">
         <input type="hidden" value="<?php print($caja['idCaja']); ?>" name="idCaja" id="idCaja">
         <input type="hidden" value="" name="idObjeto" id="idObjeto">
-        <button type="submit" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
+        <button type="submit" value="guardar" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
         </form>
       </div>
     </div>
