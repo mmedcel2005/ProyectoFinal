@@ -493,7 +493,7 @@
 
     // Ejemplo de uso
     window.addEventListener('load', () => {
-      showNotification('Comprado correctamente');
+      showNotification('Accion realizada correctamente');
     });
     
   </script>
