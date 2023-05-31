@@ -322,7 +322,7 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
             <input type="hidden" value="" id="idObjeto">
             <form action="../controller/tiendaTokensC.php" method="post">
-            <button type="button" class="btn btn-primary">Comprar</button>
+            <button type="submit" class="btn btn-primary">Comprar</button>
             </form>
           </div>
         </div>
