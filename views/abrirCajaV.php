@@ -77,6 +77,21 @@
     .roulette-container {
       position: relative;
     }
+
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .notification.show {
+      display: block;
+    }
   </style>
 </head>
 
