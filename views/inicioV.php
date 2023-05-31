@@ -45,9 +45,12 @@
     }
 
     .btn:focus,
-    .btn:active {
-      animation: none !important;
-    }
+.btn:active,
+.btn:active:focus,
+.btn:active:hover {
+  outline: none;
+  box-shadow: none;
+}
   </style>
 </head>
 
