@@ -57,13 +57,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     $idInventario = $_SESSION['idInventario'];
                     $idObjeto = $_POST['idObjeto'];
 
-                    var_dump($idInventario);
-                    var_dump($idUsuario);
-                    var_dump($idObjeto);
-
-
                     $anadirItemIntoInventario = $gestorInv->anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
 
+                    var_dump($anadirItemIntoInventario);
 
                     if ($cambiarCantTokens != false && $anadirItemIntoInventario != false) {
 
