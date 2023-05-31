@@ -52,9 +52,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 $_SESSION['cantTokens'] = $cantTokensActual;
 
 
-                if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null) {
+                if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
                     $idInventario = $_SESSION['idInventario'];
+                    $idObjeto = $_POST['idObjeto'];
 
                     $anadirItemIntoInventario = $gestorInv->anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
 
