@@ -43,10 +43,10 @@
       background-color: #efb810;
       font-weight: bold;
     }
-    .btn:hover {
-      transition: none!important;
-}
 
+    .btn:hover {
+      transition: none !important;
+    }
   </style>
 </head>
 
