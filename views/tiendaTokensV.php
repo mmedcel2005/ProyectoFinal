@@ -185,7 +185,8 @@
       </div>
     </article>
 
-    
+
+
 
     <script>
       function handleCheckboxChange(checkboxNumber) {
@@ -256,11 +257,8 @@
         // Obtener el idPackToken de la tarjeta
         const idPackToken = button.previousElementSibling.value;
 
-        // Establecer el idPackToken en el input oculto del formulario
+        // Establecer el idPackToken en el modal
         document.getElementById('idPackToken').value = idPackToken;
-
-        // Enviar el formulario
-        document.getElementById('comprarForm').submit();
       });
     });
 
