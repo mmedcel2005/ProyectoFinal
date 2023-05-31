@@ -54,7 +54,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             $notificacion= "error";
         }
     }
-    var_dump($_POST["idPackToken"]);
+    var_dump($_POST["comprar"]);
  
 
 
