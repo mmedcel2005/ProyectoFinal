@@ -103,7 +103,7 @@
             print('<div class="col-sm-4 mb-3">');
             print(' <div class="card position-relative text-center bg-custom-sec">');
             print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
-            if ($caja["enOferta"] == "S") {
+            if ($tokens["enOferta"] == "S") {
               print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
             }
             print('  <div class="card-body">');
