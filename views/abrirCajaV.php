@@ -302,8 +302,8 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vender</button>
         <form action="../controller/abrirCajaC.php" method="post">
-        <input type="hidden" value="<?php print($caja['idCaja']); ?>" id="idCaja">
-        <input type="hidden" value="" id="idObjeto">
+        <input type="hidden" value="<?php print($caja['idCaja']); ?>" name="idCaja" id="idCaja">
+        <input type="hidden" value="" name="idObjeto" id="idObjeto">
         <button type="submit" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
         </form>
       </div>
