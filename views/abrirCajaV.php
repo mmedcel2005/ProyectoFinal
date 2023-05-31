@@ -463,7 +463,7 @@
 
         setTimeout(function() {
           var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone();
-          var selectedItemId = selectedItem.find('input[name="idItem"]').val();
+          var selectedItemId = selectedItem.find('#idItem').val();
           $('#idObjeto').val(selectedItemId);
           $('#itemGanado .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
           $('#itemGanado').modal('show');
