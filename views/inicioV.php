@@ -46,13 +46,14 @@
 
     .btn-bg-custom:hover {
       background-color: #121212;
+      font-weight: bold;
 
     }
     .btn-amarillo:hover {
       background-color: #efb810;
-;
-
+      color: white;
     }
+
   </style>
 </head>
 
