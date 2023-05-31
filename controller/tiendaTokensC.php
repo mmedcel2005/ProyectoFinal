@@ -39,8 +39,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             
             $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
+            var_dump($cambiarCantTokens);
             if($cambiarCantTokens != null){
-                var_dump($_SESSION['cantTokens']);
             $_SESSION['cantTokens'] = $cantTokensActual;
             $notificacion= "ok";
             
