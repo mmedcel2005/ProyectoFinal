@@ -35,6 +35,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             $notificacion= "ok";
 
+            var_dump($notificacion);
         }else{
             $notificacion= "error";
         }
