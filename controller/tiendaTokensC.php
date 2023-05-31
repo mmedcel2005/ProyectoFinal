@@ -31,6 +31,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         $packTokensComprado = $gestorToken->obtenerTokensPorID($idPackToken, $conexPDO);
 
+        var_dump($packTokensComprado);
+
+
         if ($packTokensComprado != null && $_SESSION['cantTokens'] != null && $_SESSION['idUsuario'] != null) {
 
             $idUsuario = $_SESSION['idUsuario'];
@@ -39,7 +42,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
-            var_dump($cambiarCantTokens);
 
             if ($cambiarCantTokens != false) {
                 $_SESSION['cantTokens'] = $cantTokensActual;
