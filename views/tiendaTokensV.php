@@ -103,7 +103,7 @@
             print('<div class="col-sm-4 mb-3">');
             print(' <div class="card position-relative text-center bg-custom-sec">');
             print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
-            if ($tokens["enOferta"] == "S") {
+            if ($caja["enOferta"] == "S") {
               print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
             }
             print('  <div class="card-body">');
@@ -187,6 +187,11 @@
 
 
 
+
+
+
+
+
   </main>
   <!--------------- FOOTER  --------------->
 
@@ -230,9 +235,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"></script>
-
   <script>
     // Obtener todos los botones "Comprar"
     const buttons = document.querySelectorAll('.btn-amarillo');
