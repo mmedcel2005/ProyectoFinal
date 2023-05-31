@@ -174,8 +174,10 @@
             </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <input type="hidden" value="" id="idPackToken"> <!-- Movido aquí -->
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+          <form action="" method="post">
+          <input type="hidden" value="" id="idPackToken" name="idPackToken"> <!-- Movido aquí -->
+          <button type="button" name="comprar" id="comprar" value="comprar" class="btn btn-primary">Comprar</button>
+          </form>
         </div>
       </div>
     </div>
