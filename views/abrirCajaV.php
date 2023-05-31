@@ -379,7 +379,7 @@
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
 
-        var minPositions = 9; // Número mínimo de posiciones que se debe mover la ruleta
+        var minPositions = 13; // Número mínimo de posiciones que se debe mover la ruleta
         var maxPositions = ((carousel.items().length)*2); // Número máximo de posiciones que se puede mover la ruleta
         var randomIndex = Math.floor(Math.random() * (maxPositions - minPositions + 1)) + minPositions;
 
