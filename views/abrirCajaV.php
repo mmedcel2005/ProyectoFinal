@@ -470,10 +470,8 @@
       $('#noSuficientesTokens').click(function() {
         $('#tokensInsuficientes').modal('show');
       });
+    });
 
-
-
-      // Obtén la referencia del elemento de la ventana emergente
     const notification = document.getElementById('notification');
     const notificationMessage = document.getElementById('notification-message');
 
@@ -492,8 +490,11 @@
     function hideNotification() {
       notification.classList.remove('show');
     }
-    });
 
+    // Ejemplo de uso
+    window.addEventListener('load', () => {
+      showNotification('Comprado correctamente');
+    });
     
   </script>
 </body>
