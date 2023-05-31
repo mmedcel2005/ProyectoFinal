@@ -38,7 +38,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             $precioCaja = $caja['precio'];
 
 
-            if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null && $_SESSION['cantTokens']>0 ) {
+            if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null && $_SESSION['cantTokens']>$precioCaja ) {
                 $idUsuario= $_SESSION['idUsuario'];
 
                 $cantTokensActual= $_SESSION['cantTokens'] - $precioCaja;
