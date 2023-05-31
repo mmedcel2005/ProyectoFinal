@@ -21,7 +21,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
     $gestorCaja = new CajasM();
 
-    var_dump($_POST["idCaja"]);
 
     if (isset($_POST["idCaja"])) {
         $cajaId = $_POST["idCaja"];
