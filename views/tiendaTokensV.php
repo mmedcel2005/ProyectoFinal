@@ -109,7 +109,7 @@
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . ' €</b></p>');
             print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
-            print('     <input type="hidden" id="idPackToken" name="id" value="' . $tokens["idPackToken"] . '">');
+            print('     <input type="hidden" class="idPackToken" name="id" value="' . $tokens["idPackToken"] . '">');
             print('     <button type="submit" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-amarillo color-tokens col-sm-11">Comprar</button>');
             print('   </div>');
             print(' </div>');
@@ -177,9 +177,9 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
               <form action="../controller/tiendaTokensC.php" method="post">
-              <input type="hidden" value="" id="idPackToken" name="idPackToken">
+                <input type="hidden" value="" id="idPackToken" name="idPackToken">
                 <!-- Aquí puedes agregar campos adicionales si es necesario -->
-                <button type="submit" name="comprar" id="comprar" value="comprar" class="btn btn-primary" >Comprar</button>
+                <button type="submit" name="comprar" id="comprar" value="comprar" class="btn btn-primary">Comprar</button>
               </form>
 
             </div>
@@ -241,17 +241,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    // Obtener todos los botones "Comprar"
     const buttons = document.querySelectorAll('.btn-amarillo');
 
     // Agregar el evento click a cada botón
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         // Obtener el idPackToken de la tarjeta
-        const idPackToken = button.previousElementSibling.value;
+        const idPackToken = button.parentElement.querySelector('.idPackToken').value;
 
         // Establecer el idPackToken en el modal
-        document.getElementById('idPackToken').value = idPackToken;
+        document.querySelector('#myModal input[name="idPackToken"]').value = idPackToken;
       });
     });
 
