@@ -345,7 +345,7 @@
 
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
-        var randomIndex = 30;
+        var randomIndex = Math.floor(Math.random() * (carousel.items().length + 80));
         var currentIndex = carousel.relative(carousel.current());
         var direction = 'next';
 
