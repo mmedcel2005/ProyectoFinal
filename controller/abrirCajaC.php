@@ -49,7 +49,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
                 if ($cambiarCantTokens != false) {
-                    var_dump($_SESSION['cantTokens']);
                     $notificacion = "ok";
                 } else {
                     $notificacion = "error";
