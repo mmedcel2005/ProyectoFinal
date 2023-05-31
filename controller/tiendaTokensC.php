@@ -25,11 +25,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     if (isset($_POST["comprar"]) && $_POST["comprar"] == "comprar" && isset($_POST["idPackToken"]) && $_POST["idPackToken"] != null) {
         $idPackToken=$_POST["idPackToken"];
 
-        $packTokensComprado = $gestorCaja->obtenerCajasPorID($idPackToken, $conexPDO);
+        $packTokensComprado = $gestorToken->obtenerTokensPorID($idPackToken, $conexPDO);
 
         $_SESSION['cantTokens'] = $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
     }
-    var_dump($_POST["idPackToken"]);
 
 
     $conexPDO = Utils::conectar($l=false);

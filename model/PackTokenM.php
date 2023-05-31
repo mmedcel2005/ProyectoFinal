@@ -31,7 +31,7 @@ class PackTokenM
         }
     }
 
-    public function obtenerPackTokensPorID($idPackToken, $conexPDO)
+    public function obtenerTokensPorID($idPackToken, $conexPDO)
     {
         // Verifica si la conexión a la BD es válida
         if ($conexPDO != null && $idPackToken != null) {
