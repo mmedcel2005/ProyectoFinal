@@ -291,25 +291,25 @@
 
     <!-- Modal item -->
     <div class="modal fade" id="itemGanado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Has ganado:</h5>
-      </div>
-      <div class="modal-body">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Has ganado:</h5>
+          </div>
+          <div class="modal-body">
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vender</button>
-        <form action="../controller/abrirCajaC.php" method="post">
-        <input type="hidden" value="<?php print($caja['idCaja']); ?>" name="idCaja" id="idCaja">
-        <input type="hidden" value="" name="idObjeto" id="idObjeto">
-        <button type="submit" value="guardar" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
-        </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vender</button>
+            <form action="../controller/abrirCajaC.php" method="post">
+              <input type="hidden" value="<?php print($caja['idCaja']); ?>" name="idCaja" id="idCaja">
+              <input type="hidden" value="" name="idObjeto" id="idObjeto">
+              <button type="submit" value="guardar" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
 
 
@@ -333,7 +333,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
             <form action="../controller/tiendaTokensC.php">
-            <button type="submit" class="btn btn-primary">Comprar</button>
+              <button type="submit" class="btn btn-primary">Comprar</button>
             </form>
           </div>
 
@@ -341,6 +341,19 @@
       </div>
     </div>
     </div>
+
+
+    <!-- Aviso de vendido correctamente -->
+
+    <?php
+    if ($notificacion == "ok") {
+      print('<div id="notification" class="notification">');
+      print('<span id="notification-message" class="notification-message"></span>');
+      print('</div>');
+    }
+
+
+    ?>
 
   </main>
   <!--------------- FOOTER  --------------->
@@ -442,7 +455,31 @@
       $('#noSuficientesTokens').click(function() {
         $('#tokensInsuficientes').modal('show');
       });
+
+
+
+      // Obtén la referencia del elemento de la ventana emergente
+    const notification = document.getElementById('notification');
+    const notificationMessage = document.getElementById('notification-message');
+
+    // Función para mostrar la ventana emergente con un mensaje específico
+    function showNotification(message) {
+      notificationMessage.textContent = message;
+      notification.classList.add('show');
+
+      // Ocultar la ventana emergente después de 5 segundos
+      setTimeout(() => {
+        hideNotification();
+      }, 5000);
+    }
+
+    // Función para ocultar la ventana emergente
+    function hideNotification() {
+      notification.classList.remove('show');
+    }
     });
+
+    
   </script>
 </body>
 
