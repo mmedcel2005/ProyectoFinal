@@ -37,6 +37,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             $precioCaja = $caja['precio'];
 
+            var_dump($precioCaja);
+
             if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null) {
                 $idUsuario= $_SESSION['idUsuario'];
 
