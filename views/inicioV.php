@@ -44,8 +44,9 @@
       font-weight: bold;
     }
 
-    .btn .bg-custom:hover {
+    .btn-bg-custom:hover {
       background-color: #121212;
+
     }
   </style>
 </head>
@@ -99,7 +100,7 @@
                     <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1">POPULAR</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
+                    <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn bg-custom flex-fill mx-2 pt-2 pb-2 text-muted rounded-1" name="categoria" id="categoria" value="R">ROPA</button>
