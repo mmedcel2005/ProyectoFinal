@@ -97,5 +97,34 @@ class InventarioM
         
         return $result;
     }
+
+    
+    // Se define una función llamada anadirUsuario que añade un usuario
+    public function anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto , $conexPDO)
+    {
+        // Se inicializa la variable $result en null
+        $result = null;
+
+        // Se verifica si los parámetros recibidos son válidos
+        if ($conexPDO != null) {
+            try {
+                // Se define la sentencia SQL para insertar un nuevo registro
+                $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Inventario_has_Objeto (Inventario_idInventario, Inventario_Usuario_idUsuario, Objeto_idObjeto) VALUES (:Inventario_idInventario, :Inventario_Usuario_idUsuario, :Objeto_idObjeto);");
+
+                // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
+                $sentencia->bindParam(":Inventario_idInventario", $idInventario);
+                $sentencia->bindParam(":Inventario_Usuario_idUsuario", $idUsuario);
+                $sentencia->bindParam(":Objeto_idObjeto", $idObjeto);
+                
+
+                // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
+                $result = $sentencia->execute();
+            } catch (PDOException $e) {
+                // Si se produce un error, se muestra un mensaje en pantalla
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+        return $result;
+    }
     
 }

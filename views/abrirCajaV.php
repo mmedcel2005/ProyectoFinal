@@ -203,7 +203,7 @@
               print('       <img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
               print('           <br>');
               print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-              print('      <input type="hidden" id="id" name="id" value="' . $item['idObjeto'] . '">');
+              print('      <input type="hidden" id="idItem" name="idItem-' . $item['idObjeto'] . '" value="' . $item['idObjeto'] . '">');
               print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
               print('        </div>');
               print('    </div>');
@@ -462,6 +462,9 @@
 
 
         setTimeout(function() {
+          var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone();
+          var selectedItemId = selectedItem.find('input[name="idItem"]').val();
+          $('#idObjeto').val(selectedItemId);
           $('#itemGanado .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
           $('#itemGanado').modal('show');
         }, 3000); // Tiempo de espera en milisegundos (en este caso, 3 segundos)
@@ -495,7 +498,6 @@
     window.addEventListener('load', () => {
       showNotification('Accion realizada correctamente');
     });
-    
   </script>
 </body>
 

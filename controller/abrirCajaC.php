@@ -6,12 +6,14 @@ namespace controller;
 use \model\UsuarioM;
 use \model\ObjetoM;
 use \model\CajasM;
+use \model\InventarioM;
 use \model\Utils;
 
 session_start();
 
 
 require_once("../model/UsuarioM.php");
+require_once("../model/InventarioM.php");
 require_once("../model/ObjetoM.php");
 require_once("../model/CajasM.php");
 require_once("../model/Utils.php");
@@ -25,10 +27,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     if (isset($_POST["idCaja"])) {
         $cajaId = $_POST["idCaja"];
 
+
         $conexPDO = Utils::conectar($l = false);
 
         $gestorObj = new ObjetoM();
         $gestorUsuario = new UsuarioM();
+
 
         $caja = $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
 
@@ -38,24 +42,34 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             $precioCaja = $caja['precio'];
 
 
-            if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null && $_SESSION['cantTokens']>$precioCaja ) {
-                $idUsuario= $_SESSION['idUsuario'];
+            if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null && $_SESSION['cantTokens'] > $precioCaja) {
+                $gestorInv = new InventarioM();
 
-                $cantTokensActual= $_SESSION['cantTokens'] - $precioCaja;
+                $idUsuario = $_SESSION['idUsuario'];
 
-                $_SESSION['cantTokens']=$cantTokensActual;
+                $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
 
-                $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+                $_SESSION['cantTokens'] = $cantTokensActual;
 
 
-                if ($cambiarCantTokens != false) {
-                    $notificacion = "ok";
-                    var_dump($notificacion);
+                if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null) {
 
-                } else {
-                    $notificacion = "error";
+                    $idInventario = $_SESSION['idInventario'];
+
+                    $anadirItemIntoInventario = $gestorInv->anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
+
+                    if ($cambiarCantTokens != false && $anadirItemIntoInventario != false) {
+
+                        $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+
+                        if ($cambiarCantTokens != false) {
+
+                            $notificacion = "ok";
+                        }
+                    } else {
+                        $notificacion = "error";
+                    }
                 }
-
             } else {
                 $notificacion = "error";
             }
