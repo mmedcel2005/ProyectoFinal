@@ -175,9 +175,9 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <form action="../controller/tiendaTokensC.php" method="post">
+              <form id="comprarForm" action="../controller/tiendaTokensC.php" method="post">
                 <input type="hidden" value="" id="idPackToken" name="idPackToken">
-                <button type="button" name="comprar" id="comprar" value="comprar" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
+                <button type="submit" name="comprar" id="comprar" value="comprar" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
               </form>
             </div>
           </div>
@@ -319,8 +319,11 @@
         // Obtener el idPackToken de la tarjeta
         const idPackToken = button.previousElementSibling.value;
 
-        // Establecer el idPackToken en el modal
+        // Establecer el idPackToken en el input oculto del formulario
         document.getElementById('idPackToken').value = idPackToken;
+
+        // Enviar el formulario
+        document.getElementById('comprarForm').submit();
       });
     });
 
