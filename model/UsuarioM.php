@@ -212,13 +212,16 @@ class UsuarioM
                 $sentencia = $conexPDO->prepare("UPDATE Usuario SET cantTokens = :cantTokens WHERE idUsuario = :idUsuario");
                 $sentencia->bindParam(":cantTokens", $cantTokens);
                 $sentencia->bindParam(":idUsuario", $idUsuario);
-                $sentencia->execute();
-
-                // Devolvemos el nombre de usuario
-                return $sentencia->fetch();
+                $resultado = $sentencia->execute();
+    
+                // Devolvemos true si la actualización fue exitosa
+                return $resultado;
             } catch (PDOException $e) {
                 print("Error al acceder a BD" . $e->getMessage());
             }
         }
+    
+        // Devolvemos false si ocurrió algún error
+        return false;
     }
-}
+}    
