@@ -103,7 +103,7 @@
             print('<div class="col-sm-4 mb-3">');
             print(' <div class="card position-relative text-center bg-custom-sec">');
             print('  <img src="' . $tokens["imagen"] . '" class="card-img-top" alt="Imagen de ' . $tokens["cantidadToken"] . ' tokens">');
-            if ($caja["enOferta"] == "S") {
+            if ($tokens["enOferta"] == "S") {
               print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
             }
             print('  <div class="card-body">');
@@ -175,10 +175,13 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <form id="comprarForm" action="../controller/abrirCajaC.php" method="post">
-                <input type="hidden" value="" id="idPackToken" name="idPackToken">
+
+              <form action="../controller/abrirCajaC.php" method="post">
+              <input type="hidden" value="" id="idPackToken" name="idPackToken">
+                <!-- Aquí puedes agregar campos adicionales si es necesario -->
                 <button type="submit" name="comprar" id="comprar" value="comprar" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
               </form>
+
             </div>
           </div>
         </div>
