@@ -44,7 +44,7 @@
       font-weight: bold;
     }
     .btn:hover {
-  color: #fff;
+      transition: none;
 }
 
   </style>
