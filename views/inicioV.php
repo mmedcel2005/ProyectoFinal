@@ -43,10 +43,11 @@
       background-color: #efb810;
       font-weight: bold;
     }
+    .btn.bg-custom:hover {
+  background-color: #efb810;
+  color: #fff;
+}
 
-    .btn.no-hover-color:hover {
-    pointer-events: none!important;
-  }
   </style>
 </head>
 
