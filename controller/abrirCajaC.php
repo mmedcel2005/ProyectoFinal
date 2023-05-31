@@ -59,8 +59,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                     $anadirItemIntoInventario = $gestorInv->anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
 
-                    var_dump($anadirItemIntoInventario);
-
                     if ($cambiarCantTokens != false && $anadirItemIntoInventario != false) {
 
                         $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
