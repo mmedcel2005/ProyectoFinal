@@ -124,12 +124,12 @@
     <article>
       <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Selecciona método de pago:</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Selecciona método de pago:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
               <table class="table">
                 <thead>
                   <tr>
@@ -171,8 +171,8 @@
                   </tr>
                 </tbody>
               </table>
-            </div>            
-            
+            </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
               <form action="../controller/tiendaTokensC.php" method="post">
@@ -185,70 +185,7 @@
       </div>
     </article>
 
-    <article>
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Selecciona método de pago:</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Seleccionar</th>
-                    <th scope="col">Nombre de la tarjeta</th>
-                    <th scope="col">Números de la tarjeta</th>
-                    <th scope="col">Titular de la tarjeta</th>
-                    <th scope="col">Fecha de caducidad</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago1" onchange="handleCheckboxChange(1)"></td>
-                    <td>Tarjeta 1</td>
-                    <td>**** **** **** 1234</td>
-                    <td>John Doe</td>
-                    <td>05/25</td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago2" onchange="handleCheckboxChange(2)"></td>
-                    <td>Tarjeta 2</td>
-                    <td>**** **** **** 5678</td>
-                    <td>Jane Smith</td>
-                    <td>10/23</td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago3" onchange="handleCheckboxChange(3)"></td>
-                    <td>Tarjeta 3</td>
-                    <td>**** **** **** 9012</td>
-                    <td>Mark Johnson</td>
-                    <td>09/24</td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" name="metodoPago" id="metodoPago4" onchange="handleCheckboxChange(4)"></td>
-                    <td>Tarjeta 4</td>
-                    <td>**** **** **** 3456</td>
-                    <td>Alice Johnson</td>
-                    <td>12/26</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <form action="../controller/tiendaTokensC.php" method="post">
-          <input type="hidden" value="" id="idPackToken" name="idPackToken"> <!-- Movido aquí -->
-          <button type="button" name="comprar" id="comprar" value="comprar" class="btn btn-primary">Comprar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
 
-  
 
     <script>
       function handleCheckboxChange(checkboxNumber) {
@@ -310,29 +247,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-  // Obtener todos los botones "Comprar"
-  const buttons = document.querySelectorAll('.btn-amarillo');
+    // Obtener todos los botones "Comprar"
+    const buttons = document.querySelectorAll('.btn-amarillo');
 
-  // Agregar el evento click a cada botón
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Obtener el idPackToken de la tarjeta
-      const idPackToken = button.previousElementSibling.value;
+    // Agregar el evento click a cada botón
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Obtener el idPackToken de la tarjeta
+        const idPackToken = button.previousElementSibling.value;
 
-      // Establecer el idPackToken en el modal
-      document.getElementById('idPackToken').value = idPackToken;
+        // Establecer el idPackToken en el modal
+        document.getElementById('idPackToken').value = idPackToken;
+      });
     });
-  });
 
-  function handleCheckboxChange(checkboxNumber) {
-    // Desmarcar todos los checkboxes excepto el seleccionado
-    for (let i = 1; i <= 4; i++) {
-      if (i !== checkboxNumber) {
-        document.getElementById('metodoPago' + i).checked = false;
+    function handleCheckboxChange(checkboxNumber) {
+      // Desmarcar todos los checkboxes excepto el seleccionado
+      for (let i = 1; i <= 4; i++) {
+        if (i !== checkboxNumber) {
+          document.getElementById('metodoPago' + i).checked = false;
+        }
       }
     }
-  }
-</script>
+  </script>
 </body>
 
 </html>
