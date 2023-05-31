@@ -23,11 +23,38 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $cajaId = $_GET["idCaja"];
 
         $conexPDO = Utils::conectar($l = false);
-        
+
         $gestorObj = new ObjetoM();
         $gestorUsuario = new UsuarioM();
 
         $caja = $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
+
+
+        if (isset($_POST["guardar"]) && $_POST["guardar"] == "guardar") {
+
+            $precioCaja = $caja['precio'];
+
+            if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null) {
+                $idUsuario= $_SESSION['idUsuario'];
+
+                $cantTokensActual= $_SESSION['cantTokens'] - $precioCaja;
+
+                $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+
+
+                if ($cambiarCantTokens != false) {
+                    $_SESSION['cantTokens'] = $cantTokensActual;
+                    $notificacion = "ok";
+                } else {
+                    $notificacion = "error";
+                }
+
+            } else {
+                $notificacion = "error";
+            }
+        }
+
+
         $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
 
 
@@ -35,12 +62,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         // Definir las probabilidades de aparición para cada categoría (puedes ajustar los porcentajes según tus necesidades)
         $categoriasProbabilidades = [
-            "L" => 1,    
-            "E" => 3,    
-            "SR" => 6,   
-            "R" => 15,  
-            "C" => 25,   
-            "MC" => 50,   
+            "L" => 1,
+            "E" => 3,
+            "SR" => 6,
+            "R" => 15,
+            "C" => 25,
+            "MC" => 50,
 
         ];
 

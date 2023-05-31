@@ -33,27 +33,23 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         if ($packTokensComprado != null && $_SESSION['cantTokens'] != null && $_SESSION['idUsuario'] != null) {
 
-            $idUsuario= $_SESSION['idUsuario'];
+            $idUsuario = $_SESSION['idUsuario'];
 
-            $cantTokensActual= $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
-            
+            $cantTokensActual = $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
+
             $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
-            if($cambiarCantTokens != false){
-            $_SESSION['cantTokens'] = $cantTokensActual;
-            $notificacion= "ok";
-            
-
-        }else{
-            $notificacion= "error";
-
-        }
-
-        }else{
-            $notificacion= "error";
+            if ($cambiarCantTokens != false) {
+                $_SESSION['cantTokens'] = $cantTokensActual;
+                $notificacion = "ok";
+            } else {
+                $notificacion = "error";
+            }
+        } else {
+            $notificacion = "error";
         }
     }
- 
+
 
 
 
