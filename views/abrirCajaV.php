@@ -129,6 +129,15 @@
               <img src="<?php echo $caja['imagen']; ?>" class="card-img-top custom-img mx-auto" alt="<?php echo $item['nombre']; ?>">
               <div class="card-body">
                 <h5 class="card-text text-token"><?php echo $caja['precio']; ?></h5>
+
+                <?php
+                  if($_SESSION['cantTokens'] < $caja['precio']){
+                    print('<a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="noSuficientesTokens">Abrir</a>');
+                  }else{
+                    print('<a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>');
+                  }
+                ?>
+
                 <a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>
               </div>
             </div>
@@ -281,7 +290,7 @@
       </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal item -->
     <div class="modal fade" id="itemGanado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -296,6 +305,29 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vender</button>
             <input type="hidden" value="" id="idObjeto">
             <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal NO TIENES SUFICIENTES TOKENS-->
+    <div class="modal fade" id="tokensInsuficientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Has ganado:</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            <input type="hidden" value="" id="idObjeto">
+            <form action="../controller/tiendaTokensC.php" method="post">
+            <button type="button" class="btn btn-primary">Comprar</button>
+            </form>
           </div>
         </div>
       </div>
@@ -376,6 +408,7 @@
 
 
 
+
       $('#randomBtn').click(function() {
         var carousel = $('.owl-carousel').data('owl.carousel');
 
@@ -395,6 +428,10 @@
           $('#itemGanado .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
           $('#itemGanado').modal('show');
         }, 3000); // Tiempo de espera en milisegundos (en este caso, 3 segundos)
+      });
+
+      $('#noSuficientesTokens').click(function() {
+        $('#tokensInsuficientes').modal('show');
       });
     });
   </script>
