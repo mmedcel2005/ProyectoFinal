@@ -29,7 +29,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         $_SESSION['cantTokens'] = $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
     }
-    var_dump($_POST["comprar"]);
+    var_dump($_POST["idPackToken"]);
 
 
     $conexPDO = Utils::conectar($l=false);
