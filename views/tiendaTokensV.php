@@ -51,14 +51,7 @@
       background-color: #efb810;
       color: white;
     }
-
-    .navbar-nav .nav-item-select .nav-link::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background-color: lightgray;
-  margin-top: 2px;
-}
+    
   </style>
 </head>
 
@@ -72,7 +65,7 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item nav-item-select">
+            <li class="nav-item">
               <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
             </li>
             <li class="nav-item">
