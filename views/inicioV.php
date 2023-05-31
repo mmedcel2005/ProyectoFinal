@@ -43,7 +43,7 @@
       background-color: #efb810;
       font-weight: bold;
     }
-    .btn.bg-custom:hover {
+    .btn:hover {
   background-color: #efb810;
   color: #fff;
 }
