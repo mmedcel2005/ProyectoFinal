@@ -33,10 +33,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             $_SESSION['cantTokens'] = $_SESSION['cantTokens'] + $packTokensComprado["cantidadToken"];
 
+            $notificacion= "ok";
+
+        }else{
+            $notificacion= "error";
         }
     }
 
- 
+
 
 
     $packTokens = $gestorToken->obtenerPackTokens($conexPDO);
