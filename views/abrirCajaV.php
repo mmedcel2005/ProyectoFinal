@@ -282,7 +282,7 @@
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="itemGanado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -392,8 +392,8 @@
 
 
         setTimeout(function() {
-          $('#myModal .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
-          $('#myModal').modal('show');
+          $('#itemGanado .modal-body').html(selectedItem); // Agregar el contenido clonado al cuerpo del modal
+          $('#itemGanado').modal('show');
         }, 3000); // Tiempo de espera en milisegundos (en este caso, 3 segundos)
       });
     });
