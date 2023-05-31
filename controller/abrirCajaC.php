@@ -41,6 +41,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
             $precioCaja = $caja['precio'];
 
+            var_dump($_SESSION['cantTokens']);
+
 
             if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null && $_SESSION['cantTokens'] > $precioCaja) {
                 $gestorInv = new InventarioM();
@@ -51,7 +53,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                 $_SESSION['cantTokens'] = $cantTokensActual;
 
-                var_dump($_POST['idObjeto']);
 
                 if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
