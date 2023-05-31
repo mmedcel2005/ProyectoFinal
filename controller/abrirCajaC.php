@@ -19,6 +19,8 @@ require_once("../model/Utils.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
+    $gestorCaja = new CajasM();
+
     if (isset($_GET["idCaja"])) {
         $cajaId = $_GET["idCaja"];
 
@@ -89,7 +91,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     } else {
         $conexPDO = Utils::conectar($l = false);
 
-        $gestorCaja = new CajasM();
         $datosCajas = $gestorCaja->obtenerCajas($conexPDO);
 
         include("../views/inicioV.php");
