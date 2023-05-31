@@ -12,19 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <?php
-  if($notificacion == "ok"){
-    print('<style>
-    .notification {
-      background-color: green;
-    } </style>');
-  }elseif(($notificacion == "error")){
-    print('<style>
-    .notification {
-      background-color: red;
-    } </style>');
-  }
-  ?>
   <style>
     body {
       background-color: #1c1c1c;
@@ -95,6 +82,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
+      background-color: green;
       color: white;
       padding: 10px;
       border-radius: 5px;
@@ -427,16 +415,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-  <?php
-  if($notificacion == "ok"){
-    print('<script>mensaje = "Accion realizada correctamente" </script>');
-  }elseif(($notificacion == "error")){
-    print('<script>mensaje = "No se ha podido realizar la accion correctamente" </script>');
-  }
-
-  ?>
-
   <script>
     $(document).ready(function() {
       var owlCarousel = $('.owl-carousel');
@@ -515,7 +493,7 @@
 
     // Ejemplo de uso
     window.addEventListener('load', () => {
-      showNotification(mensaje);
+      showNotification('Accion realizada correctamente');
     });
     
   </script>
