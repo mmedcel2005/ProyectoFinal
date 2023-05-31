@@ -174,7 +174,7 @@
             </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <form action="" method="post">
+          <form action="../controller/tiendaTokensC.php" method="post">
           <input type="hidden" value="" id="idPackToken" name="idPackToken"> <!-- Movido aquí -->
           <button type="button" name="comprar" id="comprar" value="comprar" class="btn btn-primary">Comprar</button>
           </form>
