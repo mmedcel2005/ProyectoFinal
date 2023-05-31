@@ -189,7 +189,7 @@
               print('</div>');
               print('</div>');
             }
-            foreach ($itemsAleatorio as $item) {
+             foreach ($itemsAleatorio as $item) {
               print('<div class="item">');
               print('<div class="card" id="item-card-' . $item['idObjeto'] . '">');
               print('    <div class="card-img-container">');
@@ -392,7 +392,7 @@
         var direction = 'next';
 
         carousel.to(randomIndex, 500, direction);
-        randomIndex = randomIndex - 9;
+        randomIndex = randomIndex - 18;
         var selectedItem = carousel.$stage.children().eq(randomIndex).find('.card').clone(); // Clonar la tarjeta del item seleccionado
 
 
