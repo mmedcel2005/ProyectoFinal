@@ -44,7 +44,6 @@
       font-weight: bold;
     }
     .btn:hover {
-  background-color: #efb810;
   color: #fff;
 }
 
