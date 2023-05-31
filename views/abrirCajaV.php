@@ -138,7 +138,6 @@
                   }
                 ?>
 
-                <a href="#" class="btn btn-amarillo color-tokens col-sm-5 mx-auto" id="randomBtn">Abrir</a>
               </div>
             </div>
           </div>
