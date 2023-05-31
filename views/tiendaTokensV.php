@@ -187,21 +187,6 @@
 
 
 
-
-    <script>
-      function handleCheckboxChange(checkboxNumber) {
-        // Desmarcar todos los checkboxes excepto el seleccionado
-        for (let i = 1; i <= 4; i++) {
-          if (i !== checkboxNumber) {
-            document.getElementById('metodoPago' + i).checked = false;
-          }
-        }
-      }
-    </script>
-
-
-
-
   </main>
   <!--------------- FOOTER  --------------->
 
