@@ -33,11 +33,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $caja = $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
 
 
+        var_dump($_POST["guardar"]);
+
+
         if (isset($_POST["guardar"]) && $_POST["guardar"] == "guardar") {
 
             $precioCaja = $caja['precio'];
 
-            var_dump($precioCaja);
 
             if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null) {
                 $idUsuario= $_SESSION['idUsuario'];
