@@ -46,7 +46,7 @@
 
     .btn-bg-custom {
       background-color: #121212;
-
+      color: black !important;
     }
 
     .btn-bg-custom:hover {
