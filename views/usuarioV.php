@@ -171,7 +171,7 @@
                         <div class="card mb-4 bg-custom-sec">
                             <div class="card-body text-white">
                                 <div class="row">
-                                    <button type="button" class="btn btn-outline-light">Editar perfil</button>
+                                <button class="btn btn-link text-white">Editar perfil</button>
                                 </div>
                                 <hr>
                                 <div class="row">
