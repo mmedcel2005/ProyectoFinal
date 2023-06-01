@@ -179,23 +179,23 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <p class="mb-0">Historial de recompensas</p>
+                                <button class="btn btn-link text-white">Historial de recompensas</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <p class="mb-0">Historial de ventas</p>
+                                <button class="btn btn-link text-white">Historial de ventas</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <p class="mb-0">Mis envios</p>
+                                <button class="btn btn-link text-white">Mis envios</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <p class="mb-0">Soporte</p>
+                                <button class="btn btn-link text-white">Soporte</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <p class="mb-0">Cerrar sesion</p>
+                                <button class="btn btn-link text-white">Cerrar sesion</button>
                                 </div>
                             </div>
                         </div>
