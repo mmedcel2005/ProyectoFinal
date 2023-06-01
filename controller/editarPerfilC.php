@@ -52,7 +52,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             if ($avatares != null && $datosUsuario != null) {
                 include("../views/editarPerfilV.php");
             } else {
-                include("../views/usuarioC.php");
+                include("../views/usuarioV.php");
             }
         }
     } else {
@@ -60,10 +60,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
         $avatares = $gestorAvatar->obtenerAvatares($conexPDO);
 
+        var_dump($avatares);
+
         if ($avatares != null && $datosUsuario != null) {
             include("../views/editarPerfilV.php");
         } else {
-            include("../views/usuarioC.php");
+            include("../views/usuarioV.php");
         }
     }
 } else {
