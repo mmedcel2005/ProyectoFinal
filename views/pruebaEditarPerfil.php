@@ -44,7 +44,7 @@
     </style>
 </head>
 
-<body>
+<body class="text-white">
     <header>
         <!--------------- NAV  --------------->
         <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
