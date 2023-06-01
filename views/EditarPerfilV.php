@@ -129,6 +129,7 @@
             <div class="mb-3">
                 <label for="tarjeta" class="form-label">Seleccionar Avatar:</label>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+
                     <div class="col mb-3">
                         <div class="card">
                             <div class="card-img-container position-relative">
@@ -139,21 +140,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Agrega aquí las otras tarjetas -->
-                    <div class="col mb-3">
-                        <div class="card">
-                            <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
-                            <div class="card-body">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="3">
-                                    <label class="form-check-label" for="tarjeta3">
-                                        Tarjeta 3
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Agrega aquí las otras tarjetas que desees mostrar -->
+
+                    
                 </div>
             </div>
 
