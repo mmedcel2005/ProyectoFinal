@@ -92,7 +92,7 @@ class ObjetoM
                 // Se ejecuta la sentencia SQL y se verifica el resultado
                 if ($sentencia->execute()) {
                     // Se obtiene el objeto y se devuelve como resultado
-                    return $sentencia->fetch(PDO::FETCH_ASSOC);
+                    return $sentencia->fetch();
                 }
             } catch (PDOException $e) {
                 // Si ocurre algún error, se muestra el mensaje de error
