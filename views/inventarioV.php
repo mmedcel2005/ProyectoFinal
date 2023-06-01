@@ -167,7 +167,7 @@
                                         print('        <i class="bi bi-heart-fill"></i>');
                                         print('    </button>');
 
-                                        print('<span style="color: red;">' .$item["cantidad"] . '</span>');
+                                        print('<p> <span style="color: red;">x ' .$item["cantidad"] . '</span> </p>');
                                         print('</div>');
     
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
