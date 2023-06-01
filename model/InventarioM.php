@@ -65,38 +65,39 @@ class InventarioM
     
 
     public function obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO)
-    {
-        // Se inicializa la variable $result en null
-        $result = null;
-    
-        // Se verifica si los parámetros recibidos son válidos
-        if ($conexPDO != null && $idUsuario != null && $idInventario != null) {
-            try {
-                
-                // Se define la sentencia SQL para obtener los objetos del inventario
-                $sentencia = $conexPDO->prepare("SELECT O.*
-                    FROM Usuario U
-                    JOIN Inventario I ON U.idUsuario = I.Usuario_idUsuario
-                    JOIN Inventario_has_Objeto IO ON I.idInventario = IO.Inventario_idInventario
-                    JOIN Objeto O ON IO.Objeto_idObjeto = O.idObjeto
-                    WHERE U.idUsuario = :idUsuario AND I.idInventario = :idInventario");
-                
-                // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
-                $sentencia->bindParam(":idUsuario", $idUsuario);
-                $sentencia->bindParam(":idInventario", $idInventario);
-    
-                // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
-                $sentencia->execute();
-    
-                return $sentencia->fetchAll();
-            } catch (PDOException $e) {
-                // Si se produce un error, se muestra un mensaje en pantalla
-                print("Error al acceder a BD" . $e->getMessage());
-            }
+{
+    // Se inicializa la variable $result en null
+    $result = null;
+
+    // Se verifica si los parámetros recibidos son válidos
+    if ($conexPDO != null && $idUsuario != null && $idInventario != null) {
+        try {
+            
+            // Se define la sentencia SQL para obtener los objetos del inventario con la cantidad y ordenados por calidad
+            $sentencia = $conexPDO->prepare("SELECT O.*, IO.cantidad
+                FROM Usuario U
+                JOIN Inventario I ON U.idUsuario = I.Usuario_idUsuario
+                JOIN Inventario_has_Objeto IO ON I.idInventario = IO.Inventario_idInventario
+                JOIN Objeto O ON IO.Objeto_idObjeto = O.idObjeto
+                WHERE U.idUsuario = :idUsuario AND I.idInventario = :idInventario
+               ");
+
+            // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
+            $sentencia->bindParam(":idUsuario", $idUsuario);
+            $sentencia->bindParam(":idInventario", $idInventario);
+
+            // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
+            $sentencia->execute();
+
+            return $sentencia->fetchAll();
+        } catch (PDOException $e) {
+            // Si se produce un error, se muestra un mensaje en pantalla
+            print("Error al acceder a BD" . $e->getMessage());
         }
-        
-        return $result;
     }
+    
+    return $result;
+}
 
     
     // Se define una función llamada anadirUsuario que añade un usuario
