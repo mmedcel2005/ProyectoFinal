@@ -41,6 +41,10 @@
         .btn-amarillo {
             background-color: #efb810;
         }
+
+        .btn-link {
+            text-decoration: none;
+        }
     </style>
 </head>
 
