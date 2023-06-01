@@ -35,6 +35,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
         $caja = $gestorCaja->obtenerCajasPorID($cajaId, $conexPDO);
+        $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
 
 
         if (isset($_POST["guardar"]) && $_POST["guardar"] == "guardar") {
@@ -80,13 +81,43 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             } else {
                 $notificacion = "error";
             }
+        }elseif (isset($_POST["vender"]) && $_POST["vender"] == "vender") {
+            $precioCaja = $caja['precio'];
+
+            if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null && $_SESSION['cantTokens'] >= $precioCaja) {
+                $gestorInv = new InventarioM();
+
+                $idUsuario = $_SESSION['idUsuario'];
+
+
+                if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
+
+                    $idInventario = $_SESSION['idInventario'];
+                    $idObjeto = $_POST['idObjeto'];
+
+                    $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
+
+                    $objeto = $gestorObj->obtenerObjetoPorID($idObjeto, $conexPDO);
+
+                    var_dump($objeto['precio']);
+
+                    $cantTokensActual= $cantTokensActual + $objeto['precio'];
+
+                    $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+
+                        if ($cambiarCantTokens != false) {
+
+                            $_SESSION['cantTokens'] = $cantTokensActual;
+
+                            $notificacion = "ok";
+
+                        }
+
+                }
+            }
         }
 
 
-        $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
-
-
-        $items = $gestorObj->obtenerObjetosIntoCaja($cajaId, $conexPDO);
 
         // Definir las probabilidades de aparición para cada categoría (puedes ajustar los porcentajes según tus necesidades)
         $categoriasProbabilidades = [
