@@ -41,6 +41,11 @@
         .btn-amarillo {
             background-color: #efb810;
         }
+
+        .form-check-input {
+      margin: 0;
+      font-size: 15px;
+    }
     </style>
 </head>
 
