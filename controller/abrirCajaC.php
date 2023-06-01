@@ -23,12 +23,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     // El usuario ha iniciado sesión, permitir acceso a la página
     $gestorCaja = new CajasM();
 
+    $conexPDO = Utils::conectar($l = false);
 
     if (isset($_POST["idCaja"])) {
         $cajaId = $_POST["idCaja"];
 
-
-        $conexPDO = Utils::conectar($l = false);
 
         $gestorObj = new ObjetoM();
         $gestorUsuario = new UsuarioM();
