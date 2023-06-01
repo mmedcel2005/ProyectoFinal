@@ -94,8 +94,7 @@
                                 <h5 class="mb-0">Inventario</h5>
                             </div>
                             <div class="card-body">
-
-                               
+                                                             
                                 <?php
                                 if($objetosIntoInventario==null || (count($objetosIntoInventario))<1 ){
                                     print('<div class="row">');
@@ -157,7 +156,7 @@
                                         print('</div>');
     
                                         print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                        print('    <p>'.$item["nombre"] .'</p>');
+                                        print('    <p>'.$item["nombre"] .'   <span style="color: red;">' .$item["cantidad"] . '</span></p>');
 
     
     
