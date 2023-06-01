@@ -95,11 +95,11 @@
                 <input type="tel" class="form-control" id="telefono" name="telefono">
             </div>
             <div class="row">
-                <div class="col-md-8 mb-3">
+                <div class="col-md-10 mb-3">
                     <label for="direccion" class="form-label">Dirección:</label>
                     <input type="text" class="form-control" id="direccion" name="direccion">
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-2 mb-3">
                     <label for="codPostal" class="form-label">Código Postal:</label>
                     <input type="text" class="form-control" id="codPostal" name="codPostal">
                 </div>
