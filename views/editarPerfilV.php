@@ -141,11 +141,9 @@
                         </div>
                     </div>
 
-
+                    
                 </div>
             </div>
-
-            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
 
@@ -194,25 +192,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Función para verificar si todos los campos de entrada tienen un valor
-        function validateForm() {
-            var inputs = document.getElementsByTagName("input");
-            for (var i = 0; i < inputs.length; i++) {
-                if (inputs[i].value === "") {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        // Asigna el evento "submit" al formulario y llama a la función validateForm
-        document.querySelector("form").addEventListener("submit", function(event) {
-            if (!validateForm()) {
-                event.preventDefault(); // Evita que el formulario se envíe si no se cumplen las condiciones
-                alert("Por favor, completa todos los campos antes de enviar el formulario.");
-            }
-        });
-
+        
         function uncheckOtherCheckboxes(checkbox) {
             const checkboxes = document.getElementsByName("tarjeta");
             for (let i = 0; i < checkboxes.length; i++) {
