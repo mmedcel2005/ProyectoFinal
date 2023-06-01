@@ -132,14 +132,7 @@
                                     </div>
                                     <div class="col-sm-9">
                                         <?php
-                                        if($usuario["telefono"] == null){
-                                            print('<p class="text-muted mb-0">-</p>');
-
-                                        }else{
-                                            print('<p class="text-muted mb-0">' . $usuario["telefono"] . '</p>');
-
-                                        }
-
+                                        print('<p class="text-muted mb-0">' . $usuario["telefono"] . '</p>');
                                         ?>
                                     </div>
                                 </div>
@@ -151,13 +144,7 @@
                                     </div>
                                     <div class="col-sm-9">
                                         <?php
-                                        if($usuario["telefono"] == null){
-                                            print('<p class="text-muted mb-0">-</p>');
-
-                                        }else{
-                                            print('<p class="text-muted mb-0">' . $usuario["direccion"] . '</p>');
-
-                                        }
+                                        print('<p class="text-muted mb-0">' . $usuario["direccion"] . '</p>');
                                         ?>
                                     </div>
                                 </div>
@@ -339,8 +326,7 @@
     
                                         print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
                                         print('    <p>'.$item["nombre"] .'</p>');
-
-
+                                        print('</div>');
     
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
     
