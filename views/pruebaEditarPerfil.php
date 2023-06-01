@@ -43,9 +43,9 @@
         }
 
         .form-check-input {
-      margin: 0;
-      font-size: 15px;
-    }
+            margin: 0;
+            font-size: 15px;
+        }
     </style>
 </head>
 
@@ -125,12 +125,12 @@
             </div>
             <div class="mb-3">
                 <label for="tarjeta" class="form-label">Seleccionar Avatar:</label>
-                <div class="card-group">
+                <div class="card-group row-cols-md-4">
                     <div class="card">
                         <div class="card-img-container">
                             <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
                             <div class="item-overlay">
-                            <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="3">
+                                <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="3">
                             </div>
                         </div>
                     </div>
@@ -145,6 +145,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Agrega aquí las otras tarjetas que desees mostrar -->
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
