@@ -45,11 +45,11 @@
       background-color: #efb810;
       font-weight: bold;
     }
-    
+
     .btn-amarillo:hover {
-            background-color: #efb810;
-            color: white;
-        }
+      background-color: #efb810;
+      color: white;
+    }
 
     .custom-img {
       max-width: 300px;
@@ -215,49 +215,7 @@
               print('</div>');
               print('</div>');
             }
-            foreach ($itemsAleatorio as $item) {
-              print('<div class="item">');
-              print('<div class="card" id="item-card-' . $item['idObjeto'] . '">');
-              print('    <div class="card-img-container">');
-              switch ($item["calidad"]) {
-                case "L":
-                  print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
 
-                  break;
-                case "E":
-                  print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-
-                  break;
-                case "SR":
-                  print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-
-                  break;
-                case "R":
-                  print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-
-                  break;
-                case "C":
-                  print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-
-                  break;
-                case "MC":
-                  print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-
-                  break;
-                default:
-                  break;
-              }
-              print('        <div class="item-overlay">');
-              print('       <img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
-              print('           <br>');
-              print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-              print('      <input type="hidden" id="idItem" name="idItem-' . $item['idObjeto'] . '" value="' . $item['idObjeto'] . '">');
-              print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-              print('        </div>');
-              print('    </div>');
-              print('</div>');
-              print('</div>');
-            }
 
             ?>
           </div>
@@ -329,8 +287,8 @@
 
           </div>
           <div class="modal-footer">
-          <form action="../controller/abrirCajaC.php" method="post">
-            <button type="submit" value="vender" id="vender" name="vender" class="btn btn-danger">Vender</button>
+            <form action="../controller/abrirCajaC.php" method="post">
+              <button type="submit" value="vender" id="vender" name="vender" class="btn btn-danger">Vender</button>
               <input type="hidden" value="<?php print($caja['idCaja']); ?>" name="idCaja" id="idCaja">
               <input type="hidden" value="" name="idObjeto" id="idObjeto">
               <button type="submit" value="guardar" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
