@@ -179,7 +179,7 @@
                 <label for="tarjeta" class="form-label">Seleccionar Avatar:</label>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
 
-                    <?php foreach ($avateres as $avatar) {
+                    <?php foreach ($avatares as $avatar) {
                         print('<div class="col mb-3">');
                         print('<div class="card">');
                         print('<div class="card-img-container position-relative">');
