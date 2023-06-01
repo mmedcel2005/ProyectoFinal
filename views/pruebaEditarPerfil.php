@@ -45,7 +45,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <!--------------- NAV  --------------->
         <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
             <div class="container-fluid">
@@ -82,45 +82,45 @@
     <div class="container">
         <h1>Formulario de Datos</h1>
         <form>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre">
             </div>
-            <div class="form-group">
-                <label for="apellidos">Apellidos:</label>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos:</label>
                 <input type="text" class="form-control" id="apellidos" name="apellidos">
             </div>
-            <div class="form-group">
-                <label for="telefono">Teléfono:</label>
-                <input type="text" class="form-control" id="telefono" name="telefono">
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-8">
-                    <label for="calle">Calle:</label>
-                    <input type="text" class="form-control" id="calle" name="calle">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="codigo-postal">Código Postal:</label>
-                    <input type="text" class="form-control" id="codigo-postal" name="codigo-postal">
-                </div>
+            <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" name="direccion">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="pais">País:</label>
-                    <input type="text" class="form-control" id="pais" name="pais">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="codigoPostal" class="form-label">Código Postal:</label>
+                    <input type="text" class="form-control" id="codigoPostal" name="codigoPostal">
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="provincia">Provincia:</label>
+                <div class="col-md-6 mb-3">
+                    <label for="provincia" class="form-label">Provincia:</label>
                     <input type="text" class="form-control" id="provincia" name="provincia">
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="ciudad">Ciudad:</label>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="ciudad" class="form-label">Ciudad:</label>
                     <input type="text" class="form-control" id="ciudad" name="ciudad">
                 </div>
+                <div class="col-md-6 mb-3">
+                    <label for="pais" class="form-label">País:</label>
+                    <input type="text" class="form-control" id="pais" name="pais">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="tarjeta">Seleccionar Tarjeta:</label>
-                <div class="card-deck">
+            <div class="mb-3">
+                <label for="tarjeta" class="form-label">Seleccionar Tarjeta:</label>
+                <div class="card-group">
                     <div class="card">
                         <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
                         <div class="card-body">
@@ -157,10 +157,10 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>>
+        </form>
     </div>
 
-    
+
     <footer class="bg-custom text-center text-white" id="contact_footer">
         <br>
         <div class="d-flex justify-content-around">
