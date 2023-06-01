@@ -322,7 +322,6 @@
           <div class="modal-footer">
           <form action="../controller/abrirCajaC.php" method="post">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vender</button>
-            <form action="../controller/abrirCajaC.php" method="post">
               <input type="hidden" value="" name="idObjeto" id="idObjeto">
               <button type="submit" value="guardar" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
             </form>
