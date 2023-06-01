@@ -79,7 +79,7 @@ class ObjetoM
     }
 
     // Función para obtener un objeto de la base de datos por su ID
-    public function obtenerObjetoPorID($conexPDO, $idObjeto)
+    public function obtenerObjetoPorID($idObjeto, $conexPDO)
     {
         if ($conexPDO != null && isset($idObjeto)) {
             try {
