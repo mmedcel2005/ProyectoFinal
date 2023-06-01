@@ -85,11 +85,12 @@
         </nav>
     </header>
     <div class="container mb-3 mt-3">
-        <div class="d-flex justify-content-between align-items-center">
-            <h1 class="mb-0">Editar Datos</h1>
-            <button type="submit" class="btn btn-primary float-end" id="guardar" name="guardar" value="guardar">Guardar</button>
-        </div>
-        <form>
+        <form action="../controller/editarPerfilC.php" method="post">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="mb-0">Editar Datos</h1>
+                <button type="submit" class="btn btn-primary float-end" id="guardar" name="guardar" value="guardar">Guardar</button>
+            </div>
+
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
                 <?php
@@ -182,9 +183,9 @@
                         print('<div class="col mb-3">');
                         print('<div class="card">');
                         print('<div class="card-img-container position-relative">');
-                        print('<img src="'. $avatar["imagen"] .'" class="card-img-top" alt="Avatar numero '. $avatar["idAvatar"] .'">');
+                        print('<img src="' . $avatar["imagen"] . '" class="card-img-top" alt="Avatar numero ' . $avatar["idAvatar"] . '">');
                         print('<div class="item-overlay d-flex align-items-center justify-content-center">');
-                        print('<input class="form-check-input" type="radio" name="imagen" id="imagen-'. $avatar["idAvatar"] .'" value="'. $avatar["imagen"] .'">');
+                        print('<input class="form-check-input" type="radio" name="imagen" id="imagen-' . $avatar["idAvatar"] . '" value="' . $avatar["imagen"] . '">');
                         print('</div> ');
                         print('</div> ');
                         print('</div> ');
