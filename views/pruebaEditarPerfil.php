@@ -94,26 +94,26 @@
                 <label for="telefono" class="form-label">Teléfono:</label>
                 <input type="tel" class="form-control" id="telefono" name="telefono">
             </div>
-            <div class="mb-3">
-                <label for="direccion" class="form-label">Dirección:</label>
-                <input type="text" class="form-control" id="direccion" name="direccion">
-            </div>
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="codigoPostal" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" id="codigoPostal" name="codigoPostal">
+                <div class="col-md-8 mb-3">
+                    <label for="direccion" class="form-label">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="provincia" class="form-label">Provincia:</label>
-                    <input type="text" class="form-control" id="provincia" name="provincia">
+                <div class="col-md-4 mb-3">
+                    <label for="codPostal" class="form-label">Código Postal:</label>
+                    <input type="text" class="form-control" id="codPostal" name="codPostal">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-4 mb-3">
                     <label for="ciudad" class="form-label">Ciudad:</label>
                     <input type="text" class="form-control" id="ciudad" name="ciudad">
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-4 mb-3">
+                    <label for="provincia" class="form-label">Provincia:</label>
+                    <input type="text" class="form-control" id="provincia" name="provincia">
+                </div>
+                <div class="col-md-4 mb-3">
                     <label for="pais" class="form-label">País:</label>
                     <input type="text" class="form-control" id="pais" name="pais">
                 </div>
