@@ -327,15 +327,7 @@
                                         print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
                                         print('    <p>'.$item["nombre"] .'</p>');
 
-    
-    
-                                        print('   <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">');
-                                        print('        <i class="bi bi-send-fill"></i>');
-                                        print('    </button>');
-                                        print('    <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">');
-                                        print('        <i class="bi bi-heart-fill"></i>');
-                                        print('    </button>');
-                                        print('</div>');
+
     
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
     

@@ -252,6 +252,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `proyecto`.`Enviados_has_Objeto` (
   `Enviados_idEnviados` INT NOT NULL,
   `Objeto_idObjeto` INT NOT NULL,
+    `cantidad` INT,
   PRIMARY KEY (`Enviados_idEnviados`, `Objeto_idObjeto`),
   INDEX `fk_Enviados_has_Objeto_Objeto1_idx` (`Objeto_idObjeto` ASC) ,
   INDEX `fk_Enviados_has_Objeto_Enviados1_idx` (`Enviados_idEnviados` ASC) ,
