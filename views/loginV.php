@@ -37,19 +37,20 @@ namespace views;
         }
 
         .bg-custom {
-      background-color: #121212;
-    }
+            background-color: #121212;
+        }
 
-    .bg-custom-sec {
-      background-color: #2b2b2b;
-    }
+        .bg-custom-sec {
+            background-color: #2b2b2b;
+        }
 
-    .text-token{
-  color: #efb810;
-}
-.btn-amarillo{
-  background-color: #efb810;
-}
+        .text-token {
+            color: #efb810;
+        }
+
+        .btn-amarillo {
+            background-color: #efb810;
+        }
 
         .form-signin {
             width: 100%;
@@ -84,6 +85,20 @@ namespace views;
             margin-bottom: 10px;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
+        }
+
+        .btn-bg-custom {
+            background-color: #121212;
+        }
+
+        .btn-bg-custom:hover {
+            background-color: #121212;
+
+        }
+
+        .btn-amarillo:hover {
+            background-color: #efb810;
+            color: white;
         }
     </style>
 
