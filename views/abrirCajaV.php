@@ -351,7 +351,7 @@
 
           <!-- Pie del modal -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-secondary">Volver</button>
             <form action="../controller/tiendaTokensC.php">
               <button type="submit" class="btn btn-primary">Comprar</button>
             </form>
