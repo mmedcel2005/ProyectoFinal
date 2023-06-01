@@ -175,27 +175,29 @@
                         <div class="card mb-4 bg-custom-sec">
                             <div class="card-body text-white">
                                 <div class="row">
-                                <button class="btn btn-link text-white">Editar perfil</button>
+                                    <form action="../controller/editarPerfilC.php" method="post">
+                                        <button class="btn btn-link text-white">Editar perfil</button>
+                                    </form>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                <button class="btn btn-link text-white">Historial de recompensas</button>
+                                    <button class="btn btn-link text-white">Historial de recompensas</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                <button class="btn btn-link text-white">Historial de ventas</button>
+                                    <button class="btn btn-link text-white">Historial de ventas</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                <button class="btn btn-link text-white">Mis envios</button>
+                                    <button class="btn btn-link text-white">Mis envios</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                <button class="btn btn-link text-white">Soporte</button>
+                                    <button class="btn btn-link text-white">Soporte</button>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                <button class="btn btn-link text-white">Cerrar sesion</button>
+                                    <button class="btn btn-link text-white">Cerrar sesion</button>
                                 </div>
                             </div>
                         </div>

@@ -116,17 +116,19 @@ class UsuarioM
         if (isset($usuario) && $conexPDO != null) {
             try {
                 // Se define la sentencia SQL para actualizar el registro
-                $sentencia = $conexPDO->prepare("UPDATE proyecto.Usuario SET nombre = :nombre, apellidos = :apellidos, correo = :correo, password = :password, direccion = :direccion, salt = :salt, cantTokens = :cantTokens, imagen = :imagen WHERE idUsuario = :idUsuario");
+                $sentencia = $conexPDO->prepare("UPDATE proyecto.Usuario SET nombre = :nombre, apellidos = :apellidos, direccion = :direccion, imagen = :imagen, telefono = :telefono , codigo_postal = :codigo_postal , ciudad = :ciudad , provincia = :provincia , pais = :pais WHERE idUsuario = :idUsuario");
+
 
                 // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
                 $sentencia->bindParam(":nombre", $usuario["nombre"]);
                 $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
-                $sentencia->bindParam(":correo", $usuario["correo"]);
-                $sentencia->bindParam(":password", $usuario["password"]);
                 $sentencia->bindParam(":direccion", $usuario["direccion"]);
-                $sentencia->bindParam(":salt", $usuario["salt"]);
-                $sentencia->bindParam(":cantTokens", $usuario["cantTokens"]);
                 $sentencia->bindParam(":imagen", $usuario["imagen"]);
+                $sentencia->bindParam(":telefono", $usuario["telefono"]);
+                $sentencia->bindParam(":codigo_postal", $usuario["codigo_postal"]);
+                $sentencia->bindParam(":ciudad", $usuario["ciudad"]);
+                $sentencia->bindParam(":provincia", $usuario["provincia"]);
+                $sentencia->bindParam(":pais", $usuario["pais"]);
                 $sentencia->bindParam(":idUsuario", $usuario["idUsuario"]);
 
                 // Se ejecuta la sentencia SQL

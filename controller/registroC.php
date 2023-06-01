@@ -60,9 +60,9 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
                 if ($idInventario != null) {
                     $_SESSION['idInventario'] = $idInventario;
+                    $_SESSION['imagen'] = $datosUsuario['imagen'];
                     $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
                     $_SESSION['nombre'] = $datosUsuario['nombre'];
-                    $_SESSION['correo'] = $datosUsuario['correo'];
                     $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
                 }
             }

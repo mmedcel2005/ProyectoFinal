@@ -58,7 +58,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
             $_SESSION['nombre'] = $datosUsuario['nombre'];
-            $_SESSION['correo'] = $datosUsuario['correo'];
             $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
 
             //Si no quiere decir que esta activo por lo que nos enviara a mostrar clientes

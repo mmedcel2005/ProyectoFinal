@@ -87,61 +87,113 @@
     <div class="container mb-3 mt-3">
         <div class="d-flex justify-content-between align-items-center">
             <h1 class="mb-0">Editar Datos</h1>
-            <button type="submit" class="btn btn-primary float-end">Guardar</button>
+            <button type="submit" class="btn btn-primary float-end" id="guardar" name="guardar" value="guardar">Guardar</button>
         </div>
         <form>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre">
+                <?php
+                if ($datosUsuario["nombre"] != null) {
+                    print('<input type="text" class="form-control" id="nombre" name="nombre" value="' . $datosUsuario["nombre"] . '">');
+                } else {
+                    print('<input type="text" class="form-control" id="nombre" name="nombre">');
+                }
+                ?>
             </div>
             <div class="mb-3">
                 <label for="apellidos" class="form-label">Apellidos:</label>
-                <input type="text" class="form-control" id="apellidos" name="apellidos">
+                <?php
+                if ($datosUsuario["apellidos"] != null) {
+                    print('<input type="text" class="form-control" id="apellidos" name="apellidos" value="' . $datosUsuario["apellidos"] . '">');
+                } else {
+                    print('<input type="text" class="form-control" id="apellidos" name="apellidos">');
+                }
+                ?>
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono:</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono">
+                <?php
+                if ($datosUsuario["telefono"] != null) {
+                    print('<input type="text" class="form-control" id="telefono" name="telefono" value="' . $datosUsuario["telefono"] . '">');
+                } else {
+                    print('<input type="text" class="form-control" id="telefono" name="telefono">');
+                }
+                ?>
             </div>
             <div class="row">
                 <div class="col-md-10 mb-3">
                     <label for="direccion" class="form-label">Dirección:</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion">
+                    <?php
+                    if ($datosUsuario["direccion"] != null) {
+                        print('<input type="text" class="form-control" id="direccion" name="direccion" value="' . $datosUsuario["direccion"] . '">');
+                    } else {
+                        print('<input type="text" class="form-control" id="direccion" name="direccion">');
+                    }
+                    ?>
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="codPostal" class="form-label">Código Postal:</label>
-                    <input type="text" class="form-control" id="codPostal" name="codPostal">
+                    <?php
+                    if ($datosUsuario["codigo_postal"] != null) {
+                        print('<input type="text" class="form-control" id="codigo_postal" name="codigo_postal" value="' . $datosUsuario["codigo_postal"] . '">');
+                    } else {
+                        print('<input type="text" class="form-control" id="codigo_postal" name="codigo_postal">');
+                    }
+                    ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="ciudad" class="form-label">Ciudad:</label>
-                    <input type="text" class="form-control" id="ciudad" name="ciudad">
+                    <?php
+                    if ($datosUsuario["ciudad"] != null) {
+                        print('<input type="text" class="form-control" id="ciudad" name="ciudad" value="' . $datosUsuario["ciudad"] . '">');
+                    } else {
+                        print('<input type="text" class="form-control" id="ciudad" name="ciudad">');
+                    }
+                    ?>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="provincia" class="form-label">Provincia:</label>
-                    <input type="text" class="form-control" id="provincia" name="provincia">
+                    <?php
+                    if ($datosUsuario["provincia"] != null) {
+                        print('<input type="text" class="form-control" id="provincia" name="provincia" value="' . $datosUsuario["provincia"] . '">');
+                    } else {
+                        print('<input type="text" class="form-control" id="provincia" name="provincia">');
+                    }
+                    ?>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="pais" class="form-label">País:</label>
-                    <input type="text" class="form-control" id="pais" name="pais">
+                    <?php
+                    if ($datosUsuario["pais"] != null) {
+                        print('<input type="text" class="form-control" id="pais" name="pais" value="' . $datosUsuario["pais"] . '">');
+                    } else {
+                        print('<input type="text" class="form-control" id="pais" name="pais">');
+                    }
+                    ?>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="tarjeta" class="form-label">Seleccionar Avatar:</label>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
 
-                    <div class="col mb-3">
-                        <div class="card">
-                            <div class="card-img-container position-relative">
-                                <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
-                                <div class="item-overlay d-flex align-items-center justify-content-center">
-                                    <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php foreach ($avateres as $avatar) {
+                        print('<div class="col mb-3">');
+                        print('<div class="card">');
+                        print('<div class="card-img-container position-relative">');
+                        print('<img src="'. $avatar["imagen"] .'" class="card-img-top" alt="Avatar numero '. $avatar["idAvatar"] .'">');
+                        print('<div class="item-overlay d-flex align-items-center justify-content-center">');
+                        print('<input class="form-check-input" type="radio" name="imagen" id="imagen-'. $avatar["idAvatar"] .'" value="'. $avatar["imagen"] .'">');
+                        print('</div> ');
+                        print('</div> ');
+                        print('</div> ');
+                        print('</div> ');
+                    }
+                    ?>
 
-                    
+
+
                 </div>
             </div>
         </form>
@@ -192,7 +244,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        
         function uncheckOtherCheckboxes(checkbox) {
             const checkboxes = document.getElementsByName("tarjeta");
             for (let i = 0; i < checkboxes.length; i++) {
