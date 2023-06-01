@@ -45,6 +45,11 @@
       background-color: #efb810;
       font-weight: bold;
     }
+    
+    .btn-amarillo:hover {
+            background-color: #efb810;
+            color: white;
+        }
 
     .custom-img {
       max-width: 300px;
