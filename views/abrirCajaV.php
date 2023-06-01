@@ -321,7 +321,7 @@
           </div>
           <div class="modal-footer">
           <form action="../controller/abrirCajaC.php" method="post">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vender</button>
+            <button type="submit" value="vender" id="vender" name="vender" class="btn btn-danger">Vender</button>
               <input type="hidden" value="<?php print($caja['idCaja']); ?>" name="idCaja" id="idCaja">
               <input type="hidden" value="" name="idObjeto" id="idObjeto">
               <button type="submit" value="guardar" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
@@ -351,7 +351,7 @@
 
           <!-- Pie del modal -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary">Volver</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
             <form action="../controller/tiendaTokensC.php">
               <button type="submit" class="btn btn-primary">Comprar</button>
             </form>
