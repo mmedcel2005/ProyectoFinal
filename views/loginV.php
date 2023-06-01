@@ -50,6 +50,7 @@ namespace views;
 
         .btn-amarillo {
             background-color: #efb810;
+            font-weight: bold;
         }
 
         .form-signin {
