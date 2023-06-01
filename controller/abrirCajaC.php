@@ -100,7 +100,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                     var_dump($objeto['precio']);
 
-                    $cantTokensActual= $cantTokensActual + $objeto['precio'];
+                    $cantTokensActual= $cantTokensActual + ($objeto['precio'] * 100);
 
                     $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
