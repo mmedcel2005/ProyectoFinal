@@ -45,40 +45,40 @@
 </head>
 
 <body>
-<header>
-    <!--------------- NAV  --------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-      <div class="container-fluid">
-      <a class="nav-link" href="../index.php">
-          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Oro gratis</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
-            </li>
-            <li class="nav-item"></li>
-          </ul>
+    <header>
+        <!--------------- NAV  --------------->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            <div class="container-fluid">
+                <a class="nav-link" href="../index.php">
+                    <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>Oro gratis</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
 
-          <?php
-          print('<div class="d-flex mx-lg-5">');
-          print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
-          print("</a></div>");
-          print("");
+                    <?php
+                    print('<div class="d-flex mx-lg-5">');
+                    print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
+                    print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
+                    print("</a></div>");
+                    print("");
 
-          ?>
-          <div id="google_translate_element" class="google"></div>
-        </div>
-      </div>
-    </nav>
-  </header>
+                    ?>
+                    <div id="google_translate_element" class="google"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
     <main>
@@ -121,7 +121,11 @@
                                     </div>
                                     <div class="col-sm-9">
                                         <?php
-                                        print('<p class="text-muted mb-0">' . $usuario["correo"] . '</p>');
+                                        if ($usuario["telefono"] == null) {
+                                            print('<p class="text-muted mb-0">-</p>');
+                                        } else {
+                                            print('<p class="text-muted mb-0">' . $usuario["correo"] . '</p>');
+                                        }
                                         ?>
                                     </div>
                                 </div>
@@ -132,7 +136,12 @@
                                     </div>
                                     <div class="col-sm-9">
                                         <?php
-                                        print('<p class="text-muted mb-0">' . $usuario["telefono"] . '</p>');
+                                        if ($usuario["telefono"] == null) {
+                                            print('<p class="text-muted mb-0">-</p>');
+                                        } else {
+                                            print('<p class="text-muted mb-0">' . $usuario["telefono"] . '</p>');
+                                        }
+
                                         ?>
                                     </div>
                                 </div>
@@ -200,53 +209,53 @@
                             </div>
                             <div class="card-body">
 
-                               
+
                                 <?php
-                                if((count($objetosIntoInventario)>3)){
-                                    for($i=0;$i<3;$i++){
+                                if ((count($objetosIntoInventario) > 3)) {
+                                    for ($i = 0; $i < 3; $i++) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
                                         print('    <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">');
                                         switch ($objetosIntoInventario[$i]["calidad"]) {
                                             case "L":
                                                 print('        <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "E":
                                                 print('        <img src="../src/img/bg-item-rojo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "SR":
                                                 print('        <img src="../src/img/bg-item-morado.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "R":
                                                 print('        <img src="../src/img/bg-item-azul.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "C":
                                                 print('        <img src="../src/img/bg-item-celeste.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "MC":
                                                 print('        <img src="../src/img/bg-item-gris.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             default:
-                                              break;
-                                          }
-                                        print('        <img src="'.$objetosIntoInventario[$i]["imagen"] .'" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de '.$objetosIntoInventario[$i]["nombre"] .'" />');
+                                                break;
+                                        }
+                                        print('        <img src="' . $objetosIntoInventario[$i]["imagen"] . '" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de ' . $objetosIntoInventario[$i]["nombre"] . '" />');
                                         print('        <a href="#!">');
                                         print('            <div class="mask"></div>');
                                         print('        </a>');
                                         print('    </div>');
                                         print('</div>');
-    
-                                        print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                        print('    <p>'.$objetosIntoInventario[$i]["nombre"] .'</p>');
 
-    
-    
+                                        print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
+                                        print('    <p>' . $objetosIntoInventario[$i]["nombre"] . '</p>');
+
+
+
                                         print('   <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">');
                                         print('        <i class="bi bi-send-fill"></i>');
                                         print('    </button>');
@@ -254,20 +263,18 @@
                                         print('        <i class="bi bi-heart-fill"></i>');
                                         print('    </button>');
                                         print('</div>');
-    
+
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-    
+
                                         print('      <p class="text-start text-md-center">');
-                                        print('       <strong class="text-token">'.$objetosIntoInventario[$i]["precio"] .' €</strong>');
+                                        print('       <strong class="text-token">' . $objetosIntoInventario[$i]["precio"] . ' €</strong>');
                                         print('    </p>');
                                         print('</div>');
                                         print('</div>');
                                         print('<hr class="my-4">');
                                     }
                                     print('<h5><a href="../controller/inventarioC.php" class="text-decoration-none text-white">Ver más</a></h5>');
-
-                                }
-                                elseif($objetosIntoInventario==null || (count($objetosIntoInventario))<1 ){
+                                } elseif ($objetosIntoInventario == null || (count($objetosIntoInventario)) < 1) {
                                     print('<div class="row">');
                                     print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
 
@@ -283,63 +290,61 @@
 
                                     print('</div>');
                                     print('</div>');
-                                }                               
-                                else{
-                                    foreach($objetosIntoInventario as $item){
+                                } else {
+                                    foreach ($objetosIntoInventario as $item) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
                                         print('    <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">');
                                         switch ($item["calidad"]) {
                                             case "L":
                                                 print('        <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "E":
                                                 print('        <img src="../src/img/bg-item-rojo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "SR":
                                                 print('        <img src="../src/img/bg-item-morado.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "R":
                                                 print('        <img src="../src/img/bg-item-azul.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "C":
                                                 print('        <img src="../src/img/bg-item-celeste.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "MC":
                                                 print('        <img src="../src/img/bg-item-gris.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             default:
-                                              break;
-                                          }
-                                        print('        <img src="'.$item["imagen"] .'" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de '.$item["nombre"] .'" />');
+                                                break;
+                                        }
+                                        print('        <img src="' . $item["imagen"] . '" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de ' . $item["nombre"] . '" />');
                                         print('        <a href="#!">');
                                         print('            <div class="mask"></div>');
                                         print('        </a>');
                                         print('    </div>');
                                         print('</div>');
-    
+
                                         print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                        print('    <p>'.$item["nombre"] .'</p>');
+                                        print('    <p>' . $item["nombre"] . '</p>');
 
 
-    
+
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-    
+
                                         print('      <p class="text-start text-md-center">');
-                                        print('       <strong class="text-token">'.$item["precio"] .' €</strong>');
+                                        print('       <strong class="text-token">' . $item["precio"] . ' €</strong>');
                                         print('    </p>');
                                         print('</div>');
                                         print('</div>');
                                         print('<hr class="my-4">');
                                     }
                                     print('<h5><a href="../controller/inventarioC.php" class="text-decoration-none text-white">Ver más</a></h5>');
-
                                 }
 
                                 ?>
