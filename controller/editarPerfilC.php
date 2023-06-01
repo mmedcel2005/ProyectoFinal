@@ -22,6 +22,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar($l = false);
 
+    $idUsuario=$_SESSION['idUsuario'];
+
     if (isset($_POST["guardar"]) && $_POST["guardar"] == "guardar" && isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["telefono"]) && isset($_POST["direccion"]) && isset($_POST["codigo_postal"]) && isset($_POST["ciudad"]) && isset($_POST["provincia"]) && isset($_POST["pais"]) && isset($_POST["imagen"])) {
 
         $usuario["nombre"] = $_POST["nombre"];
@@ -62,7 +64,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
         var_dump($datosUsuario);
 
-        if ($avatares != null && $datosUsuario != null) {
+        if ($avatares != null && $datosUsuario != false) {
             include("../views/editarPerfilV.php");
         } else {
             include("../views/usuarioV.php");
