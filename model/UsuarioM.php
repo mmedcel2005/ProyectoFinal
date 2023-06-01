@@ -53,21 +53,21 @@ class UsuarioM
 
     public function obtenerUsuarioPorID($idUsuario, $conexPDO)
     {
-        if ($idUsuario != null) {
+        if ($conexPDO != null) {
+            try {
+                $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE idUsuario = ?");
+                $sentencia->bindParam(1, $idUsuario);
+                $sentencia->execute();
 
-            if ($conexPDO != null) {
-                try {
-                    $sentencia = $conexPDO->prepare("SELECT * FROM proyecto.Usuario WHERE idUsuario = ?");
-                    $sentencia->bindParam(1, $idUsuario);
-                    $sentencia->execute();
-
-                    // Devolvemos el nombre de usuario
-                    return $sentencia->fetch();
-                } catch (PDOException $e) {
-                    print("Error al acceder a BD" . $e->getMessage());
-                }
+                // Devolvemos el nombre de usuario
+                return $sentencia->fetch();
+            } catch (PDOException $e) {
+                print("Error al acceder a BD" . $e->getMessage());
             }
         }
+
+
+        return null; // Agregar un retorno para cubrir todos los casos
     }
 
 
@@ -215,15 +215,15 @@ class UsuarioM
                 $sentencia->bindParam(":cantTokens", $cantTokens);
                 $sentencia->bindParam(":idUsuario", $idUsuario);
                 $resultado = $sentencia->execute();
-    
+
                 // Devolvemos true si la actualización fue exitosa
                 return $resultado;
             } catch (PDOException $e) {
                 print("Error al acceder a BD" . $e->getMessage());
             }
         }
-    
+
         // Devolvemos false si ocurrió algún error
         return false;
     }
-}    
+}
