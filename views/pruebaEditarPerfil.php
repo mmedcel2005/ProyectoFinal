@@ -119,7 +119,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="tarjeta" class="form-label">Seleccionar Tarjeta:</label>
+                <label for="tarjeta" class="form-label">Seleccionar Avatar:</label>
                 <div class="card-group">
                     <div class="card">
                         <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
