@@ -37,7 +37,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="pais">País:</label>
-                    <input type="text" class="form-control" id="pais" name="pais">>
+                    <input type="text" class="form-control" id="pais" name="pais">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="provincia">Provincia:</label>
@@ -49,25 +49,45 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="tarjeta1" name="tarjeta" onclick="uncheckOtherCheckboxes(this)">
-                    <label class="custom-control-label" for="tarjeta1">Tarjeta 1</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="tarjeta2" name="tarjeta" onclick="uncheckOtherCheckboxes(this)">
-                    <label class="custom-control-label" for="tarjeta2">Tarjeta 2</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="tarjeta3" name="tarjeta" onclick="uncheckOtherCheckboxes(this)">
-                    <label class="custom-control-label" for="tarjeta3">Tarjeta 3</label>
+                <label for="tarjeta">Seleccionar Tarjeta:</label>
+                <div class="card-deck">
+                    <div class="card">
+                        <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta1" value="1">
+                                <label class="form-check-label" for="tarjeta1">
+                                    Tarjeta 1
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="imagen2.jpg" class="card-img-top" alt="Imagen 2">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta2" value="2">
+                                <label class="form-check-label" for="tarjeta2">
+                                    Tarjeta 2
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="imagen3.jpg" class="card-img-top" alt="Imagen 3">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="3">
+                                <label class="form-check-label" for="tarjeta3">
+                                    Tarjeta 3
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
+        </form>>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
