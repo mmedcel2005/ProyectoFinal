@@ -122,24 +122,10 @@
                 <label for="tarjeta" class="form-label">Seleccionar Avatar:</label>
                 <div class="card-group">
                     <div class="card">
-                        <img src="imagen1.jpg" class="card-img-top" alt="Imagen 1">
-                        <div class="card-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta1" value="1">
-                                <label class="form-check-label" for="tarjeta1">
-                                    Tarjeta 1
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="imagen2.jpg" class="card-img-top" alt="Imagen 2">
-                        <div class="card-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta2" value="2">
-                                <label class="form-check-label" for="tarjeta2">
-                                    Tarjeta 2
-                                </label>
+                        <div class="card-img-container">
+                            <img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">
+                            <div class="item-overlay">
+                            <input class="form-check-input" type="radio" name="tarjeta" id="tarjeta3" value="3">
                             </div>
                         </div>
                     </div>
