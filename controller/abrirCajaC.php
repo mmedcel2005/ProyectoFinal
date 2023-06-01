@@ -47,22 +47,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                 $idUsuario = $_SESSION['idUsuario'];
 
-                $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
-
-                $_SESSION['cantTokens'] = $cantTokensActual;
-
 
                 if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
                     $idInventario = $_SESSION['idInventario'];
                     $idObjeto = $_POST['idObjeto'];
-
-
-                    var_dump($idInventario);
-                    var_dump($idUsuario);
-                    var_dump($idObjeto);
-                    var_dump($conexPDO);
-
 
                     $anadirItemIntoInventario = $gestorInv->anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
 
@@ -74,6 +63,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
                         if ($cambiarCantTokens != false) {
+
+                            $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
+
+                            $_SESSION['cantTokens'] = $cantTokensActual;
 
                             $notificacion = "ok";
 

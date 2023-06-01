@@ -100,25 +100,38 @@ class InventarioM
 
     
     // Se define una función llamada anadirUsuario que añade un usuario
-    public function anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto , $conexPDO)
+    public function anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO)
     {
         // Se inicializa la variable $result en null
         $result = null;
-
+    
         // Se verifica si los parámetros recibidos son válidos
         if ($conexPDO != null) {
             try {
-                // Se define la sentencia SQL para insertar un nuevo registro
-                $sentencia = $conexPDO->prepare("INSERT INTO proyecto.Inventario_has_Objeto (Inventario_idInventario, Inventario_Usuario_idUsuario, Objeto_idObjeto) VALUES (:Inventario_idInventario, :Inventario_Usuario_idUsuario, :Objeto_idObjeto);");
-
-                // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
-                $sentencia->bindParam(":Inventario_idInventario", $idInventario);
-                $sentencia->bindParam(":Inventario_Usuario_idUsuario", $idUsuario);
-                $sentencia->bindParam(":Objeto_idObjeto", $idObjeto);
-                
-
-                // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
-                $result = $sentencia->execute();
+                // Verificar si el objeto ya existe en el inventario
+                $consulta = $conexPDO->prepare("SELECT cantidad FROM proyecto.Inventario_has_Objeto WHERE Inventario_idInventario = :Inventario_idInventario AND Inventario_Usuario_idUsuario = :Inventario_Usuario_idUsuario AND Objeto_idObjeto = :Objeto_idObjeto");
+                $consulta->bindParam(":Inventario_idInventario", $idInventario);
+                $consulta->bindParam(":Inventario_Usuario_idUsuario", $idUsuario);
+                $consulta->bindParam(":Objeto_idObjeto", $idObjeto);
+                $consulta->execute();
+    
+                $cantidad = $consulta->fetchColumn();
+    
+                if ($cantidad) {
+                    // Si el objeto ya existe, incrementar la cantidad en 1
+                    $actualizarSentencia = $conexPDO->prepare("UPDATE proyecto.Inventario_has_Objeto SET cantidad = cantidad + 1 WHERE Inventario_idInventario = :Inventario_idInventario AND Inventario_Usuario_idUsuario = :Inventario_Usuario_idUsuario AND Objeto_idObjeto = :Objeto_idObjeto");
+                    $actualizarSentencia->bindParam(":Inventario_idInventario", $idInventario);
+                    $actualizarSentencia->bindParam(":Inventario_Usuario_idUsuario", $idUsuario);
+                    $actualizarSentencia->bindParam(":Objeto_idObjeto", $idObjeto);
+                    $result = $actualizarSentencia->execute();
+                } else {
+                    // Si el objeto no existe, insertar un nuevo registro con cantidad 1
+                    $insertarSentencia = $conexPDO->prepare("INSERT INTO proyecto.Inventario_has_Objeto (Inventario_idInventario, Inventario_Usuario_idUsuario, Objeto_idObjeto, cantidad) VALUES (:Inventario_idInventario, :Inventario_Usuario_idUsuario, :Objeto_idObjeto, 1)");
+                    $insertarSentencia->bindParam(":Inventario_idInventario", $idInventario);
+                    $insertarSentencia->bindParam(":Inventario_Usuario_idUsuario", $idUsuario);
+                    $insertarSentencia->bindParam(":Objeto_idObjeto", $idObjeto);
+                    $result = $insertarSentencia->execute();
+                }
             } catch (PDOException $e) {
                 // Si se produce un error, se muestra un mensaje en pantalla
                 print("Error al acceder a BD" . $e->getMessage());
@@ -126,5 +139,6 @@ class InventarioM
         }
         return $result;
     }
+    
     
 }
