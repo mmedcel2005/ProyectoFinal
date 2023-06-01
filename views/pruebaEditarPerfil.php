@@ -85,7 +85,10 @@
         </nav>
     </header>
     <div class="container">
-        <h1>Formulario de Datos</h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="mb-0">Editar Datos</h1>
+            <button type="submit" class="btn btn-primary float-end">Guardar</button>
+        </div>
         <form>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
