@@ -96,6 +96,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                     $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
 
+                    var_dump($conexPDO);
+                    var_dump($idObjeto);
+
+
                     $objeto = $gestorObj->obtenerObjetoPorID($idObjeto, $conexPDO);
 
                     var_dump($objeto['precio']);
