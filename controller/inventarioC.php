@@ -21,21 +21,53 @@ require_once("../model/Utils.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SESSION['idUsuario']) && isset($_SESSION['idInventario'])) {
     // El usuario ha iniciado sesión, permitir acceso a la página
-        $idUsuario= $_SESSION['idUsuario'];
-        $idInventario= $_SESSION['idInventario'];
+    $idUsuario = $_SESSION['idUsuario'];
+    $idInventario = $_SESSION['idInventario'];
 
-        $conexPDO = Utils::conectar($l=false);
-        $gestorUsuario = new UsuarioM();
-        $gestorInv = new InventarioM();
-        $gestorCaja = new CajasM();
+    $conexPDO = Utils::conectar($l = false);
+    $gestorUsuario = new UsuarioM();
+    $gestorInv = new InventarioM();
+    $gestorCaja = new CajasM();
 
-        
-        
-        $objetosIntoInventario= $gestorInv->obtenerObjetoIntoInventario( $idInventario , $idUsuario, $conexPDO);
+    $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
 
 
-            include("../views/inventarioV.php");
+    if (isset($_POST["vender"]) && $_POST["vender"] == "vender") {
+        $precioCaja = $caja['precio'];
 
+        if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null) {
+            $gestorInv = new InventarioM();
+
+            $idUsuario = $_SESSION['idUsuario'];
+
+
+            if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
+
+                $idInventario = $_SESSION['idInventario'];
+                $idObjeto = $_POST['idObjeto'];
+
+                $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
+
+                $objeto = $gestorObj->obtenerObjetoPorID($idObjeto, $conexPDO);
+
+                $tokensGanados = $objeto['precio'] * 100;
+
+                $cantTokensActual = $cantTokensActual + $tokensGanados;
+
+                $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+
+                if ($cambiarCantTokens != false) {
+
+                    $_SESSION['cantTokens'] = $cantTokensActual;
+
+                    $vendido = true;
+                }
+            }
+        }
+    }
+
+
+    include("../views/inventarioV.php");
 } else {
     // El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
     include("../views/loginV.php");

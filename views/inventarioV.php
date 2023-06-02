@@ -41,6 +41,21 @@
         .btn-amarillo {
             background-color: #efb810;
         }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .notification.show {
+            display: block;
+        }
     </style>
 </head>
 
@@ -213,8 +228,8 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <form action="../controller/inventarioC.php" method="post">
-                        <input type="hidden" id="inputValor" class="form-control" readonly>
-                        <button type="button" id="vender" name="vender" value="vender" class="btn btn-danger">Vender</button>
+                            <input type="hidden" id="inputValor" class="form-control" readonly>
+                            <button type="button" id="vender" name="vender" value="vender" class="btn btn-primary">Vender</button>
                         </form>
 
                     </div>
@@ -223,8 +238,17 @@
             </div>
         </div>
 
-
-
+        <?php
+        if ($vendido == true) {
+            print('<div id="notification" class="notification">');
+            print('<span id="notification-message" class="notification-message">Has ganado' . $tokensGanados  . ' monedas</span>');
+            print('</div>');
+        } elseif ($enviado == true) {
+            print('<div id="notification" class="notification">');
+            print('<span id="notification-message" class="notification-message">Tu envio esta siendo procesado</span>');
+            print('</div>');
+        }
+        ?>
     </main>
     <!--------------- FOOTER  --------------->
 
@@ -293,6 +317,29 @@
             // Aquí puedes continuar con el código para mostrar el modal o realizar otras acciones
             $('#confirmacionVender').modal('show');
         }
+
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notification-message');
+
+        // Función para mostrar la ventana emergente con un mensaje específico
+        function showNotification() {
+            notification.classList.add('show');
+
+            // Ocultar la ventana emergente después de 5 segundos
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+
+        // Función para ocultar la ventana emergente
+        function hideNotification() {
+            notification.classList.remove('show');
+        }
+
+        // Ejemplo de uso
+        window.addEventListener('load', () => {
+            showNotification();
+        });
     </script>
 </body>
 
