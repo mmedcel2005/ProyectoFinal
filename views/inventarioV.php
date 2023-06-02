@@ -161,10 +161,10 @@
     
     
                                         print('   <button type="button" class="btn" data-mdb-toggle="tooltip" title="Vender">');
-                                        print('        <i class="bi bi-send-fill"></i>');
+                                        print('        <i class="bi bi-send-fill text-white"></i>');
                                         print('    </button>');
                                         print('    <button type="button" class="btn" data-mdb-toggle="tooltip" title="Enviar">');
-                                        print('        <i class="bi bi-heart-fill"></i>');
+                                        print('        <i class="bi bi-heart-fill text-white"></i>');
                                         print('    </button>');
 
                                         print('<p> <span style="color: red;">x ' .$item["cantidad"] . '</span> </p>');
