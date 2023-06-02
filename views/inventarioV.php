@@ -160,10 +160,10 @@
 
     
     
-                                        print('   <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Remove item">');
+                                        print('   <button type="button" class="btn" data-mdb-toggle="tooltip" title="Vender">');
                                         print('        <i class="bi bi-send-fill"></i>');
                                         print('    </button>');
-                                        print('    <button type="button" class="featured_button" data-mdb-toggle="tooltip" title="Move to the wish list">');
+                                        print('    <button type="button" class="btn" data-mdb-toggle="tooltip" title="Enviar">');
                                         print('        <i class="bi bi-heart-fill"></i>');
                                         print('    </button>');
 
