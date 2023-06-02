@@ -6,6 +6,7 @@ namespace controller;
 use \model\AvatarM;
 use \model\UsuarioM;
 use \model\CajasM;
+use \model\InventarioM;
 use \model\Utils;
 
 session_start();
@@ -13,6 +14,7 @@ session_start();
 require_once("../model/AvatarM.php");
 require_once("../model/CajasM.php");
 require_once("../model/UsuarioM.php");
+require_once("../model/InventarioM.php");
 require_once("../model/Utils.php");
 
 session_start();
@@ -20,6 +22,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
     $gestorAvatar = new AvatarM();
     $gestorUsuario = new UsuarioM();
+    $gestorInv = new InventarioM();
 
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar($l = false);
