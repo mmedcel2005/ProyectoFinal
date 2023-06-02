@@ -45,20 +45,21 @@
         .btn-link {
             text-decoration: none;
         }
-        .notification {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: green;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      display: none;
-    }
 
-    .notification.show {
-      display: block;
-    }
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .notification.show {
+            display: block;
+        }
     </style>
 </head>
 
@@ -423,32 +424,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Obtén la referencia del elemento de la ventana emergente
-            const notification = document.getElementById('notification');
-            const notificationMessage = document.getElementById('notification-message');
-
-            // Función para mostrar la ventana emergente con un mensaje específico
-            function showNotification(message) {
-                notificationMessage.textContent = message;
-                notification.classList.add('show');
-
-                // Ocultar la ventana emergente después de 5 segundos
-                setTimeout(() => {
-                    hideNotification();
-                }, 5000);
-            }
-
-            // Función para ocultar la ventana emergente
-            function hideNotification() {
-                notification.classList.remove('show');
-            }
-
-            // Ejemplo de uso
-            window.addEventListener('load', () => {
-                showNotification('Comprado correctamente');
-            });
-
+        document.addEventListener("DOMContentLoaded", function() {
+            var notification = document.getElementById("notification");
+            notification.classList.add("show");
+            notification.innerText = "Tu notificación aquí";
         });
     </script>
 </body>
