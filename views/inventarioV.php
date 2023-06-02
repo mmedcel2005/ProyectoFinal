@@ -164,7 +164,7 @@
                                         print('    <i class="bi bi-send-fill text-white"></i>');
                                         print('</button>');
 
-                                        print('<butto onclick="vender()" type="button" data-value="' . $item['idObjeto'] . '">');
+                                        print('<butto onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
                                         print('    <i class="bi bi-heart-fill text-white"></i>');
                                         print('</button>');
 
@@ -194,24 +194,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="modal fade" id="enviar" tabindex="-1" aria-labelledby="enviarLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="enviarLabel">Enviar objeto</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="text" id="inputValor" class="form-control" readonly>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" onclick="realizarEnvio()">Enviar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="modal fade" id="confirmacionVender" tabindex="-1" aria-labelledby="confirmacionVenderLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -301,7 +283,9 @@
             document.getElementById('inputValor').value = value;
         });
 
-        function vender() {
+        function vender(button) {
+            var idObjeto = button.value;
+            document.getElementById('inputValor').value = value;
         $('#confirmacionVender').modal('show');
       };
     </script>
