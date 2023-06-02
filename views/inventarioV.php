@@ -164,7 +164,7 @@
                                         print('    <i class="bi bi-send-fill text-white"></i>');
                                         print('</button>');
 
-                                        print('<button onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
+                                        print('<button class="btn" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
                                         print('    <i class="bi bi-heart-fill text-white"></i>');
                                         print('</button>');
 
@@ -222,7 +222,7 @@
         </div>
 
 
-    
+
     </main>
     <!--------------- FOOTER  --------------->
 
@@ -285,9 +285,11 @@
 
         function vender(button) {
             var idObjeto = button.value;
-            document.getElementById('inputValor').value = value;
-        $('#confirmacionVender').modal('show');
-      };
+            console.log("ID del objeto: " + idObjeto);
+
+            // Aquí puedes continuar con el código para mostrar el modal o realizar otras acciones
+            $('#confirmacionVender').modal('show');
+        }
     </script>
 </body>
 
