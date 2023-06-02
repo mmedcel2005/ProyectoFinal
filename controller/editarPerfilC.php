@@ -42,15 +42,27 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
         $datosUsuario = $gestorUsu->actualizarUsuario($usuario, $conexPDO);
 
-        var_dump($_POST);
         if ($datosUsuario != false) {
             $_SESSION["nombre"] = $usuario["nombre"];
             $_SESSION["imagen"] = $usuario["imagen"];
 
             $mensaje = "ok";
 
-            include("../views/usuarioV.php");
-        } else {
+            $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
+
+            $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+
+
+            if ($usuario != null) {
+                include("../views/usuarioV.php");
+            } else {
+
+                $gestorCaj = new CajasM();
+
+                $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+
+                include("../views/inicioV.php");
+            }        } else {
             $datosUsuario = $gestorUsu->obtenerUsuarioPorID($idUsuario, $conexPDO);
 
             $avatares = $gestorAvatar->obtenerAvatares($conexPDO);
