@@ -45,40 +45,40 @@
 </head>
 
 <body>
-<header>
-    <!--------------- NAV  --------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-      <div class="container-fluid">
-      <a class="nav-link" href="../index.php">
-          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Oro gratis</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
-            </li>
-            <li class="nav-item"></li>
-          </ul>
+    <header>
+        <!--------------- NAV  --------------->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            <div class="container-fluid">
+                <a class="nav-link" href="../index.php">
+                    <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>Oro gratis</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
 
-          <?php
-          print('<div class="d-flex mx-lg-5">');
-          print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'].' </b></p>');
-          print("</a></div>");
-          print("");
+                    <?php
+                    print('<div class="d-flex mx-lg-5">');
+                    print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
+                    print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
+                    print("</a></div>");
+                    print("");
 
-          ?>
-          <div id="google_translate_element" class="google"></div>
-        </div>
-      </div>
-    </nav>
-  </header>
+                    ?>
+                    <div id="google_translate_element" class="google"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
     <main>
@@ -87,16 +87,16 @@
 
 
                 <div class="row">
-                <div class="col-lg-12">
+                    <div class="col-lg-12">
                         <div class="card mb-4 bg-custom-sec text-white">
 
                             <div class="card-header py-3">
                                 <h5 class="mb-0">Inventario</h5>
                             </div>
                             <div class="card-body">
-                                                             
+
                                 <?php
-                                if($objetosIntoInventario==null || (count($objetosIntoInventario))<1 ){
+                                if ($objetosIntoInventario == null || (count($objetosIntoInventario)) < 1) {
                                     print('<div class="row">');
                                     print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
 
@@ -112,76 +112,77 @@
 
                                     print('</div>');
                                     print('</div>');
-                                }                               
-                                else{
+                                } else {
                                     $totalItems = count($objetosIntoInventario);
 
-                                    foreach($objetosIntoInventario as $key => $item){
+                                    foreach ($objetosIntoInventario as $key => $item) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
                                         print('    <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">');
                                         switch ($item["calidad"]) {
                                             case "L":
                                                 print('        <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "E":
                                                 print('        <img src="../src/img/bg-item-rojo.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "SR":
                                                 print('        <img src="../src/img/bg-item-morado.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "R":
                                                 print('        <img src="../src/img/bg-item-azul.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "C":
                                                 print('        <img src="../src/img/bg-item-celeste.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             case "MC":
                                                 print('        <img src="../src/img/bg-item-gris.png" class="w-100" alt="Imagen de fondo" />');
-                              
-                                              break;
+
+                                                break;
                                             default:
-                                              break;
-                                          }
-                                        print('        <img src="'.$item["imagen"] .'" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de '.$item["nombre"] .'" />');
+                                                break;
+                                        }
+                                        print('        <img src="' . $item["imagen"] . '" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de ' . $item["nombre"] . '" />');
                                         print('        <a href="#!">');
                                         print('            <div class="mask"></div>');
                                         print('        </a>');
                                         print('    </div>');
                                         print('</div>');
-    
-                                        print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0" d-flex flex-column>');
-                                        print('    <p>'.$item["nombre"] .'</p>');
-                                        print('<p> <span style="color: red;">x ' .$item["cantidad"] . '</span> </p>');
-   
-    
-                                        print('   <button type="button" class="btn mt-auto" data-mdb-toggle="tooltip" title="Vender">');
-                                        print('        <i class="bi bi-send-fill text-white"></i>');
-                                        print('    </button>');
-                                        print('    <button type="button" class="btn mt-auto" data-mdb-toggle="tooltip" title="Enviar">');
-                                        print('        <i class="bi bi-heart-fill text-white"></i>');
-                                        print('    </button>');
+
+                                        print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
+                                        print('    <p>' . $item["nombre"] . '</p>');
+                                        print('<p> <span style="color: red;">x ' . $item["cantidad"] . '</span> </p>');
+
+
+
+                                        print('<button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#enviar" data-value="' . $item['idObjeto'] . '">');
+                                        print('    <i class="bi bi-send-fill text-white"></i>');
+                                        print('</button>');
+
+                                        print('<button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#vender" data-value="' . $item['idObjeto'] . '">');
+                                        print('    <i class="bi bi-heart-fill text-white"></i>');
+                                        print('</button>');
+
                                         print('</div>');
-    
+
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-    
+
                                         print('      <p class="text-start text-md-center">');
-                                        print('       <strong class="text-token">'.$item["precio"] .' €</strong>');
+                                        print('       <strong class="text-token">' . $item["precio"] . ' €</strong>');
                                         print('    </p>');
                                         print('</div>');
                                         print('</div>');
-                                        
+
                                         if ($key != $totalItems - 1) {
                                             // No es el último elemento, realizar acción adicional
                                             print('<hr class="my-4">');
                                         }
                                     }
-
                                 }
 
                                 ?>
@@ -193,6 +194,43 @@
                 </div>
             </div>
         </section>
+
+        <div class="modal fade" id="enviar" tabindex="-1" aria-labelledby="enviarLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="enviarLabel">Enviar objeto</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="inputValor" class="form-control" readonly>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="realizarEnvio()">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de vender -->
+        <div class="modal fade" id="vender" tabindex="-1" aria-labelledby="venderLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="venderLabel">Vender objeto</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="inputValor" class="form-control" readonly>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="realizarVenta()">Vender</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!--------------- FOOTER  --------------->
 
@@ -235,6 +273,24 @@
             <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var enviarModal = document.getElementById('enviar');
+        enviarModal.addEventListener('show.bs.modal', function(event) {
+            var button = event.relatedTarget;
+            var value = button.getAttribute('data-value');
+            document.getElementById('inputValor').value = value;
+        });
+
+        var venderModal = document.getElementById('vender');
+        venderModal.addEventListener('show.bs.modal', function(event) {
+            var button = event.relatedTarget;
+            var value = button.getAttribute('data-value');
+            document.getElementById('inputValor').value = value;
+        });
+    </script>
 </body>
 
 </html>
