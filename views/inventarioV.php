@@ -212,8 +212,10 @@
                     <!-- Pie del modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <input type="text" id="inputValor" class="form-control" readonly>
+                        <form action="" method="post">
+                        <input type="hidden" id="inputValor" class="form-control" readonly>
                         <button type="button" class="btn btn-primary">Vender</button>
+                        </form>
 
                     </div>
 
