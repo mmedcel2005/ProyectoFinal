@@ -94,7 +94,7 @@
                     <div class="col-lg-4">
                         <div class="card mb-4 bg-custom-sec">
                             <div class="card-body text-center text-white">
-                            <img src="<?php echo($_SESSION["imagen"]) ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                <img src="<?php echo ($_SESSION["imagen"]) ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <?php
                                 print('<h5 class="my-3">' . $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
                                 ?>
@@ -166,8 +166,6 @@
 
                     </div>
                 </div>
-                <!-- Carrito -->
-
 
 
                 <div class="row">
@@ -355,6 +353,17 @@
             </div>
             </div>
         </section>
+
+        <?php
+        if ($notificacion == "ok") {
+            print('<div id="notification" class="notification">');
+            print('<span id="notification-message" class="notification-message"></span>');
+            print('</div>');
+        }
+
+
+        ?>
+
     </main>
     <!--------------- FOOTER  --------------->
 
@@ -397,6 +406,33 @@
             <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notification-message');
+
+        // Función para mostrar la ventana emergente con un mensaje específico
+        function showNotification(message) {
+            notificationMessage.textContent = message;
+            notification.classList.add('show');
+
+            // Ocultar la ventana emergente después de 5 segundos
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+
+        // Función para ocultar la ventana emergente
+        function hideNotification() {
+            notification.classList.remove('show');
+        }
+
+        // Ejemplo de uso
+        window.addEventListener('load', () => {
+            showNotification('Accion realizada correctamente');
+        });
+    </script>
 </body>
 
 </html>

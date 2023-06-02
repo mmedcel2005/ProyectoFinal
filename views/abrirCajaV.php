@@ -352,7 +352,6 @@
     </div>
 
 
-    <!-- Aviso de vendido correctamente -->
 
     <?php
     if ($notificacion == "ok") {
