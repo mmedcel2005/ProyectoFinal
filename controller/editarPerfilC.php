@@ -5,11 +5,13 @@ namespace controller;
 
 use \model\AvatarM;
 use \model\UsuarioM;
+use \model\CajasM;
 use \model\Utils;
 
 session_start();
 
 require_once("../model/AvatarM.php");
+require_once("../model/CajasM.php");
 require_once("../model/UsuarioM.php");
 require_once("../model/Utils.php");
 
@@ -56,8 +58,23 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             if ($avatares != null && $datosUsuario != null) {
                 include("../views/editarPerfilV.php");
             } else {
-                include("../views/usuarioV.php");
-            }
+                $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
+        
+                $objetosIntoInventario= $gestorInv->obtenerObjetoIntoInventario( $idInventario , $idUsuario, $conexPDO);
+        
+        
+                if($usuario != null){
+                    include("../views/usuarioV.php");
+                }
+                else{
+                    
+                    $gestorCaj = new CajasM();
+        
+                    $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+        
+                    include("../views/inicioV.php");
+                }
+                     }
         }
     } else {
         $datosUsuario = $gestorUsu->obtenerUsuarioPorID($idUsuario, $conexPDO);
