@@ -28,7 +28,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
     if (isset($_POST["guardar"]) && $_POST["guardar"] == "guardar" && isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["telefono"]) && isset($_POST["direccion"]) && isset($_POST["codigo_postal"]) && isset($_POST["ciudad"]) && isset($_POST["provincia"]) && isset($_POST["pais"]) && isset($_POST["imagen"])) {
 
-        $usuario["idUsuario"] = $_SESSION['idUsuario'];
+        $usuario["idUsuario"] = $idUsuario;
         $usuario["nombre"] = $_POST["nombre"];
         $usuario["apellidos"] = $_POST["apellidos"];
         $usuario["telefono"] = $_POST["telefono"];
@@ -62,7 +62,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
                 $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
                 include("../views/inicioV.php");
-            }        } else {
+            }
+        } else {
             $datosUsuario = $gestorUsu->obtenerUsuarioPorID($idUsuario, $conexPDO);
 
             $avatares = $gestorAvatar->obtenerAvatares($conexPDO);
@@ -97,19 +98,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         } else {
             $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
 
-                $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+            $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
 
 
-                if ($usuario != null) {
-                    include("../views/usuarioV.php");
-                } else {
+            if ($usuario != null) {
+                include("../views/usuarioV.php");
+            } else {
 
-                    $gestorCaj = new CajasM();
+                $gestorCaj = new CajasM();
 
-                    $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+                $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
-                    include("../views/inicioV.php");
-                }
+                include("../views/inicioV.php");
+            }
         }
     }
 } else {
