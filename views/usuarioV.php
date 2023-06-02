@@ -46,6 +46,7 @@
             text-decoration: none;
         }
 
+
         .notification {
             position: fixed;
             bottom: 20px;
@@ -421,13 +422,54 @@
             <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var notification = document.getElementById("notification");
-            notification.classList.add("show");
-            notification.innerText = "Tu notificación aquí";
+        const buttons = document.querySelectorAll('.btn-amarillo');
+
+        // Agregar el evento click a cada botón
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Obtener el idPackToken de la tarjeta
+                const idPackToken = button.parentElement.querySelector('.idPackToken').value;
+
+                // Establecer el idPackToken en el modal
+                document.querySelector('#myModal input[name="idPackToken"]').value = idPackToken;
+            });
+        });
+
+        function handleCheckboxChange(checkboxNumber) {
+            // Desmarcar todos los checkboxes excepto el seleccionado
+            for (let i = 1; i <= 4; i++) {
+                if (i !== checkboxNumber) {
+                    document.getElementById('metodoPago' + i).checked = false;
+                }
+            }
+        }
+
+        // Obtén la referencia del elemento de la ventana emergente
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notification-message');
+
+        // Función para mostrar la ventana emergente con un mensaje específico
+        function showNotification(message) {
+            notificationMessage.textContent = message;
+            notification.classList.add('show');
+
+            // Ocultar la ventana emergente después de 5 segundos
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+
+        // Función para ocultar la ventana emergente
+        function hideNotification() {
+            notification.classList.remove('show');
+        }
+
+        // Ejemplo de uso
+        window.addEventListener('load', () => {
+            showNotification('Comprado correctamente');
         });
     </script>
 </body>
