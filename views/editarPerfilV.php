@@ -185,7 +185,11 @@
                         print('<div class="card-img-container position-relative">');
                         print('<img src="' . $avatar["imagen"] . '" class="card-img-top" alt="Avatar numero ' . $avatar["idAvatar"] . '">');
                         print('<div class="item-overlay d-flex align-items-center justify-content-center">');
+                        if($avatar["imagen"]== $_SESSION["imagen"]){
+                        print('<input class="form-check-input" type="radio" name="imagen" id="imagen-' . $avatar["idAvatar"] . '" value="' . $avatar["imagen"] . '" checked>');
+                    }else{
                         print('<input class="form-check-input" type="radio" name="imagen" id="imagen-' . $avatar["idAvatar"] . '" value="' . $avatar["imagen"] . '">');
+                    }
                         print('</div> ');
                         print('</div> ');
                         print('</div> ');
