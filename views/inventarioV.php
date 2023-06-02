@@ -285,8 +285,9 @@
 
         function vender(button) {
             var idObjeto = button.value;
-            document.getElementById('inputValor').value = value;
+            console.log("ID del objeto: " + idObjeto);
 
+            
             // Aquí puedes continuar con el código para mostrar el modal o realizar otras acciones
             $('#confirmacionVender').modal('show');
         }
