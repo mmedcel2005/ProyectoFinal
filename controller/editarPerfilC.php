@@ -52,6 +52,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             $avatares = $gestorAvatar->obtenerAvatares($conexPDO);
 
             if ($avatares != null && $datosUsuario != null) {
+                var_dump($avatares);
                 include("../views/editarPerfilV.php");
             } else {
                 include("../views/usuarioV.php");
