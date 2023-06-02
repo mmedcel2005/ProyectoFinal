@@ -25,6 +25,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     $idInventario = $_SESSION['idInventario'];
 
     $conexPDO = Utils::conectar($l = false);
+    $gestorObj = new ObjetoM();
     $gestorUsuario = new UsuarioM();
     $gestorInv = new InventarioM();
     $gestorCaja = new CajasM();
