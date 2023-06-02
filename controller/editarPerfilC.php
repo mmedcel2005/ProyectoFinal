@@ -24,7 +24,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar($l = false);
 
-    $idUsuario=$_SESSION['idUsuario'];
+    $idUsuario = $_SESSION['idUsuario'];
 
     if (isset($_POST["guardar"]) && $_POST["guardar"] == "guardar" && isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["telefono"]) && isset($_POST["direccion"]) && isset($_POST["codigo_postal"]) && isset($_POST["ciudad"]) && isset($_POST["provincia"]) && isset($_POST["pais"]) && isset($_POST["imagen"])) {
 
@@ -58,23 +58,22 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             if ($avatares != null && $datosUsuario != null) {
                 include("../views/editarPerfilV.php");
             } else {
-                $usuario= $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
-        
-                $objetosIntoInventario= $gestorInv->obtenerObjetoIntoInventario( $idInventario , $idUsuario, $conexPDO);
-        
-        
-                if($usuario != null){
+                $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
+
+                $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+
+
+                if ($usuario != null) {
                     include("../views/usuarioV.php");
-                }
-                else{
-                    
+                } else {
+
                     $gestorCaj = new CajasM();
-        
-                    $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
-        
+
+                    $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+
                     include("../views/inicioV.php");
                 }
-                     }
+            }
         }
     } else {
         $datosUsuario = $gestorUsu->obtenerUsuarioPorID($idUsuario, $conexPDO);
@@ -84,7 +83,21 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         if ($avatares != null && $datosUsuario != false) {
             include("../views/editarPerfilV.php");
         } else {
-            include("../views/usuarioV.php");
+            $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
+
+                $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+
+
+                if ($usuario != null) {
+                    include("../views/usuarioV.php");
+                } else {
+
+                    $gestorCaj = new CajasM();
+
+                    $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+
+                    include("../views/inicioV.php");
+                }
         }
     }
 } else {
