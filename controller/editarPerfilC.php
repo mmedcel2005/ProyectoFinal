@@ -49,7 +49,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             $_SESSION["nombre"] = $usuario["nombre"];
             $_SESSION["imagen"] = $usuario["imagen"];
             $idInventario = $_SESSION["idInventario"];
-            $mensaje = "ok";
 
             $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
 
@@ -57,6 +56,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
 
             if ($usuario != null) {
+                $mensaje = "ok";
+
                 include("../views/usuarioV.php");
             } else {
 
@@ -80,6 +81,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
 
                 if ($usuario != null) {
+                    $mensaje = "ok";
+
                     include("../views/usuarioV.php");
                 } else {
 
@@ -105,6 +108,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
 
             if ($usuario != null) {
+
+                $mensaje = "ok";
+
                 include("../views/usuarioV.php");
             } else {
 

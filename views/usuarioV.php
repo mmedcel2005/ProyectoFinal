@@ -355,9 +355,11 @@
         </section>
 
         <?php
+    if ($notificacion == "ok") {
       print('<div id="notification" class="notification">');
       print('<span id="notification-message" class="notification-message"></span>');
       print('</div>');
+    }
 
 
     ?>
