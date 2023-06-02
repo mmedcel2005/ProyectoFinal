@@ -229,7 +229,7 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <form action="../controller/inventarioC.php" method="post">
                             <input type="hidden" id="inputValor" class="form-control" readonly>
-                            <button type="button" id="vender" name="vender" value="vender" class="btn btn-primary">Vender</button>
+                            <button type="submit" id="vender" name="vender" value="vender" class="btn btn-primary">Vender</button>
                         </form>
 
                     </div>
