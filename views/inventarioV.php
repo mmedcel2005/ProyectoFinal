@@ -164,7 +164,7 @@
                                         print('    <i class="bi bi-send-fill text-white"></i>');
                                         print('</button>');
 
-                                        print('<button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#vender" data-value="' . $item['idObjeto'] . '">');
+                                        print('<butto onclick="vender()" type="button" data-value="' . $item['idObjeto'] . '">');
                                         print('    <i class="bi bi-heart-fill text-white"></i>');
                                         print('</button>');
 
@@ -213,24 +213,34 @@
             </div>
         </div>
 
-        <!-- Modal de vender -->
-        <div class="modal fade" id="vender" tabindex="-1" aria-labelledby="venderLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade" id="confirmacionVender" tabindex="-1" aria-labelledby="confirmacionVenderLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="venderLabel">Vender objeto</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmacion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     </div>
+
+                    <!-- Cuerpo del modal -->
                     <div class="modal-body">
-                        <input type="text" id="inputValor" class="form-control" readonly>
+                        <p>¿Seguro que quieres vender el objeto?.</p>
                     </div>
+
+                    <!-- Pie del modal -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" onclick="realizarVenta()">Vender</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="text" id="inputValor" class="form-control" readonly>
+                        <button type="button" class="btn btn-primary">Vender</button>
+
                     </div>
+
                 </div>
             </div>
         </div>
+
+
+    
     </main>
     <!--------------- FOOTER  --------------->
 
@@ -290,6 +300,10 @@
             var value = button.getAttribute('data-value');
             document.getElementById('inputValor').value = value;
         });
+
+        function vender() {
+        $('#confirmacionVender').modal('show');
+      };
     </script>
 </body>
 
