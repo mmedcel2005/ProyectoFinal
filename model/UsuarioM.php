@@ -118,7 +118,6 @@ class UsuarioM
                 // Se define la sentencia SQL para actualizar el registro
                 $sentencia = $conexPDO->prepare("UPDATE proyecto.Usuario SET nombre = :nombre, apellidos = :apellidos, direccion = :direccion, imagen = :imagen, telefono = :telefono , codigo_postal = :codigo_postal , ciudad = :ciudad , provincia = :provincia , pais = :pais WHERE idUsuario = :idUsuario");
 
-
                 // Se asignan los valores de los parámetros a los placeholders de la sentencia SQL
                 $sentencia->bindParam(":nombre", $usuario["nombre"]);
                 $sentencia->bindParam(":apellidos", $usuario["apellidos"]);
