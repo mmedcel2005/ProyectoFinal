@@ -21,7 +21,6 @@ require_once("../model/Utils.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SESSION['idUsuario']) && isset($_SESSION['idInventario'])) {
 
-    var_dump($_SESSION['cantTokens']);
     // El usuario ha iniciado sesión, permitir acceso a la página
         $idUsuario= $_SESSION['idUsuario'];
         $idInventario= $_SESSION['idInventario'];
