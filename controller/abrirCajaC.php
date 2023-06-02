@@ -98,7 +98,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                     $objeto = $gestorObj->obtenerObjetoPorID($idObjeto, $conexPDO);
 
-                    $cantTokensActual= $cantTokensActual + ($objeto['precio'] * 100);
+                    $tokensGanados = $objeto['precio'] * 100;
+
+                    $cantTokensActual= $cantTokensActual + $tokensGanados;
 
                     $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
@@ -106,7 +108,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                             $_SESSION['cantTokens'] = $cantTokensActual;
 
-                            $notificacion = "ok";
+                            $vendido = true;
 
                         }
 

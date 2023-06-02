@@ -327,6 +327,28 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="ganadoTokens" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">¡Has ganado tokens!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+          </div>
+
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <p>Has ganado <?php print('<span class="text-token"> ' . $tokensGanados . '</span>') ?> monedas por vender tu item.</p>
+          </div>
+
+          <!-- Pie del modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+          </div>
+
+        </div>
+      </div>
     </div>
 
 
@@ -387,6 +409,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <?php if ($vendido == true) {
+    print('<script>');
+    print('$(document).ready(function() {');
+      print("$('#ganadoTokens').modal('show');");
+      print(' });');
+      print(' </script>');
+
+  } 
+  ?>
+
   <script>
     $(document).ready(function() {
       var owlCarousel = $('.owl-carousel');
