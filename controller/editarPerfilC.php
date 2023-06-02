@@ -45,7 +45,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         if ($datosUsuario != false) {
             $_SESSION["nombre"] = $usuario["nombre"];
             $_SESSION["imagen"] = $usuario["imagen"];
-
+            $idInventario = $_SESSION["idInventario"];
             $mensaje = "ok";
 
             $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
