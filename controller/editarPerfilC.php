@@ -19,7 +19,7 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SESSION['idUsuario'])) {
 
     $gestorAvatar = new AvatarM();
-    $gestorUsu = new UsuarioM();
+    $gestorUsuario = new UsuarioM();
 
     //Nos conectamos a la Bd
     $conexPDO = Utils::conectar($l = false);
@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         $usuario["imagen"] = $_POST["imagen"];
 
 
-        $datosUsuario = $gestorUsu->actualizarUsuario($usuario, $conexPDO);
+        $datosUsuario = $gestorUsuario->actualizarUsuario($usuario, $conexPDO);
 
         if ($datosUsuario != false) {
             $_SESSION["nombre"] = $usuario["nombre"];
