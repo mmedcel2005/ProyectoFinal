@@ -39,7 +39,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
         $datosUsuario = $gestorUsu->actualizarUsuario($usuario, $conexPDO);
 
-        var_dump($datosUsuario);
+        var_dump($_POST);
         if ($datosUsuario != false) {
             $_SESSION["nombre"] = $usuario["nombre"];
             $_SESSION["imagen"] = $usuario["imagen"];
