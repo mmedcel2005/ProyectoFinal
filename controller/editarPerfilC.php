@@ -89,7 +89,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             }
         }
     } else {
-        $datosUsuario = $gestorUsu->obtenerUsuarioPorID($idUsuario, $conexPDO);
+        $datosUsuario = $gestorUsuario->obtenerUsuarioPorID($idUsuario, $conexPDO);
 
         $avatares = $gestorAvatar->obtenerAvatares($conexPDO);
 
