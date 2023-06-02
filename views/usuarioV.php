@@ -94,7 +94,7 @@
                     <div class="col-lg-4">
                         <div class="card mb-4 bg-custom-sec">
                             <div class="card-body text-center text-white">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                            <img src="<?php echo($_SESSION["imagen"]) ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <?php
                                 print('<h5 class="my-3">' . $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
                                 ?>
