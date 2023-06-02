@@ -157,8 +157,8 @@
     
                                         print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
                                         print('    <p>'.$item["nombre"] .'</p>');
-
-    
+                                        print('<p> <span style="color: red;">x ' .$item["cantidad"] . '</span> </p>');
+   
     
                                         print('   <button type="button" class="btn" data-mdb-toggle="tooltip" title="Vender">');
                                         print('        <i class="bi bi-send-fill text-white"></i>');
@@ -166,8 +166,6 @@
                                         print('    <button type="button" class="btn" data-mdb-toggle="tooltip" title="Enviar">');
                                         print('        <i class="bi bi-heart-fill text-white"></i>');
                                         print('    </button>');
-
-                                        print('<p> <span style="color: red;">x ' .$item["cantidad"] . '</span> </p>');
                                         print('</div>');
     
                                         print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
