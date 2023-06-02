@@ -164,7 +164,7 @@
                                         print('    <i class="bi bi-send-fill text-white"></i>');
                                         print('</button>');
 
-                                        print('<butto onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
+                                        print('<button onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
                                         print('    <i class="bi bi-heart-fill text-white"></i>');
                                         print('</button>');
 
