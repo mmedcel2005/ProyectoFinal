@@ -285,7 +285,6 @@
 
         function vender(button) {
             var idObjeto = button.value;
-            console.log("ID del objeto: " + idObjeto);
 
             document.getElementById('inputValor').value = idObjeto;
 
