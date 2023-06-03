@@ -26,7 +26,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $usuario["apellidos"] = Utils::limpiarDatos($_POST["apellidos"]);
     $usuario["correo"] = Utils::limpiarDatos($_POST["correo"]);
     $usuario["password"] = Utils::limpiarDatos($_POST["password"]);
-            $_SESSION['loggedin'] = true;
+    $_SESSION['loggedin'] = true;
 
 
     //Generemaos la salt y le damos el valor del resultado a usuario["salt"]
@@ -49,7 +49,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     $comprobarCorreo = $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
 
-    if ($comprobarCorreo == null) {
+    if ($comprobarCorreo != null) {
         $resultado = $gestorUsu->anadirUsuario($usuario, $conexPDO);
 
         if ($resultado != null) {
@@ -57,21 +57,17 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
             $_SESSION['loggedin'] = true;
 
-            $datosUsuario = $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
+            $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
-            if ($datosUsuario != null) {
-
-                $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
-
-                if ($idInventario != null) {
-                    $_SESSION['idInventario'] = $idInventario;
-                    $_SESSION['imagen'] = $usuario['imagen'];
-                    $_SESSION['idUsuario'] = $usuario['idUsuario'];
-                    $_SESSION['nombre'] = $usuario['nombre'];
-                    $_SESSION['cantTokens'] = $usuario['cantTokens'];
-                }
+            if ($idInventario != null) {
+                $_SESSION['idInventario'] = $idInventario;
+                $_SESSION['imagen'] = $usuario['imagen'];
+                $_SESSION['idUsuario'] = $usuario['idUsuario'];
+                $_SESSION['nombre'] = $usuario['nombre'];
+                $_SESSION['cantTokens'] = $usuario['cantTokens'];
             }
-            $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+
+            $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
 
             var_dump($_SESSION['loggedin']);
