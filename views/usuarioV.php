@@ -187,7 +187,7 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                <form action="../controller/enviosC.php" method="post">
+                                <form action="../controller/enviadosC.php" method="post">
                                 <button class="btn btn-link text-white">Mis envios</button>
                                     </form>
                                 </div>
