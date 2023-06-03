@@ -64,10 +64,10 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
                 if ($idInventario != null) {
                     $_SESSION['idInventario'] = $idInventario;
-                    $_SESSION['imagen'] = $datosUsuario['imagen'];
-                    $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
-                    $_SESSION['nombre'] = $datosUsuario['nombre'];
-                    $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
+                    $_SESSION['imagen'] = $usuario['imagen'];
+                    $_SESSION['idUsuario'] = $usuario['idUsuario'];
+                    $_SESSION['nombre'] = $usuario['nombre'];
+                    $_SESSION['cantTokens'] = $usuario['cantTokens'];
                 }
             }
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
