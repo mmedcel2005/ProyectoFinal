@@ -179,25 +179,33 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <button class="btn btn-link text-white">Historial de recompensas</button>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <button class="btn btn-link text-white">Historial de ventas</button>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                <form action="../controller/enviadosC.php" method="post">
-                                <button class="btn btn-link text-white">Mis envios</button>
+                                    <form action="../controller/editarPerfilC.php" method="post">
+                                        <button class="btn btn-link text-white">Historial de recompensas</button>
                                     </form>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <button class="btn btn-link text-white">Soporte</button>
+                                    <form action="../controller/editarPerfilC.php" method="post">
+                                        <button class="btn btn-link text-white">Historial de venta</button>
+                                    </form>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <button class="btn btn-link text-white">Cerrar sesion</button>
+                                    <form action="../controller/enviadosC.php" method="post">
+                                        <button class="btn btn-link text-white">Mis envios</button>
+                                    </form>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <form action="../controller/editarPerfilC.php" method="post">
+                                        <button class="btn btn-link text-white">Soporte</button>
+                                    </form>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <form action="../controller/loginC.php" method="post">
+                                        <button class="btn btn-link text-white" name="cerrarSesion" id="cerrarSesion" value="cerrarSesion">Cerrar sesion</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -398,7 +406,7 @@
             <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

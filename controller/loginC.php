@@ -76,7 +76,17 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
     //Mostramos la pagina de registro
     include("../views/registroV.php");
 
-} else {
+} elseif(isset($_POST["cerrarSesion"]) && $_POST["cerrarSesion"] == "cerrarSesion"){
+// Limpiar todas las variables de sesión
+session_unset();
+
+// Destruir la sesión
+session_destroy();
+
+include("../views/loginV.php");
+
+
+}else {
     //Si entra aqui quiere decir que no se ha pulsado ningun boton dirigimos a la pagina de login
     include("../views/loginV.php");
 }
