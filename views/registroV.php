@@ -85,6 +85,21 @@ namespace views;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .notification.show {
+            display: block;
+        }
     </style>
 
 
@@ -129,6 +144,14 @@ namespace views;
 
         <p class="mt-5 mb-3 text-muted">&copy; 2023-2024</p>
     </form>
+
+    <?php
+    if ($mensaje != null) {
+        print('<div id="notification" class="notification">');
+        print('<span id="notification-message" class="notification-message">'. $mensaje .'</span>');
+        print('</div>');
+    }
+    ?>
 </body>
 <!-- Scripts para usar el plugin jsquery validation -->
 
@@ -143,5 +166,7 @@ namespace views;
 
 <!-- Enlazamos el js con los parametros de la validacio  -->
 <script src="../validation/loginValidation.js"></script>
+
+
 
 </html>

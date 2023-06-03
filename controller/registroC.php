@@ -56,6 +56,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
 
             $_SESSION['loggedin'] = true;
+            var_dump($_SESSION['loggedin']);
 
             $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
@@ -70,11 +71,13 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
                 include("../views/inicioV.php");
             }else{
+                $mensaje = "Fallo al acceder a la base de datos";
 
+                include("../views/registroV.php");
             }
 
         } else {
-            $mensaje = "";
+            $mensaje = "Fallo al crear usuario";
 
 
             include("../views/registroV.php");

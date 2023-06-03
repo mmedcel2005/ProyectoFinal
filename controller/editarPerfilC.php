@@ -58,8 +58,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             if ($usuario != null) {
                 $mensaje = "ok";
 
-                var_dump($mensaje);
-
                 include("../views/usuarioV.php");
             } else {
 

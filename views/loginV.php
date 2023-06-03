@@ -101,6 +101,21 @@ namespace views;
             background-color: #efb810;
             color: white;
         }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .notification.show {
+            display: block;
+        }
     </style>
 
 
@@ -136,19 +151,53 @@ namespace views;
         <button name="iniciar" value="iniciar" class="btn btn-lg btn-amarillo btn-block" type="submit">Iniciar Sesión</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2023-2024</p>
     </form>
+    <?php
+    if ($mensaje != null) {
+        print('<div id="notification" class="notification">');
+        print('<span id="notification-message" class="notification-message">'. $mensaje .'</span>');
+        print('</div>');
+    }
+    ?>
+
+
+    <!-- Scripts para usar el plugin jsquery validation -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery Validation Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!-- jQuery Validation Additional Methods -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+
+    <!-- Enlazamos el js con los parametros de la validacio  -->
+    <script src="../validation/loginValidation.js"></script>
+    <script>
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notification-message');
+
+        // Función para mostrar la ventana emergente con un mensaje específico
+        function showNotification() {
+            notification.classList.add('show');
+
+            // Ocultar la ventana emergente después de 5 segundos
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+
+        // Función para ocultar la ventana emergente
+        function hideNotification() {
+            notification.classList.remove('show');
+        }
+
+        // Ejemplo de uso
+        window.addEventListener('load', () => {
+            showNotification();
+        });
+    </script>
 </body>
-<!-- Scripts para usar el plugin jsquery validation -->
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- jQuery Validation Plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-
-<!-- jQuery Validation Additional Methods -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
-
-<!-- Enlazamos el js con los parametros de la validacio  -->
-<script src="../validation/loginValidation.js"></script>
 
 </html>

@@ -383,7 +383,7 @@
         <?php
         if ($mensaje == "ok") {
             print('<div id="notification" class="notification">');
-            print('<span id="notification-message" class="notification-message">Has ganado' . $tokensGanados  . ' monedas</span>');
+            print('<span id="notification-message" class="notification-message">Modificado correctamente</span>');
             print('</div>');
         }
         ?>

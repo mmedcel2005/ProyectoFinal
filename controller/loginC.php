@@ -60,6 +60,8 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
             $_SESSION['nombre'] = $datosUsuario['nombre'];
             $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
 
+            $mensaje="Iniciado sesion correctamente";
+
             //Si no quiere decir que esta activo por lo que nos enviara a mostrar clientes
             include("../views/inicioV.php");
 
