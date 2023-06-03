@@ -11,38 +11,52 @@ use \PDOException;
 // Se define la clase Usuario
 class EnviadosM
 {
-    public function agregarObjetoEnviado($idObjeto, $idUsuario, $conexPDO)
-    {
-        // Se verifica si los parámetros recibidos son válidos
-        if ($conexPDO != null && $idUsuario != null && $idObjeto != null) {
-            try {
-                // Obtenemos la fecha actual
-                $fechaActual = date("d-m-Y");
-                $estadoEnvio = "Pendiente de envio";
-
-                // Preparamos la sentencia SQL para insertar el objeto enviado
-                $sentencia = $conexPDO->prepare("INSERT INTO Enviados (Usuario_idUsuario, Objeto_idObjeto, fecha, estadoEnvio ) VALUES (:idUsuario, :idObjeto, :fecha, :estadoEnvio)");
-
-                // Asignamos los valores de los parámetros a los placeholders de la sentencia SQL
-                $sentencia->bindParam(":idUsuario", $idUsuario);
-                $sentencia->bindParam(":idObjeto", $idObjeto);
-                $sentencia->bindParam(":fecha", $fechaActual);
-                $sentencia->bindParam(":estadoEnvio", $estadoEnvio);
-
-                // Ejecutamos la sentencia SQL
-                $sentencia->execute();
-
-                // Retornamos true para indicar que el objeto fue agregado correctamente
-                return true;
-            } catch (PDOException $e) {
-                // Si se produce un error, se muestra un mensaje en pantalla
-                print("Error al acceder a BD" . $e->getMessage());
+    
+        public function agregarObjetoEnviado($idObjeto, $idUsuario, $conexPDO)
+        {
+            // Se verifica si los parámetros recibidos son válidos
+            if ($conexPDO != null && $idUsuario != null && $idObjeto != null) {
+                try {
+                    // Obtenemos la fecha actual
+                    $fechaActual = date("Y-m-d");
+                    $estadoEnvio = "Pendiente de envio";
+    
+                    // Preparamos la sentencia SQL para insertar el objeto enviado
+                    $sentencia = $conexPDO->prepare("INSERT INTO Enviados (numEnviados, fecha_Envio, estadoEnvio, Usuario_idUsuario) VALUES (NULL, :fecha, :estadoEnvio, :idUsuario)");
+                    
+                    // Asignamos los valores de los parámetros a los placeholders de la sentencia SQL
+                    $sentencia->bindParam(":fecha", $fechaActual);
+                    $sentencia->bindParam(":estadoEnvio", $estadoEnvio);
+                    $sentencia->bindParam(":idUsuario", $idUsuario);
+    
+                    // Ejecutamos la sentencia SQL
+                    $sentencia->execute();
+    
+                    // Obtenemos el último ID insertado en la tabla Enviados
+                    $idEnviado = $conexPDO->lastInsertId();
+    
+                    // Preparamos la sentencia SQL para insertar la relación en la tabla Enviados_has_Objeto
+                    $sentenciaRelacion = $conexPDO->prepare("INSERT INTO Enviados_has_Objeto (Enviados_idEnviados, Objeto_idObjeto) VALUES (:idEnviado, :idObjeto)");
+                    
+                    // Asignamos los valores de los parámetros a los placeholders de la sentencia SQL
+                    $sentenciaRelacion->bindParam(":idEnviado", $idEnviado);
+                    $sentenciaRelacion->bindParam(":idObjeto", $idObjeto);
+    
+                    // Ejecutamos la sentencia SQL para insertar la relación
+                    $sentenciaRelacion->execute();
+    
+                    // Retornamos true para indicar que el objeto fue agregado correctamente
+                    return true;
+                } catch (PDOException $e) {
+                    // Si se produce un error, se muestra un mensaje en pantalla
+                    print("Error al acceder a BD" . $e->getMessage());
+                }
             }
+    
+            // Si se llega a este punto, significa que hubo un error al agregar el objeto
+            return false;
         }
-
-        // Si se llega a este punto, significa que hubo un error al agregar el objeto
-        return false;
-    }
+    
 
     public function actualizarEstadoEnvio($idEnvio, $nuevoEstado, $conexPDO)
     {
