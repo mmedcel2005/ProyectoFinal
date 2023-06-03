@@ -175,7 +175,7 @@
 
 
 
-                                        print('<button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#enviar" data-value="' . $item['idObjeto'] . '">');
+                                        print('<<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
                                         print('    <i class="bi bi-send-fill text-white"></i>');
                                         print('</button>');
 
@@ -221,15 +221,46 @@
 
                     <!-- Cuerpo del modal -->
                     <div class="modal-body">
-                        <p>¿Seguro que quieres vender el objeto?.</p>
+                        <p>¿Seguro que quieres vender el objeto?</p>
                     </div>
 
                     <!-- Pie del modal -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-secondary">Cancelar</button>
                         <form action="../controller/inventarioC.php" method="post">
                             <input type="hidden" name="idObjeto" id="idObjeto" class="form-control" readonly>
-                            <button type="submit" id="vender" name="vender" value="vender" class="btn btn-primary">Vender</button>
+                            <button type="submit" id="enviar" name="enviar" value="enviar" class="btn btn-primary">Vender</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmacionEnviar" tabindex="-1" aria-labelledby="confirmacionEnviarLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmacion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <!-- Cuerpo del modal -->
+                    <div class="modal-body">
+                        <p>¿Seguro quieres enviarlo a esta direccion?</p>
+                    </div>
+
+                    <!-- Pie del modal -->
+                    <div class="modal-footer">
+                        <form action="../controller/editarPerfilC.php" method="post">
+                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar direccion</button>
+                        </form>
+
+                        <form action="../controller/inventarioC.php" method="post">
+                            <input type="hidden" name="idObjeto" id="idObjeto" class="form-control" readonly>
+                            <button type="submit" id="enviar" name="enviar" value="enviar" class="btn btn-primary">Enviar</button>
                         </form>
 
                     </div>
@@ -295,20 +326,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        var enviarModal = document.getElementById('enviar');
-        enviarModal.addEventListener('show.bs.modal', function(event) {
-            var button = event.relatedTarget;
-            var value = button.getAttribute('data-value');
-            document.getElementById('inputValor').value = value;
-        });
-
-        var venderModal = document.getElementById('vender');
-        venderModal.addEventListener('show.bs.modal', function(event) {
-            var button = event.relatedTarget;
-            var value = button.getAttribute('data-value');
-            document.getElementById('inputValor').value = value;
-        });
-
         function vender(button) {
             var idObjeto = button.value;
 
@@ -316,6 +333,15 @@
 
             // Aquí puedes continuar con el código para mostrar el modal o realizar otras acciones
             $('#confirmacionVender').modal('show');
+        }
+
+        function enviar(button) {
+            var idObjeto = button.value;
+
+            document.getElementById('idObjeto').value = idObjeto;
+
+            // Aquí puedes continuar con el código para mostrar el modal o realizar otras acciones
+            $('#confirmacionEnviar').modal('show');
         }
 
         const notification = document.getElementById('notification');

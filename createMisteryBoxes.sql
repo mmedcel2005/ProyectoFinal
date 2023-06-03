@@ -237,7 +237,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `proyecto`.`Enviados` (
   `numEnviados` INT NOT NULL,
   `fecha_Envio` DATE NULL,
-  `estadoEnvio` VARCHAR(45) GENERATED ALWAYS AS (CASE WHEN `fecha_Envio` IS NULL THEN 'PENDIENTE' ELSE 'ENVIADO' END) VIRTUAL,
+  `estadoEnvio` VARCHAR(45) NULL,
   `Usuario_idUsuario` INT NOT NULL,
   PRIMARY KEY (`numEnviados`, `Usuario_idUsuario`),
   INDEX `fk_Enviados_Usuario1_idx` (`Usuario_idUsuario` ASC) ,
