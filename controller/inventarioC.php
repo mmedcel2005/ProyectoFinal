@@ -71,7 +71,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
                 }
             }
         }
-    }elseif (isset($_POST["enviar"]) && $_POST["enviar"] == "enviar") {
+    } elseif (isset($_POST["enviar"]) && $_POST["enviar"] == "enviar") {
 
 
         if ($_SESSION['idUsuario'] != null) {
@@ -85,26 +85,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
                 $idObjeto = $_POST['idObjetoE'];
 
                 $reducirObjeto = $gestorInv->reducirObjetoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
-                
+
                 $anadirEnviados = $gestorEnv->agregarObjetoEnviado($idObjeto, $idUsuario, $conexPDO);
 
-                var_dump($_SESSION["idInventario"]);
-                var_dump($_POST["idObjetoE"]);
-               
+                var_dump($anadirEnviados);
 
                 if ($reducirObjeto != false && $anadirEnviados != false) {
-                    $tokensGanados = $objeto['precio'] * 100;
-
-                    $cantTokensActual = $cantTokensActual + $tokensGanados;
-
-                    $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
-
-                    if ($cambiarCantTokens != false) {
-
-                        $_SESSION['cantTokens'] = $cantTokensActual;
-
-                        $vendido = true;
-                    }
+                    $enviado = true;
                 }
             }
         }
