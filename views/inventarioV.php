@@ -259,7 +259,7 @@
                         </form>
 
                         <form action="../controller/inventarioC.php" method="post">
-                            <input type="hidden" name="idObjeto" id="idObjeto" class="form-control" readonly>
+                            <input type="hidden" name="idObjetoE" id="idObjetoE" class="form-control" readonly>
                             <button type="submit" id="enviar" name="enviar" value="enviar" class="btn btn-primary">Enviar</button>
                         </form>
 
