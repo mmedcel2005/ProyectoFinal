@@ -79,19 +79,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
             $idUsuario = $_SESSION['idUsuario'];
 
-
-            if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
+            if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjetoE']) && $_POST['idObjetoE'] != null) {
 
                 $idInventario = $_SESSION['idInventario'];
-                $idObjeto = $_POST['idObjeto'];
+                $idObjeto = $_POST['idObjetoE'];
 
                 $reducirObjeto = $gestorInv->reducirObjetoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
                 
                 $anadirEnviados = $gestorEnv->agregarObjetoEnviado($idObjeto, $idUsuario, $conexPDO);
 
-                var_dump($anadirEnviados);
-                var_dump($reducirObjeto);
-
+                var_dump($_SESSION["idInventario"]);
+                var_dump($_POST["idObjetoE"]);
+               
 
                 if ($reducirObjeto != false && $anadirEnviados != false) {
                     $tokensGanados = $objeto['precio'] * 100;
