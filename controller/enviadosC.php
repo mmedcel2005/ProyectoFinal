@@ -34,34 +34,34 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
     $enviados = $gestorEnv->obtenerEnviosUsuario($idUsuario, $conexPDO);
 
-    if($enviados != null){
+    if ($enviados != null) {
 
         include("../views/enviadosM.php");
-
-    }else{
+    } else {
         $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
 
-            $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+        $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+
+        $idInventario = $_SESSION["idInventario"];
+
+        $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
+
+        $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
 
 
-            if ($usuario != null) {
-                $mensaje = "ok";
+        if ($usuario != null) {
+            $mensaje = "ok";
 
-                var_dump($mensaje);
+            include("../views/usuarioV.php");
+        } else {
 
-                include("../views/usuarioV.php");
-            } else {
+            $gestorCaj = new CajasM();
 
-                $gestorCaj = new CajasM();
+            $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
-                $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
-
-                include("../views/inicioV.php");
-            }
-
+            include("../views/inicioV.php");
+        }
     }
-
-
-}else{
+} else {
     include("../views/loginV.php");
 }
