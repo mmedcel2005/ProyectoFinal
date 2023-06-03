@@ -34,7 +34,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     $gestorInv = new InventarioM();
     $gestorCaja = new CajasM();
 
-    var_dump($_POST["enviar"]);
 
     if (isset($_POST["vender"]) && $_POST["vender"] == "vender") {
         $precioCaja = $caja['precio'];
@@ -73,6 +72,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
             }
         }
     }elseif (isset($_POST["enviar"]) && $_POST["enviar"] == "enviar") {
+
+        var_dump($_POST["idUsuario"]);
 
         if ($_SESSION['idUsuario'] != null) {
             $gestorInv = new InventarioM();
