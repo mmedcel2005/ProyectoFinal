@@ -73,7 +73,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         }
     }elseif (isset($_POST["enviar"]) && $_POST["enviar"] == "enviar") {
 
-        var_dump($_POST["idUsuario"]);
+        var_dump($_SESSION["idUsuario"]);
 
         if ($_SESSION['idUsuario'] != null) {
             $gestorInv = new InventarioM();
