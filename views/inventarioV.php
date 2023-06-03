@@ -338,7 +338,7 @@
         function enviar(button) {
             var idObjeto = button.value;
 
-            document.getElementById('idObjeto').value = idObjeto;
+            document.getElementById('idObjetoE').value = idObjeto;
 
             // Aquí puedes continuar con el código para mostrar el modal o realizar otras acciones
             $('#confirmacionEnviar').modal('show');
