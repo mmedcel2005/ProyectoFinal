@@ -27,8 +27,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
     $conexPDO = Utils::conectar($l = false);
 
+    $gestorUsuario = new UsuarioM();
     $gestorObj = new ObjetoM();
     $gestorEnv = new EnviadosM();
+    $gestorInv = new InventarioM();
 
     $enviados = $gestorEnv->obtenerEnviosUsuario($idUsuario, $conexPDO);
 
@@ -37,7 +39,25 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
         include("../views/enviadosM.php");
 
     }else{
-        include("../views/usuarioV.php");
+        $usuario = $gestorUsuario->obtenerUsuarioPorId($idUsuario, $conexPDO);
+
+            $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
+
+
+            if ($usuario != null) {
+                $mensaje = "ok";
+
+                var_dump($mensaje);
+
+                include("../views/usuarioV.php");
+            } else {
+
+                $gestorCaj = new CajasM();
+
+                $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+
+                include("../views/inicioV.php");
+            }
 
     }
 
