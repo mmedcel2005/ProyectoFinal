@@ -79,9 +79,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
             $idUsuario = $_SESSION['idUsuario'];
 
-            var_dump($_SESSION["idInventario"]);
-            var_dump($_POST["idObjetoE"]);
-
 
             if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
@@ -92,7 +89,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
                 
                 $anadirEnviados = $gestorEnv->agregarObjetoEnviado($idObjeto, $idUsuario, $conexPDO);
 
-               
+                var_dump($anadirEnviados);
+                var_dump($reducirObjeto);
+
 
                 if ($reducirObjeto != false && $anadirEnviados != false) {
                     $tokensGanados = $objeto['precio'] * 100;
