@@ -26,6 +26,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $usuario["apellidos"] = Utils::limpiarDatos($_POST["apellidos"]);
     $usuario["correo"] = Utils::limpiarDatos($_POST["correo"]);
     $usuario["password"] = Utils::limpiarDatos($_POST["password"]);
+            $_SESSION['loggedin'] = true;
 
 
     //Generemaos la salt y le damos el valor del resultado a usuario["salt"]
@@ -72,6 +73,13 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
             }
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
 
+
+            var_dump($_SESSION['loggedin']);
+            var_dump($_SESSION['nombre']);
+            var_dump($_SESSION['cantTokens']);
+            var_dump($_SESSION['imagen']);
+            var_dump($_SESSION['idInventario']);
+            var_dump($_SESSION['idUsuario']);
 
             include("../views/inicioV.php");
         } else {
