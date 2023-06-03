@@ -175,7 +175,7 @@
 
 
 
-                                        print('<<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
+                                        print('<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
                                         print('    <i class="bi bi-send-fill text-white"></i>');
                                         print('</button>');
 
