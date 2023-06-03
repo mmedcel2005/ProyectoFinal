@@ -187,7 +187,9 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <button class="btn btn-link text-white">Mis envios</button>
+                                <form action="../controller/editarPerfilC.php" method="post">
+                                <button class="btn btn-link text-white">Mis envios</button>
+                                    </form>
                                 </div>
                                 <hr>
                                 <div class="row">
