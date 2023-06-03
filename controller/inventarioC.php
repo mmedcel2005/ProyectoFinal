@@ -25,12 +25,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     $idInventario = $_SESSION['idInventario'];
 
     $conexPDO = Utils::conectar($l = false);
+
     $gestorObj = new ObjetoM();
     $gestorUsuario = new UsuarioM();
     $gestorInv = new InventarioM();
     $gestorCaja = new CajasM();
-
-    $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
 
 
     if (isset($_POST["vender"]) && $_POST["vender"] == "vender") {
@@ -51,23 +50,27 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
                 $objeto = $gestorObj->obtenerObjetoPorID($idObjeto, $conexPDO);
 
-                $tokensGanados = $objeto['precio'] * 100;
+                $reducirObjeto = $gestorInv->reducirObjetoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
 
-                $cantTokensActual = $cantTokensActual + $tokensGanados;
+                if ($reducirObjeto != false) {
+                    $tokensGanados = $objeto['precio'] * 100;
 
-                $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
+                    $cantTokensActual = $cantTokensActual + $tokensGanados;
 
-                var_dump($cambiarCantTokens);
-                if ($cambiarCantTokens != false) {
+                    $cambiarCantTokens = $gestorUsuario->cambiarCantidadTokens($cantTokensActual, $idUsuario, $conexPDO);
 
-                    $_SESSION['cantTokens'] = $cantTokensActual;
+                    if ($cambiarCantTokens != false) {
 
-                    $vendido = true;
+                        $_SESSION['cantTokens'] = $cantTokensActual;
+
+                        $vendido = true;
+                    }
                 }
             }
         }
     }
 
+    $objetosIntoInventario = $gestorInv->obtenerObjetoIntoInventario($idInventario, $idUsuario, $conexPDO);
 
     include("../views/inventarioV.php");
 } else {
