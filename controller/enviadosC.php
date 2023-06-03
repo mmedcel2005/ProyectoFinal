@@ -34,6 +34,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
 
     $enviados = $gestorEnv->obtenerEnviosUsuario($idUsuario, $conexPDO);
 
+    var_dump($enviados);
+
     if ($enviados != null) {
 
         include("../views/enviadosM.php");
