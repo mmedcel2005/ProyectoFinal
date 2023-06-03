@@ -6,6 +6,7 @@ session_start();
 
 use \model\UsuarioM;
 use \model\InventarioM;
+use \model\CajasM;
 use \model\Utils;
 //Creamos un array para guardar los datos del cliente
 
@@ -13,6 +14,7 @@ use \model\Utils;
 //Añadimos el código del modelo
 require_once("../model/UsuarioM.php");
 require_once("../model/InventarioM.php");
+require_once("../model/CajasM.php");
 require_once("../model/Utils.php");
 
 
@@ -37,6 +39,8 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     $gestorUsu = new UsuarioM();
     $gestorInv = new InventarioM();
+    $gestorCaj = new CajasM();
+
 
 
     //Nos conectamos a la Bd
@@ -66,6 +70,8 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
                     $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
                 }
             }
+            $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+
 
             include("../views/inicioV.php");
         } else {
