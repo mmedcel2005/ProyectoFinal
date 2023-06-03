@@ -65,21 +65,16 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
                 $_SESSION['idUsuario'] = $usuario['idUsuario'];
                 $_SESSION['nombre'] = $usuario['nombre'];
                 $_SESSION['cantTokens'] = $usuario['cantTokens'];
+
+                $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+
+                include("../views/inicioV.php");
+            }else{
+
             }
 
-            $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
-
-
-            var_dump($_SESSION['loggedin']);
-            var_dump($_SESSION['nombre']);
-            var_dump($_SESSION['cantTokens']);
-            var_dump($_SESSION['imagen']);
-            var_dump($_SESSION['idInventario']);
-            var_dump($_SESSION['idUsuario']);
-
-            include("../views/inicioV.php");
         } else {
-            $mensaje = "Ha habido un fallo al acceder a la Base de Datos";
+            $mensaje = "";
 
 
             include("../views/registroV.php");
