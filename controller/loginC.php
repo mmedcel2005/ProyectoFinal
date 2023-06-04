@@ -51,7 +51,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
             $datosUsuario= $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
             $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
-            $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
+            $idInventario = $gestorInv->obtenerIdInventario($datosUsuario['idUsuario'], $conexPDO);
 
 
             $_SESSION['is_admin'] = $datosUsuario['is_admin'];
