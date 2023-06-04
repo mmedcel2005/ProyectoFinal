@@ -100,8 +100,12 @@
           <?php
           print('<div class="d-flex mx-lg-5">');
           print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
-          print("</a></div>");
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br />');
+          print("</a>");
+          print('<a class="nav-link" href="../controller/tiendaTokensC.php"> <img src="../src/img/1token.png" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" /><p class="text-token"> <b>' . $_SESSION['cantTokens'] . ' </b></p>');
+          print("</a>");
+
+          print("</div>");
           print("");
 
           ?>
