@@ -57,11 +57,14 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
         $anadirInv = $gestorInv->anadirInventario($idUsuario, $conexPDO);
 
+        var_dump($anadirInv);
 
         if ($anadirUsu != false && $anadirInv != false) {
 
 
             $_SESSION['loggedin'] = true;
+            var_dump($idUsuario);
+
 
             $idInventario = $gestorInv->obtenerIdInventario($idUsuario, $conexPDO);
 
