@@ -220,7 +220,7 @@
               print('           <br>');
               print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
               print('      <input type="hidden" id="idItem" name="idItem-' . $item['idObjeto'] . '" value="' . $item['idObjeto'] . '">');
-              print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+              print('       <h4 class="item-card-text text-token">' . $item['precio'] . ' €</h4>');
               print('        </div>');
               print('    </div>');
               print('</div>');

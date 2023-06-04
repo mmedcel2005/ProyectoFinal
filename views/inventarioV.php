@@ -272,7 +272,7 @@
         <?php
         if ($vendido == true) {
             print('<div id="notification" class="notification">');
-            print('<span id="notification-message" class="notification-message">Has ganado' . $tokensGanados  . ' monedas</span>');
+            print('<span id="notification-message" class="notification-message">Has ganado ' . $tokensGanados  . ' monedas</span>');
             print('</div>');
         } elseif ($enviado == true) {
             print('<div id="notification" class="notification">');
