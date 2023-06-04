@@ -52,11 +52,11 @@
       background-color: #121212;
 
     }
+
     .btn-amarillo:hover {
       background-color: #efb810;
       color: white;
     }
-
   </style>
 </head>
 
@@ -153,8 +153,14 @@
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
             print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+            if ($_SESSION["is_admin"] == true) {
+              print('<form action="../controller/editarCajaC.php" method="post">');
+              print('     <input type="hidden" name="idCaja" value="' . $caja["idCaja"] . '">');
+              print('     <button type="submit" class="btn btn-secondary color-tokens col-sm-11">Editar</button>');
+              print('   </form>');
+            }
             print('<form action="../controller/abrirCajaC.php" method="post">');
-            print('     <input type="hidden" id="idCaja" name="idCaja" value="' . $caja["idCaja"] . '">');
+            print('     <input type="hidden" name="idCaja" value="' . $caja["idCaja"] . '">');
             print('     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
             print('   </form>');
             print('   </div>');
