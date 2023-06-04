@@ -37,7 +37,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
       if($actualizarCaja != false){
 
-         $cajaEditada= true;
+         $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
+
+         $mensaje= "Caja actualizada correctamente";
 
          include("../views/inicioV.php");
 
