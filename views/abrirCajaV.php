@@ -84,12 +84,12 @@
     }
 
   .roulette-line {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
     width: 2px;
-    height: calc(100% + 20px);
+    height: 80%;
     background-color: #efb810; /* Puedes ajustar el color de la línea aquí */
     z-index: 2;
   }
