@@ -48,7 +48,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 $idUsuario = $_SESSION['idUsuario'];
 
 
-                var_dump($idUsuario);
+                var_dump($_SESSION['idInventario']);
+                var_dump($_POST['idObjeto']);
 
 
                 if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
