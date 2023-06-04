@@ -113,15 +113,15 @@
                     <div class="form-group">
                         <label for="estado">Estado:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="estadoN" name="estado" value="N">
+                            <input type="radio" class="form-check-input" id="estadoN" name="estado" value="N" <?php if($datosCaja["estado"]== "N"){ print('checked');} ?>>
                             <label class="form-check-label" for="estadoN">N</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="estadoO" name="estado" value="O">
+                            <input type="radio" class="form-check-input" id="estadoO" name="estado" value="O" <?php if($datosCaja["estado"]== "O"){ print('checked');} ?>>
                             <label class="form-check-label" for="estadoO">O</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="estadoX" name="estado" value="X">
+                            <input type="radio" class="form-check-input" id="estadoX" name="estado" value="X" <?php if($datosCaja["estado"]== "X" || $datosCaja["estado"] == null){ print('checked');} ?>>
                             <label class="form-check-label" for="estadoX">X</label>
                         </div>
                     </div>
@@ -130,19 +130,19 @@
                     <div class="form-group">
                         <label for="categoria">Categoría:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="categoriaT" name="categoria" value="T">
+                            <input type="radio" class="form-check-input" id="categoriaT" name="categoria" value="T" <?php if($datosCaja["categoria"]== "T"){ print('checked');} ?>>
                             <label class="form-check-label" for="categoriaT">T</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="categoriaR" name="categoria" value="R">
+                            <input type="radio" class="form-check-input" id="categoriaR" name="categoria" value="R" <?php if($datosCaja["categoria"]== "R"){ print('checked');} ?>>
                             <label class="form-check-label" for="categoriaR">R</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="categoriaF" name="categoria" value="F">
+                            <input type="radio" class="form-check-input" id="categoriaF" name="categoria" value="F" <?php if($datosCaja["categoria"]== "F"){ print('checked');} ?>>
                             <label class="form-check-label" for="categoriaF">F</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="categoriaA" name="categoria" value="A">
+                            <input type="radio" class="form-check-input" id="categoriaA" name="categoria" value="A" <?php if($datosCaja["categoria"]== "A"){ print('checked');} ?>>
                             <label class="form-check-label" for="categoriaA">A</label>
                         </div>
                     </div>
