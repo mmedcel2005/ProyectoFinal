@@ -108,7 +108,7 @@
 
           print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
           print('<div class="d-flex align-items-center">');
-          print('<img src="../src/img/token.png" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+          print('<img src="../src/img/token.png" alt="Imagen de token" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
           print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
           print('</div>');
           print('</a>');
@@ -179,10 +179,8 @@
             }
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
-            print('<div class="d-flex align-items-center">');
             print('<img src="../src/img/token.png" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-            print('<h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
-            print('</div>');
+            print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
             if ($_SESSION["is_admin"] == true) {
               print('<form action="../controller/editarCajaC.php" method="post">');
               print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
