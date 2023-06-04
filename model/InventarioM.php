@@ -27,6 +27,7 @@ class InventarioM
 
                 // Se ejecuta la sentencia SQL y se asigna el resultado a la variable $result
                 $sentencia->execute();
+
                 return $sentencia->fetch();
             } catch (PDOException $e) {
                 // Si se produce un error, se muestra un mensaje en pantalla
