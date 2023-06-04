@@ -147,6 +147,7 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="idCaja" name="idCaja" value="<?php print($datosCaja["idCaja"]); ?>">
             </div>
 
         </form>

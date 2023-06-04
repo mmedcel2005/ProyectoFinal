@@ -23,7 +23,26 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
    $conexPDO = Utils::conectar($l = false);
    $gestorCaj = new CajasM();
 
-   if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true && isset($_POST['editarCajaID'])) {
+   if(isset($_POST['guardar']) &&  $_POST['guardar']== "guardar" && isset($_POST['nombre']) && isset($_POST['precio']) && isset($_POST['estado'])  && isset($_POST['categoria'])  && isset($_POST['idCaja'])){
+
+      $caja["nombre"] = $_POST['nombre'];
+      $caja["precio"] = $_POST['precio'];
+      $caja["estado"] = $_POST['estado'];
+      $caja["categoria"] = $_POST['categoria'];
+      $caja["idCaja"] = $_POST['idCaja'];
+
+      $actualizarCaja = $gestorCaj->actualizarCaja($caja, $conexPDO);
+
+
+      if($actualizarCaja != false){
+
+         $cajaEditada= true;
+
+         include("../views/inicioV.php");
+
+      }
+
+   }elseif (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true && isset($_POST['editarCajaID'])) {
       $cajaId = $_POST['editarCajaID'];
       $datosCaja = $gestorCaj->obtenerCajasPorID($cajaId, $conexPDO);
 
