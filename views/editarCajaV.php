@@ -98,26 +98,40 @@
                 <input type="text" class="form-control" id="nombre" name="nombre" <?php print('value="' . $datosCaja["nombre"] . '"'); ?>>
             </div>
 
-            <div>
-                <label for="estado">Estado:</label><br>
-                <input type="checkbox" id="estadoN" name="estado" value="N">
-                <label for="estadoN">N</label>
-                <input type="checkbox" id="estadoO" name="estado" value="O">
-                <label for="estadoO">O</label>
-                <input type="checkbox" id="estadoX" name="estado" value="X">
-                <label for="estadoX">X</label>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="estadoN" name="estado" value="N">
+                    <label class="form-check-label" for="estadoN">N</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="estadoO" name="estado" value="O">
+                    <label class="form-check-label" for="estadoO">O</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="estadoX" name="estado" value="X">
+                    <label class="form-check-label" for="estadoX">X</label>
+                </div>
             </div>
 
-            <div>
-                <label for="categoria">Categoría:</label><br>
-                <input type="checkbox" id="categoriaT" name="categoria" value="T">
-                <label for="categoriaT">T</label>
-                <input type="checkbox" id="categoriaR" name="categoria" value="R">
-                <label for="categoriaR">R</label>
-                <input type="checkbox" id="categoriaF" name="categoria" value="F">
-                <label for="categoriaF">F</label>
-                <input type="checkbox" id="categoriaA" name="categoria" value="A">
-                <label for="categoriaA">A</label>
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="categoriaT" name="categoria" value="T">
+                    <label class="form-check-label" for="categoriaT">T</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="categoriaR" name="categoria" value="R">
+                    <label class="form-check-label" for="categoriaR">R</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="categoriaF" name="categoria" value="F">
+                    <label class="form-check-label" for="categoriaF">F</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="categoriaA" name="categoria" value="A">
+                    <label class="form-check-label" for="categoriaA">A</label>
+                </div>
             </div>
 
             <div class="mb-3">
