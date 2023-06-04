@@ -182,7 +182,7 @@
                                         <?php
 
                                         if ($usuario["direccion"] != null) {
-                                            print('<p class="text-muted mb-0">' . $usuario["direccion"] . '</p>');
+                                            print('<p class="text-muted mb-0">' . $usuario["direccion"] . ', ' . $usuario["codigo_postal"] . ', ' . $usuario["ciudad"] . ', ' . $usuario["provincia"] . ', ' . $usuario["pais"] . '</p>');
                                         } else {
                                             print('<p class="text-muted mb-0">-</p>');
                                         }
