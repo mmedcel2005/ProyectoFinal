@@ -179,8 +179,10 @@
             }
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
+            print('<div class="d-flex align-items-center">');
             print('<img src="../src/img/token.png" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-            print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+            print('<h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+            print('</div>');
             if ($_SESSION["is_admin"] == true) {
               print('<form action="../controller/editarCajaC.php" method="post">');
               print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
