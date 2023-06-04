@@ -163,45 +163,45 @@
 
 
     <article>
-      <div class="container">
-        <div class="row">
+  <div class="container">
+    <div class="row">
 
-          <?php
-          foreach ($datosCajas as $caja) {
+      <?php
+      foreach ($datosCajas as $caja) {
 
-            print('<div class="col-sm-4 mb-3">');
-            print(' <div class="card position-relative text-center bg-custom-sec">');
-            print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
-            if ($caja["estado"] == "O") {
-              print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            } elseif ($caja["estado"] == "N") {
-              print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            }
-            print('  <div class="card-body">');
-            print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
-            print('<div class="d-flex align-items-center">'); // Nuevo contenedor para alinear la imagen y el precio
-            print('<img src="../src/img/token.png" alt="Imagen de token" style="max-width: 40px;" />');
-            print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
-            print('</div>');
-            if ($_SESSION["is_admin"] == true) {
-              print('<form action="../controller/editarCajaC.php" method="post">');
-              print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
-              print('     <button type="submit" class="btn btn-secondary color-tokens col-sm-11">Editar</button>');
-              print('   </form>');
-            }
-            print('<form action="../controller/abrirCajaC.php" method="post">');
-            print('     <input type="hidden" name="idCaja" value="' . $caja["idCaja"] . '">');
-            print('     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
-            print('   </form>');
-            print('   </div>');
-            print(' </div>');
-            print('</div>');
-          }
-          ?>
+        print('<div class="col-sm-4 mb-3">');
+        print('<div class="card position-relative text-center bg-custom-sec d-flex">'); // Agregado d-flex a la clase de la tarjeta
+        print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
+        if ($caja["estado"] == "O") {
+          print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+        } elseif ($caja["estado"] == "N") {
+          print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+        }
+        print('  <div class="card-body d-flex align-items-center">'); // Agregado d-flex y align-items-center al contenedor del cuerpo de la tarjeta
+        print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
+        print('<div class="d-flex align-items-center">');
+        print('<img src="../src/img/token.png" alt="Imagen de token" style="max-width: 40px;" />');
+        print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+        print('</div>');
+        if ($_SESSION["is_admin"] == true) {
+          print('<form action="../controller/editarCajaC.php" method="post">');
+          print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
+          print('     <button type="submit" class="btn btn-secondary color-tokens col-sm-11">Editar</button>');
+          print('   </form>');
+        }
+        print('<form action="../controller/abrirCajaC.php" method="post">');
+        print('     <input type="hidden" name="idCaja" value="' . $caja["idCaja"] . '">');
+        print('     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
+        print('   </form>');
+        print('   </div>');
+        print(' </div>');
+        print('</div>');
+      }
+      ?>
 
-        </div>
-      </div>
-    </article>
+    </div>
+  </div>
+</article>
 
     <?php
     if ($mensaje != null) {
