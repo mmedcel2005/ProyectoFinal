@@ -37,15 +37,14 @@ class InventarioM
     }
     
 
-    public function obtenerIdInventario($usuario, $conexPDO)
+    public function obtenerIdInventario($idUsuario, $conexPDO)
     {
         // Se inicializa la variable $result en null
         $result = null;
 
         // Se verifica si los parámetros recibidos son válidos
-        if ($conexPDO != null && $usuario['idUsuario'] != null) {
+        if ($conexPDO != null && $idUsuario != null) {
             try {
-                $idUsuario = $usuario['idUsuario'];
                 // Se define la sentencia SQL para obtener el idInventario del Usuario
                 $sentencia = $conexPDO->prepare("SELECT idInventario FROM proyecto.Inventario WHERE Usuario_idUsuario = :idUsuario");
 

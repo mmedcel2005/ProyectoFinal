@@ -33,7 +33,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $salt = Utils::generarSalt(16, false);
     $usuario["salt"] = $salt;
     $usuario["cantTokens"] = 0;
-    $usuario["imagen"] = "../src/img/ava-1.png";
+    $usuario["imagen"] = "../src/img/avatar/ava-1.png";
 
     //Encriptamos el password en 256 bits
     $usuario["password"] = crypt($_POST["password"], '$5$rounds=5000$' . $usuario["salt"] . '$');
