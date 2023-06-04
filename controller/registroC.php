@@ -74,6 +74,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
                 var_dump($idUsuario);
 
                 $_SESSION['idInventario'] = $idInventario;
+                $_SESSION['is_admin'] = $datosUsuario['is_admin'];
                 $_SESSION['imagen'] = $datosUsuario['imagen'];
                 $_SESSION['idUsuario'] = $idUsuario;
                 $_SESSION['nombre'] = $datosUsuario['nombre'];

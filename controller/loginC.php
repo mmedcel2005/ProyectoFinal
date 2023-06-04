@@ -54,7 +54,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
             $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
 
-            $_SESSION['idInventario'] = $idInventario;
+            $_SESSION['is_admin'] = $datosUsuario['is_admin'];
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
             $_SESSION['nombre'] = $datosUsuario['nombre'];
