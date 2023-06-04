@@ -57,6 +57,21 @@
       background-color: #efb810;
       color: white;
     }
+
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .notification.show {
+      display: block;
+    }
   </style>
 </head>
 
@@ -173,6 +188,14 @@
       </div>
     </article>
 
+    <?php
+    if ($mensaje != null) {
+      print('<div id="notification" class="notification">');
+      print('<span id="notification-message" class="notification-message">' . $mensaje . '</span>');
+      print('</div>');
+    }
+    ?>
+
 
   </main>
   <!--------------- FOOTER  --------------->
@@ -216,6 +239,33 @@
       <a class="text-white" href="https://mdbootstrap.com/">Manuel Medina</a>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    const notification = document.getElementById('notification');
+    const notificationMessage = document.getElementById('notification-message');
+
+    // Función para mostrar la ventana emergente con un mensaje específico
+    function showNotification() {
+      notification.classList.add('show');
+
+      // Ocultar la ventana emergente después de 5 segundos
+      setTimeout(() => {
+        hideNotification();
+      }, 5000);
+    }
+
+    // Función para ocultar la ventana emergente
+    function hideNotification() {
+      notification.classList.remove('show');
+    }
+
+    // Ejemplo de uso
+    window.addEventListener('load', () => {
+      showNotification();
+    });
+  </script>
 </body>
 
 </html>
