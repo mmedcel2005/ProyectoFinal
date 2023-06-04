@@ -73,39 +73,51 @@
 
 <body>
 <header>
-        <!--------------- NAV  --------------->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-            <div class="container-fluid">
-                <a class="nav-link" href="../index.php">
-                    <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
-                </a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><b>Oro gratis</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
-                        </li>
-                        <li class="nav-item"></li>
-                    </ul>
+    <!--------------- NAV  --------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+      <div class="container-fluid">
+        <a class="nav-link" href="../index.php">
+          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Oro gratis</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
+            </li>
+            <li class="nav-item"></li>
+          </ul>
 
-                    <?php
-                    print('<div class="d-flex mx-lg-5">');
-                    print('<a class="nav-link" href="../controller/usuarioC.php"><img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 50px;" />');
-                    print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span> <br /> <p class="text-token"> <b>' .$_SESSION['cantTokens'] . ' </b></p>');
-                    print("</a></div>");
-                    print("");
+          <?php
+          print('<div class="d-flex flex-column mx-lg-5">');
+          print('<a class="nav-link" href="../controller/usuarioC.php">');
+          print('<div class="d-flex align-items-center">');
+          print('<img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span>');
+          print('</div>');
+          print('</a>');
 
-                    ?>
-                    <div id="google_translate_element" class="google"></div>
-                </div>
-            </div>
-        </nav>
-    </header>
+          print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
+          print('<div class="d-flex align-items-center">');
+          print('<img src="../src/img/token.png" alt="Imagen de token" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+          print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
+          print('</div>');
+          print('</a>');
+
+          print('</div>');
+
+
+          ?>
+          <div id="google_translate_element" class="google"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
 
 
