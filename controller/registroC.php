@@ -49,21 +49,16 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     $comprobarCorreo = $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
 
-    var_dump($comprobarCorreo);
     if ($comprobarCorreo == false) {
         $anadirUsu = $gestorUsu->anadirUsuario($usuario, $conexPDO);
         $obtenerID = $gestorUsu-> obtenerIDUsuarioPorCorreo($usuario, $conexPDO);
 
         $anadirInv = $gestorInv->anadirInventario($obtenerID, $conexPDO);
 
-        var_dump($anadirUsu);
-        var_dump($anadirInv);
-
         if ($anadirUsu != null && $anadirInv != null) {
 
 
             $_SESSION['loggedin'] = true;
-            var_dump($_SESSION['loggedin']);
 
             $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
@@ -72,7 +67,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
             if ($idInventario != null) {
                 $_SESSION['idInventario'] = $idInventario;
                 $_SESSION['imagen'] = $usuario['imagen'];
-                $_SESSION['idUsuario'] = obtenerID;
+                $_SESSION['idUsuario'] = $obtenerID;
                 $_SESSION['nombre'] = $usuario['nombre'];
                 $_SESSION['cantTokens'] = $usuario['cantTokens'];
 
