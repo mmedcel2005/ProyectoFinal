@@ -17,12 +17,12 @@ class CajasM
         if ($conexPDO != null) {
             try {
                 // Se define la consulta SQL de actualización
-                $sentencia = $conexPDO->prepare("UPDATE proyecto.Caja SET nombre = :nombre, estado = :estado, categoria = :categoria, precio = :precio WHERE idCaja = :id");
+                $sentencia = $conexPDO->prepare("UPDATE proyecto.Caja SET nombre = :nombre, estado = :estado, categoria = :categoria, precio = :precio WHERE idCaja = :idCaja");
                 $sentencia->bindParam(':nombre', $caja["nombre"]);
                 $sentencia->bindParam(':estado', $caja["estado"]);
                 $sentencia->bindParam(':categoria', $caja["categoria"]);
                 $sentencia->bindParam(':precio', $caja["precio"]);
-                $sentencia->bindParam(':id', $caja["id"]);
+                $sentencia->bindParam(':idCaja', $caja["idCaja"]);
 
                 // Se ejecuta la sentencia SQL
                 $sentencia->execute();
