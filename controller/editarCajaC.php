@@ -33,6 +33,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
       $actualizarCaja = $gestorCaj->actualizarCaja($caja, $conexPDO);
 
+      var_dump($actualizarCaja);
 
       if($actualizarCaja != false){
 
