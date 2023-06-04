@@ -51,6 +51,25 @@ class UsuarioM
         }
     }
 
+    public function obtenerIDUsuarioPorCorreo($usuario, $conexPDO)
+    {
+        if (isset($usuario["correo"])) {
+            $correo = $usuario["correo"];
+            if ($conexPDO != null) {
+                try {
+                    $sentencia = $conexPDO->prepare("SELECT idUsuario FROM proyecto.Usuario WHERE correo = ?");
+                    $sentencia->bindParam(1, $correo);
+                    $sentencia->execute();
+
+                    // Devolvemos el nombre de usuario
+                    return $sentencia->fetch();
+                } catch (PDOException $e) {
+                    print("Error al acceder a BD" . $e->getMessage());
+                }
+            }
+        }
+    }
+
     public function obtenerUsuarioPorID($idUsuario, $conexPDO)
     {
         if ($conexPDO != null) {
