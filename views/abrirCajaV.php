@@ -83,6 +83,17 @@
       position: relative;
     }
 
+  .roulette-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #efb810; /* Puedes ajustar el color de la línea aquí */
+    z-index: 1;
+  }
+
     .notification {
       position: fixed;
       bottom: 20px;
