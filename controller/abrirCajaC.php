@@ -48,6 +48,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 $idUsuario = $_SESSION['idUsuario'];
 
 
+                var_dump($idUsuario);
+
+
                 if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
                     $idInventario = $_SESSION['idInventario'];
@@ -56,7 +59,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     $anadirItemIntoInventario = $gestorInv->anadirObjetoIntoInventario($idInventario, $idUsuario, $idObjeto, $conexPDO);
 
 
-                    var_dump($anadirItemIntoInventario);
 
                     if ($anadirItemIntoInventario != false) {
 
