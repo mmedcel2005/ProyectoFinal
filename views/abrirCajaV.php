@@ -91,7 +91,7 @@
     width: 2px;
     height: 100%;
     background-color: #efb810; /* Puedes ajustar el color de la línea aquí */
-    z-index: 1;
+    z-index: 2;
   }
 
     .notification {
