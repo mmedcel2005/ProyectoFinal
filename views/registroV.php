@@ -11,6 +11,7 @@ namespace views;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="../src/img/logo-Mini.png" type="image/x-icon">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
     <title>Document</title>
