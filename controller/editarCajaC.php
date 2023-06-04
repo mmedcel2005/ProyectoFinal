@@ -18,24 +18,20 @@ require_once("../model/InventarioM.php");
 require_once("../model/Utils.php");
 
 session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
-    $conexPDO = Utils::conectar($l=false);
-    $gestorCaj = new CajasM();
+   $conexPDO = Utils::conectar($l = false);
+   $gestorCaj = new CajasM();
 
- if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true && isset($_SESSION['cajaId']) && $_SESSION['cajaId'] == true){
-    $cajaId = $_SESSION['cajaId'];
-    $datosCaja= $gestorCaj->obtenerCajasPorID($cajaId, $conexPDO);
+   if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true && isset($_POST['cajaId']) && $_POST['cajaId'] == true) {
+      $cajaId = $_POST['cajaId'];
+      $datosCaja = $gestorCaj->obtenerCajasPorID($cajaId, $conexPDO);
 
-    include("../views/editarCajaV.php");
-
- }else{
-    $datosCajas= $gestorCaj->obtenerCajas($conexPDO);
-    include("../views/inicioV.php");
-
- }
-
-}else{
-    include("../views/loginV.php");
-
+      include("../views/editarCajaV.php");
+   } else {
+      $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
+      include("../views/inicioV.php");
+   }
+} else {
+   include("../views/loginV.php");
 }
