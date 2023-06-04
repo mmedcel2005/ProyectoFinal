@@ -64,6 +64,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                         if ($cambiarCantTokens != false) {
 
+                            var_dump($cambiarCantTokens);
                             $cantTokensActual = $_SESSION['cantTokens'] - $precioCaja;
 
                             $_SESSION['cantTokens'] = $cantTokensActual;
