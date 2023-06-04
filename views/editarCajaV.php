@@ -92,6 +92,7 @@
                 <h1 class="mb-0">Editar Datos</h1>
                 <button type="submit" class="btn btn-primary float-end" id="guardar" name="guardar" value="guardar">Guardar</button>
             </div>
+
             <div class="row">
                 <div class="col">
                     <div class="mb-3">
@@ -112,15 +113,15 @@
                     <div class="form-group">
                         <label for="estado">Estado:</label>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="estadoN" name="estado" value="N">
+                            <input type="radio" class="form-check-input" id="estadoN" name="estado" value="N">
                             <label class="form-check-label" for="estadoN">N</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="estadoO" name="estado" value="O">
+                            <input type="radio" class="form-check-input" id="estadoO" name="estado" value="O">
                             <label class="form-check-label" for="estadoO">O</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="estadoX" name="estado" value="X">
+                            <input type="radio" class="form-check-input" id="estadoX" name="estado" value="X">
                             <label class="form-check-label" for="estadoX">X</label>
                         </div>
                     </div>
@@ -129,19 +130,19 @@
                     <div class="form-group">
                         <label for="categoria">Categoría:</label>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="categoriaT" name="categoria" value="T">
+                            <input type="radio" class="form-check-input" id="categoriaT" name="categoria" value="T">
                             <label class="form-check-label" for="categoriaT">T</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="categoriaR" name="categoria" value="R">
+                            <input type="radio" class="form-check-input" id="categoriaR" name="categoria" value="R">
                             <label class="form-check-label" for="categoriaR">R</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="categoriaF" name="categoria" value="F">
+                            <input type="radio" class="form-check-input" id="categoriaF" name="categoria" value="F">
                             <label class="form-check-label" for="categoriaF">F</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="categoriaA" name="categoria" value="A">
+                            <input type="radio" class="form-check-input" id="categoriaA" name="categoria" value="A">
                             <label class="form-check-label" for="categoriaA">A</label>
                         </div>
                     </div>
