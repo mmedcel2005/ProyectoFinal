@@ -59,7 +59,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
 
         var_dump($anadirUsu);
-        var_dump($obtenerID);
+        var_dump($gestorInv);
 
         if ($anadirUsu != null && $anadirInv != null) {
 
