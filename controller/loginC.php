@@ -55,6 +55,7 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
 
 
             $_SESSION['is_admin'] = $datosUsuario['is_admin'];
+            $_SESSION['idInventario'] = $idInventario;
             $_SESSION['idUsuario'] = $datosUsuario['idUsuario'];
             $_SESSION['imagen'] = $datosUsuario['imagen'];
             $_SESSION['nombre'] = $datosUsuario['nombre'];
