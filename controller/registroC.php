@@ -63,7 +63,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
             $_SESSION['loggedin'] = true;
 
-            $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
+            $idInventario = $gestorInv->obtenerIdInventario($idUsuario, $conexPDO);
 
             var_dump($idInventario);
 
