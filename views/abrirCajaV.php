@@ -84,7 +84,7 @@
     }
 
   .roulette-line {
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
