@@ -111,7 +111,7 @@
                             <div class="card-body">
 
                                 <?php
-                                if ($objetosIntoInventario == null || (count($objetosIntoInventario)) < 1) {
+                                if ($objetosIntoInventario == null) {
                                     print('<div class="row">');
                                     print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
 
