@@ -183,7 +183,8 @@
             print('      <div>');
             print('        <img src="../src/img/token.png" alt="Imagen de token" style="margin-right: 10px; max-width: 40px;">');
             print('        <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
-            print('      </div>');
+            print('      </div> </div>');
+
             if ($_SESSION["is_admin"] == true) {
               print('<form action="../controller/editarCajaC.php" method="post">');
               print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
