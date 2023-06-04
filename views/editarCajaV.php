@@ -95,22 +95,34 @@
 
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" <?php print('value="'. $datosCaja["nombre"] .'"');?>>
+                <input type="text" class="form-control" id="nombre" name="nombre" <?php print('value="' . $datosCaja["nombre"] . '"'); ?>>
             </div>
 
-            <div class="mb-3">
-                <label for="estado" class="form-label">Estado (Nuevo / Oferta):</label>
-                <input type="text" class="form-control" id="estado" name="estado" <?php print('value="'. $datosCaja["estado"] .'"');?>>
+            <div>
+                <label for="estado">Estado:</label><br>
+                <input type="checkbox" id="estadoN" name="estado" value="N">
+                <label for="estadoN">N</label>
+                <input type="checkbox" id="estadoO" name="estado" value="O">
+                <label for="estadoO">O</label>
+                <input type="checkbox" id="estadoX" name="estado" value="X">
+                <label for="estadoX">X</label>
             </div>
 
-            <div class="mb-3">
-                <label for="categoria" class="form-label">Categoría (Tecnologia / Ropa / Figuras / Accesorios):</label>
-                <input type="text" class="form-control" id="categoria" name="categoria" <?php print('value="'. $datosCaja["categoria"] .'"');?>>
+            <div>
+                <label for="categoria">Categoría:</label><br>
+                <input type="checkbox" id="categoriaT" name="categoria" value="T">
+                <label for="categoriaT">T</label>
+                <input type="checkbox" id="categoriaR" name="categoria" value="R">
+                <label for="categoriaR">R</label>
+                <input type="checkbox" id="categoriaF" name="categoria" value="F">
+                <label for="categoriaF">F</label>
+                <input type="checkbox" id="categoriaA" name="categoria" value="A">
+                <label for="categoriaA">A</label>
             </div>
 
             <div class="mb-3">
                 <label for="precio" class="form-label">Precio:</label>
-                <input type="text" class="form-control" id="precio" name="precio" <?php print('value="'. $datosCaja["precio"] .'"');?>>
+                <input type="text" class="form-control" id="precio" name="precio" <?php print('value="' . $datosCaja["precio"] . '"'); ?>>
             </div>
 
         </form>
