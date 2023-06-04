@@ -87,7 +87,7 @@
 
 
     <div class="container mb-3 mt-3">
-        <form action="../controller/editarPerfilC.php" method="post">
+        <form action="../controller/editarCajaC.php" method="post">
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="mb-0">Editar Datos</h1>
                 <button type="submit" class="btn btn-primary float-end" id="guardar" name="guardar" value="guardar">Guardar</button>
