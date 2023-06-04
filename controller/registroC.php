@@ -51,29 +51,28 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
     if ($comprobarCorreo == false) {
         $anadirUsu = $gestorUsu->anadirUsuario($usuario, $conexPDO);
-        $obtenerID = $gestorUsu-> obtenerUsuarioPorCorreo($usuario, $conexPDO);
+        $datosUsuario = $gestorUsu-> obtenerUsuarioPorCorreo($usuario, $conexPDO);
 
         $idUsuario = $usuario["idUsuario"];
 
         $anadirInv = $gestorInv->anadirInventario($idUsuario, $conexPDO);
 
 
-        var_dump($anadirUsu);
-        var_dump($anadirInv);
-
-        if ($anadirUsu != null && $anadirInv != null) {
+        if ($anadirUsu != false && $anadirInv != false) {
 
 
             $_SESSION['loggedin'] = true;
 
             $idInventario = $gestorInv->obtenerIdInventario($datosUsuario, $conexPDO);
 
+            var_dump($anadirInv);
+
             if ($idInventario != null) {
                 $_SESSION['idInventario'] = $idInventario;
-                $_SESSION['imagen'] = $usuario['imagen'];
+                $_SESSION['imagen'] = $datosUsuario['imagen'];
                 $_SESSION['idUsuario'] = $idUsuario;
-                $_SESSION['nombre'] = $usuario['nombre'];
-                $_SESSION['cantTokens'] = $usuario['cantTokens'];
+                $_SESSION['nombre'] = $datosUsuario['nombre'];
+                $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
 
                 $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
 
