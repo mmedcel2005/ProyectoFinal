@@ -24,10 +24,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
    $gestorCaj = new CajasM();
 
    if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true && isset($_POST['editarCajaID'])) {
-      $cajaId = $_POST['cajaId'];
+      $cajaId = $_POST['editarCajaID'];
       $datosCaja = $gestorCaj->obtenerCajasPorID($cajaId, $conexPDO);
 
-      var_dump($datosCaja);
       include("../views/editarCajaV.php");
    } else {
       $datosCajas = $gestorCaj->obtenerCajas($conexPDO);
