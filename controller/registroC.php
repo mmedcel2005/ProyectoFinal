@@ -53,7 +53,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
         $anadirUsu = $gestorUsu->anadirUsuario($usuario, $conexPDO);
         $datosUsuario = $gestorUsu-> obtenerUsuarioPorCorreo($usuario, $conexPDO);
 
-        $idUsuario = $usuario["idUsuario"];
+        $idUsuario = $datosUsuario["idUsuario"];
 
         $anadirInv = $gestorInv->anadirInventario($idUsuario, $conexPDO);
 
