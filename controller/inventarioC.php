@@ -38,12 +38,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     if (isset($_POST["vender"]) && $_POST["vender"] == "vender") {
         $precioCaja = $caja['precio'];
 
+        var_dump($_SESSION['idUsuario']);
+        var_dump($_SESSION['cantTokens']);
+
         if ($_SESSION['idUsuario'] != null && $_SESSION['cantTokens'] != null) {
             $gestorInv = new InventarioM();
 
             $idUsuario = $_SESSION['idUsuario'];
 
-            var_dump($idUsuario);
             if (isset($_SESSION['idInventario']) && $_SESSION['idInventario'] != null && isset($_POST['idObjeto']) && $_POST['idObjeto'] != null) {
 
                 $idInventario = $_SESSION['idInventario'];
