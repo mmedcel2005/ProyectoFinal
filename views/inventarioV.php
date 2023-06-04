@@ -255,7 +255,7 @@
                     <!-- Pie del modal -->
                     <div class="modal-footer">
                         <form action="../controller/editarPerfilC.php" method="post">
-                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar direccion</button>
+                            <button type="submit" class="btn btn-secondary">Cambiar direccion</button>
                         </form>
 
                         <form action="../controller/inventarioC.php" method="post">
