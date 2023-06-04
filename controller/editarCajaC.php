@@ -23,9 +23,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
    $conexPDO = Utils::conectar($l = false);
    $gestorCaj = new CajasM();
 
-   var_dump($_SESSION['is_admin']);
-   var_dump($_POST['editarCajaID']);
-
    if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true && isset($_POST['editarCajaID'])) {
       $cajaId = $_POST['cajaId'];
       $datosCaja = $gestorCaj->obtenerCajasPorID($cajaId, $conexPDO);
