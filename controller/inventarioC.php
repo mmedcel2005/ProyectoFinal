@@ -34,8 +34,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && isset($_SES
     $gestorInv = new InventarioM();
     $gestorCaja = new CajasM();
 
-    var_dump($_POST['vender']);
-
 
     if (isset($_POST["vender"]) && $_POST["vender"] == "vender") {
         $precioCaja = $caja['precio'];
