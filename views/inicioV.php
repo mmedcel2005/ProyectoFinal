@@ -108,7 +108,7 @@
 
           print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
           print('<div class="d-flex align-items-center">');
-          print('<img src="../src/img/1token.png" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+          print('<img src="../src/img/token.png" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
           print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
           print('</div>');
           print('</a>');
