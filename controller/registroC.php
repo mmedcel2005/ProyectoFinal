@@ -57,7 +57,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
 
         var_dump($anadirUsu);
-        var_dump($anadirInv);
+        var_dump($obtenerID);
 
         if ($anadirUsu != null && $anadirInv != null) {
 
