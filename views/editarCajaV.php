@@ -92,10 +92,19 @@
                 <h1 class="mb-0">Editar Datos</h1>
                 <button type="submit" class="btn btn-primary float-end" id="guardar" name="guardar" value="guardar">Guardar</button>
             </div>
-
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" <?php print('value="' . $datosCaja["nombre"] . '"'); ?>>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" <?php print('value="' . $datosCaja["nombre"] . '"'); ?>>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio:</label>
+                        <input type="text" class="form-control" id="precio" name="precio" <?php print('value="' . $datosCaja["precio"] . '"'); ?>>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
@@ -137,11 +146,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="mb-3">
-                <label for="precio" class="form-label">Precio:</label>
-                <input type="text" class="form-control" id="precio" name="precio" <?php print('value="' . $datosCaja["precio"] . '"'); ?>>
             </div>
 
         </form>
