@@ -99,7 +99,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="estado" class="form-label">Estado (N/O):</label>
+                <label for="estado" class="form-label">Estado (Nuevo / Oferta):</label>
                 <input type="text" class="form-control" id="estado" name="estado" <?php print('value="'. $datosCaja["estado"] .'"');?>>
             </div>
 
