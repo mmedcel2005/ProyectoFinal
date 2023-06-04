@@ -89,7 +89,7 @@
     top: 0;
     transform: translateX(-50%);
     width: 2px;
-    height: 100%;
+    height: calc(100% + 20px);
     background-color: #efb810; /* Puedes ajustar el color de la línea aquí */
     z-index: 2;
   }
