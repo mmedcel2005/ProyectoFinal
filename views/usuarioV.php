@@ -237,7 +237,23 @@
 
 
                                 <?php
-                                if ((count($objetosIntoInventario) > 3)) {
+                                if ($objetosIntoInventario == null) {
+                                    print('<div class="row">');
+                                    print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
+
+                                    print('</div>');
+
+                                    print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
+                                    print('<h3>El inventario esta vacio</h3>');
+                                    print('</div>');
+
+                                    print('<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
+
+
+
+                                    print('</div>');
+                                    print('</div>');
+                                }elseif ((count($objetosIntoInventario) > 3)) {
                                     for ($i = 0; $i < 3; $i++) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
@@ -292,23 +308,7 @@
                                         print('<hr class="my-4">');
                                     }
                                     print('<h5><a href="../controller/inventarioC.php" class="text-decoration-none text-white">Ver más</a></h5>');
-                                } elseif ($objetosIntoInventario == null || (count($objetosIntoInventario)) < 1) {
-                                    print('<div class="row">');
-                                    print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
-
-                                    print('</div>');
-
-                                    print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                    print('<h3>El inventario esta vacio</h3>');
-                                    print('</div>');
-
-                                    print('<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-
-
-
-                                    print('</div>');
-                                    print('</div>');
-                                } else {
+                                }else {
                                     foreach ($objetosIntoInventario as $item) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
