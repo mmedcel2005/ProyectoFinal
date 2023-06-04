@@ -139,14 +139,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             $categoriaItems = array_slice($categoriaItems, 0, $numItems); // Tomar solo el número de elementos necesarios según la probabilidad
             $itemsAleatorio = array_merge($itemsAleatorio, $categoriaItems); // Agregar los elementos de esta categoría al nuevo array
         }
-        foreach ($categoriasProbabilidades as $categoria => $probabilidad) {
-            $numItems = round(count($items) * ($probabilidad / 100)); // Calcular el número de elementos para esta categoría
-            $categoriaItems = array_filter($items, function ($item) use ($categoria) {
-                return $item['calidad'] === $categoria;
-            }); // Filtrar los elementos por categoría
-            $categoriaItems = array_slice($categoriaItems, 0, $numItems); // Tomar solo el número de elementos necesarios según la probabilidad
-            $itemsAleatorio = array_merge($itemsAleatorio, $categoriaItems); // Agregar los elementos de esta categoría al nuevo array
-        }
 
         shuffle($itemsAleatorio); // Mezclar aleatoriamente el nuevo array
 
