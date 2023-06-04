@@ -50,7 +50,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
     $comprobarCorreo = $gestorUsu->obtenerUsuarioPorCorreo($usuario, $conexPDO);
 
     var_dump($comprobarCorreo);
-    if ($comprobarCorreo != null) {
+    if ($comprobarCorreo == false) {
         $anadirUsu = $gestorUsu->anadirUsuario($usuario, $conexPDO);
         $anadirInv = $gestorInv->anadirInventario($idUsuario, $conexPDO);
 
