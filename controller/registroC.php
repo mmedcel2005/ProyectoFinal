@@ -65,13 +65,8 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["corre
 
             $idInventario = $gestorInv->obtenerIdInventario($idUsuario, $conexPDO);
 
-            var_dump($idInventario);
 
             if ($idInventario != null) {
-
-                var_dump($idInventario);
-                var_dump($datosUsuario['imagen']);
-                var_dump($idUsuario);
 
                 $_SESSION['idInventario'] = $idInventario;
                 $_SESSION['is_admin'] = $datosUsuario['is_admin'];

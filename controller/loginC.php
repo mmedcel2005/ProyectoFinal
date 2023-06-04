@@ -61,7 +61,6 @@ if (isset($_POST["iniciar"]) && $_POST["iniciar"] == "iniciar") {
             $_SESSION['nombre'] = $datosUsuario['nombre'];
             $_SESSION['cantTokens'] = $datosUsuario['cantTokens'];
 
-            var_dump( $_SESSION['cantTokens'] );
 
             $mensaje="Iniciado sesion correctamente";
 
