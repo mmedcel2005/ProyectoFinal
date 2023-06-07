@@ -169,7 +169,7 @@
             print('     <div class="item-overlay">');
             print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
             print('<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
-            print('<img src="../src/img/vender.png" alt="Icono vender" class="rounded-circle usuario-imagen" style="max-width: 30px;" />');
+            print('<img src="../src/img/vender.png" alt="Icono vender" class="rounded-circle usuario-imagen" style="max-width: 20px;" />');
             print('</button>');
 
             print('<button class="btn" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
