@@ -135,78 +135,50 @@
 
 
     <main>
-        <section>
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card mb-4 bg-custom-sec text-white">
-                            <div class="card-header py-3">
-                                <h5 class="mb-0">Inventario</h5>
-                            </div>
-                            <div class="card-body">
-                                <?php
-                                if ($objetosIntoInventario == null) {
-                                    print('<div class="row">');
-                                    print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0"></div>');
-                                    print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                    print('<h3>El inventario está vacío</h3>');
-                                    print('</div>');
-                                    print('<div class="col-lg-4 col-md-6 mb-4 mb-lg-0"></div>');
-                                    print('</div>');
-                                } else {
-                                    print('<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">');
-                                    $counter = 0;
-                                    foreach ($objetosIntoInventario as $item) {
-                                        print('<div class="col mb-4 rounded p-4">');
-                                        print('<div class="card h-300">'); // Agregado: clase "h-100" para hacer la tarjeta de altura completa
-                                        print('<div class="card-img-container">');
-                                        switch ($item["calidad"]) {
-                                            case "L":
-                                                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
-                                            case "E":
-                                                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
-                                            case "SR":
-                                                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
-                                            case "R":
-                                                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
-                                            case "C":
-                                                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
-                                            case "MC":
-                                                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
-                                            default:
-                                                break;
-                                        }
-                                        print('<div class="item-overlay">');
-                                        print('<img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
-                                        print('<br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-                                        print('<h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-                                        print('</div>');
-                                        print('</div>');
-                                        print('</div>');
-                                        print('</div>');
+    <section>
+      <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">
+          <?php
+          foreach ($objetosIntoInventario as $item) {
+            print('<div class="col mb-4 rounded p-4">');
+            print(' <div class="card">');
+            print('   <div class="card-img-container">');
+            switch ($item["calidad"]) {
+              case "L":
+                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "E":
+                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "SR":
+                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "R":
+                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "C":
+                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              case "MC":
+                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+                break;
+              default:
+                break;
+            }
+            print('     <div class="item-overlay">');
+            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
+            print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+            print('      </div>');
+            print('    </div>');
+            print('  </div>');
+            print('</div>');
+          }
 
-                                        $counter++;
-                                        if ($counter === 3) {
-                                            print('</div>');
-                                            print('<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">');
-                                            $counter = 0;
-                                        }
-                                    }
-                                    print('</div>');
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          ?>
+        </div>
+      </div>
+    </section>
 
 
         <div class="modal fade" id="confirmacionVender" tabindex="-1" aria-labelledby="confirmacionVenderLabel" aria-hidden="true">
