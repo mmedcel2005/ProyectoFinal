@@ -158,7 +158,7 @@
                                     $counter = 0;
                                     foreach ($objetosIntoInventario as $item) {
                                         print('<div class="col mb-4 rounded p-4">');
-                                        print('<div class="card h-100">'); // Agregado: clase "h-100" para hacer la tarjeta de altura completa
+                                        print('<div class="card h-300">'); // Agregado: clase "h-100" para hacer la tarjeta de altura completa
                                         print('<div class="card-img-container">');
                                         switch ($item["calidad"]) {
                                             case "L":
