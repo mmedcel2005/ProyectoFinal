@@ -289,7 +289,7 @@
             print('     <div class="item-overlay">');
             print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+            print('       <h4 class="item-card-text text-token">' . $item['precio'] . ' €</h4>');
             print('      </div>');
             print('    </div>');
             print('  </div>');
