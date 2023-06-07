@@ -145,74 +145,49 @@
                                     $totalItems = count($objetosIntoInventario);
 
                                     foreach ($objetosIntoInventario as $key => $item) {
-                                        print('<div class="row">');
-                                        print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
-                                        print('    <div class="bg-image hover-overlay hover-zoom ripple rounded position-relative" data-mdb-ripple-color="light">');
-                                        switch ($item["calidad"]) {
-                                            case "L":
-                                                print('        <img src="../src/img/bg-item-amarillo.png" class="w-100" alt="Imagen de fondo" />');
-
+                                            print('<div class="col mb-4 rounded p-4">');
+                                            print(' <div class="card">');
+                                            print('   <div class="card-img-container">');
+                                            switch ($item["calidad"]) {
+                                              case "L":
+                                                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
                                                 break;
-                                            case "E":
-                                                print('        <img src="../src/img/bg-item-rojo.png" class="w-100" alt="Imagen de fondo" />');
-
+                                              case "E":
+                                                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
                                                 break;
-                                            case "SR":
-                                                print('        <img src="../src/img/bg-item-morado.png" class="w-100" alt="Imagen de fondo" />');
-
+                                              case "SR":
+                                                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
                                                 break;
-                                            case "R":
-                                                print('        <img src="../src/img/bg-item-azul.png" class="w-100" alt="Imagen de fondo" />');
-
+                                              case "R":
+                                                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
                                                 break;
-                                            case "C":
-                                                print('        <img src="../src/img/bg-item-celeste.png" class="w-100" alt="Imagen de fondo" />');
-
+                                              case "C":
+                                                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
                                                 break;
-                                            case "MC":
-                                                print('        <img src="../src/img/bg-item-gris.png" class="w-100" alt="Imagen de fondo" />');
-
+                                              case "MC":
+                                                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
                                                 break;
-                                            default:
+                                              default:
                                                 break;
-                                        }
-                                        print('        <img src="' . $item["imagen"] . '" class="position-absolute top-0 start-0 w-100 h-100" alt="Imagen de ' . $item["nombre"] . '" />');
-                                        print('        <a href="#!">');
-                                        print('            <div class="mask"></div>');
-                                        print('        </a>');
-                                        print('    </div>');
-                                        print('</div>');
-
-                                        print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                        print('    <p>' . $item["nombre"] . '</p>');
-                                        print('<p> <span style="color: red;">x ' . $item["cantidad"] . '</span> </p>');
-
-
-
-                                        print('<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
-                                        print('    <i class="bi bi-send-fill text-white"></i>');
-                                        print('</button>');
-
-                                        print('<button class="btn" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
-                                        print('    <i class="bi bi-heart-fill text-white"></i>');
-                                        print('</button>');
-
-                                        print('</div>');
-
-                                        print(' <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-
-                                        print('      <p class="text-start text-md-center">');
-                                        print('       <strong class="text-token">' . $item["precio"] . ' €</strong>');
-                                        print('    </p>');
-                                        print('</div>');
-                                        print('</div>');
+                                            }
+                                            print('     <div class="item-overlay">');
+                                            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
+                                            print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+                                            print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+                                            print('      </div>');
+                                            print('    </div>');
+                                            print('  </div>');
+                                            print('</div>');
+                                          }
+                                
+                                        
 
                                         if ($key != $totalItems - 1) {
                                             // No es el último elemento, realizar acción adicional
                                             print('<hr class="my-4">');
                                         }
                                     }
-                                }
+                                
 
                                 ?>
                             </div>
