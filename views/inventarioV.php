@@ -167,6 +167,7 @@
                 break;
             }
             print('     <div class="item-overlay">');
+            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
             print('<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
             print('    <i class="bi bi-send-fill text-white"></i>');
             print('</button>');
@@ -174,7 +175,6 @@
             print('<button class="btn" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
             print('    <i class="bi bi-heart-fill text-white"></i>');
             print('</button>');
-            print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
             print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
             print('      </div>');
