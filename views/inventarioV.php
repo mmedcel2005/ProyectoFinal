@@ -134,42 +134,45 @@
                                     print('</div>');
                                     print('</div>');
                                 } else {
+                                    print('<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">');
+
                                     $totalItems = count($objetosIntoInventario);
                                     $counter = 0;
                                     foreach ($objetosIntoInventario as $key => $item) {
-                                        print('<div class="col mb-4 rounded p-4">');
-                                        print(' <div class="card">');
-                                        print('   <div class="card-img-container">');
-                                        switch ($item["calidad"]) {
+                                          print('<div class="col mb-4 rounded p-4">');
+                                          print(' <div class="card">');
+                                          print('   <div class="card-img-container">');
+                                          switch ($item["calidad"]) {
                                             case "L":
-                                                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
+                                              print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+                                              break;
                                             case "E":
-                                                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
+                                              print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+                                              break;
                                             case "SR":
-                                                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
+                                              print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+                                              break;
                                             case "R":
-                                                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
+                                              print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+                                              break;
                                             case "C":
-                                                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
+                                              print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+                                              break;
                                             case "MC":
-                                                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-                                                break;
+                                              print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+                                              break;
                                             default:
-                                                break;
+                                              break;
+                                          }
+                                          print('     <div class="item-overlay">');
+                                          print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
+                                          print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+                                          print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+                                          print('      </div>');
+                                          print('    </div>');
+                                          print('  </div>');
+                                          print('</div>');
                                         }
-                                        print('     <div class="item-overlay">');
-                                        print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
-                                        print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-                                        print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-                                        print('      </div>');
-                                        print('    </div>');
-                                        print('  </div>');
-                                        print('</div>');
                                         if ($counter % 3 === 2 || $key === $totalItems - 1) {
                                             print('</div>');
                                             if ($key !== $totalItems - 1) {
