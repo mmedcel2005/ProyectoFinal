@@ -136,8 +136,9 @@
 
     <main>
     <section>
+        <h1>Inventario</h1>
       <div class="container py-5">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 bg-custom-sec">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3">
           <?php
           foreach ($objetosIntoInventario as $item) {
             print('<div class="col mb-4 rounded p-4">');
