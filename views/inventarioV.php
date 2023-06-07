@@ -169,11 +169,11 @@
             print('     <div class="item-overlay">');
             print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
             print('<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
-            print('<img src="../src/img/enviar.png" alt="Icono vender"style="max-width: 20px;" />');
+            print('<img src="../src/img/enviar.png" alt="Icono vender"style="max-width: 27px;" />');
             print('</button>');
 
             print('<button class="btn" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
-            print('<img src="../src/img/vender.png" alt="Icono vender"style="max-width: 20px;" />');
+            print('<img src="../src/img/vender.png" alt="Icono vender"style="max-width: 27px;" />');
             print('</button>');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
             print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
