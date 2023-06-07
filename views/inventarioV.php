@@ -136,7 +136,7 @@
 
     <main>
     <section>
-        <h1 class="text-center">Inventario</h1>
+        <h1 class="text-center text-white">Inventario</h1>
       <div class="container py-5">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3">
           <?php
