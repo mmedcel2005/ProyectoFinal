@@ -57,6 +57,30 @@
         .notification.show {
             display: block;
         }
+
+        .custom-img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .card-img-container {
+      position: relative;
+    }
+
+    .item-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .item-card-title,
+    .item-card-text {
+      margin: 0;
+      font-size: 15px;
+    }
     </style>
 </head>
 
