@@ -168,11 +168,11 @@
             }
             print('     <div class="item-overlay">');
             print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
-            print('<button class="btn" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
-            print('<img src="../src/img/vender.png" alt="Icono vender" class="img-fluid max-width-1">');
+            print('<button class="btn d-flex align-items-center" onclick="enviar(this)" type="button" value="' . $item['idObjeto'] . '">');
+            print('    <img src="../src/img/vender.png" alt="Icono vender" class="img-fluid max-width-100">');
             print('</button>');
-
-            print('<button class="btn" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
+            
+            print('<button class="btn d-flex align-items-center" onclick="vender(this)" type="button" value="' . $item['idObjeto'] . '">');
             print('    <i class="bi bi-heart-fill text-white"></i>');
             print('</button>');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
