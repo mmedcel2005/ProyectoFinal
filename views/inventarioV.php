@@ -59,159 +59,151 @@
         }
 
         .custom-img {
-      max-width: 300px;
-      height: auto;
-    }
+            max-width: 300px;
+            height: auto;
+        }
 
-    .card-img-container {
-      position: relative;
-    }
+        .card-img-container {
+            position: relative;
+        }
 
-    .item-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-    }
+        .item-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
 
-    .item-card-title,
-    .item-card-text {
-      margin: 0;
-      font-size: 15px;
-    }
+        .item-card-title,
+        .item-card-text {
+            margin: 0;
+            font-size: 15px;
+        }
     </style>
 </head>
 
 <body>
-<header>
-    <!--------------- NAV  --------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-      <div class="container-fluid">
-        <a class="nav-link" href="../index.php">
-          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Oro gratis</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
-            </li>
-            <li class="nav-item"></li>
-          </ul>
+    <header>
+        <!--------------- NAV  --------------->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            <div class="container-fluid">
+                <a class="nav-link" href="../index.php">
+                    <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>Oro gratis</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
 
-          <?php
-          print('<div class="d-flex flex-column mx-lg-5">');
-          print('<a class="nav-link" href="../controller/usuarioC.php">');
-          print('<div class="d-flex align-items-center">');
-          print('<img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span>');
-          print('</div>');
-          print('</a>');
+                    <?php
+                    print('<div class="d-flex flex-column mx-lg-5">');
+                    print('<a class="nav-link" href="../controller/usuarioC.php">');
+                    print('<div class="d-flex align-items-center">');
+                    print('<img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+                    print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span>');
+                    print('</div>');
+                    print('</a>');
 
-          print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
-          print('<div class="d-flex align-items-center">');
-          print('<img src="../src/img/token.png" alt="Imagen de token" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-          print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
-          print('</div>');
-          print('</a>');
+                    print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
+                    print('<div class="d-flex align-items-center">');
+                    print('<img src="../src/img/token.png" alt="Imagen de token" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+                    print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
+                    print('</div>');
+                    print('</a>');
 
-          print('</div>');
+                    print('</div>');
 
 
-          ?>
-          <div id="google_translate_element" class="google"></div>
-        </div>
-      </div>
-    </nav>
-  </header>
+                    ?>
+                    <div id="google_translate_element" class="google"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
 
     <main>
         <section>
             <div class="container py-5">
-
-
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card mb-4 bg-custom-sec text-white">
-
                             <div class="card-header py-3">
                                 <h5 class="mb-0">Inventario</h5>
                             </div>
                             <div class="card-body">
-
                                 <?php
                                 if ($objetosIntoInventario == null) {
                                     print('<div class="row">');
-                                    print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
-
-                                    print('</div>');
-
+                                    print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0"></div>');
                                     print('<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">');
-                                    print('<h3>El inventario esta vacio</h3>');
+                                    print('<h3>El inventario está vacío</h3>');
                                     print('</div>');
-
-                                    print('<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">');
-
-
-
-                                    print('</div>');
+                                    print('<div class="col-lg-4 col-md-6 mb-4 mb-lg-0"></div>');
                                     print('</div>');
                                 } else {
                                     print('<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">');
-
+                                    $counter = 0;
                                     foreach ($objetosIntoInventario as $item) {
                                         print('<div class="col mb-4 rounded p-4">');
-                                      print(' <div class="card">');
-                                      print('   <div class="card-img-container">');
-                                      switch ($item["calidad"]) {
-                                        case "L":
-                                          print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
-                                          break;
-                                        case "E":
-                                          print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
-                                          break;
-                                        case "SR":
-                                          print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
-                                          break;
-                                        case "R":
-                                          print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
-                                          break;
-                                        case "C":
-                                          print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
-                                          break;
-                                        case "MC":
-                                          print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
-                                          break;
-                                        default:
-                                          break;
-                                      }
-                                      print('     <div class="item-overlay">');
-                                      print('       <img src="' . $item['imagen'] . '" alt="Imagen de' . $item['nombre'] . '" class="item-image img-fluid">');
-                                      print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-                                      print('       <h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
-                                      print('      </div>');
-                                      print('    </div>');
-                                      print('  </div>');
-                                      print('</div>');
+                                        print('<div class="card">');
+                                        print('<div class="card-img-container">');
+                                        switch ($item["calidad"]) {
+                                            case "L":
+                                                print('<img src="../src/img/bg-item-amarillo.png" class="card-img-top" alt="Imagen de fondo">');
+                                                break;
+                                            case "E":
+                                                print('<img src="../src/img/bg-item-rojo.png" class="card-img-top" alt="Imagen de fondo">');
+                                                break;
+                                            case "SR":
+                                                print('<img src="../src/img/bg-item-morado.png" class="card-img-top" alt="Imagen de fondo">');
+                                                break;
+                                            case "R":
+                                                print('<img src="../src/img/bg-item-azul.png" class="card-img-top" alt="Imagen de fondo">');
+                                                break;
+                                            case "C":
+                                                print('<img src="../src/img/bg-item-celeste.png" class="card-img-top" alt="Imagen de fondo">');
+                                                break;
+                                            case "MC":
+                                                print('<img src="../src/img/bg-item-gris.png" class="card-img-top" alt="Imagen de fondo">');
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                        print('<div class="item-overlay">');
+                                        print('<img src="' . $item['imagen'] . '" alt="Imagen de ' . $item['nombre'] . '" class="item-image img-fluid">');
+                                        print('<br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
+                                        print('<h4 class="item-card-text text-token">' . $item['precio'] . '</h4>');
+                                        print('</div>');
+                                        print('</div>');
+                                        print('</div>');
+                                        print('</div>');
+
+                                        $counter++;
+                                        if ($counter === 3) {
+                                            print('</div>');
+                                            print('<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 bg-custom-sec">');
+                                            $counter = 0;
+                                        }
                                     }
-
+                                    print('</div>');
                                 }
-
                                 ?>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>
