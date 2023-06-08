@@ -166,12 +166,11 @@
     <article>
       <div class="container">
       <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+      <div class="d-flex align-items-start justify-content-center" style="height: 100vh; margin-top: 30px;">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Cargando...</span>
   </div>
 </div>
-      <div class="spinner-border" role="status">
-  <span class="visually-hidden">Cargando...</span>
 </div>
         <div class="row">
           
@@ -287,6 +286,20 @@
     window.addEventListener('load', () => {
       showNotification();
     });
+
+    window.addEventListener('load', function() {
+  // Obtén una referencia a los elementos que deseas mostrar
+  var elementosMostrables = document.querySelectorAll('.elementos-mostrables');
+
+  // Elimina la clase 'd-none' de los elementos para mostrarlos
+  elementosMostrables.forEach(function(elemento) {
+    elemento.classList.remove('d-none');
+  });
+
+  // Oculta el spinner de carga
+  var spinner = document.querySelector('.spinner-border');
+  spinner.style.display = 'none';
+});
   </script>
 </body>
 
