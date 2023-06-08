@@ -165,7 +165,11 @@
 
     <article>
       <div class="container">
+      <div class="spinner-border" role="status">
+  <span class="visually-hidden">Cargando...</span>
+</div>
         <div class="row">
+          
 
           <?php
           foreach ($datosCajas as $caja) {
