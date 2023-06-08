@@ -311,7 +311,7 @@
       });
 
       // Oculta el spinner de carga
-      var spinner = document.querySelector('#cargando');
+      var spinner = document.getElementById('#cargando');
       spinner.style.display = 'none';
     }, 1000);
     });
