@@ -132,7 +132,7 @@
                             <div class="card-body text-center text-white">
                                 <img src="<?php echo ($_SESSION["imagen"]) ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <?php
-                                print('<h5 class="my-3">' . $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h5>');
+                                print('<h4 class="my-3">' . $usuario["nombre"] . ' ' . $usuario["apellidos"] . '</h4>');
                                 ?>
                                 <div class="d-flex justify-content-center mb-2">
 
@@ -251,7 +251,7 @@
                         <div class="card mb-4 bg-custom-sec text-white">
 
                             <div class="card-header py-3">
-                                <h5 class="mb-0">Inventario</h5>
+                                <h4 class="mb-0">Inventario</h4>
                             </div>
                             <div class="card-body">
 
