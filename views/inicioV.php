@@ -311,7 +311,7 @@
         // Oculta el spinner de carga
         var spinner = document.querySelector('.spinner-border');
     spinner.style.visibility = 'hidden';
-      }, 1000);
+      }, 500);
     });
   </script>
 </body>
