@@ -76,6 +76,7 @@
 
     .btn-active {
   border-color: #efb810 !important; 
+  color: #efb810 !important;
 }
   </style>
 </head>
