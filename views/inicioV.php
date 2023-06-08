@@ -179,11 +179,9 @@
 
     <article>
       <div class="container">
-      <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Cargando...</span>
-  </div>
-</div>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
         <div class="row d-none" id="cajas">
 
 
