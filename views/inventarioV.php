@@ -16,7 +16,6 @@
           h1,
     h2,
     h3,
-    h4,
     h5 {
       font-family: 'Bebas Neue', sans-serif;
     }
@@ -182,7 +181,7 @@
             print('<img src="../src/img/vender.png" alt="Icono vender"style="max-width: 27px;" />');
             print('</button>');
             print('      <br><h6 class="item-card-title text-white">' . $item['nombre'] . '</h6>');
-            print('       <h3 class="item-card-text text-token">' . $item['precio'] . ' €</h3>');
+            print('       <h4 class="item-card-text text-token">' . $item['precio'] . ' €</h4>');
             print('      </div>');
             print('    </div>');
             print('  </div>');
