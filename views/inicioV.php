@@ -179,9 +179,9 @@
 
     <article>
       <div class="container">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Cargando...</span>
-      </div>
+        <div class="spinner-border position-absolute top-50 start-50 translate-middle" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
         <div class="row d-none" id="cajas">
 
 
@@ -300,18 +300,18 @@
 
     window.addEventListener('load', function() {
       setTimeout(function() {
-      // Obtén una referencia a los elementos que deseas mostrar
-      var elementosMostrables = document.querySelectorAll('#cajas');
+        // Obtén una referencia a los elementos que deseas mostrar
+        var elementosMostrables = document.querySelectorAll('#cajas');
 
-      // Elimina la clase 'd-none' de los elementos para mostrarlos
-      elementosMostrables.forEach(function(elemento) {
-        elemento.classList.remove('d-none');
-      });
+        // Elimina la clase 'd-none' de los elementos para mostrarlos
+        elementosMostrables.forEach(function(elemento) {
+          elemento.classList.remove('d-none');
+        });
 
-      // Oculta el spinner de carga
-      var spinner = document.querySelector('.spinner-border');
-      spinner.style.display = 'none';
-    }, 1000);
+        // Oculta el spinner de carga
+        var spinner = document.querySelector('.spinner-border');
+        spinner.style.display = 'none';
+      }, 1000);
     });
   </script>
 </body>
