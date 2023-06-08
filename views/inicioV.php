@@ -134,25 +134,39 @@
               <div class="card-body text-center bg-custom-sec ">
                 <div class="d-flex justify-content-between ">
                   <form action="../index.php" method="post">
-                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]==null){print('active');}?>">POPULAR</button>
+                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == null) {
+                                                                                                      print('active');
+                                                                                                    } ?>">POPULAR</button>
                   </form>
                   <form action="../index.php" method="post">
-                  <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]== "T"){print('active');}?>" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
+                    <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "T") {
+                                                                                                      print('active');
+                                                                                                    } ?>" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]=="R"){print('active');}?>" name="categoria" id="categoria" value="R">ROPA</button>
+                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "R") {
+                                                                                                      print('active');
+                                                                                                    } ?>" name="categoria" id="categoria" value="R">ROPA</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]=="F"){print('active');}?>" name="categoria" id="categoria" value="F">FIGURAS</button>
+                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "F") {
+                                                                                                      print('active');
+                                                                                                    } ?>" name="categoria" id="categoria" value="F">FIGURAS</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]=="A"){print('active');}?>" name="categoria" id="categoria" value="A">ACCESORIOS</button>
+                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "A") {
+                                                                                                      print('active');
+                                                                                                    } ?>" name="categoria" id="categoria" value="A">ACCESORIOS</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]=="N"){print('active');}?>" name="categoria" id="categoria" value="N">NUEVO</button>
+                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "N") {
+                                                                                                      print('active');
+                                                                                                    } ?>" name="categoria" id="categoria" value="N">NUEVO</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if($_POST["categoria"]=="O"){print('active');}?>" name="categoria" id="categoria" value="O">OFERTAS</button>
+                    <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "O") {
+                                                                                                      print('active');
+                                                                                                    } ?>" name="categoria" id="categoria" value="O">OFERTAS</button>
                   </form>
                 </div>
               </div>
@@ -165,46 +179,45 @@
 
     <article>
       <div class="container">
-      <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
-      <div class="d-flex align-items-start justify-content-center" style="height: 100vh; margin-top: 30px;">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Cargando...</span>
-  </div>
-</div>
-</div>
-        <div class="row d-none" id="cajas">
-          
+        <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+        </div>
 
-          <?php
-          foreach ($datosCajas as $caja) {
+        <div class="d-flex align-items-start justify-content-center mt-5">
+          <div class="d-none" id="cajas">
 
-            print('<div class="col-sm-4 mb-3">');
-            print(' <div class="card position-relative text-center bg-custom-sec">');
-            print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
-            if ($caja["estado"] == "O") {
-              print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            } elseif ($caja["estado"] == "N") {
-              print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
-            }
-            print('  <div class="card-body">');
-            print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
-            print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
-            if ($_SESSION["is_admin"] == true) {
-              print('<form action="../controller/editarCajaC.php" method="post">');
-              print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
-              print('     <button type="submit" class="btn btn-secondary color-tokens col-sm-11">Editar</button>');
+            <?php
+            foreach ($datosCajas as $caja) {
+
+              print('<div class="col-sm-4 mb-3">');
+              print(' <div class="card position-relative text-center bg-custom-sec">');
+              print('  <img src="' . $caja["imagen"] . '" class="card-img-top" alt="Imagen ' . $caja["nombre"] . '">');
+              if ($caja["estado"] == "O") {
+                print('<img src="../src/img/oferta.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+              } elseif ($caja["estado"] == "N") {
+                print('<img src="../src/img/new.png" class="position-absolute imagen-superpuesta" alt="Caja Nueva">');
+              }
+              print('  <div class="card-body">');
+              print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
+              print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+              if ($_SESSION["is_admin"] == true) {
+                print('<form action="../controller/editarCajaC.php" method="post">');
+                print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
+                print('     <button type="submit" class="btn btn-secondary color-tokens col-sm-11">Editar</button>');
+                print('   </form>');
+              }
+              print('<form action="../controller/abrirCajaC.php" method="post">');
+              print('     <input type="hidden" name="idCaja" value="' . $caja["idCaja"] . '">');
+              print('     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
               print('   </form>');
+              print('   </div>');
+              print(' </div>');
+              print('</div>');
             }
-            print('<form action="../controller/abrirCajaC.php" method="post">');
-            print('     <input type="hidden" name="idCaja" value="' . $caja["idCaja"] . '">');
-            print('     <button type="submit" class="btn btn-amarillo color-tokens col-sm-11">Abrir</button>');
-            print('   </form>');
-            print('   </div>');
-            print(' </div>');
-            print('</div>');
-          }
-          ?>
-
+            ?>
+          </div>
         </div>
       </div>
     </article>
@@ -288,18 +301,18 @@
     });
 
     window.addEventListener('load', function() {
-  // Obtén una referencia a los elementos que deseas mostrar
-  var elementosMostrables = document.querySelectorAll('#cajas');
+      // Obtén una referencia a los elementos que deseas mostrar
+      var elementosMostrables = document.querySelectorAll('#cajas');
 
-  // Elimina la clase 'd-none' de los elementos para mostrarlos
-  elementosMostrables.forEach(function(elemento) {
-    elemento.classList.remove('d-none');
-  });
+      // Elimina la clase 'd-none' de los elementos para mostrarlos
+      elementosMostrables.forEach(function(elemento) {
+        elemento.classList.remove('d-none');
+      });
 
-  // Oculta el spinner de carga
-  var spinner = document.querySelector('.spinner-border');
-  spinner.style.display = 'none';
-});
+      // Oculta el spinner de carga
+      var spinner = document.querySelector('.spinner-border');
+      spinner.style.display = 'none';
+    });
   </script>
 </body>
 
