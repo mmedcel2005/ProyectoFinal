@@ -172,7 +172,7 @@
   </div>
 </div>
 </div>
-        <div class="row">
+        <div class="row d-none" id="cajas">
           
 
           <?php
@@ -289,7 +289,7 @@
 
     window.addEventListener('load', function() {
   // Obtén una referencia a los elementos que deseas mostrar
-  var elementosMostrables = document.querySelectorAll('.elementos-mostrables');
+  var elementosMostrables = document.querySelectorAll('#cajas');
 
   // Elimina la clase 'd-none' de los elementos para mostrarlos
   elementosMostrables.forEach(function(elemento) {
