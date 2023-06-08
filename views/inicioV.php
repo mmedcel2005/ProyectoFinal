@@ -179,11 +179,9 @@
 
     <article>
       <div class="container">
-      <div class="d-flex align-items-center justify-content-center" id="cargando" style="height: 100vh;">
-      <div class="spinner-border" role="status">
+      <div class="spinner-border d-flex align-items-center justify-content-center" role="status">
         <span class="visually-hidden">Cargando...</span>
       </div>
-    </div>
         <div class="row d-none" id="cajas">
 
 
@@ -311,7 +309,7 @@
       });
 
       // Oculta el spinner de carga
-      var spinner = document.getElementById('#cargando');
+      var spinner = document.querySelector('.spinner-border');
       spinner.style.display = 'none';
     }, 1000);
     });
