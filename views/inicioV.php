@@ -145,32 +145,32 @@
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "T") {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "R") {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>" name="categoria" id="categoria" value="R">ROPA</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "F") {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>" name="categoria" id="categoria" value="F">FIGURAS</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "A") {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>" name="categoria" id="categoria" value="A">ACCESORIOS</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "N") {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>" name="categoria" id="categoria" value="N">NUEVO</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == "O") {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>" name="categoria" id="categoria" value="O">OFERTAS</button>
                   </form>
                 </div>
