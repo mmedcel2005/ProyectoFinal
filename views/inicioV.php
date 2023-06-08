@@ -73,6 +73,10 @@
     .notification.show {
       display: block;
     }
+
+    .btn-active {
+  border-color: #efb810 !important; 
+}
   </style>
 </head>
 
@@ -135,7 +139,7 @@
                 <div class="d-flex justify-content-between ">
                   <form action="../index.php" method="post">
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom <?php if ($_POST["categoria"] == null) {
-                                                                                                      print('active');
+                                                                                                      print('active btn-active');
                                                                                                     } ?>">POPULAR</button>
                   </form>
                   <form action="../index.php" method="post">
