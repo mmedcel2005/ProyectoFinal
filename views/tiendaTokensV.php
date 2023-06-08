@@ -143,7 +143,7 @@
             }
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $tokens["precio"] . ' €</b></p>');
-            print('    <h5 class="card-text text-token">' . $tokens["cantidadToken"] . '</h5>');
+            print('    <h4 class="card-text text-token">' . $tokens["cantidadToken"] . '</h4>');
             print('     <input type="hidden" class="idPackToken" name="id" value="' . $tokens["idPackToken"] . '">');
             print('     <button type="submit" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-amarillo color-tokens col-sm-11">Comprar</button>');
             print('   </div>');
