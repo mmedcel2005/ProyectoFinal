@@ -178,7 +178,7 @@
             <div class="card position-relative text-center bg-custom-sec">
               <img src="<?php echo $caja['imagen']; ?>" class="card-img-top custom-img mx-auto" alt="<?php echo $item['nombre']; ?>">
               <div class="card-body">
-                <h5 class="card-text text-token"><?php echo $caja['precio']; ?></h5>
+                <h4 class="card-text text-token"><?php echo $caja['precio']; ?></h4>
 
                 <?php
                 if ($_SESSION['cantTokens'] < $caja['precio']) {
