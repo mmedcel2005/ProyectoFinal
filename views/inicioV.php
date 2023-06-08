@@ -94,9 +94,7 @@
             <li class="nav-item">
               <a class="nav-link active" href="../index.php"><b>Mistery Boxes</b></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><b>Oro gratis</b></a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
             </li>
