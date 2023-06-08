@@ -297,11 +297,9 @@
       showNotification();
     });
     // Ejemplo de uso
-    window.addEventListener('load', () => {
-      showNotification();
-    });
 
     window.addEventListener('load', function() {
+      setTimeout(function() {
       // Obtén una referencia a los elementos que deseas mostrar
       var elementosMostrables = document.querySelectorAll('#cajas');
 
@@ -313,6 +311,7 @@
       // Oculta el spinner de carga
       var spinner = document.querySelector('.spinner-border');
       spinner.style.display = 'none';
+    }, 3000);
     });
   </script>
 </body>
