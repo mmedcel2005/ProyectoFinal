@@ -137,7 +137,7 @@
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom">POPULAR</button>
                   </form>
                   <form action="../index.php" method="post">
-                    <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
+                  <button class="btn flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom active" name="categoria" id="categoria" value="T">TECNOLOGÍA</button>
                   </form>
                   <form action="../index.php" method="post">
                     <button class="btn  flex-fill mx-2 pt-2 pb-2 text-muted rounded-1 btn-bg-custom" name="categoria" id="categoria" value="R">ROPA</button>
