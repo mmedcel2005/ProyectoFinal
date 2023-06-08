@@ -179,7 +179,7 @@
 
     <article>
       <div class="container">
-        <div class="spinner-border position-absolute top-50 start-50 translate-middle" role="status">
+        <div class="spinner-border position-relative top-50 start-50 translate-middle" role="status">
           <span class="visually-hidden">Cargando...</span>
         </div>
         <div class="row d-none" id="cajas">
