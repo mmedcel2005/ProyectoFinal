@@ -7,11 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOMBRE | Inicio</title>
     <link rel="icon" href="../src/img/logo-Mini.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../style/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
         body {
             background-color: #1c1c1c;
         }
@@ -47,7 +56,7 @@
             text-decoration: none;
         }
 
-        
+
         .notification {
             position: fixed;
             bottom: 20px;
@@ -66,50 +75,50 @@
 </head>
 
 <body>
-<header>
-    <!--------------- NAV  --------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-      <div class="container-fluid">
-        <a class="nav-link" href="../index.php">
-          <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
-            </li>
+    <header>
+        <!--------------- NAV  --------------->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            <div class="container-fluid">
+                <a class="nav-link" href="../index.php">
+                    <img src="..\src\img\logoXL.png" alt="" style="height: 40px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.php"><b>Mistery Boxes</b></a>
+                        </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
-            </li>
-            <li class="nav-item"></li>
-          </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../controller/tiendaTokensC.php"><b>Tienda</b></a>
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
 
-          <?php
-          print('<div class="d-flex flex-column mx-lg-5">');
-          print('<a class="nav-link" href="../controller/usuarioC.php">');
-          print('<div class="d-flex align-items-center">');
-          print('<img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-          print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span>');
-          print('</div>');
-          print('</a>');
+                    <?php
+                    print('<div class="d-flex flex-column mx-lg-5">');
+                    print('<a class="nav-link" href="../controller/usuarioC.php">');
+                    print('<div class="d-flex align-items-center">');
+                    print('<img src="' . $_SESSION['imagen'] . '" alt="Imagen de usuario" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+                    print('<span class="usuario-nombre text-white">' . $_SESSION['nombre'] . '</span>');
+                    print('</div>');
+                    print('</a>');
 
-          print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
-          print('<div class="d-flex align-items-center">');
-          print('<img src="../src/img/token.png" alt="Imagen de token" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
-          print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
-          print('</div>');
-          print('</a>');
+                    print('<a class="nav-link mt-2" href="../controller/tiendaTokensC.php">');
+                    print('<div class="d-flex align-items-center">');
+                    print('<img src="../src/img/token.png" alt="Imagen de token" class="rounded-circle usuario-imagen" style="max-width: 40px;" />');
+                    print('<p class="text-token"><b>' . $_SESSION['cantTokens'] . '</b></p>');
+                    print('</div>');
+                    print('</a>');
 
-          print('</div>');
+                    print('</div>');
 
 
-          ?>
-          <div id="google_translate_element" class="google"></div>
-        </div>
-      </div>
-    </nav>
-  </header>
+                    ?>
+                    <div id="google_translate_element" class="google"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
     <main>
@@ -264,7 +273,7 @@
 
                                     print('</div>');
                                     print('</div>');
-                                }elseif ((count($objetosIntoInventario) > 3)) {
+                                } elseif ((count($objetosIntoInventario) > 3)) {
                                     for ($i = 0; $i < 3; $i++) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
@@ -319,7 +328,7 @@
                                         print('<hr class="my-4">');
                                     }
                                     print('<h5><a href="../controller/inventarioC.php" class="text-decoration-none text-white">Ver más</a></h5>');
-                                }else {
+                                } else {
                                     foreach ($objetosIntoInventario as $item) {
                                         print('<div class="row">');
                                         print('<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">');
