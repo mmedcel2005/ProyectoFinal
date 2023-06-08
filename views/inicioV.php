@@ -179,7 +179,7 @@
 
     <article>
       <div class="container">
-        <div class="spinner-border position-relative top-50 start-50 translate-middle" role="status">
+        <div class="spinner-border position-relative top-50 start-50 translate-middle text-token" role="status">
           <span class="visually-hidden">Cargando...</span>
         </div>
         <div class="row d-none" id="cajas">
@@ -299,7 +299,7 @@
     // Ejemplo de uso
 
     window.addEventListener('load', function() {
-      setTimeout(function() {
+      
         // Obtén una referencia a los elementos que deseas mostrar
         var elementosMostrables = document.querySelectorAll('#cajas');
 
@@ -311,7 +311,6 @@
         // Oculta el spinner de carga
         var spinner = document.querySelector('.spinner-border');
         spinner.style.display = 'none';
-      }, 1000);
     });
   </script>
 </body>
