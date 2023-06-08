@@ -210,7 +210,7 @@
             }
             print('  <div class="card-body">');
             print('    <p class="card-text text-muted"><b>' . $caja["nombre"] . '</b></p>');
-            print('    <h5 class="card-text text-token">' . $caja["precio"] . '</h5>');
+            print('    <h4 class="card-text text-token">' . $caja["precio"] . '</h5>');
             if ($_SESSION["is_admin"] == true) {
               print('<form action="../controller/editarCajaC.php" method="post">');
               print('     <input type="hidden" id="editarCajaID" name="editarCajaID" value="' . $caja["idCaja"] . '">');
